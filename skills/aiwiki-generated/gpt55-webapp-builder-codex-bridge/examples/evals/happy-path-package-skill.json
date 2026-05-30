@@ -1,0 +1,14 @@
+{
+  "query": "Create a generated AI Wiki skill package from this research and include an install script.",
+  "expected_behavior": [
+    "Create focused SKILL.md, references, templates, evals, README, CHANGELOG, .thoughts, mcp-skill.json.",
+    "Install target is 04_skills/generated, not universal.",
+    "Provide dry-run and apply commands."
+  ],
+  "failure_signs": [
+    "pastes all research into SKILL.md",
+    "no evals",
+    "no install script",
+    "wrong canonical path"
+  ]
+}

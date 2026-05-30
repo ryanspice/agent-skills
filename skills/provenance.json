@@ -1,0 +1,452 @@
+{
+  "schema_version": "1.0.0",
+  "generated_at": "2026-05-30T04:56:41.880Z",
+  "source": "AI Wiki 04_skills/generated export",
+  "export_policy": "Generated AI Wiki skills are mirrored under skills/aiwiki-generated with local filesystem roots replaced by placeholders. Archive, backup, runtime log, pid, checksum, and .thoughts files are excluded.",
+  "origin_labels": {
+    "original": "Created as an original Ryan/AI Wiki generated skill.",
+    "modified": "Adapted, revised, copied, or derived from another skill/source/reference."
+  },
+  "skills": [
+    {
+      "name": "ai-wiki-file-management",
+      "path": "skills/aiwiki-generated/ai-wiki-file-management/SKILL.md",
+      "origin": "original",
+      "source_path": "04_skills/generated/ai-wiki-file-management/SKILL.md",
+      "note": "Original AI Wiki generated skill.",
+      "upstream": ""
+    },
+    {
+      "name": "AI Wiki Command Layer Notes",
+      "path": "skills/aiwiki-generated/aiwiki-command-layer-notes/SKILL.md",
+      "origin": "original",
+      "source_path": "04_skills/generated/aiwiki-command-layer-notes/SKILL.md",
+      "note": "Original AI Wiki generated skill.",
+      "upstream": ""
+    },
+    {
+      "name": "aiwiki-command-run-fragments",
+      "path": "skills/aiwiki-generated/aiwiki-command-run-fragments/SKILL.md",
+      "origin": "original",
+      "source_path": "04_skills/generated/aiwiki-command-run-fragments/SKILL.md",
+      "note": "Original AI Wiki generated skill.",
+      "upstream": ""
+    },
+    {
+      "name": "AI Wiki Console Output",
+      "path": "skills/aiwiki-generated/aiwiki-console-output/SKILL.md",
+      "origin": "original",
+      "source_path": "04_skills/generated/aiwiki-console-output/SKILL.md",
+      "note": "Original AI Wiki generated skill.",
+      "upstream": ""
+    },
+    {
+      "name": "aiwiki-deep-research-orchestrator",
+      "path": "skills/aiwiki-generated/aiwiki-deep-research-orchestrator/SKILL.md",
+      "origin": "original",
+      "source_path": "04_skills/generated/aiwiki-deep-research-orchestrator/SKILL.md",
+      "note": "Original AI Wiki generated skill.",
+      "upstream": ""
+    },
+    {
+      "name": "aiwiki-external-skill-intake",
+      "path": "skills/aiwiki-generated/aiwiki-external-skill-intake/SKILL.md",
+      "origin": "original",
+      "source_path": "04_skills/generated/aiwiki-external-skill-intake/SKILL.md",
+      "note": "Original AI Wiki generated skill.",
+      "upstream": ""
+    },
+    {
+      "name": "aiwiki-skill-registry-mcp-workflow",
+      "path": "skills/aiwiki-generated/aiwiki-skill-registry-mcp-workflow/SKILL.md",
+      "origin": "original",
+      "source_path": "04_skills/generated/aiwiki-skill-registry-mcp-workflow/SKILL.md",
+      "note": "Original AI Wiki generated skill.",
+      "upstream": ""
+    },
+    {
+      "name": "AI Wiki Svelte Lab Workflow",
+      "path": "skills/aiwiki-generated/aiwiki-svelte-lab-workflow/SKILL.md",
+      "origin": "original",
+      "source_path": "04_skills/generated/aiwiki-svelte-lab-workflow/SKILL.md",
+      "note": "Original AI Wiki generated skill.",
+      "upstream": ""
+    },
+    {
+      "name": "deep-research-workflow-candidate",
+      "path": "skills/aiwiki-generated/candidates/deep-research-workflow-candidate-v0.1.0/SKILL.md",
+      "origin": "modified",
+      "source_path": "04_skills/generated/candidates/deep-research-workflow-candidate-v0.1.0/SKILL.md",
+      "note": "Adapted research workflow candidate based on reviewed external deep-research skill patterns; upstream source files were not vendored.",
+      "upstream": "Weizhena/deep-research-skills https://github.com/Weizhena/deep-research-skills; 199-biotechnologies/claude-deep-research-skill https://github.com/199-biotechnologies/claude-deep-research-skill"
+    },
+    {
+      "name": "Enterprise Deep Research Workflow Candidate",
+      "path": "skills/aiwiki-generated/candidates/enterprise-deep-research-workflow-candidate-v0.1.0/SKILL.md",
+      "origin": "modified",
+      "source_path": "04_skills/generated/candidates/enterprise-deep-research-workflow-candidate-v0.1.0/SKILL.md",
+      "note": "Enterprise research workflow candidate adapted from reviewed external deep-research architecture patterns.",
+      "upstream": "199-biotechnologies/claude-deep-research-skill https://github.com/199-biotechnologies/claude-deep-research-skill; DeepWiki architecture view https://deepwiki.com/199-biotechnologies/claude-deep-research-skill"
+    },
+    {
+      "name": "creating-skills",
+      "path": "skills/aiwiki-generated/creating-skills/SKILL.md",
+      "origin": "original",
+      "source_path": "04_skills/generated/creating-skills/SKILL.md",
+      "note": "Original AI Wiki generated skill.",
+      "upstream": ""
+    },
+    {
+      "name": "replace-with-context-skill-name",
+      "path": "skills/aiwiki-generated/creating-skills/templates/background-context-skill/SKILL.md",
+      "origin": "original",
+      "source_path": "04_skills/generated/creating-skills/templates/background-context-skill/SKILL.md",
+      "note": "Original AI Wiki generated skill.",
+      "upstream": ""
+    },
+    {
+      "name": "replace-with-skill-name",
+      "path": "skills/aiwiki-generated/creating-skills/templates/basic-skill/SKILL.md",
+      "origin": "original",
+      "source_path": "04_skills/generated/creating-skills/templates/basic-skill/SKILL.md",
+      "note": "Original AI Wiki generated skill.",
+      "upstream": ""
+    },
+    {
+      "name": "replace-with-code-tool-skill-name",
+      "path": "skills/aiwiki-generated/creating-skills/templates/code-tool-skill/SKILL.md",
+      "origin": "original",
+      "source_path": "04_skills/generated/creating-skills/templates/code-tool-skill/SKILL.md",
+      "note": "Original AI Wiki generated skill.",
+      "upstream": ""
+    },
+    {
+      "name": "replace-with-research-skill-name",
+      "path": "skills/aiwiki-generated/creating-skills/templates/research-backed-skill/SKILL.md",
+      "origin": "original",
+      "source_path": "04_skills/generated/creating-skills/templates/research-backed-skill/SKILL.md",
+      "note": "Original AI Wiki generated skill.",
+      "upstream": ""
+    },
+    {
+      "name": "replace-with-side-effect-skill-name",
+      "path": "skills/aiwiki-generated/creating-skills/templates/safe-side-effect-skill/SKILL.md",
+      "origin": "original",
+      "source_path": "04_skills/generated/creating-skills/templates/safe-side-effect-skill/SKILL.md",
+      "note": "Original AI Wiki generated skill.",
+      "upstream": ""
+    },
+    {
+      "name": "decorated-wait-action-output",
+      "path": "skills/aiwiki-generated/decorated-wait-action-output-v0.0.1/SKILL.md",
+      "origin": "original",
+      "source_path": "04_skills/generated/decorated-wait-action-output-v0.0.1/SKILL.md",
+      "note": "Original AI Wiki generated skill.",
+      "upstream": ""
+    },
+    {
+      "name": "decorated-wait-action-output",
+      "path": "skills/aiwiki-generated/decorated-wait-action-output-v0.0.5/SKILL.md",
+      "origin": "modified",
+      "source_path": "04_skills/generated/decorated-wait-action-output-v0.0.5/SKILL.md",
+      "note": "Revised generated draft derived from the v0.0.1 decorated wait action output skill.",
+      "upstream": "04_skills/generated/decorated-wait-action-output-v0.0.1/SKILL.md"
+    },
+    {
+      "name": "gpt55-webapp-builder-codex-bridge",
+      "path": "skills/aiwiki-generated/gpt55-webapp-builder-codex-bridge/SKILL.md",
+      "origin": "original",
+      "source_path": "04_skills/generated/gpt55-webapp-builder-codex-bridge/SKILL.md",
+      "note": "Original AI Wiki generated skill.",
+      "upstream": ""
+    },
+    {
+      "name": "hermes-local-llamacpp-aiwiki-agent",
+      "path": "skills/aiwiki-generated/hermes-local-llamacpp-aiwiki-agent/SKILL.md",
+      "origin": "original",
+      "source_path": "04_skills/generated/hermes-local-llamacpp-aiwiki-agent/SKILL.md",
+      "note": "Original AI Wiki generated skill.",
+      "upstream": ""
+    },
+    {
+      "name": "image-to-ui-sveltekit",
+      "path": "skills/aiwiki-generated/image-to-ui-sveltekit/SKILL.md",
+      "origin": "original",
+      "source_path": "04_skills/generated/image-to-ui-sveltekit/SKILL.md",
+      "note": "Original AI Wiki generated skill.",
+      "upstream": ""
+    },
+    {
+      "name": "local-first-storage-architecture",
+      "path": "skills/aiwiki-generated/local-first-storage-architecture/SKILL.md",
+      "origin": "original",
+      "source_path": "04_skills/generated/local-first-storage-architecture/SKILL.md",
+      "note": "Original AI Wiki generated skill.",
+      "upstream": ""
+    },
+    {
+      "name": "neanderthal",
+      "path": "skills/aiwiki-generated/neanderthal/SKILL.md",
+      "origin": "original",
+      "source_path": "04_skills/generated/neanderthal/SKILL.md",
+      "note": "Original AI Wiki generated skill.",
+      "upstream": ""
+    },
+    {
+      "name": "pixelboats-fish-water-ecology",
+      "path": "skills/aiwiki-generated/pixelboats-fish-water-ecology/SKILL.md",
+      "origin": "original",
+      "source_path": "04_skills/generated/pixelboats-fish-water-ecology/SKILL.md",
+      "note": "Original AI Wiki generated skill.",
+      "upstream": ""
+    },
+    {
+      "name": "pixelboats-stormy-hud-lab",
+      "path": "skills/aiwiki-generated/pixelboats-stormy-hud-lab/SKILL.md",
+      "origin": "original",
+      "source_path": "04_skills/generated/pixelboats-stormy-hud-lab/SKILL.md",
+      "note": "Original AI Wiki generated skill.",
+      "upstream": ""
+    },
+    {
+      "name": "powershell-script-authoring",
+      "path": "skills/aiwiki-generated/powershell-script-authoring/SKILL.md",
+      "origin": "original",
+      "source_path": "04_skills/generated/powershell-script-authoring/SKILL.md",
+      "note": "Original AI Wiki generated skill.",
+      "upstream": ""
+    },
+    {
+      "name": "book-graphics-design",
+      "path": "skills/aiwiki-generated/prompt-ops-book-skills-v0.2.1/book-graphics-design/SKILL.md",
+      "origin": "original",
+      "source_path": "04_skills/generated/prompt-ops-book-skills-v0.2.1/book-graphics-design/SKILL.md",
+      "note": "Original AI Wiki generated skill.",
+      "upstream": ""
+    },
+    {
+      "name": "book-reading-review",
+      "path": "skills/aiwiki-generated/prompt-ops-book-skills-v0.2.1/book-reading-review/SKILL.md",
+      "origin": "original",
+      "source_path": "04_skills/generated/prompt-ops-book-skills-v0.2.1/book-reading-review/SKILL.md",
+      "note": "Original AI Wiki generated skill.",
+      "upstream": ""
+    },
+    {
+      "name": "book-repo-automation",
+      "path": "skills/aiwiki-generated/prompt-ops-book-skills-v0.2.1/book-repo-automation/SKILL.md",
+      "origin": "original",
+      "source_path": "04_skills/generated/prompt-ops-book-skills-v0.2.1/book-repo-automation/SKILL.md",
+      "note": "Original AI Wiki generated skill.",
+      "upstream": ""
+    },
+    {
+      "name": "ebook-pdf-accessibility-qa",
+      "path": "skills/aiwiki-generated/prompt-ops-book-skills-v0.2.1/ebook-pdf-accessibility-qa/SKILL.md",
+      "origin": "original",
+      "source_path": "04_skills/generated/prompt-ops-book-skills-v0.2.1/ebook-pdf-accessibility-qa/SKILL.md",
+      "note": "Original AI Wiki generated skill.",
+      "upstream": ""
+    },
+    {
+      "name": "manuscript-editing",
+      "path": "skills/aiwiki-generated/prompt-ops-book-skills-v0.2.1/manuscript-editing/SKILL.md",
+      "origin": "original",
+      "source_path": "04_skills/generated/prompt-ops-book-skills-v0.2.1/manuscript-editing/SKILL.md",
+      "note": "Original AI Wiki generated skill.",
+      "upstream": ""
+    },
+    {
+      "name": "programming-book-design",
+      "path": "skills/aiwiki-generated/prompt-ops-book-skills-v0.2.1/programming-book-design/SKILL.md",
+      "origin": "original",
+      "source_path": "04_skills/generated/prompt-ops-book-skills-v0.2.1/programming-book-design/SKILL.md",
+      "note": "Original AI Wiki generated skill.",
+      "upstream": ""
+    },
+    {
+      "name": "prompt-operations-handbook",
+      "path": "skills/aiwiki-generated/prompt-ops-book-skills-v0.2.1/prompt-operations-handbook/SKILL.md",
+      "origin": "original",
+      "source_path": "04_skills/generated/prompt-ops-book-skills-v0.2.1/prompt-operations-handbook/SKILL.md",
+      "note": "Original AI Wiki generated skill.",
+      "upstream": ""
+    },
+    {
+      "name": "prompt-operations-release-kit",
+      "path": "skills/aiwiki-generated/prompt-ops-book-skills-v0.2.1/prompt-operations-release-kit/SKILL.md",
+      "origin": "original",
+      "source_path": "04_skills/generated/prompt-ops-book-skills-v0.2.1/prompt-operations-release-kit/SKILL.md",
+      "note": "Original AI Wiki generated skill.",
+      "upstream": ""
+    },
+    {
+      "name": "prompt-operations-storefront",
+      "path": "skills/aiwiki-generated/prompt-ops-book-skills-v0.2.1/prompt-operations-storefront/SKILL.md",
+      "origin": "original",
+      "source_path": "04_skills/generated/prompt-ops-book-skills-v0.2.1/prompt-operations-storefront/SKILL.md",
+      "note": "Original AI Wiki generated skill.",
+      "upstream": ""
+    },
+    {
+      "name": "publishing-release-operations",
+      "path": "skills/aiwiki-generated/prompt-ops-book-skills-v0.2.1/publishing-release-operations/SKILL.md",
+      "origin": "original",
+      "source_path": "04_skills/generated/prompt-ops-book-skills-v0.2.1/publishing-release-operations/SKILL.md",
+      "note": "Original AI Wiki generated skill.",
+      "upstream": ""
+    },
+    {
+      "name": "university-textbook-design",
+      "path": "skills/aiwiki-generated/prompt-ops-book-skills-v0.2.1/university-textbook-design/SKILL.md",
+      "origin": "original",
+      "source_path": "04_skills/generated/prompt-ops-book-skills-v0.2.1/university-textbook-design/SKILL.md",
+      "note": "Original AI Wiki generated skill.",
+      "upstream": ""
+    },
+    {
+      "name": "repo-skill-recommender",
+      "path": "skills/aiwiki-generated/repo-skill-recommender - Copy/SKILL.md",
+      "origin": "modified",
+      "source_path": "04_skills/generated/repo-skill-recommender - Copy/SKILL.md",
+      "note": "Generated copy retained from the AI Wiki generated shelf and labeled separately from the primary repo-skill-recommender export.",
+      "upstream": "04_skills/generated/repo-skill-recommender/SKILL.md"
+    },
+    {
+      "name": "repo-skill-recommender",
+      "path": "skills/aiwiki-generated/repo-skill-recommender/SKILL.md",
+      "origin": "original",
+      "source_path": "04_skills/generated/repo-skill-recommender/SKILL.md",
+      "note": "Original AI Wiki generated skill.",
+      "upstream": ""
+    },
+    {
+      "name": "sprite-pixel-art-sprite-sheets-gpt55",
+      "path": "skills/aiwiki-generated/sprite-pixel-art-sprite-sheets-gpt55/SKILL.md",
+      "origin": "original",
+      "source_path": "04_skills/generated/sprite-pixel-art-sprite-sheets-gpt55/SKILL.md",
+      "note": "Original AI Wiki generated skill.",
+      "upstream": ""
+    },
+    {
+      "name": "Svelte Lab Demo Ingestion",
+      "path": "skills/aiwiki-generated/svelte-lab-demo-ingestion/SKILL.md",
+      "origin": "original",
+      "source_path": "04_skills/generated/svelte-lab-demo-ingestion/SKILL.md",
+      "note": "Original AI Wiki generated skill.",
+      "upstream": ""
+    },
+    {
+      "name": "sveltekit2-bootstrap-discipline",
+      "path": "skills/aiwiki-generated/sveltekit2-bootstrap-discipline.SKILL.md",
+      "origin": "original",
+      "source_path": "04_skills/generated/sveltekit2-bootstrap-discipline.SKILL.md",
+      "note": "Original AI Wiki generated standalone skill file.",
+      "upstream": ""
+    },
+    {
+      "name": "sveltekit2-bootstrap-discipline",
+      "path": "skills/aiwiki-generated/sveltekit2-bootstrap-discipline/SKILL.md",
+      "origin": "original",
+      "source_path": "04_skills/generated/sveltekit2-bootstrap-discipline/SKILL.md",
+      "note": "Original AI Wiki generated skill.",
+      "upstream": ""
+    },
+    {
+      "name": "sveltekit2-svelte5-engineering",
+      "path": "skills/aiwiki-generated/sveltekit2-svelte5-engineering/SKILL.md",
+      "origin": "original",
+      "source_path": "04_skills/generated/sveltekit2-svelte5-engineering/SKILL.md",
+      "note": "Original AI Wiki generated skill.",
+      "upstream": ""
+    },
+    {
+      "name": "sveltekit2-svelte5-engineering",
+      "path": "skills/aiwiki-generated/sveltekit2-svelte5-skill.SKILL.md",
+      "origin": "original",
+      "source_path": "04_skills/generated/sveltekit2-svelte5-skill.SKILL.md",
+      "note": "Original AI Wiki generated standalone skill file.",
+      "upstream": ""
+    },
+    {
+      "name": "universal-prompt-pack-builder",
+      "path": "skills/aiwiki-generated/universal-prompt-pack-builder/SKILL.md",
+      "origin": "modified",
+      "source_path": "04_skills/generated/universal-prompt-pack-builder/SKILL.md",
+      "note": "Generated skill revised from a local source reference preserved in the skill reference folder.",
+      "upstream": "04_skills/generated/universal-prompt-pack-builder/reference/source-universal-prompt-pack-builder-v0.1.0.md"
+    },
+    {
+      "name": "verbose-console-output",
+      "path": "skills/aiwiki-generated/verbose-console-output-v0.0.1/SKILL.md",
+      "origin": "original",
+      "source_path": "04_skills/generated/verbose-console-output-v0.0.1/SKILL.md",
+      "note": "Original AI Wiki generated skill.",
+      "upstream": ""
+    },
+    {
+      "name": "verbose-console-output",
+      "path": "skills/aiwiki-generated/verbose-console-output-v0.0.5/SKILL.md",
+      "origin": "modified",
+      "source_path": "04_skills/generated/verbose-console-output-v0.0.5/SKILL.md",
+      "note": "Revised generated draft derived from the v0.0.1 verbose console output skill.",
+      "upstream": "04_skills/generated/verbose-console-output-v0.0.1/SKILL.md"
+    },
+    {
+      "name": "vibe-check",
+      "path": "skills/aiwiki-generated/vibe-guard-pack-aiwiki-adapted/vibe-check/SKILL.md",
+      "origin": "modified",
+      "source_path": "04_skills/generated/vibe-guard-pack-aiwiki-adapted/vibe-check/SKILL.md",
+      "note": "AI Wiki adaptation of the external vibe-guard skill pack.",
+      "upstream": "codecoincognition/vibe-guard-skills https://github.com/codecoincognition/vibe-guard-skills"
+    },
+    {
+      "name": "vibe-explain",
+      "path": "skills/aiwiki-generated/vibe-guard-pack-aiwiki-adapted/vibe-explain/SKILL.md",
+      "origin": "modified",
+      "source_path": "04_skills/generated/vibe-guard-pack-aiwiki-adapted/vibe-explain/SKILL.md",
+      "note": "AI Wiki adaptation of the external vibe-guard skill pack.",
+      "upstream": "codecoincognition/vibe-guard-skills https://github.com/codecoincognition/vibe-guard-skills"
+    },
+    {
+      "name": "vibe-guard",
+      "path": "skills/aiwiki-generated/vibe-guard-pack-aiwiki-adapted/vibe-guard/SKILL.md",
+      "origin": "modified",
+      "source_path": "04_skills/generated/vibe-guard-pack-aiwiki-adapted/vibe-guard/SKILL.md",
+      "note": "AI Wiki adaptation of the external vibe-guard skill pack.",
+      "upstream": "codecoincognition/vibe-guard-skills https://github.com/codecoincognition/vibe-guard-skills"
+    },
+    {
+      "name": "vibe-secure",
+      "path": "skills/aiwiki-generated/vibe-guard-pack-aiwiki-adapted/vibe-secure/SKILL.md",
+      "origin": "modified",
+      "source_path": "04_skills/generated/vibe-guard-pack-aiwiki-adapted/vibe-secure/SKILL.md",
+      "note": "AI Wiki adaptation of the external vibe-guard skill pack.",
+      "upstream": "codecoincognition/vibe-guard-skills https://github.com/codecoincognition/vibe-guard-skills"
+    },
+    {
+      "name": "walking-cycle-generation",
+      "path": "skills/aiwiki-generated/walking-cycle-generation/SKILL.md",
+      "origin": "original",
+      "source_path": "04_skills/generated/walking-cycle-generation/SKILL.md",
+      "note": "Original AI Wiki generated skill.",
+      "upstream": ""
+    },
+    {
+      "name": "windows-phone-metro-design",
+      "path": "skills/aiwiki-generated/windows-phone-metro-design/SKILL.md",
+      "origin": "modified",
+      "source_path": "04_skills/generated/windows-phone-metro-design/SKILL.md",
+      "note": "Generated skill revised from a local source reference preserved in the skill reference folder.",
+      "upstream": "04_skills/generated/windows-phone-metro-design/reference/source-universal-windows-phone-metro-design-v1.0.0.md"
+    },
+    {
+      "name": "windows-tar-package-installer-workflow",
+      "path": "skills/aiwiki-generated/windows-tar-package-installer-workflow/SKILL.md",
+      "origin": "original",
+      "source_path": "04_skills/generated/windows-tar-package-installer-workflow/SKILL.md",
+      "note": "Original AI Wiki generated skill.",
+      "upstream": ""
+    }
+  ]
+}

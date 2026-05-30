@@ -1,0 +1,49 @@
+param(
+  [Parameter(Mandatory=$true)] [string] $TargetPath,
+  [switch] $DryRun,
+  [switch] $Force,
+  [switch] $CleanTemp
+)
+
+Set-StrictMode -Version Latest
+$ErrorActionPreference = 'Stop'
+
+function Write-Step {
+  param([Parameter(Mandatory=$true)] [string] $Message)
+  Write-Host "==> $Message"
+}
+
+$TempRoot = Join-Path $env:TEMP ("gpt-builder-" + [guid]::NewGuid().ToString("N"))
+New-Item -ItemType Directory -Path $TempRoot -Force | Out-Null
+
+try {
+  Write-Step "Preflight"
+  $ResolvedParent = Split-Path -Parent $TargetPath
+  if (-not (Test-Path -LiteralPath $ResolvedParent -PathType Container)) {
+    throw "Target parent path not found: $ResolvedParent"
+  }
+
+  Write-Step "Plan"
+  Write-Host "TargetPath: $TargetPath"
+  Write-Host "DryRun:     $DryRun"
+  Write-Host "Force:      $Force"
+
+  if ($DryRun) {
+    Write-Step "Dry-run only; no files changed"
+    return
+  }
+
+  if ((Test-Path -LiteralPath $TargetPath) -and -not $Force) {
+    throw "Target exists. Re-run with -Force after review: $TargetPath"
+  }
+
+  # TODO: perform safe file operations here.
+
+  Write-Step "Verification"
+  Test-Path -LiteralPath $TargetPath | Write-Host
+}
+finally {
+  if (Test-Path -LiteralPath $TempRoot) {
+    Remove-Item -LiteralPath $TempRoot -Recurse -Force -ErrorAction SilentlyContinue
+  }
+}

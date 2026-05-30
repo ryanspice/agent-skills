@@ -1,0 +1,13 @@
+{
+  "name": "agent-skills",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "check": "node scripts/validate-skills.mjs",
+    "test": "node scripts/validate-skills.mjs",
+    "build": "node scripts/validate-skills.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

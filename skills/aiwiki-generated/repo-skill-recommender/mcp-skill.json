@@ -1,0 +1,28 @@
+{
+  "slug": "repo-skill-recommender",
+  "name": "Repo Skill Recommender",
+  "version": "0.1.0",
+  "type": "universal-agent-skill",
+  "status": "active",
+  "canonical_path": "04_skills/universal/repo-skill-recommender/SKILL.md",
+  "entrypoint": "04_skills/universal/repo-skill-recommender/SKILL.md",
+  "description": "Inspects repos and AI Wiki skill registries to recommend repo-level skill pointers, MCP roots, setup prompts, and agent handoff rules.",
+  "invocation_phrases": [
+    "repo skill recommendation",
+    "setup repo skills",
+    "which skills belong in this repo",
+    "MCP roots for repo",
+    "repo setup prompt",
+    "sync project skills"
+  ],
+  "allowed_mcp_tools": [
+    "vault_search",
+    "vault_read",
+    "graph_neighbors",
+    "context_pack"
+  ],
+  "optional_write_tool": "stage_inbound_note",
+  "write_policy": "Default to dry-run recommendation reports. Repo writes require explicit apply mode.",
+  "risk": "medium because repo setup can affect agent behavior and file writes.",
+  "updated_at": "2026-05-18T00:00:00-04:00"
+}

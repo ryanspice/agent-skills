@@ -1,0 +1,17 @@
+{
+  "skills": ["creating-skills"],
+  "query": "Make a skill from this dump. [pasted: mixes three different workflows, has no clear trigger phrase, lots of actionable rules buried in chat banter]",
+  "files": ["mixed-transcript-20260518.md"],
+  "expected_behavior": [
+    "Detects multiple distinct trigger contexts and proposes a split",
+    "Asks one or two blocking clarifying questions before building",
+    "Extracts stable rules from banter without copying banter verbatim",
+    "Does not overbuild a single mega-skill"
+  ],
+  "failure_signs": [
+    "Attempts to build one skill covering all three workflows",
+    "Copies long chat quotes into SKILL.md",
+    "Produces a vague description without trigger language",
+    "Generates allowed-tools: Bash(*) without reviewing risk"
+  ]
+}

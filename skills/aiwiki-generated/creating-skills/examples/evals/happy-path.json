@@ -1,0 +1,17 @@
+{
+  "skills": ["creating-skills"],
+  "query": "Create a new universal skill for daily standup notes from these meeting transcripts.",
+  "files": ["standup-notes-20260518.md"],
+  "expected_behavior": [
+    "Creates a properly named skill folder in 04_skills/universal/",
+    "SKILL.md has valid YAML frontmatter (name, description)",
+    "Description is third-person and includes 'Use when' trigger language",
+    "Bulk transcript content goes to reference/, not SKILL.md",
+    "Build output script provided (e.g. build-the-file pattern)"
+  ],
+  "failure_signs": [
+    "Pastes raw notes into SKILL.md body verbatim",
+    "Creates generic name like 'helper' or 'meeting-skill'",
+    "Output is >500 lines without splitting to reference/"
+  ]
+}
