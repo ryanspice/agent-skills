@@ -4,6 +4,11 @@ This directory is the owned skill library for `ryanspice/agent-skills`.
 
 The AI Wiki consumes this `skills/` tree directly through `04_skills/agent-skills/skills`. The retired local-created shelf is historical provenance only; this repository is the owned source and distribution surface.
 
+Duplicate resolution is policy-driven through:
+
+- `scripts/skill-dedup-policy.json`
+- `skill-duplicate-adjudication.md`
+
 Every ingested skill document carries provenance fields:
 
 - `provenance_origin`: `original` or `modified`.
@@ -12,6 +17,12 @@ Every ingested skill document carries provenance fields:
 - `provenance_upstream`: present when a skill was adapted from an upstream/source reference.
 
 Text files are normalized to placeholders such as `<AI_WIKI_ROOT>`, `<DEV_ROOT>`, `<SEARCH_ROOT>`, `<DOWNLOADS_ROOT>`, `<USER_HOME>`, and `<LOCAL_HOST>`. Binary package/image files are copied byte-for-byte. See `skills/provenance.json` for the full file manifest.
+
+Active default selection metadata is tracked in `skills/provenance.json` where applicable:
+
+- `selected_by_default`: `true` for active canonical duplicates, `false` for duplicate carry-only entries.
+- `selection_reason`: short rationale from policy for non-canonical entries.
+- `duplicate_policy`: policy metadata block pointing to `scripts/skill-dedup-policy.json`.
 
 ## Skill Index
 
@@ -54,7 +65,7 @@ Text files are normalized to placeholders such as `<AI_WIKI_ROOT>`, `<DEV_ROOT>`
 | `prompt-operations-storefront` | `original` | Ryan Spice-Finnie | `skills/prompt-ops-book-skills-v0.2.1/prompt-operations-storefront/SKILL.md` | `04_skills/agent-skills/skills/prompt-ops-book-skills-v0.2.1/prompt-operations-storefront/SKILL.md` |
 | `publishing-release-operations` | `original` | Ryan Spice-Finnie | `skills/prompt-ops-book-skills-v0.2.1/publishing-release-operations/SKILL.md` | `04_skills/agent-skills/skills/prompt-ops-book-skills-v0.2.1/publishing-release-operations/SKILL.md` |
 | `university-textbook-design` | `original` | Ryan Spice-Finnie | `skills/prompt-ops-book-skills-v0.2.1/university-textbook-design/SKILL.md` | `04_skills/agent-skills/skills/prompt-ops-book-skills-v0.2.1/university-textbook-design/SKILL.md` |
-| `repo-skill-recommender` | `modified` | Ryan Spice-Finnie | `skills/repo-skill-recommender - Copy/SKILL.md` | `04_skills/agent-skills/skills/repo-skill-recommender - Copy/SKILL.md` |
+| `repo-skill-recommender` | `modified` | Ryan Spice-Finnie | `skills/repo-skill-recommender-copy/SKILL.md` | `04_skills/agent-skills/skills/repo-skill-recommender-copy/SKILL.md` |
 | `repo-skill-recommender` | `original` | Ryan Spice-Finnie | `skills/repo-skill-recommender/SKILL.md` | `04_skills/agent-skills/skills/repo-skill-recommender/SKILL.md` |
 | `sprite-pixel-art-sprite-sheets-gpt55` | `original` | Ryan Spice-Finnie | `skills/sprite-pixel-art-sprite-sheets-gpt55/SKILL.md` | `04_skills/agent-skills/skills/sprite-pixel-art-sprite-sheets-gpt55/SKILL.md` |
 | `Svelte Lab Demo Ingestion` | `original` | Ryan Spice-Finnie | `skills/svelte-lab-demo-ingestion/SKILL.md` | `04_skills/agent-skills/skills/svelte-lab-demo-ingestion/SKILL.md` |
@@ -70,3 +81,4 @@ Text files are normalized to placeholders such as `<AI_WIKI_ROOT>`, `<DEV_ROOT>`
 | `walking-cycle-generation` | `original` | Ryan Spice-Finnie | `skills/walking-cycle-generation/SKILL.md` | `04_skills/agent-skills/skills/walking-cycle-generation/SKILL.md` |
 | `windows-phone-metro-design` | `modified` | Ryan Spice-Finnie | `skills/windows-phone-metro-design/SKILL.md` | `04_skills/agent-skills/skills/windows-phone-metro-design/SKILL.md` |
 | `windows-tar-package-installer-workflow` | `original` | Ryan Spice-Finnie | `skills/windows-tar-package-installer-workflow/SKILL.md` | `04_skills/agent-skills/skills/windows-tar-package-installer-workflow/SKILL.md` |
+

@@ -63,3 +63,31 @@ npm run aiwiki:link-codex -- --all
 
 Add `--apply` to create the junctions. Add `--replace` only when replacing
 existing local Codex skill folders is intentional.
+
+## Duplicate normalization policy (phase 1)
+
+Active default exposure now runs through an explicit duplicate policy in:
+
+- `scripts/skill-dedup-policy.json`
+
+The rebuild script uses this policy to:
+
+- keep repo-backed skills ahead of universal/project overlays,
+- prefer highest semver when multiple repo-owned variants are present,
+- suppress obvious copy-derived duplicates by default (e.g., `- Copy`),
+- apply explicit per-name overrides (`repo-skill-recommender`, `vibe-guard`).
+
+The current adjudication table used by AI-Wiki-visible docs is maintained at:
+
+- `skill-duplicate-adjudication.md` (repo snapshot)
+- `S:\\OneDrive\\Obsidan\\AI-Wiki\\03_indexes\\skills\\skill-duplicate-adjudication.md` (generated)
+
+A metadata policy summary is also persisted in `skills/provenance.json`:
+
+- `duplicate_policy.version`
+- `duplicate_policy.ref`
+- `skills[].selected_by_default`
+- `skills[].selection_reason`
+
+Run `npm run aiwiki:rebuild-indexes -- --apply` after any intentional policy update
+to refresh AI-Wiki outputs with the canonical adjudication policy.
