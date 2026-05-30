@@ -1,0 +1,29 @@
+{
+  "slug": "aiwiki-external-skill-intake",
+  "name": "AI Wiki External Skill Intake",
+  "version": "0.1.0",
+  "type": "generated-agent-skill",
+  "status": "active",
+  "canonical_path": "04_skills/agent-skills/skills/aiwiki-external-skill-intake/SKILL.md",
+  "entrypoint": "04_skills/agent-skills/skills/aiwiki-external-skill-intake/SKILL.md",
+  "description": "Imports and adapts external agent-skill repositories into Ryan's AI Wiki as review-only candidates with provenance, safe manifests, de-duped indexes, and optional promotion.",
+  "invocation_phrases": [
+    "import external skills",
+    "incorporate this skills repo",
+    "stage candidate skills",
+    "external candidate skill index",
+    "promote candidate skill",
+    "repair external candidate index",
+    "AI Wiki skill intake"
+  ],
+  "allowed_mcp_tools": [
+    "vault_search",
+    "vault_read",
+    "graph_neighbors",
+    "context_pack"
+  ],
+  "optional_write_tool": "stage_inbound_note",
+  "write_policy": "Default to dry-run package/install recommendations. Writes to the AI Wiki require explicit apply mode.",
+  "risk": "medium because skill imports and promotions affect agent behavior and index state.",
+  "updated_at": "2026-05-20T00:00:00-04:00"
+}

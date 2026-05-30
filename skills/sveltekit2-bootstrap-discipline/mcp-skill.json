@@ -1,0 +1,10 @@
+{
+  "slug": "sveltekit2-bootstrap-discipline",
+  "name": "sveltekit2-bootstrap-discipline",
+  "version": "0.1.0",
+  "type": "universal-agent-skill",
+  "status": "active",
+  "canonical_path": "04_skills/universal/sveltekit2-bootstrap-discipline/SKILL.md",
+  "entrypoint": "04_skills/universal/sveltekit2-bootstrap-discipline/SKILL.md",
+  "description": "Uses Svelte CLI tooling correctly for new SvelteKit projects, official add-ons, migrations, and setup repairs while avoiding sv create inside existing apps."
+}

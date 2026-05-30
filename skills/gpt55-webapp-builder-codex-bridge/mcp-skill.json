@@ -1,0 +1,30 @@
+{
+  "slug": "gpt55-webapp-builder-codex-bridge",
+  "name": "GPT-5.5 Web App Builder / Codex Bridge",
+  "version": "0.1.0",
+  "type": "generated-agent-skill",
+  "status": "candidate",
+  "canonical_path": "04_skills/agent-skills/skills/gpt55-webapp-builder-codex-bridge/SKILL.md",
+  "entrypoint": "04_skills/agent-skills/skills/gpt55-webapp-builder-codex-bridge/SKILL.md",
+  "description": "Guides ChatGPT web-app sessions into a Codex-like human-in-the-loop builder workflow using reviewable scripts, PowerShell, Python, clipboard handoff, TAR.GZ bundles, manifests, hashes, cleanup, and approval gates.",
+  "invocation_phrases": [
+    "use ChatGPT like Codex",
+    "use GPT-5.5 as a builder",
+    "make a Codex bridge script",
+    "generate a PowerShell apply script",
+    "package this as a tar.gz handoff",
+    "copy this to clipboard for local execution",
+    "make a human-in-the-loop builder workflow",
+    "use scripts to abstract what ChatGPT web cannot do"
+  ],
+  "allowed_mcp_tools": [
+    "vault_search",
+    "vault_read",
+    "graph_neighbors",
+    "context_pack"
+  ],
+  "optional_write_tool": "stage_inbound_note",
+  "write_policy": "Prefer generated downloadable scripts and packages. Stage proposed durable AI Wiki edits when possible. Do not mutate broad vault or repo paths without explicit user-run installer/apply script and backups.",
+  "risk": "medium by default; high for generated scripts that mutate repos, delete files, call network APIs, touch credentials, install native helpers, or modify system/browser settings.",
+  "updated_at": "2026-05-19T22:55:00-04:00"
+}

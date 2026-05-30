@@ -1,0 +1,33 @@
+{
+  "slug": "powershell-script-authoring",
+  "name": "PowerShell Script Authoring",
+  "version": "0.1.0",
+  "type": "universal-agent-skill",
+  "status": "active",
+  "canonical_path": "04_skills/universal/powershell-script-authoring/SKILL.md",
+  "entrypoint": "04_skills/universal/powershell-script-authoring/SKILL.md",
+  "description": "Creates, audits, repairs, and packages Windows PowerShell/pwsh scripts for install/apply, diagnostics, TAR.GZ workflows, AI Wiki operations, repo automation, and copy-paste terminal tasks.",
+  "invocation_phrases": [
+    "PowerShell",
+    "pwsh",
+    "ps1",
+    "write a script",
+    "build the file script",
+    "copy-paste command",
+    "installer script",
+    "apply script",
+    "tar.gz install",
+    "self delete script",
+    "cleanup script",
+    "Windows automation"
+  ],
+  "allowed_mcp_tools": [
+    "vault_search",
+    "vault_read",
+    "graph_neighbors",
+    "context_pack"
+  ],
+  "write_policy": "Prefer dry-run/stage-first scripts. Stage durable AI Wiki edits into 07_inbound/proposed unless running a reviewed installer. Require explicit apply for destructive/client/production operations.",
+  "risk": "medium by default; high when scripts delete, overwrite, deploy, send externally, change credentials, touch billing, or mutate production/client environments.",
+  "updated_at": "2026-05-18T00:00:00-04:00"
+}

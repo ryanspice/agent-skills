@@ -1,0 +1,30 @@
+{
+  "slug": "ai-wiki-file-management",
+  "name": "AI Wiki File Management",
+  "version": "0.2.2",
+  "type": "universal-agent-skill",
+  "status": "active",
+  "canonical_path": "04_skills/universal/ai-wiki-file-management/SKILL.md",
+  "entrypoint": "04_skills/universal/ai-wiki-file-management/SKILL.md",
+  "description": "Manages Ryan's canonical AI Wiki safely, including naming, staging, promotion, MCP/Hermes skill scanning, project overlays, registry maintenance, and PowerShell-first verification.",
+  "invocation_phrases": [
+    "ai wiki",
+    "AI Wiki file",
+    "manage the wiki",
+    "stage this note",
+    "promote this wiki file",
+    "rebuild the skills registry",
+    "Hermes skill scanning",
+    "MCP skill root"
+  ],
+  "allowed_mcp_tools": [
+    "vault_search",
+    "vault_read",
+    "graph_neighbors",
+    "context_pack"
+  ],
+  "optional_write_tool": "stage_inbound_note",
+  "write_policy": "Prefer staging generated durable content into 07_inbound/proposed. Reviewed installers may update 04_skills, skills/projects, and 03_indexes with backups.",
+  "risk": "medium because it concerns filesystem organization and registry/index updates; high only when deleting, moving, or overwriting durable content without backup.",
+  "updated_at": "2026-05-19T05:17:25-04:00"
+}

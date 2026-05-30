@@ -1,0 +1,25 @@
+{
+  "package": "replace-with-package-name",
+  "version": "0.1.0",
+  "created_at": "YYYY-MM-DDTHH:mm:ssZ",
+  "purpose": "Describe why this package exists.",
+  "canonical_target": "<AI_WIKI_ROOT>/04_skills/agent-skills/skills/<skill>",
+  "generated_by": "ChatGPT web builder bridge",
+  "risk": "low|medium|high",
+  "requires_review": true,
+  "contains_secrets": false,
+  "files": [
+    {
+      "path": "SKILL.md",
+      "role": "entrypoint",
+      "sha256": "..."
+    }
+  ],
+  "install": {
+    "dry_run": "pwsh -NoProfile -ExecutionPolicy Bypass -File ./install.ps1 -DryRun",
+    "apply": "pwsh -NoProfile -ExecutionPolicy Bypass -File ./install.ps1 -Force"
+  },
+  "verification": [
+    "Test-Path <target>/SKILL.md"
+  ]
+}

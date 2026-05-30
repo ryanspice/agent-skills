@@ -1,0 +1,50 @@
+{
+  "schema_version": "1.0.0",
+  "policy_version": "1.0.0",
+  "description": "Deterministic policy for AI Wiki skill duplicate adjudication while preserving repo-owned source of truth.",
+  "source_ranking": [
+    "repo",
+    "universal",
+    "project"
+  ],
+  "prefer_highest_version": true,
+  "prefer_by_name": {
+    "repo-skill-recommender": "04_skills/agent-skills/skills/repo-skill-recommender/SKILL.md",
+    "vibe-guard": "04_skills/agent-skills/skills/vibe-guard/SKILL.md"
+  },
+  "copy": {
+    "disable_by_default": true,
+    "allowlist": [],
+    "patterns": [
+      " - copy",
+      " copy of",
+      " [copy]",
+      "-copy",
+      "_copy"
+    ]
+  },
+  "followup_notes": {
+    "book-repo-automation": "Prefer root repo skill. Keep project overlay in history.",
+    "decorated-wait-action-output": "Prefer v0.0.5, highest semver in repo-owned variants.",
+    "ebook-pdf-accessibility-qa": "Prefer root repo skill. Keep project mirror in history.",
+    "image-to-ui-sveltekit": "Prefer root repo skill; project mirror remains searchable for diff review only.",
+    "pixelboats-fish-water-ecology": "Prefer root repo skill; project mirror remains searchable for project-specific context.",
+    "pixelboats-stormy-hud-lab": "Prefer root repo skill; project mirror remains searchable for project-specific context.",
+    "prompt-operations-handbook": "Prefer root repo skill. Keep project mirror for historical comparison.",
+    "prompt-operations-release-kit": "Prefer root repo skill. Keep project mirror for historical comparison.",
+    "prompt-operations-storefront": "Prefer root repo skill. Keep project mirror for historical comparison.",
+    "publishing-release-operations": "Prefer root repo skill. Keep project mirror for historical comparison.",
+    "repo-skill-recommender": "Prefer canonical repo skill; keep `repo-skill-recommender-copy` in history only.",
+    "sprite-pixel-art-sprite-sheets-gpt55": "Prefer root repo skill; project mirror in history.",
+    "verbose-console-output": "Prefer v0.0.5, highest semver in repo-owned variants.",
+    "vibe-check": "Prefer adapted repo copy over universal mirror.",
+    "vibe-explain": "Prefer adapted repo copy over universal mirror.",
+    "vibe-guard": "Prefer `04_skills/agent-skills/skills/vibe-guard/SKILL.md`; keep adapted pack and universal mirrors as non-active history.",
+    "vibe-secure": "Prefer adapted repo copy over universal mirror."
+  },
+  "type_rules": {
+    "type_a_versioned": "keep highest version tokenized by numeric segments.",
+    "type_b_copy": "deactivate copy-derive duplicates unless copy path is explicitly allowlisted.",
+    "type_c_adapted": "for overlaps between repo-owned and adapted/localized roots, keep repo root by default unless explicit override exists."
+  }
+}

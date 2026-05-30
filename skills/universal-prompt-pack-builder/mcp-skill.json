@@ -1,0 +1,31 @@
+{
+  "slug": "universal-prompt-pack-builder",
+  "name": "Universal Prompt Pack Builder",
+  "version": "0.2.0",
+  "type": "universal-agent-skill",
+  "status": "active",
+  "canonical_path": "04_skills/universal/universal-prompt-pack-builder/SKILL.md",
+  "entrypoint": "04_skills/universal/universal-prompt-pack-builder/SKILL.md",
+  "description": "Builds reusable prompt packs, handoff packs, agent prompt sequences, .thoughts state files, asset-pack prompts, checklists, and TAR.GZ-style deliverables.",
+  "invocation_phrases": [
+    "prompt pack",
+    "agent handoff",
+    "handoff pack",
+    "build a prompt pack",
+    "asset pack prompt",
+    ".thoughts",
+    "continuation prompt",
+    "Trae prompt",
+    "Codex prompt"
+  ],
+  "allowed_mcp_tools": [
+    "vault_search",
+    "vault_read",
+    "graph_neighbors",
+    "context_pack"
+  ],
+  "optional_write_tool": "stage_inbound_note",
+  "write_policy": "Prefer generated packs in 07_inbound/proposed or downloadable artifacts. Repo writes require explicit apply package.",
+  "risk": "medium because prompt packs can direct future agents and include scripts or file-scope changes.",
+  "updated_at": "2026-05-18T00:00:00-04:00"
+}
