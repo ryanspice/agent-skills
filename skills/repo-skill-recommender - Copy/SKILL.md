@@ -7,11 +7,11 @@ risk: medium
 description: Inspects a repo and AI Wiki skills registry to recommend repo-level skill pointers, MCP roots, setup prompts, and agent handoff rules. Use when the user asks which skills belong in a repo, how to sync project skills, or how to set up repo-local AI agent context from the AI Wiki.
 tags: ["repo", "skills", "mcp", "ai-wiki", "setup", "recommendation"]
 provenance_origin: "modified"
-provenance_source_path: "04_skills/generated/repo-skill-recommender - Copy/SKILL.md"
+provenance_source_path: "04_skills/agent-skills/skills/repo-skill-recommender - Copy/SKILL.md"
 provenance_credit: "Ryan Spice-Finnie"
 provenance_ingested_as: "ryanspice/agent-skills owned skill"
-provenance_note: "Generated copy retained from the AI Wiki generated shelf and credited to Ryan Spice-Finnie as a local mutation of repo-skill-recommender."
-provenance_upstream: "04_skills/generated/repo-skill-recommender/SKILL.md"
+provenance_note: "Modified local copy credited to Ryan Spice-Finnie as a mutation of repo-skill-recommender."
+provenance_upstream: "04_skills/agent-skills/skills/repo-skill-recommender/SKILL.md"
 
 ---
 
@@ -30,7 +30,7 @@ Use this skill when a repo needs a recommended list of AI Wiki skills, repo-loca
 5. Generate a dry-run recommendation report before writing repo files.
 6. For project repos, recommend project-specific canonical skills first, then universal skills as externally loaded context.
 7. Treat `04_skills/candidates` as imported external source snapshots and review library, not as rejected skills.
-8. Treat `04_skills/generated` as Ryan-directed generated/history/package source records.
+8. Treat `04_skills/agent-skills/skills` as the owned Ryan-maintained skill source.
 9. Use provenance to distinguish already-promoted candidate-derived support skills from unpromoted candidates.
 10. For client/production repos, check available tool/runtime compatibility before writing scripts or changing files.
 

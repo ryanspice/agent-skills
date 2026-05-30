@@ -15,10 +15,10 @@ tags:
   - spinner
   - eta
 provenance_origin: "original"
-provenance_source_path: "04_skills/generated/aiwiki-command-run-fragments/SKILL.md"
+provenance_source_path: "04_skills/agent-skills/skills/aiwiki-command-run-fragments/SKILL.md"
 provenance_credit: "Ryan Spice-Finnie"
 provenance_ingested_as: "ryanspice/agent-skills owned skill"
-provenance_note: "Original AI Wiki generated skill credited to Ryan Spice-Finnie."
+provenance_note: "Original AI Wiki local skill credited to Ryan Spice-Finnie."
 
 ---
 
@@ -71,7 +71,7 @@ Reindex
 `Start-Elastic` avoids blank visible CMD windows by starting Elastic hidden/backgrounded where possible. It shows progress in the current terminal and writes logs to:
 
 ```txt
-04_skills/generated/aiwiki-command-run-fragments/.runtime/search-services/
+04_skills/agent-skills/skills/aiwiki-command-run-fragments/.runtime/search-services/
 ```
 
 Startup order:

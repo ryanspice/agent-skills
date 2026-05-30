@@ -6,10 +6,10 @@ platforms: [windows, chatgpt, ai-wiki, mcp, codex, trae, hermes]
 tags: [builder-workflow, codex-bridge, powershell, python, clipboard, tar, human-in-the-loop, safety]
 risk: medium-by-default; high when scripts mutate repos, delete files, call network APIs, touch secrets, or run native helpers
 provenance_origin: "original"
-provenance_source_path: "04_skills/generated/gpt55-webapp-builder-codex-bridge/SKILL.md"
+provenance_source_path: "04_skills/agent-skills/skills/gpt55-webapp-builder-codex-bridge/SKILL.md"
 provenance_credit: "Ryan Spice-Finnie"
 provenance_ingested_as: "ryanspice/agent-skills owned skill"
-provenance_note: "Original AI Wiki generated skill credited to Ryan Spice-Finnie."
+provenance_note: "Original AI Wiki local skill credited to Ryan Spice-Finnie."
 
 ---
 
@@ -68,7 +68,7 @@ Do **not** use this skill for ordinary one-off coding answers unless the answer 
 - PowerShell 7 command examples use `pwsh -NoProfile -ExecutionPolicy Bypass`.
 - Downloads and generated artifacts often land in `<DOWNLOADS_ROOT>`.
 - Canonical AI Wiki root is `<AI_WIKI_ROOT>`.
-- Generated skills live under `04_skills/generated/<skill>/SKILL.md`.
+- Owned Ryan-maintained skills live in the `ryanspice/agent-skills` clone at `04_skills/agent-skills/skills/<skill>/SKILL.md`.
 - Repo-local `.ai/skills` copies are mirrors/pointers, not canonical sources.
 - Prefer TAR.GZ packages with README, CHANGELOG, `.thoughts`, manifests, hashes, and verification notes for larger handoffs.
 - Prefer targeted PowerShell scripts over huge pasted edits when work is file-heavy.
@@ -93,7 +93,7 @@ Pick one mode before generating scripts.
 | Tier | Examples | Required behavior |
 |---|---|---|
 | **Read-only** | Inspect files, list archive contents, summarize logs | No confirmation needed after user request |
-| **Local write** | Generate files in repo/workspace, copy skill to AI Wiki generated shelf | Dry-run or clear preview, explicit target path |
+| **Local write** | Generate files in repo/workspace, update an owned skill in the agent-skills repo-backed source | Dry-run or clear preview, explicit target path |
 | **Destructive** | Delete/replace files, force overwrite, cleanup downloads | Backup or reversible path, `-Force` style switch |
 | **Network/API** | Install packages, call model APIs, fetch remote files | Explain endpoint/source, avoid secrets in logs |
 | **Credential/system** | Tokens, registry, native messaging host, system PATH, services | Hard stop unless explicitly requested in same turn |

@@ -11,7 +11,7 @@ Do not pipe model output directly into shell, browser HTML, SQL, config, native 
 | Risk | Examples | Gate |
 |---|---|---|
 | Low | read files, list archive, generate docs | proceed after user request |
-| Medium | write files in explicit workspace, copy generated skill to generated shelf | dry-run/preview + clear target path |
+| Medium | write files in explicit workspace, copy authored skill to repo-backed skill source | dry-run/preview + clear target path |
 | High | delete/overwrite, install deps, network/API calls, archive extraction over repo | explicit apply command, backup, verification |
 | Critical | credentials, registry, services, native helper install, deploy/push/send | hard confirmation or refuse if hidden/ambiguous |
 

@@ -14,7 +14,7 @@ source_path: skills/vibe-guard.md
 adapted: true
 review_only: true
 provenance_origin: "modified"
-provenance_source_path: "04_skills/generated/vibe-guard-pack-aiwiki-adapted/vibe-guard/SKILL.md"
+provenance_source_path: "04_skills/agent-skills/skills/vibe-guard-pack-aiwiki-adapted/vibe-guard/SKILL.md"
 provenance_credit: "Ryan Spice-Finnie"
 provenance_ingested_as: "ryanspice/agent-skills owned skill"
 provenance_note: "AI Wiki adaptation credited to Ryan Spice-Finnie, based on the external vibe-guard skill pack."

@@ -8,10 +8,10 @@ risk: medium
 tags: ["local-first", "storage", "indexeddb", "cache", "import-export", "ai-wiki"]
 created_at: 2026-05-22
 provenance_origin: "original"
-provenance_source_path: "04_skills/generated/local-first-storage-architecture/SKILL.md"
+provenance_source_path: "04_skills/agent-skills/skills/local-first-storage-architecture/SKILL.md"
 provenance_credit: "Ryan Spice-Finnie"
 provenance_ingested_as: "ryanspice/agent-skills owned skill"
-provenance_note: "Original AI Wiki generated skill credited to Ryan Spice-Finnie."
+provenance_note: "Original AI Wiki local skill credited to Ryan Spice-Finnie."
 
 ---
 
@@ -99,6 +99,6 @@ A search hit proves that text exists in the corpus. It does not prove the user c
 
 ## AI Wiki/search rule
 
-Use Inbox/proposed for capture, project final notes for synthesis, generated skills for drafts, and promoted project/universal skills only after review.
+Use Inbox/proposed for capture, project final notes for synthesis, repo-backed skill drafts, and promoted project/universal skills only after review.
 
 Collapse useful checkpoints into final notes, then delete or archive staging based on whether unique value remains.

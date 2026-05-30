@@ -7,7 +7,8 @@ const repoRoot = process.cwd();
 const skillsRoot = path.join(repoRoot, 'skills');
 const manifestPath = path.join(skillsRoot, 'provenance.json');
 const allowedOrigins = new Set(['original', 'modified']);
-const generatedBucketPath = ['skills', 'aiwiki-generated'].join('/');
+const legacyBucketPath = ['skills', 'aiwiki-generated'].join('/');
+const expectedOwnedSourceRoot = '04_skills/agent-skills/skills/';
 const blockedPathPatterns = [
   /S:[\\/]+OneDrive[\\/]+Obsidan/i,
   /S:\/OneDrive\/Obsidan/i,
@@ -173,8 +174,8 @@ for (const skillPath of manifestByPath.keys()) {
   if (!skillPath.startsWith('skills/')) {
     fail(`${skillPath}: provenance manifest entries must live under skills/`);
   }
-  if (skillPath.startsWith(`${generatedBucketPath}/`)) {
-    fail(`${skillPath}: ingested skills should live directly under skills/, not ${generatedBucketPath}/`);
+  if (skillPath.startsWith(`${legacyBucketPath}/`)) {
+    fail(`${skillPath}: ingested skills should live directly under skills/, not ${legacyBucketPath}/`);
   }
   if (!skillFiles.includes(skillPath)) {
     fail(`${skillPath}: listed in manifest but SKILL.md was not found`);
@@ -194,11 +195,11 @@ if (!Array.isArray(manifest.source_files)) {
     if (!sourceFile.path.startsWith('skills/')) {
       fail(`${sourceFile.path}: source file manifest entries must live under skills/`);
     }
-    if (sourceFile.path.startsWith(`${generatedBucketPath}/`)) {
-      fail(`${sourceFile.path}: source files should live directly under skills/, not ${generatedBucketPath}/`);
+    if (sourceFile.path.startsWith(`${legacyBucketPath}/`)) {
+      fail(`${sourceFile.path}: source files should live directly under skills/, not ${legacyBucketPath}/`);
     }
-    if (!sourceFile.source_path?.startsWith('04_skills/generated/')) {
-      fail(`${sourceFile.path}: source file missing AI Wiki source path`);
+    if (!sourceFile.source_path?.startsWith(expectedOwnedSourceRoot)) {
+      fail(`${sourceFile.path}: source file missing repo-backed AI Wiki source path`);
     }
     if (!sourceFile.kind) {
       fail(`${sourceFile.path}: source file missing kind`);

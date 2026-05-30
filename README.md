@@ -8,18 +8,17 @@ Current contents:
 - `skills/vibe-guard`
 - AI Wiki skill shelf content ingested directly under `skills/`
 
-Ryan's current AI Wiki `04_skills/generated` route has been ingested directly
-into this repository instead of being kept under a separate generated-export
-folder. The AI Wiki path remains source provenance; this repo is the owned
-distribution surface. Each ingested skill document includes provenance and
-credit fields:
+Ryan's AI Wiki now consumes this repository directly at
+`04_skills/agent-skills/skills`. The retired local-created shelf is kept only
+as historical provenance; this repo is the owned source and distribution
+surface. Each skill document includes provenance and credit fields:
 
-- `provenance_origin: "original"` for original Ryan/AI Wiki generated or
+- `provenance_origin: "original"` for original Ryan/AI Wiki-created or
   pre-existing repository skills.
 - `provenance_origin: "modified"` for skills adapted, revised, copied, or
   derived from another skill/source/reference.
-- `provenance_credit: "Ryan Spice-Finnie"` for generated and locally mutated
-  AI Wiki skills.
+- `provenance_credit: "Ryan Spice-Finnie"` for Ryan-created and locally
+  mutated AI Wiki skills.
 - `provenance_ingested_as: "ryanspice/agent-skills owned skill"` for the repo
   ownership lane.
 
@@ -48,6 +47,12 @@ Use the status helper after cloning or pulling inside the wiki:
 
 ```powershell
 npm run aiwiki:status
+```
+
+Rebuild the AI Wiki skill indexes from the repo-backed source:
+
+```powershell
+npm run aiwiki:rebuild-indexes -- --apply
 ```
 
 To preview linking repo skills into Codex as local junctions:

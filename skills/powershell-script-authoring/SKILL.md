@@ -7,10 +7,10 @@ type: universal-agent-skill
 risk: medium by default; high when scripts delete, overwrite, deploy, send data externally, change credentials, touch billing, or mutate production/client environments.
 tags: ["powershell", "pwsh", "windows", "scripts", "automation", "tar-gz", "aiwiki"]
 provenance_origin: "original"
-provenance_source_path: "04_skills/generated/powershell-script-authoring/SKILL.md"
+provenance_source_path: "04_skills/agent-skills/skills/powershell-script-authoring/SKILL.md"
 provenance_credit: "Ryan Spice-Finnie"
 provenance_ingested_as: "ryanspice/agent-skills owned skill"
-provenance_note: "Original AI Wiki generated skill credited to Ryan Spice-Finnie."
+provenance_note: "Original AI Wiki local skill credited to Ryan Spice-Finnie."
 
 ---
 

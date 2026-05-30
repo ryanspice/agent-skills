@@ -16,7 +16,7 @@ It is meant to sit beside the lighter `deep-research-workflow-candidate` package
 ```text
 00_INBOX/proposed/enterprise-deep-research-skills-ingest-v0.1.0.md
 03_Indexes/skill-candidates/enterprise-deep-research-workflow-candidate-v0.1.0.json
-04_skills/generated/candidates/enterprise-deep-research-workflow-candidate-v0.1.0/
+04_skills/agent-skills/skills/candidates/enterprise-deep-research-workflow-candidate-v0.1.0/
   SKILL.md
   README.md
   enterprise-research-runbook.md

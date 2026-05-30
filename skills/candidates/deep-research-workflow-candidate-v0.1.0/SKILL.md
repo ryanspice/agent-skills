@@ -13,7 +13,7 @@ tags:
   - citations
   - resumable-workflow
 provenance_origin: "modified"
-provenance_source_path: "04_skills/generated/candidates/deep-research-workflow-candidate-v0.1.0/SKILL.md"
+provenance_source_path: "04_skills/agent-skills/skills/candidates/deep-research-workflow-candidate-v0.1.0/SKILL.md"
 provenance_credit: "Ryan Spice-Finnie"
 provenance_ingested_as: "ryanspice/agent-skills owned skill"
 provenance_note: "Research workflow candidate adapted by Ryan Spice-Finnie from reviewed external deep-research skill patterns; upstream source files were not vendored."
@@ -211,7 +211,7 @@ source-review.json
 
 ## AI Wiki Specific Rules
 
-- Candidate skills live under `04_skills/generated/candidates/<skill-name>/` until tested.
+- Candidate skills live under `04_skills/candidates/<source-slug>/<skill-name>/` until reviewed and promoted or ingested into the owned agent-skills repo.
 - Proposed project notes can live under `00_INBOX/proposed/` first.
 - Use source URLs and source review notes, but do not vendor external repos unless explicitly intended and license-reviewed.
 - Search should be able to discover this by tags: `research`, `source verification`, `deep research`, `evidence matrix`, `search broker`, `candidate skill`.

@@ -60,6 +60,6 @@ gpt55-webapp-builder-codex-bridge-v0.1.0/
 
 ## Notes
 
-- The install script copies into `04_skills/generated`, not `04_skills/universal`.
+- The install script updates the repo-backed source under `04_skills/agent-skills/skills`, not `04_skills/universal`.
 - Repo-local `.ai/skills` copies should be mirrors/pointers unless you explicitly promote this skill.
 - Self-cleanup is treated as temp hygiene, not secure deletion.

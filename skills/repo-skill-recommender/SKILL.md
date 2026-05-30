@@ -7,10 +7,10 @@ risk: medium
 description: Inspects a repo and AI Wiki skills registry to recommend repo-level skill pointers, MCP roots, setup prompts, and agent handoff rules. Use when the user asks which skills belong in a repo, how to sync project skills, or how to set up repo-local AI agent context from the AI Wiki.
 tags: ["repo", "skills", "mcp", "ai-wiki", "setup", "recommendation"]
 provenance_origin: "original"
-provenance_source_path: "04_skills/generated/repo-skill-recommender/SKILL.md"
+provenance_source_path: "04_skills/agent-skills/skills/repo-skill-recommender/SKILL.md"
 provenance_credit: "Ryan Spice-Finnie"
 provenance_ingested_as: "ryanspice/agent-skills owned skill"
-provenance_note: "Original AI Wiki generated skill credited to Ryan Spice-Finnie."
+provenance_note: "Original AI Wiki local skill credited to Ryan Spice-Finnie."
 
 ---
 

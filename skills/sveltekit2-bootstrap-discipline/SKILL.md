@@ -2,10 +2,10 @@
 name: sveltekit2-bootstrap-discipline
 description: Use this skill only when creating a brand-new SvelteKit project, adding official Svelte CLI add-ons with sv add, migrating a Svelte/SvelteKit project with sv migrate, or repairing the initial project setup. Do not use for normal feature work, UI work, refactors, route edits, component edits, bug fixes, or existing app architecture unless setup tooling is the actual task.
 provenance_origin: "original"
-provenance_source_path: "04_skills/generated/sveltekit2-bootstrap-discipline/SKILL.md"
+provenance_source_path: "04_skills/agent-skills/skills/sveltekit2-bootstrap-discipline/SKILL.md"
 provenance_credit: "Ryan Spice-Finnie"
 provenance_ingested_as: "ryanspice/agent-skills owned skill"
-provenance_note: "Original AI Wiki generated skill credited to Ryan Spice-Finnie."
+provenance_note: "Original AI Wiki local skill credited to Ryan Spice-Finnie."
 
 ---
 

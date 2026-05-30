@@ -7,10 +7,10 @@ risk: low
 description: Designs console output for actions users must wait on, such as installs, indexing, package extraction, cleanup, builds, long scans, and agent operations, with reassuring status, safe dry-run/apply boundaries, and clear completion states.
 tags: [console, cli, powershell, python, progress, installer, long-running, ux]
 provenance_origin: "original"
-provenance_source_path: "04_skills/generated/decorated-wait-action-output-v0.0.1/SKILL.md"
+provenance_source_path: "04_skills/agent-skills/skills/decorated-wait-action-output-v0.0.1/SKILL.md"
 provenance_credit: "Ryan Spice-Finnie"
 provenance_ingested_as: "ryanspice/agent-skills owned skill"
-provenance_note: "Original AI Wiki generated skill credited to Ryan Spice-Finnie."
+provenance_note: "Original AI Wiki local skill credited to Ryan Spice-Finnie."
 
 ---
 # Decorated Wait Action Output

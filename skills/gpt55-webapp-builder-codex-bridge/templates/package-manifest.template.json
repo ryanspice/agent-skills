@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "created_at": "YYYY-MM-DDTHH:mm:ssZ",
   "purpose": "Describe why this package exists.",
-  "canonical_target": "<AI_WIKI_ROOT>/04_skills/generated/<skill>",
+  "canonical_target": "<AI_WIKI_ROOT>/04_skills/agent-skills/skills/<skill>",
   "generated_by": "ChatGPT web builder bridge",
   "risk": "low|medium|high",
   "requires_review": true,

@@ -4,8 +4,8 @@
   "version": "0.1.0",
   "type": "generated-agent-skill",
   "status": "active",
-  "canonical_path": "04_skills/generated/aiwiki-external-skill-intake/SKILL.md",
-  "entrypoint": "04_skills/generated/aiwiki-external-skill-intake/SKILL.md",
+  "canonical_path": "04_skills/agent-skills/skills/aiwiki-external-skill-intake/SKILL.md",
+  "entrypoint": "04_skills/agent-skills/skills/aiwiki-external-skill-intake/SKILL.md",
   "description": "Imports and adapts external agent-skill repositories into Ryan's AI Wiki as review-only candidates with provenance, safe manifests, de-duped indexes, and optional promotion.",
   "invocation_phrases": [
     "import external skills",

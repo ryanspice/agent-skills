@@ -1,6 +1,6 @@
 # Install Surfaces
 
-## AI Wiki generated skill shelf
+## AI Wiki repo-backed skill source
 
 Default install target:
 

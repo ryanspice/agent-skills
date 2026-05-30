@@ -7,11 +7,11 @@ source_reviewed:
   - https://github.com/199-biotechnologies/claude-deep-research-skill
   - https://deepwiki.com/199-biotechnologies/claude-deep-research-skill
 created: 2026-05-22
-intended_location: 04_skills/generated/candidates/enterprise-deep-research-workflow-candidate-v0.1.0
+intended_location: 04_skills/agent-skills/skills/candidates/enterprise-deep-research-workflow-candidate-v0.1.0
 promote_to: 04_skills/universal/deep-research/enterprise-deep-research-workflow
 risk_tier: medium
 provenance_origin: "modified"
-provenance_source_path: "04_skills/generated/candidates/enterprise-deep-research-workflow-candidate-v0.1.0/SKILL.md"
+provenance_source_path: "04_skills/agent-skills/skills/candidates/enterprise-deep-research-workflow-candidate-v0.1.0/SKILL.md"
 provenance_credit: "Ryan Spice-Finnie"
 provenance_ingested_as: "ryanspice/agent-skills owned skill"
 provenance_note: "Enterprise research workflow candidate adapted by Ryan Spice-Finnie from reviewed external deep-research architecture patterns."

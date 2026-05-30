@@ -5,10 +5,10 @@ version: 0.1.0
 platforms: [windows]
 tags: [hermes, llama-cpp, ai-wiki, mcp, local-agent, windows, powershell, openrouter, nemotron]
 provenance_origin: "original"
-provenance_source_path: "04_skills/generated/hermes-local-llamacpp-aiwiki-agent/SKILL.md"
+provenance_source_path: "04_skills/agent-skills/skills/hermes-local-llamacpp-aiwiki-agent/SKILL.md"
 provenance_credit: "Ryan Spice-Finnie"
 provenance_ingested_as: "ryanspice/agent-skills owned skill"
-provenance_note: "Original AI Wiki generated skill credited to Ryan Spice-Finnie."
+provenance_note: "Original AI Wiki local skill credited to Ryan Spice-Finnie."
 
 ---
 
@@ -51,7 +51,7 @@ Hermes stack launcher:
 <AI_WIKI_ROOT>\00_Kit\scripts\hermes\start-aiwiki-hermes-stack.ps1
 ```
 
-AI Wiki generated skills shelf:
+AI Wiki repo-backed skills shelf:
 
 ```text
 <AI_WIKI_ROOT>\04_skills\generated

@@ -58,7 +58,7 @@ Build evals before adding long documentation.
 
 ## Pass/fail rubric
 
-A generated skill passes if:
+A created skill passes if:
 
 - frontmatter is valid
 - description routes the right user requests

@@ -7,11 +7,11 @@ risk: medium
 description: Creates, audits, packages, and improves reusable prompt packs, agent handoffs, downloadable project packs, asset packs, .thoughts state files, and verification checklists. Use when the user asks for a prompt pack, handoff pack, agent prompt sequence, visual asset prompt pack, or reusable AI workflow pack.
 tags: ["prompt-pack", "handoff", "agent-workflow", "tar-gz", "asset-pack", "thoughts"]
 provenance_origin: "modified"
-provenance_source_path: "04_skills/generated/universal-prompt-pack-builder/SKILL.md"
+provenance_source_path: "04_skills/agent-skills/skills/universal-prompt-pack-builder/SKILL.md"
 provenance_credit: "Ryan Spice-Finnie"
 provenance_ingested_as: "ryanspice/agent-skills owned skill"
-provenance_note: "Generated skill revised by Ryan Spice-Finnie from a local source reference preserved in the skill reference folder."
-provenance_upstream: "04_skills/generated/universal-prompt-pack-builder/reference/source-universal-prompt-pack-builder-v0.1.0.md"
+provenance_note: "Modified AI Wiki local skill revised by Ryan Spice-Finnie from a local source reference preserved in the skill reference folder."
+provenance_upstream: "04_skills/agent-skills/skills/universal-prompt-pack-builder/reference/source-universal-prompt-pack-builder-v0.1.0.md"
 
 ---
 

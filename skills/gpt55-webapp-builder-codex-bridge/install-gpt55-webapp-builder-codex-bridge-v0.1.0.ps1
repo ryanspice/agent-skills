@@ -117,7 +117,7 @@ try {
     Remove-Item -LiteralPath $Destination -Recurse -Force
   }
 
-  Write-Step 'Installing generated skill'
+  Write-Step 'Installing repo-backed skill'
   New-Item -ItemType Directory -Path $Destination -Force | Out-Null
   Get-ChildItem -LiteralPath $SourceRoot -Force | ForEach-Object {
     Copy-Item -LiteralPath $_.FullName -Destination $Destination -Recurse -Force

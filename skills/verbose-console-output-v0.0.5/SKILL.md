@@ -7,11 +7,11 @@ risk: low
 description: Designs optional verbose console output for CLI tools, scripts, and agent-run commands using clean phase status, counts, elapsed time, and Vite/Webpack-inspired readability without spamming normal output.
 tags: [console, cli, powershell, python, logging, verbose, ux, progress]
 provenance_origin: "modified"
-provenance_source_path: "04_skills/generated/verbose-console-output-v0.0.5/SKILL.md"
+provenance_source_path: "04_skills/agent-skills/skills/verbose-console-output-v0.0.5/SKILL.md"
 provenance_credit: "Ryan Spice-Finnie"
 provenance_ingested_as: "ryanspice/agent-skills owned skill"
 provenance_note: "Revised generated draft credited to Ryan Spice-Finnie, derived from the v0.0.1 verbose console output skill."
-provenance_upstream: "04_skills/generated/verbose-console-output-v0.0.1/SKILL.md"
+provenance_upstream: "04_skills/agent-skills/skills/verbose-console-output-v0.0.1/SKILL.md"
 
 ---
 # Verbose Console Output

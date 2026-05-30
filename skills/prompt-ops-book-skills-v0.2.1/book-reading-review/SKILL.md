@@ -7,10 +7,10 @@ type: generated-agent-skill
 risk: medium
 tags: [books, reading, review, synthesis, copyright]
 provenance_origin: "original"
-provenance_source_path: "04_skills/generated/prompt-ops-book-skills-v0.2.1/book-reading-review/SKILL.md"
+provenance_source_path: "04_skills/agent-skills/skills/prompt-ops-book-skills-v0.2.1/book-reading-review/SKILL.md"
 provenance_credit: "Ryan Spice-Finnie"
 provenance_ingested_as: "ryanspice/agent-skills owned skill"
-provenance_note: "Original AI Wiki generated skill credited to Ryan Spice-Finnie."
+provenance_note: "Original AI Wiki local skill credited to Ryan Spice-Finnie."
 
 ---
 

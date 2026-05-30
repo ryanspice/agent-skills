@@ -7,11 +7,11 @@ risk: low
 description: Creates, critiques, and implements Windows Phone, Metro, Lumia, Zune, Pivot, Panorama, Action Center, command-bar, tile-grid, and OLED black UI designs. Use when the user asks for Windows Phone-like design, Metro UI, WP8/WP10/Lumia/Zune styling, mobile shell layouts, SvelteKit/Compose/Tauri implementations, screenshot recreation, prompt packs, asset packs, or QA of Metro-inspired UI.
 tags: ["ui", "metro", "windows-phone", "lumia", "sveltekit", "compose", "tauri"]
 provenance_origin: "modified"
-provenance_source_path: "04_skills/generated/windows-phone-metro-design/SKILL.md"
+provenance_source_path: "04_skills/agent-skills/skills/windows-phone-metro-design/SKILL.md"
 provenance_credit: "Ryan Spice-Finnie"
 provenance_ingested_as: "ryanspice/agent-skills owned skill"
-provenance_note: "Generated skill revised by Ryan Spice-Finnie from a local source reference preserved in the skill reference folder."
-provenance_upstream: "04_skills/generated/windows-phone-metro-design/reference/source-universal-windows-phone-metro-design-v1.0.0.md"
+provenance_note: "Modified AI Wiki local skill revised by Ryan Spice-Finnie from a local source reference preserved in the skill reference folder."
+provenance_upstream: "04_skills/agent-skills/skills/windows-phone-metro-design/reference/source-universal-windows-phone-metro-design-v1.0.0.md"
 
 ---
 

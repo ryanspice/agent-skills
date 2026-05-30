@@ -3,10 +3,10 @@ name: replace-with-context-skill-name
 description: Provides background context for a system, project, client, or domain. Use when related implementation, review, planning, or troubleshooting work depends on this context.
 user-invocable: false
 provenance_origin: "original"
-provenance_source_path: "04_skills/generated/creating-skills/templates/background-context-skill/SKILL.md"
+provenance_source_path: "04_skills/agent-skills/skills/creating-skills/templates/background-context-skill/SKILL.md"
 provenance_credit: "Ryan Spice-Finnie"
 provenance_ingested_as: "ryanspice/agent-skills owned skill"
-provenance_note: "Original AI Wiki generated skill credited to Ryan Spice-Finnie."
+provenance_note: "Original AI Wiki local skill credited to Ryan Spice-Finnie."
 
 ---
 

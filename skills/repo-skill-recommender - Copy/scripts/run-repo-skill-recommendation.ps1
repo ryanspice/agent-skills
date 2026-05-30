@@ -687,7 +687,7 @@ Add-Line -Lines $Lines -Text "## Proposed setup model"
 Add-Line -Lines $Lines
 Add-Line -Lines $Lines -Text "- Keep AI Wiki canonical skills as source of truth."
 Add-Line -Lines $Lines -Text '- Treat `04_skills/candidates` as external source snapshots and review library.'
-Add-Line -Lines $Lines -Text '- Treat `04_skills/generated` as Ryan-directed generated/history/package records.'
+Add-Line -Lines $Lines -Text '- Treat `04_skills/agent-skills/skills` as the owned Ryan-maintained skill source.'
 Add-Line -Lines $Lines -Text "- Do not copy all external candidates or generated source records into the repo."
 Add-Line -Lines $Lines -Text '- Use repo-local `.ai/skills` only as pointer mirrors unless Ryan explicitly asks for full copies.'
 Add-Line -Lines $Lines -Text "- Treat active PixelBoats project skills as the default repo setup set."
@@ -708,7 +708,7 @@ Add-Line -Lines $Lines -Text "- <AI_WIKI_ROOT>/04_skills/projects/pixelboats"
 Add-Line -Lines $Lines -Text ""
 Add-Line -Lines $Lines -Text "Source/history shelves:"
 Add-Line -Lines $Lines -Text "- <AI_WIKI_ROOT>/04_skills/candidates"
-Add-Line -Lines $Lines -Text "- <AI_WIKI_ROOT>/04_skills/generated"
+Add-Line -Lines $Lines -Text "- <AI_WIKI_ROOT>/04_skills/agent-skills/skills"
 Add-Line -Lines $Lines -Text ""
 Add-Line -Lines $Lines -Text "Do not copy all source snapshots into the repo."
 Add-Line -Lines $Lines -Text "Recommend a minimal active set, already-promoted support skills, deferred candidate snapshots, pointer strategy, AGENTS.md strategy, and exact verification commands."

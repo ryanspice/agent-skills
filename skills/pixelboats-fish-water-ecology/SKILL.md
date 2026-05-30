@@ -14,10 +14,10 @@ tags:
   - handoff
   - grill-me
 provenance_origin: "original"
-provenance_source_path: "04_skills/generated/pixelboats-fish-water-ecology/SKILL.md"
+provenance_source_path: "04_skills/agent-skills/skills/pixelboats-fish-water-ecology/SKILL.md"
 provenance_credit: "Ryan Spice-Finnie"
 provenance_ingested_as: "ryanspice/agent-skills owned skill"
-provenance_note: "Original AI Wiki generated skill credited to Ryan Spice-Finnie."
+provenance_note: "Original AI Wiki local skill credited to Ryan Spice-Finnie."
 
 ---
 

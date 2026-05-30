@@ -4,10 +4,10 @@ version: 0.1.0
 status: generated
 summary: Compressed high-signal engineering mode for low-token agent handoffs, debugging, and repo execution.
 provenance_origin: "original"
-provenance_source_path: "04_skills/generated/neanderthal/SKILL.md"
+provenance_source_path: "04_skills/agent-skills/skills/neanderthal/SKILL.md"
 provenance_credit: "Ryan Spice-Finnie"
 provenance_ingested_as: "ryanspice/agent-skills owned skill"
-provenance_note: "Original AI Wiki generated skill credited to Ryan Spice-Finnie."
+provenance_note: "Original AI Wiki local skill credited to Ryan Spice-Finnie."
 
 ---
 

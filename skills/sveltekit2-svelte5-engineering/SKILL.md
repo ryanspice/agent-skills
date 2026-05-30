@@ -2,10 +2,10 @@
 name: sveltekit2-svelte5-engineering
 description: Use when creating, refactoring, auditing, debugging, or reviewing SvelteKit 2 + Svelte 5 applications, routes, components, load functions, actions, adapters, stores/state, accessibility, performance, hydration, prerendering, and TypeScript architecture.
 provenance_origin: "original"
-provenance_source_path: "04_skills/generated/sveltekit2-svelte5-engineering/SKILL.md"
+provenance_source_path: "04_skills/agent-skills/skills/sveltekit2-svelte5-engineering/SKILL.md"
 provenance_credit: "Ryan Spice-Finnie"
 provenance_ingested_as: "ryanspice/agent-skills owned skill"
-provenance_note: "Original AI Wiki generated skill credited to Ryan Spice-Finnie."
+provenance_note: "Original AI Wiki local skill credited to Ryan Spice-Finnie."
 
 ---
 

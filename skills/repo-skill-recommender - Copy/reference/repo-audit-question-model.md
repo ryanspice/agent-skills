@@ -19,7 +19,7 @@ Use:
 ## Rules
 
 1. Candidate skills are source snapshots until selected, adapted, and promoted.
-2. Generated skills are Ryan-directed generated/history/package records; keep that source record even after promotion.
+2. Ryan-owned skills are maintained in the repo-backed source; keep provenance records when promoting or overriding.
 3. Repo setup should not copy all candidate skills.
 4. Already-promoted candidate-derived skills should be reported as promoted support skills, not as review candidates.
 5. Questions must be derived from actual repo evidence.

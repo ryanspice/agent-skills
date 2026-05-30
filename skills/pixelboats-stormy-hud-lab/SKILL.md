@@ -8,10 +8,10 @@ canonical_generated_path: <AI_WIKI_ROOT>\04_skills\generated\pixelboats-stormy-h
 canonical_project_path: <AI_WIKI_ROOT>\04_skills\projects\pixelboats\pixelboats-stormy-hud-lab\SKILL.md
 repo_mirror_path: <DEV_ROOT>\PixelBoats\.ai\skills\pixelboats-stormy-hud-lab\SKILL.md
 provenance_origin: "original"
-provenance_source_path: "04_skills/generated/pixelboats-stormy-hud-lab/SKILL.md"
+provenance_source_path: "04_skills/agent-skills/skills/pixelboats-stormy-hud-lab/SKILL.md"
 provenance_credit: "Ryan Spice-Finnie"
 provenance_ingested_as: "ryanspice/agent-skills owned skill"
-provenance_note: "Original AI Wiki generated skill credited to Ryan Spice-Finnie."
+provenance_note: "Original AI Wiki local skill credited to Ryan Spice-Finnie."
 
 ---
 

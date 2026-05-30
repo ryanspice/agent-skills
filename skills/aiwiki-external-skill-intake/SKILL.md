@@ -6,13 +6,13 @@ status: active
 type: generated-agent-skill
 risk: medium
 tags: ["ai-wiki", "skills", "external-candidates", "provenance", "promotion", "mcp", "powershell"]
-canonical_path: 04_skills/generated/aiwiki-external-skill-intake/SKILL.md
+canonical_path: 04_skills/agent-skills/skills/aiwiki-external-skill-intake/SKILL.md
 created_at: 2026-05-20
 provenance_origin: "original"
-provenance_source_path: "04_skills/generated/aiwiki-external-skill-intake/SKILL.md"
+provenance_source_path: "04_skills/agent-skills/skills/aiwiki-external-skill-intake/SKILL.md"
 provenance_credit: "Ryan Spice-Finnie"
 provenance_ingested_as: "ryanspice/agent-skills owned skill"
-provenance_note: "Original AI Wiki generated skill credited to Ryan Spice-Finnie."
+provenance_note: "Original AI Wiki local skill credited to Ryan Spice-Finnie."
 
 ---
 
@@ -36,10 +36,11 @@ Use these paths unless the user explicitly overrides them:
 00_INBOX/proposed/<source-slug>-aiwiki-review-v<version>.md
 ```
 
-For generated helper skills like this one, install under:
+For owned Ryan-maintained helper skills like this one, maintain them in the
+agent-skills repo-backed source:
 
 ```txt
-04_skills/generated/<skill-slug>/SKILL.md
+04_skills/agent-skills/skills/<skill-slug>/SKILL.md
 ```
 
 ## Intake workflow

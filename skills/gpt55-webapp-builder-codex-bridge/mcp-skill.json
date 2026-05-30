@@ -4,8 +4,8 @@
   "version": "0.1.0",
   "type": "generated-agent-skill",
   "status": "candidate",
-  "canonical_path": "04_skills/generated/gpt55-webapp-builder-codex-bridge/SKILL.md",
-  "entrypoint": "04_skills/generated/gpt55-webapp-builder-codex-bridge/SKILL.md",
+  "canonical_path": "04_skills/agent-skills/skills/gpt55-webapp-builder-codex-bridge/SKILL.md",
+  "entrypoint": "04_skills/agent-skills/skills/gpt55-webapp-builder-codex-bridge/SKILL.md",
   "description": "Guides ChatGPT web-app sessions into a Codex-like human-in-the-loop builder workflow using reviewable scripts, PowerShell, Python, clipboard handoff, TAR.GZ bundles, manifests, hashes, cleanup, and approval gates.",
   "invocation_phrases": [
     "use ChatGPT like Codex",

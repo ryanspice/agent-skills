@@ -3,7 +3,7 @@
   "description": "Workflow skill for AI Wiki skill registry, MCP contracts, candidate search/read, and PixelBoats skill discovery.",
   "status": "active",
   "kind": "generated-workflow-skill",
-  "skill_path": "04_skills/generated/aiwiki-skill-registry-mcp-workflow/SKILL.md",
+  "skill_path": "04_skills/agent-skills/skills/aiwiki-skill-registry-mcp-workflow/SKILL.md",
   "tags": [
     "ai-wiki",
     "mcp",

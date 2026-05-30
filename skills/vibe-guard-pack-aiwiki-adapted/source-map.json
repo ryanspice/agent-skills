@@ -3,7 +3,7 @@
   "source": "codecoincognition-vibe-guard-skills",
   "source_url": "https://github.com/codecoincognition/vibe-guard-skills.git",
   "candidate_clone_path": "04_skills/candidates/codecoincognition-vibe-guard-skills",
-  "adapted_workspace_path": "04_skills/generated/vibe-guard-pack-aiwiki-adapted",
+  "adapted_workspace_path": "04_skills/agent-skills/skills/vibe-guard-pack-aiwiki-adapted",
   "active_targets": [
     {
       "path": "04_skills/universal/vibe-check/SKILL.md",

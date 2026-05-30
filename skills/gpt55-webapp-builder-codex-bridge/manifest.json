@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "created_at": "2026-05-19T22:55:00-04:00",
   "purpose": "Generated AI Wiki skill for using ChatGPT/GPT-5.5 web as a Codex-style human-in-the-loop builder bridge.",
-  "canonical_target": "<AI_WIKI_ROOT>/04_skills/generated/gpt55-webapp-builder-codex-bridge",
+  "canonical_target": "<AI_WIKI_ROOT>/04_skills/agent-skills/skills/gpt55-webapp-builder-codex-bridge",
   "risk": "medium-by-default",
   "requires_review": true,
   "contains_secrets": false,

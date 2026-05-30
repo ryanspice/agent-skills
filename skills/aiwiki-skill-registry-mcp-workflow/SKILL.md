@@ -8,10 +8,10 @@ risk: medium
 tags: ["ai-wiki", "skills", "mcp", "registry", "pixelboats", "powershell", "python"]
 created_at: 2026-05-20
 provenance_origin: "original"
-provenance_source_path: "04_skills/generated/aiwiki-skill-registry-mcp-workflow/SKILL.md"
+provenance_source_path: "04_skills/agent-skills/skills/aiwiki-skill-registry-mcp-workflow/SKILL.md"
 provenance_credit: "Ryan Spice-Finnie"
 provenance_ingested_as: "ryanspice/agent-skills owned skill"
-provenance_note: "Original AI Wiki generated skill credited to Ryan Spice-Finnie."
+provenance_note: "Original AI Wiki local skill credited to Ryan Spice-Finnie."
 
 ---
 
@@ -44,7 +44,7 @@ Do not crawl the whole vault by default.
 Default active discovery reads:
 
 ```text
-04_skills/generated
+04_skills/agent-skills/skills
 04_skills/universal
 04_skills/projects
 ```

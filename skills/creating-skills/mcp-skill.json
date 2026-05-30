@@ -25,6 +25,6 @@
   ],
   "optional_write_tool": "stage_inbound_note",
   "write_policy": "Prefer staging proposed durable wiki edits into 07_inbound/proposed for human review. Do not mutate 02_wiki pages directly. Reviewed installers may update 04_skills and 03_indexes with backups.",
-  "risk": "low-by-default; medium when generating scripts or install commands; high only if a generated skill performs deploy, send, delete, credential, billing, or production actions.",
+  "risk": "low-by-default; medium when authoring scripts or install commands; high only if a skill performs deploy, send, delete, credential, billing, or production actions.",
   "updated_at": "2026-05-19T05:17:25-04:00"
 }

@@ -5,6 +5,7 @@ import process from 'node:process';
 
 const defaultAiWikiRoot = 'S:\\OneDrive\\Obsidan\\AI-Wiki';
 const expectedSourceRoot = '04_skills/agent-skills/skills';
+const retiredLocalCreatedRoot = ['04_skills', 'generated'].join('/');
 
 function repoPath(filePath, root) {
   return path.relative(root, filePath).replaceAll(path.sep, '/');
@@ -94,8 +95,8 @@ if (existsSync(policyPath)) {
     if (!includeRoots.includes(expectedSourceRoot)) {
       errors.push(`skill scan policy does not include ${expectedSourceRoot}`);
     }
-    if (includeRoots.includes('04_skills/generated')) {
-      errors.push('skill scan policy still includes deprecated 04_skills/generated');
+    if (includeRoots.includes(retiredLocalCreatedRoot)) {
+      errors.push(`skill scan policy still includes deprecated ${retiredLocalCreatedRoot}`);
     }
   } catch (error) {
     errors.push(`failed to parse skill scan policy: ${error.message}`);

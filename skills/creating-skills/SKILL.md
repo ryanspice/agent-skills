@@ -5,10 +5,10 @@ version: 0.1.3
 platforms: [windows, ai-wiki, mcp, hermes, chatgpt, claude-code, codex, trae]
 tags: [skills, ai-wiki, mcp, hermes, prompt-packs, validation, packaging]
 provenance_origin: "original"
-provenance_source_path: "04_skills/generated/creating-skills/SKILL.md"
+provenance_source_path: "04_skills/agent-skills/skills/creating-skills/SKILL.md"
 provenance_credit: "Ryan Spice-Finnie"
 provenance_ingested_as: "ryanspice/agent-skills owned skill"
-provenance_note: "Original AI Wiki generated skill credited to Ryan Spice-Finnie."
+provenance_note: "Original AI Wiki local skill credited to Ryan Spice-Finnie."
 
 ---
 
