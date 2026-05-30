@@ -54,7 +54,6 @@ Text files are normalized to placeholders such as `<AI_WIKI_ROOT>`, `<DEV_ROOT>`
 | `prompt-operations-storefront` | `original` | Ryan Spice-Finnie | `skills/prompt-ops-book-skills-v0.2.1/prompt-operations-storefront/SKILL.md` | `04_skills/agent-skills/skills/prompt-ops-book-skills-v0.2.1/prompt-operations-storefront/SKILL.md` |
 | `publishing-release-operations` | `original` | Ryan Spice-Finnie | `skills/prompt-ops-book-skills-v0.2.1/publishing-release-operations/SKILL.md` | `04_skills/agent-skills/skills/prompt-ops-book-skills-v0.2.1/publishing-release-operations/SKILL.md` |
 | `university-textbook-design` | `original` | Ryan Spice-Finnie | `skills/prompt-ops-book-skills-v0.2.1/university-textbook-design/SKILL.md` | `04_skills/agent-skills/skills/prompt-ops-book-skills-v0.2.1/university-textbook-design/SKILL.md` |
-| `repo-skill-recommender` | `modified` | Ryan Spice-Finnie | `skills/repo-skill-recommender-copy/SKILL.md` | `04_skills/agent-skills/skills/repo-skill-recommender-copy/SKILL.md` |
 | `repo-skill-recommender` | `original` | Ryan Spice-Finnie | `skills/repo-skill-recommender/SKILL.md` | `04_skills/agent-skills/skills/repo-skill-recommender/SKILL.md` |
 | `sprite-pixel-art-sprite-sheets-gpt55` | `original` | Ryan Spice-Finnie | `skills/sprite-pixel-art-sprite-sheets-gpt55/SKILL.md` | `04_skills/agent-skills/skills/sprite-pixel-art-sprite-sheets-gpt55/SKILL.md` |
 | `Svelte Lab Demo Ingestion` | `original` | Ryan Spice-Finnie | `skills/svelte-lab-demo-ingestion/SKILL.md` | `04_skills/agent-skills/skills/svelte-lab-demo-ingestion/SKILL.md` |
@@ -70,4 +69,5 @@ Text files are normalized to placeholders such as `<AI_WIKI_ROOT>`, `<DEV_ROOT>`
 | `walking-cycle-generation` | `original` | Ryan Spice-Finnie | `skills/walking-cycle-generation/SKILL.md` | `04_skills/agent-skills/skills/walking-cycle-generation/SKILL.md` |
 | `windows-phone-metro-design` | `modified` | Ryan Spice-Finnie | `skills/windows-phone-metro-design/SKILL.md` | `04_skills/agent-skills/skills/windows-phone-metro-design/SKILL.md` |
 | `windows-tar-package-installer-workflow` | `original` | Ryan Spice-Finnie | `skills/windows-tar-package-installer-workflow/SKILL.md` | `04_skills/agent-skills/skills/windows-tar-package-installer-workflow/SKILL.md` |
+
 
