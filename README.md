@@ -28,9 +28,9 @@ skill index.
 ## Checks
 
 ```powershell
-npm run check
-npm test
-npm run build
+pnpm run check
+pnpm test
+pnpm run build
 ```
 
 All three commands run the dependency-free skill validator.
@@ -46,19 +46,19 @@ S:\OneDrive\Obsidan\AI-Wiki\04_skills\agent-skills
 Use the status helper after cloning or pulling inside the wiki:
 
 ```powershell
-npm run aiwiki:status
+pnpm run aiwiki:status
 ```
 
 Rebuild the AI Wiki skill indexes from the repo-backed source:
 
 ```powershell
-npm run aiwiki:rebuild-indexes -- --apply
+pnpm run aiwiki:rebuild-indexes -- --apply
 ```
 
 To preview linking repo skills into Codex as local junctions:
 
 ```powershell
-npm run aiwiki:link-codex -- --all
+pnpm run aiwiki:link-codex -- --all
 ```
 
 Add `--apply` to create the junctions. Add `--replace` only when replacing
