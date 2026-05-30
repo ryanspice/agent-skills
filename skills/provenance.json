@@ -1,6 +1,6 @@
 {
   "schema_version": "1.2.0",
-  "generated_at": "2026-05-30T10:31:55.059Z",
+  "generated_at": "2026-05-30T10:44:18.869Z",
   "source": "AI Wiki 04_skills/agent-skills/skills route ingested into owned agent-skills repo",
   "export_policy": "All current files under the AI Wiki 04_skills/agent-skills/skills route are ingested directly under skills/. Text files are normalized for public review by replacing local machine roots and hostnames with placeholders; binary package/image files are copied byte-for-byte.",
   "origin_labels": {
@@ -8,7 +8,7 @@
     "modified": "Adapted, revised, copied, or derived from another skill/source/reference, with upstream/source credit retained."
   },
   "credit_policy": "Ryan Spice-Finnie is credited for created and locally mutated AI Wiki skills. Modified/adapted skills also retain upstream/source-reference credit where known. Ingesting them directly into this repository makes ryanspice/agent-skills the owned distribution surface.",
-  "source_file_count": 179,
+  "source_file_count": 178,
   "skill_document_count": 53,
   "source_files": [
     {
@@ -1409,14 +1409,6 @@
       "kind": "support-file",
       "credit": "Ryan Spice-Finnie",
       "sha256": "b8e7e5d143d58d1af8d7f321bf7d72ce79f0503c1b6e1fd79b10c1d66befa051",
-      "ingested_as": "ryanspice/agent-skills owned skill"
-    },
-    {
-      "path": "skills/windows-phone-metro-design/SKILL_windows-phone-metro-design.md",
-      "source_path": "04_skills/agent-skills/skills/windows-phone-metro-design/SKILL_windows-phone-metro-design.md",
-      "kind": "support-file",
-      "credit": "Ryan Spice-Finnie",
-      "sha256": "3696ef8b3070defe409d09e237d8b5960f777fb4e72ddc41bddac7d571156458",
       "ingested_as": "ryanspice/agent-skills owned skill"
     },
     {
