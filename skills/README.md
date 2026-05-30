@@ -69,5 +69,6 @@ Text files are normalized to placeholders such as `<AI_WIKI_ROOT>`, `<DEV_ROOT>`
 | `walking-cycle-generation` | `original` | Ryan Spice-Finnie | `skills/walking-cycle-generation/SKILL.md` | `04_skills/agent-skills/skills/walking-cycle-generation/SKILL.md` |
 | `windows-phone-metro-design` | `modified` | Ryan Spice-Finnie | `skills/windows-phone-metro-design/SKILL.md` | `04_skills/agent-skills/skills/windows-phone-metro-design/SKILL.md` |
 | `windows-tar-package-installer-workflow` | `original` | Ryan Spice-Finnie | `skills/windows-tar-package-installer-workflow/SKILL.md` | `04_skills/agent-skills/skills/windows-tar-package-installer-workflow/SKILL.md` |
-
-
+| `deep-research-workflow` | `modified` | Ryan Spice-Finnie | `skills/deep-research-workflow/SKILL.md` | `04_skills/agent-skills/skills/deep-research-workflow/SKILL.md` |
+| `enterprise-deep-research-workflow` | `modified` | Ryan Spice-Finnie | `skills/enterprise-deep-research-workflow/SKILL.md` | `04_skills/agent-skills/skills/enterprise-deep-research-workflow/SKILL.md` |
+| `deepseek-research-api-substrate` | `original` | Ryan Spice-Finnie | `skills/candidates/deepseek-research-api-substrate-v0.1.0/SKILL.md` | `04_skills/agent-skills/skills/candidates/deepseek-research-api-substrate-v0.1.0/SKILL.md` |

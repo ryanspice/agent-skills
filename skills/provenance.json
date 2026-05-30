@@ -1,6 +1,6 @@
 {
   "schema_version": "1.2.0",
-  "generated_at": "2026-05-30T14:00:24.985Z",
+  "generated_at": "2026-05-30T14:07:51.312Z",
   "source": "AI Wiki 04_skills/agent-skills/skills route ingested into owned agent-skills repo",
   "export_policy": "All current files under the AI Wiki 04_skills/agent-skills/skills route are ingested directly under skills/. Text files are normalized for public review by replacing local machine roots and hostnames with placeholders; binary package/image files are copied byte-for-byte.",
   "origin_labels": {
@@ -8,8 +8,8 @@
     "modified": "Adapted, revised, copied, or derived from another skill/source/reference, with upstream/source credit retained."
   },
   "credit_policy": "Ryan Spice-Finnie is credited for created and locally mutated AI Wiki skills. Modified/adapted skills also retain upstream/source-reference credit where known. Ingesting them directly into this repository makes ryanspice/agent-skills the owned distribution surface.",
-  "source_file_count": 175,
-  "skill_document_count": 52,
+  "source_file_count": 178,
+  "skill_document_count": 55,
   "source_files": [
     {
       "path": "skills/ai-wiki-file-management/mcp-skill.json",
@@ -273,6 +273,14 @@
       "kind": "support-file",
       "credit": "Ryan Spice-Finnie",
       "sha256": "0f99003c164527a66de8897366292c989cafe6615a8c598211396445fdc86b9f",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/candidates/deepseek-research-api-substrate-v0.1.0/SKILL.md",
+      "source_path": "04_skills/agent-skills/skills/candidates/deepseek-research-api-substrate-v0.1.0/SKILL.md",
+      "kind": "skill-document",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "485b5b276bc972788f784fa24fe85386856352030b882f3d62b1622dcfe32339",
       "ingested_as": "ryanspice/agent-skills owned skill"
     },
     {
@@ -593,6 +601,22 @@
       "kind": "skill-document",
       "credit": "Ryan Spice-Finnie",
       "sha256": "c6e8ef80b47808e27acc7bc896a6434ac1f51340dfe57364d599ff12f814103f",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/deep-research-workflow/SKILL.md",
+      "source_path": "04_skills/agent-skills/skills/deep-research-workflow/SKILL.md",
+      "kind": "skill-document",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "83ac4db57f2616e4b6428fb07e6c19f8cd415e1bac6b04b294d7f2547cf84665",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/enterprise-deep-research-workflow/SKILL.md",
+      "source_path": "04_skills/agent-skills/skills/enterprise-deep-research-workflow/SKILL.md",
+      "kind": "skill-document",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "a166af201c178a6c50b27176c8043ad77077a590b8b1bdb7e916453a624cb504",
       "ingested_as": "ryanspice/agent-skills owned skill"
     },
     {
@@ -1504,6 +1528,14 @@
       "ingested_as": "ryanspice/agent-skills owned skill"
     },
     {
+      "name": "deepseek-research-api-substrate",
+      "path": "skills/candidates/deepseek-research-api-substrate-v0.1.0/SKILL.md",
+      "source_path": "04_skills/agent-skills/skills/candidates/deepseek-research-api-substrate-v0.1.0/SKILL.md",
+      "origin": "original",
+      "credit": "Ryan Spice-Finnie",
+      "note": "Candidate skill for DeepSeek as a research API substrate, held as candidate pending deeper source and API validation."
+    },
+    {
       "name": "Enterprise Deep Research Workflow Candidate",
       "path": "skills/candidates/enterprise-deep-research-workflow-candidate-v0.1.0/SKILL.md",
       "origin": "modified",
@@ -1592,6 +1624,24 @@
       "note": "Revised generated draft credited to Ryan Spice-Finnie, derived from the v0.0.1 decorated wait action output skill.",
       "upstream": "04_skills/agent-skills/skills/decorated-wait-action-output-v0.0.1/SKILL.md",
       "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "name": "deep-research-workflow",
+      "path": "skills/deep-research-workflow/SKILL.md",
+      "source_path": "04_skills/agent-skills/skills/deep-research-workflow/SKILL.md",
+      "origin": "modified",
+      "credit": "Ryan Spice-Finnie",
+      "note": "Promoted research workflow skill based on Ryan Spice-Finnie AI Wiki research operations adaptation.",
+      "upstream": "Promoted from skills/candidates/deep-research-workflow-candidate-v0.1.0 after Prompt Operations deep research review."
+    },
+    {
+      "name": "enterprise-deep-research-workflow",
+      "path": "skills/enterprise-deep-research-workflow/SKILL.md",
+      "source_path": "04_skills/agent-skills/skills/enterprise-deep-research-workflow/SKILL.md",
+      "origin": "modified",
+      "credit": "Ryan Spice-Finnie",
+      "note": "Promoted enterprise research workflow skill based on Ryan Spice-Finnie AI Wiki research operations adaptation.",
+      "upstream": "Promoted from skills/candidates/enterprise-deep-research-workflow-candidate-v0.1.0 after Prompt Operations deep research review."
     },
     {
       "name": "gpt55-webapp-builder-codex-bridge",
