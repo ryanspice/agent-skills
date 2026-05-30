@@ -35,3 +35,26 @@ npm run build
 ```
 
 All three commands run the dependency-free skill validator.
+
+## AI Wiki Integration
+
+The AI Wiki consumes this repo from:
+
+```text
+S:\OneDrive\Obsidan\AI-Wiki\04_skills\agent-skills
+```
+
+Use the status helper after cloning or pulling inside the wiki:
+
+```powershell
+npm run aiwiki:status
+```
+
+To preview linking repo skills into Codex as local junctions:
+
+```powershell
+npm run aiwiki:link-codex -- --all
+```
+
+Add `--apply` to create the junctions. Add `--replace` only when replacing
+existing local Codex skill folders is intentional.

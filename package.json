@@ -5,7 +5,9 @@
   "scripts": {
     "check": "node scripts/validate-skills.mjs",
     "test": "node scripts/validate-skills.mjs",
-    "build": "node scripts/validate-skills.mjs"
+    "build": "node scripts/validate-skills.mjs",
+    "aiwiki:status": "node scripts/aiwiki-status.mjs",
+    "aiwiki:link-codex": "node scripts/aiwiki-link-codex.mjs"
   },
   "engines": {
     "node": ">=18"
