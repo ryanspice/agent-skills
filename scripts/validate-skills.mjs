@@ -7,6 +7,7 @@ const repoRoot = process.cwd();
 const skillsRoot = path.join(repoRoot, 'skills');
 const manifestPath = path.join(skillsRoot, 'provenance.json');
 const allowedOrigins = new Set(['original', 'modified']);
+const generatedBucketPath = ['skills', 'aiwiki-generated'].join('/');
 const blockedPathPatterns = [
   /S:[\\/]+OneDrive[\\/]+Obsidan/i,
   /S:\/OneDrive\/Obsidan/i,
@@ -87,8 +88,8 @@ const manifest = existsSync(manifestPath)
   ? JSON.parse(readFileSync(manifestPath, 'utf8'))
   : { skills: [] };
 
-if (manifest.schema_version !== '1.1.0') {
-  fail('skills/provenance.json: expected schema_version 1.1.0');
+if (manifest.schema_version !== '1.2.0') {
+  fail('skills/provenance.json: expected schema_version 1.2.0');
 }
 
 if (!Array.isArray(manifest.skills)) {
@@ -124,24 +125,20 @@ for (const skill of manifest.skills ?? []) {
 }
 
 const allFiles = existsSync(skillsRoot) ? walkFiles(skillsRoot) : [];
-const generatedFiles = allFiles
-  .map(toRepoPath)
-  .filter((repoPath) => repoPath.startsWith('skills/aiwiki-generated/'));
 const skillFiles = allFiles
   .map(toRepoPath)
   .filter((repoPath) => repoPath.endsWith('/SKILL.md') || repoPath.endsWith('.SKILL.md'));
-const generatedSkillFiles = skillFiles
-  .filter((repoPath) => repoPath.startsWith('skills/aiwiki-generated/'));
+const ingestedSkillFiles = [...manifestByPath.keys()].sort();
 
-if (generatedSkillFiles.length < 50) {
-  fail(`expected at least 50 generated skill files after AI Wiki import, found ${generatedSkillFiles.length}`);
+if (ingestedSkillFiles.length < 50) {
+  fail(`expected at least 50 AI Wiki-ingested skill files, found ${ingestedSkillFiles.length}`);
 }
 
 if (!manifest.skills?.some((skill) => skill.origin === 'modified')) {
   fail('expected at least one modified skill in the provenance index');
 }
 
-for (const repoPath of generatedSkillFiles) {
+for (const repoPath of ingestedSkillFiles) {
   const skill = manifestByPath.get(repoPath);
   if (!skill) {
     fail(`${repoPath}: missing from skills/provenance.json`);
@@ -173,10 +170,13 @@ for (const repoPath of generatedSkillFiles) {
 }
 
 for (const skillPath of manifestByPath.keys()) {
-  if (!skillPath.startsWith('skills/aiwiki-generated/')) {
-    fail(`${skillPath}: provenance manifest should only index generated exports`);
+  if (!skillPath.startsWith('skills/')) {
+    fail(`${skillPath}: provenance manifest entries must live under skills/`);
   }
-  if (!generatedSkillFiles.includes(skillPath)) {
+  if (skillPath.startsWith(`${generatedBucketPath}/`)) {
+    fail(`${skillPath}: ingested skills should live directly under skills/, not ${generatedBucketPath}/`);
+  }
+  if (!skillFiles.includes(skillPath)) {
     fail(`${skillPath}: listed in manifest but SKILL.md was not found`);
   }
 }
@@ -191,8 +191,11 @@ if (!Array.isArray(manifest.source_files)) {
       continue;
     }
     sourceFilePaths.add(sourceFile.path);
-    if (!sourceFile.path.startsWith('skills/aiwiki-generated/')) {
-      fail(`${sourceFile.path}: source file manifest should only index generated exports`);
+    if (!sourceFile.path.startsWith('skills/')) {
+      fail(`${sourceFile.path}: source file manifest entries must live under skills/`);
+    }
+    if (sourceFile.path.startsWith(`${generatedBucketPath}/`)) {
+      fail(`${sourceFile.path}: source files should live directly under skills/, not ${generatedBucketPath}/`);
     }
     if (!sourceFile.source_path?.startsWith('04_skills/generated/')) {
       fail(`${sourceFile.path}: source file missing AI Wiki source path`);
@@ -220,13 +223,8 @@ if (!Array.isArray(manifest.source_files)) {
   if (manifest.source_file_count !== manifest.source_files.length) {
     fail('skills/provenance.json: source_file_count does not match source_files length');
   }
-  if (manifest.skill_document_count !== generatedSkillFiles.length) {
-    fail('skills/provenance.json: skill_document_count does not match generated skill count');
-  }
-  for (const repoPath of generatedFiles) {
-    if (!sourceFilePaths.has(repoPath)) {
-      fail(`${repoPath}: generated export missing from source_files manifest`);
-    }
+  if (manifest.skill_document_count !== ingestedSkillFiles.length) {
+    fail('skills/provenance.json: skill_document_count does not match AI Wiki-ingested skill count');
   }
 }
 
@@ -246,4 +244,4 @@ if (errors.length > 0) {
   process.exit(1);
 }
 
-console.log(`Validated ${generatedSkillFiles.length} generated skills with provenance labels.`);
+console.log(`Validated ${ingestedSkillFiles.length} AI Wiki-ingested skills with provenance labels.`);

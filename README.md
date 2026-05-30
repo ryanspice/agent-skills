@@ -6,11 +6,13 @@ Current contents:
 
 - `skills/tauri-sveltekit-svelte`
 - `skills/vibe-guard`
-- `skills/aiwiki-generated`
+- AI Wiki skill shelf content ingested directly under `skills/`
 
-The `skills/aiwiki-generated` tree mirrors Ryan's current AI Wiki
-`04_skills/generated` route. Each exported skill document includes provenance
-and credit fields:
+Ryan's current AI Wiki `04_skills/generated` route has been ingested directly
+into this repository instead of being kept under a separate generated-export
+folder. The AI Wiki path remains source provenance; this repo is the owned
+distribution surface. Each ingested skill document includes provenance and
+credit fields:
 
 - `provenance_origin: "original"` for original Ryan/AI Wiki generated or
   pre-existing repository skills.
@@ -18,6 +20,8 @@ and credit fields:
   derived from another skill/source/reference.
 - `provenance_credit: "Ryan Spice-Finnie"` for generated and locally mutated
   AI Wiki skills.
+- `provenance_ingested_as: "ryanspice/agent-skills owned skill"` for the repo
+  ownership lane.
 
 See `skills/provenance.json` and `skills/README.md` for the full file and
 skill index.
