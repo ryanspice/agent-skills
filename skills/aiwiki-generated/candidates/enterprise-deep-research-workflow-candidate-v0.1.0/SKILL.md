@@ -12,7 +12,8 @@ promote_to: 04_skills/universal/deep-research/enterprise-deep-research-workflow
 risk_tier: medium
 provenance_origin: "modified"
 provenance_source_path: "04_skills/generated/candidates/enterprise-deep-research-workflow-candidate-v0.1.0/SKILL.md"
-provenance_note: "Enterprise research workflow candidate adapted from reviewed external deep-research architecture patterns."
+provenance_credit: "Ryan Spice-Finnie"
+provenance_note: "Enterprise research workflow candidate adapted by Ryan Spice-Finnie from reviewed external deep-research architecture patterns."
 provenance_upstream: "199-biotechnologies/claude-deep-research-skill https://github.com/199-biotechnologies/claude-deep-research-skill; DeepWiki architecture view https://deepwiki.com/199-biotechnologies/claude-deep-research-skill"
 
 ---

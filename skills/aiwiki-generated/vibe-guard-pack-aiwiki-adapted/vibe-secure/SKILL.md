@@ -15,7 +15,8 @@ adapted: true
 review_only: true
 provenance_origin: "modified"
 provenance_source_path: "04_skills/generated/vibe-guard-pack-aiwiki-adapted/vibe-secure/SKILL.md"
-provenance_note: "AI Wiki adaptation of the external vibe-guard skill pack."
+provenance_credit: "Ryan Spice-Finnie"
+provenance_note: "AI Wiki adaptation credited to Ryan Spice-Finnie, based on the external vibe-guard skill pack."
 provenance_upstream: "codecoincognition/vibe-guard-skills https://github.com/codecoincognition/vibe-guard-skills"
 
 ---

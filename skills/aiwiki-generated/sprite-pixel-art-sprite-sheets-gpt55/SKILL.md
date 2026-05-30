@@ -9,7 +9,8 @@ tags: ["sprite", "pixel-art", "sprite-sheets", "animation", "art-direction", "gp
 created_at: 2026-05-22
 provenance_origin: "original"
 provenance_source_path: "04_skills/generated/sprite-pixel-art-sprite-sheets-gpt55/SKILL.md"
-provenance_note: "Original AI Wiki generated skill."
+provenance_credit: "Ryan Spice-Finnie"
+provenance_note: "Original AI Wiki generated skill credited to Ryan Spice-Finnie."
 
 ---
 

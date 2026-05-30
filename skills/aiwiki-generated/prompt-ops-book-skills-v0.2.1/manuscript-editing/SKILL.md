@@ -8,7 +8,8 @@ risk: low
 tags: [editing, manuscript, book, review]
 provenance_origin: "original"
 provenance_source_path: "04_skills/generated/prompt-ops-book-skills-v0.2.1/manuscript-editing/SKILL.md"
-provenance_note: "Original AI Wiki generated skill."
+provenance_credit: "Ryan Spice-Finnie"
+provenance_note: "Original AI Wiki generated skill credited to Ryan Spice-Finnie."
 
 ---
 

@@ -8,7 +8,8 @@ description: Creates, audits, packages, and improves reusable prompt packs, agen
 tags: ["prompt-pack", "handoff", "agent-workflow", "tar-gz", "asset-pack", "thoughts"]
 provenance_origin: "modified"
 provenance_source_path: "04_skills/generated/universal-prompt-pack-builder/SKILL.md"
-provenance_note: "Generated skill revised from a local source reference preserved in the skill reference folder."
+provenance_credit: "Ryan Spice-Finnie"
+provenance_note: "Generated skill revised by Ryan Spice-Finnie from a local source reference preserved in the skill reference folder."
 provenance_upstream: "04_skills/generated/universal-prompt-pack-builder/reference/source-universal-prompt-pack-builder-v0.1.0.md"
 
 ---

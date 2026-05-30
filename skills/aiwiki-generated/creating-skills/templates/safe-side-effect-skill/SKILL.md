@@ -4,7 +4,8 @@ description: Performs a controlled side-effect workflow only when explicitly inv
 disable-model-invocation: true
 provenance_origin: "original"
 provenance_source_path: "04_skills/generated/creating-skills/templates/safe-side-effect-skill/SKILL.md"
-provenance_note: "Original AI Wiki generated skill."
+provenance_credit: "Ryan Spice-Finnie"
+provenance_note: "Original AI Wiki generated skill credited to Ryan Spice-Finnie."
 
 ---
 

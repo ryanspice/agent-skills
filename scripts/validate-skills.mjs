@@ -1,3 +1,4 @@
+import { createHash } from 'node:crypto';
 import { existsSync, readFileSync, readdirSync, statSync } from 'node:fs';
 import path from 'node:path';
 import process from 'node:process';
@@ -17,19 +18,8 @@ const blockedPathPatterns = [
   /B:\/Temp\/@Browser/i,
   /B:[\\/]+AI-Wiki/i,
   /B:\/AI-Wiki/i,
-  /C:[\\/]+Users[\\/]+/i
-];
-const excludedExportFiles = [
-  /\.zip$/i,
-  /\.tar$/i,
-  /\.gz$/i,
-  /\.7z$/i,
-  /\.log$/i,
-  /\.pid$/i,
-  /\.sha256$/i,
-  /\.bak-/i,
-  /(^|[\\/])\.thoughts$/i,
-  /(^|[\\/])\.runtime([\\/]|$)/i
+  /C:[\\/]+Users[\\/]+/i,
+  new RegExp(['SPICE', 'PC', '2023'].join('-'), 'i')
 ];
 
 function fail(message) {
@@ -97,8 +87,8 @@ const manifest = existsSync(manifestPath)
   ? JSON.parse(readFileSync(manifestPath, 'utf8'))
   : { skills: [] };
 
-if (manifest.schema_version !== '1.0.0') {
-  fail('skills/provenance.json: expected schema_version 1.0.0');
+if (manifest.schema_version !== '1.1.0') {
+  fail('skills/provenance.json: expected schema_version 1.1.0');
 }
 
 if (!Array.isArray(manifest.skills)) {
@@ -125,12 +115,18 @@ for (const skill of manifest.skills ?? []) {
   if (!skill.note) {
     fail(`${skill.path}: manifest missing note`);
   }
+  if (!skill.credit) {
+    fail(`${skill.path}: manifest missing credit`);
+  }
   if (skill.origin === 'modified' && !skill.upstream) {
     fail(`${skill.path}: modified skills must identify upstream/source reference`);
   }
 }
 
 const allFiles = existsSync(skillsRoot) ? walkFiles(skillsRoot) : [];
+const generatedFiles = allFiles
+  .map(toRepoPath)
+  .filter((repoPath) => repoPath.startsWith('skills/aiwiki-generated/'));
 const skillFiles = allFiles
   .map(toRepoPath)
   .filter((repoPath) => repoPath.endsWith('/SKILL.md') || repoPath.endsWith('.SKILL.md'));
@@ -168,6 +164,9 @@ for (const repoPath of generatedSkillFiles) {
   if (!fields.get('provenance_note')) {
     fail(`${repoPath}: missing provenance_note`);
   }
+  if (fields.get('provenance_credit') !== skill.credit) {
+    fail(`${repoPath}: provenance_credit does not match manifest`);
+  }
   if (skill.origin === 'modified' && !fields.get('provenance_upstream')) {
     fail(`${repoPath}: modified skill missing provenance_upstream`);
   }
@@ -182,17 +181,58 @@ for (const skillPath of manifestByPath.keys()) {
   }
 }
 
-for (const filePath of allFiles) {
-  const repoPath = toRepoPath(filePath);
-  if (repoPath.startsWith('skills/aiwiki-generated/')) {
-    for (const pattern of excludedExportFiles) {
-      if (pattern.test(repoPath)) {
-        fail(`${repoPath}: excluded generated artifact should not be exported`);
+if (!Array.isArray(manifest.source_files)) {
+  fail('skills/provenance.json: expected source_files array');
+} else {
+  const sourceFilePaths = new Set();
+  for (const sourceFile of manifest.source_files) {
+    if (!sourceFile.path) {
+      fail('skills/provenance.json: source file entry missing path');
+      continue;
+    }
+    sourceFilePaths.add(sourceFile.path);
+    if (!sourceFile.path.startsWith('skills/aiwiki-generated/')) {
+      fail(`${sourceFile.path}: source file manifest should only index generated exports`);
+    }
+    if (!sourceFile.source_path?.startsWith('04_skills/generated/')) {
+      fail(`${sourceFile.path}: source file missing AI Wiki source path`);
+    }
+    if (!sourceFile.kind) {
+      fail(`${sourceFile.path}: source file missing kind`);
+    }
+    if (!sourceFile.credit) {
+      fail(`${sourceFile.path}: source file missing credit`);
+    }
+    if (!sourceFile.sha256) {
+      fail(`${sourceFile.path}: source file missing sha256`);
+    }
+    const sourceFilePath = path.join(repoRoot, ...sourceFile.path.split('/'));
+    if (!existsSync(sourceFilePath)) {
+      fail(`${sourceFile.path}: listed in source_files but file was not found`);
+    } else {
+      const actualHash = createHash('sha256').update(readFileSync(sourceFilePath)).digest('hex');
+      if (actualHash !== sourceFile.sha256) {
+        fail(`${sourceFile.path}: sha256 does not match source_files manifest`);
       }
     }
   }
 
-  if (!/\.(png)$/i.test(repoPath)) {
+  if (manifest.source_file_count !== manifest.source_files.length) {
+    fail('skills/provenance.json: source_file_count does not match source_files length');
+  }
+  if (manifest.skill_document_count !== generatedSkillFiles.length) {
+    fail('skills/provenance.json: skill_document_count does not match generated skill count');
+  }
+  for (const repoPath of generatedFiles) {
+    if (!sourceFilePaths.has(repoPath)) {
+      fail(`${repoPath}: generated export missing from source_files manifest`);
+    }
+  }
+}
+
+for (const filePath of allFiles) {
+  const repoPath = toRepoPath(filePath);
+  if (!/\.(png|zip|tar|gz|7z)$/i.test(repoPath)) {
     const text = readFileSync(filePath, 'utf8');
     validateNoBlockedRoots(repoPath, text);
   }

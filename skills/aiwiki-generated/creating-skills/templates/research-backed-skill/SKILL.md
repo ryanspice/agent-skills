@@ -3,7 +3,8 @@ name: replace-with-research-skill-name
 description: Converts research, transcripts, source notes, or examples into a reusable workflow. Use when the user asks to make a skill from research material, pasted notes, uploaded transcripts, or prior prompt iterations.
 provenance_origin: "original"
 provenance_source_path: "04_skills/generated/creating-skills/templates/research-backed-skill/SKILL.md"
-provenance_note: "Original AI Wiki generated skill."
+provenance_credit: "Ryan Spice-Finnie"
+provenance_note: "Original AI Wiki generated skill credited to Ryan Spice-Finnie."
 
 ---
 

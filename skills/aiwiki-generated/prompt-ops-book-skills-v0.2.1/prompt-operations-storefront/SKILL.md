@@ -8,7 +8,8 @@ risk: high
 tags: [prompt-operations, storefront, private-repo, website, commerce]
 provenance_origin: "original"
 provenance_source_path: "04_skills/generated/prompt-ops-book-skills-v0.2.1/prompt-operations-storefront/SKILL.md"
-provenance_note: "Original AI Wiki generated skill."
+provenance_credit: "Ryan Spice-Finnie"
+provenance_note: "Original AI Wiki generated skill credited to Ryan Spice-Finnie."
 
 ---
 

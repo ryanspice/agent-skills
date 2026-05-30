@@ -8,7 +8,8 @@ risk: medium by default; high when scripts delete, overwrite, deploy, send data 
 tags: ["powershell", "pwsh", "windows", "scripts", "automation", "tar-gz", "aiwiki"]
 provenance_origin: "original"
 provenance_source_path: "04_skills/generated/powershell-script-authoring/SKILL.md"
-provenance_note: "Original AI Wiki generated skill."
+provenance_credit: "Ryan Spice-Finnie"
+provenance_note: "Original AI Wiki generated skill credited to Ryan Spice-Finnie."
 
 ---
 

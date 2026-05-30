@@ -6,7 +6,8 @@ version: 0.7.1
 updated: 2026-05-25
 provenance_origin: "original"
 provenance_source_path: "04_skills/generated/aiwiki-svelte-lab-workflow/SKILL.md"
-provenance_note: "Original AI Wiki generated skill."
+provenance_credit: "Ryan Spice-Finnie"
+provenance_note: "Original AI Wiki generated skill credited to Ryan Spice-Finnie."
 
 ---
 

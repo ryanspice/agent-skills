@@ -7,7 +7,8 @@ tags: [builder-workflow, codex-bridge, powershell, python, clipboard, tar, human
 risk: medium-by-default; high when scripts mutate repos, delete files, call network APIs, touch secrets, or run native helpers
 provenance_origin: "original"
 provenance_source_path: "04_skills/generated/gpt55-webapp-builder-codex-bridge/SKILL.md"
-provenance_note: "Original AI Wiki generated skill."
+provenance_credit: "Ryan Spice-Finnie"
+provenance_note: "Original AI Wiki generated skill credited to Ryan Spice-Finnie."
 
 ---
 

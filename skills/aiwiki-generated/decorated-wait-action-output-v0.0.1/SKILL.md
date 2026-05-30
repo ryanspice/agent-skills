@@ -8,7 +8,8 @@ description: Designs console output for actions users must wait on, such as inst
 tags: [console, cli, powershell, python, progress, installer, long-running, ux]
 provenance_origin: "original"
 provenance_source_path: "04_skills/generated/decorated-wait-action-output-v0.0.1/SKILL.md"
-provenance_note: "Original AI Wiki generated skill."
+provenance_credit: "Ryan Spice-Finnie"
+provenance_note: "Original AI Wiki generated skill credited to Ryan Spice-Finnie."
 
 ---
 # Decorated Wait Action Output

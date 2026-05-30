@@ -1,0 +1,35 @@
+---
+title: AI Wiki External Skill Intake
+version: 0.1.0
+created_at: 2026-05-20
+status: packaged
+canonical_target: <AI_WIKI_ROOT>\04_skills\generated\aiwiki-external-skill-intake
+risk: medium
+---
+
+# State
+
+Generated a reusable AI Wiki skill for importing external skill repositories as review-only candidates.
+
+# Source Lessons
+
+Built from the `codecoincognition/vibe-guard-skills` import workflow.
+
+# Decisions
+
+- Install this helper skill under `04_skills/generated`, not `04_skills/universal`.
+- Stage external skills under `04_skills/candidates`.
+- Preserve both adapted candidates and original upstream snapshots.
+- Use `03_indexes/skills/external-sources/external-candidate-skills.json` as the global external candidate index.
+- Default to dry-run/apply split for scripts.
+
+# Known Footguns Captured
+
+- `tar -C` requires the destination directory to already exist.
+- The external candidate index path includes `external-sources`.
+- Re-running import scripts must not duplicate candidate rows.
+- Candidate rows must include `source_slug`.
+
+# Next Checkpoint
+
+Install the package into the AI Wiki generated shelf, then consider whether `vibe-guard` alone should be promoted to `04_skills/universal`.

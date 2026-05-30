@@ -6,7 +6,8 @@ platforms: [windows]
 tags: [hermes, llama-cpp, ai-wiki, mcp, local-agent, windows, powershell, openrouter, nemotron]
 provenance_origin: "original"
 provenance_source_path: "04_skills/generated/hermes-local-llamacpp-aiwiki-agent/SKILL.md"
-provenance_note: "Original AI Wiki generated skill."
+provenance_credit: "Ryan Spice-Finnie"
+provenance_note: "Original AI Wiki generated skill credited to Ryan Spice-Finnie."
 
 ---
 

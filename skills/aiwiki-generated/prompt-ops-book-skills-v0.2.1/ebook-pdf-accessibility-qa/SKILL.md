@@ -8,7 +8,8 @@ risk: medium
 tags: [pdf, epub, accessibility, publishing, qa]
 provenance_origin: "original"
 provenance_source_path: "04_skills/generated/prompt-ops-book-skills-v0.2.1/ebook-pdf-accessibility-qa/SKILL.md"
-provenance_note: "Original AI Wiki generated skill."
+provenance_credit: "Ryan Spice-Finnie"
+provenance_note: "Original AI Wiki generated skill credited to Ryan Spice-Finnie."
 
 ---
 

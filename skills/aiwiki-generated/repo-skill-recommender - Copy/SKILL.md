@@ -8,7 +8,8 @@ description: Inspects a repo and AI Wiki skills registry to recommend repo-level
 tags: ["repo", "skills", "mcp", "ai-wiki", "setup", "recommendation"]
 provenance_origin: "modified"
 provenance_source_path: "04_skills/generated/repo-skill-recommender - Copy/SKILL.md"
-provenance_note: "Generated copy retained from the AI Wiki generated shelf and labeled separately from the primary repo-skill-recommender export."
+provenance_credit: "Ryan Spice-Finnie"
+provenance_note: "Generated copy retained from the AI Wiki generated shelf and credited to Ryan Spice-Finnie as a local mutation of repo-skill-recommender."
 provenance_upstream: "04_skills/generated/repo-skill-recommender/SKILL.md"
 
 ---

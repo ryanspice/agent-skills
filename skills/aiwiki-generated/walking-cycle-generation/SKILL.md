@@ -9,7 +9,8 @@ tags: ["animation", "walk-cycle", "sprite", "sprite-sheets", "pixel-art"]
 created_at: 2026-05-22
 provenance_origin: "original"
 provenance_source_path: "04_skills/generated/walking-cycle-generation/SKILL.md"
-provenance_note: "Original AI Wiki generated skill."
+provenance_credit: "Ryan Spice-Finnie"
+provenance_note: "Original AI Wiki generated skill credited to Ryan Spice-Finnie."
 
 ---
 

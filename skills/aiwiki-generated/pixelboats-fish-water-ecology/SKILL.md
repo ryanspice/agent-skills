@@ -15,7 +15,8 @@ tags:
   - grill-me
 provenance_origin: "original"
 provenance_source_path: "04_skills/generated/pixelboats-fish-water-ecology/SKILL.md"
-provenance_note: "Original AI Wiki generated skill."
+provenance_credit: "Ryan Spice-Finnie"
+provenance_note: "Original AI Wiki generated skill credited to Ryan Spice-Finnie."
 
 ---
 

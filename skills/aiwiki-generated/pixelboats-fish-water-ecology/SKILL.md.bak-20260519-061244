@@ -1,0 +1,464 @@
+---
+name: pixelboats-fish-water-ecology
+description: Use when designing or implementing PixelBoats fish schools, fish-water interaction, ripples/splashes, food rewards, seagull/shark ecology, and giant net gameplay. Project-level skill for integrating the fish-water prototype into the PixelBoats app without destabilizing P0 systems.
+risk: high
+version: 0.1.0
+project: pixelboats
+canonical_path: <AI_WIKI_ROOT>\04_skills\projects\pixelboats\pixelboats-fish-water-ecology\SKILL.md
+---
+
+# PixelBoats Fish Water Ecology Skill
+
+## Goal
+
+Integrate the fish-water prototype into PixelBoats as a real gameplay/ecology system, not as a one-off visual gag.
+
+The feature should add:
+
+- multiple drifting schools of fish in the world map;
+- underwater/surface/breach/skim/submerge fish behaviour;
+- water ripples, splashes, surface impulses, and debug-box visibility;
+- fish that can rarely jump onto the player boat and grant food;
+- seagull flocks that discover and exploit fish schools;
+- sharks that react to nearby schools, chum/captures, and dense biomass;
+- a giant fish net perk/item for harvesting multiple fish in open ocean.
+
+This skill must preserve the PixelBoats P0 rule: do not destabilize start/death state, boat scale/collision, render ordering, item density, rocks/sandbars, wake readability, or WebGL2 performance while adding content.
+
+## When To Use
+
+Use this skill for:
+
+- fish school system planning or implementation;
+- water ripple/splash integration from fish events;
+- fish catch / food reward mechanics;
+- seagull and shark ecology around fish schools;
+- giant net perk / AoE capture logic;
+- fish-water debug scene, tuning panel, and settings schema;
+- turning the HTML fish-water prototype into PixelBoats app modules;
+- writing prompts for Trae/Codex/GPT to implement this feature.
+
+Do **not** use this skill for:
+
+- unrelated UI/HUD redesigns;
+- full map editor/Wake Lab implementation;
+- broad water shader rewrites before P0 is visually stable;
+- flamingo/easter-egg/sprite-sheet work;
+- bypassing existing boat physics, collision, or render order rules.
+
+## Source Context To Read First
+
+Before editing code, read:
+
+```txt
+.thoughts
+FEATURE_MATRIX.md
+NEXT_CHAT_HANDOFF.md
+AGENTS_PIXELBOATS.md
+.ai/skills/pixelboats-p0-stabilization/SKILL.md
+.ai/skills/webgl2-mobile-performance-pass/SKILL.md
+.ai/skills/pixelboats-production-architecture/SKILL.md
+.ai/skills/pixelboats-fish-water-ecology/SKILL.md
+docs/fish-water-ecology/NEXT_CHAT_HANDOFF_fish-water-ecology.md
+docs/fish-water-ecology/IMPLEMENTATION_PLAN.md
+docs/fish-water-ecology/ARCHITECTURE_CONTRACTS.md
+docs/fish-water-ecology/SETTINGS_SCHEMA.json
+docs/fish-water-ecology/FEATURE_MATRIX_fish-water-ecology.md
+```
+
+## Current PixelBoats Reality
+
+PixelBoats is still POC-shaped:
+
+- much gameplay/rendering remains in large browser/server files;
+- server owns shared rocks, bots, snapshots, collision-ish state, and WebSocket path `/boat-ws`;
+- client owns local WebGL2 simulation and rendering;
+- scale/collision/render order bugs have been recurring regressions;
+- visual browser QA is required before claiming a render/system fix.
+
+Therefore, implement this feature as a staged integration with bounded contracts, not a big rewrite.
+
+## Architecture Rule
+
+Keep this separation:
+
+```txt
+Fish simulation emits events.
+Gameplay systems consume catch/reward/predator events.
+Water systems consume ripple/splash/impulse events.
+Render systems consume fish/water instance data.
+```
+
+Do not make the renderer own fish AI.
+Do not make fish AI draw particles.
+Do not let water effects update inventory.
+Do not let net capture scan the whole world every frame.
+
+## Target Systems
+
+### 1. FishSchoolSystem
+
+Owns school-level lifecycle.
+
+States:
+
+```ts
+type FishSchoolState =
+  | 'dormant'
+  | 'spawned'
+  | 'linger'
+  | 'wander'
+  | 'surfaceActive'
+  | 'alert'
+  | 'flee'
+  | 'despawn';
+```
+
+Responsibilities:
+
+- spawn multiple schools from authored or procedural ocean nodes;
+- keep a school anchor but allow it to drift/linger away from the original spawn;
+- apply school tether, separation, alignment, cohesion, boat avoidance, predator avoidance, and noise;
+- expose school centroid, radius, biomass, surface activity, and threat pressure;
+- cull or downgrade far schools.
+
+Recommended steering:
+
+```txt
+steer =
+  separation * wSep +
+  alignment * wAlign +
+  cohesion * wCoh +
+  seek(anchor) * wTether +
+  curlNoise * wNoise +
+  avoidBoat * wBoat +
+  avoidPredator * wPredator +
+  avoidBounds * wBounds
+```
+
+### 2. FishAgentSystem
+
+Owns per-fish behaviour.
+
+States:
+
+```ts
+type FishState =
+  | 'underwaterSchooling'
+  | 'approachingSurface'
+  | 'breaching'
+  | 'surfaceSkimming'
+  | 'landing'
+  | 'submerging'
+  | 'hidden';
+```
+
+Rules:
+
+- fish can swim underwater as tinted/blurred silhouettes;
+- near-surface fish regain colour and sharper silhouette;
+- fish may breach, skim, or disappear/recover;
+- fish should not jump immediately and robotically when they reach the surface;
+- jump/splash Y is sampled from ocean height + wave height;
+- scale variance can be `0` so all fish share the same size;
+- fish shadow/ripple/splash scale must derive from the individual fish scale.
+
+### 3. FishWaterInteractor
+
+Bridges fish events to water.
+
+Contract:
+
+```ts
+interface WaterSample {
+  height: number;
+  normalX: number;
+  normalY: number;
+  normalZ: number;
+  velocityX?: number;
+  velocityZ?: number;
+  depth?: number;
+}
+
+interface WaterImpulse {
+  x: number;
+  z: number;
+  amplitude: number;
+  radius: number;
+  kind: 'launch' | 'land' | 'skim' | 'boat' | 'predator' | 'net';
+  sourceId?: string;
+}
+
+interface IWaterQuery {
+  sampleXZ(x: number, z: number): WaterSample;
+}
+
+interface IWaterImpulseSink {
+  submitImpulse(impulse: WaterImpulse): void;
+}
+```
+
+Landing splash must be angle-driven:
+
+```ts
+function landingSplashPower(velocity: Vec3, normal: Vec3, fishScale: number, splashIntensity: number) {
+  const speed = Math.max(length(velocity), 0.0001);
+  const intoSurface = Math.max(0, dot(mul(velocity, -1), normalize(normal)));
+  const tangential = Math.sqrt(Math.max(0, speed * speed - intoSurface * intoSurface));
+  const angle = Math.atan2(intoSurface, Math.max(tangential, 0.0001));
+  const angleFactor = Math.pow(Math.sin(angle), 1.35);
+  const massProxy = Math.pow(Math.max(fishScale, 0.05), 3);
+  const energyProxy = Math.sqrt(0.5 * massProxy * speed * speed);
+  return splashIntensity * energyProxy * (0.20 + 0.80 * angleFactor);
+}
+```
+
+Shallow skims create wake/ripple trails. Steep re-entry creates stronger center splash, larger ripple, more upward spray, and stronger local water impulse.
+
+### 4. FishCatchFoodSystem
+
+Fish can rarely jump into the player boat.
+
+Conditions:
+
+- fish is near surface or already breaching/skimming;
+- deck/catch volume is near the fish trajectory;
+- fish heading is plausibly toward the deck/catch volume;
+- school is not in hard flee state;
+- event passes a low probability gate.
+
+Events:
+
+```ts
+type FishCatchEvent =
+  | { type: 'FishBoatHit'; fishId: string; schoolId: string; species: string; fishScale: number; foodAmount: number; x: number; y: number }
+  | { type: 'FishBoatDeflect'; fishId: string; schoolId: string; x: number; y: number; landingSplashPower: number }
+  | { type: 'FoodAwarded'; source: 'fishBoatHit' | 'netCapture'; amount: number; species?: string };
+```
+
+Food formula:
+
+```txt
+foodAward = round(speciesFoodBase * sqrt(fishScale) * rarityMultiplier * perkMultiplier)
+```
+
+Award inventory exactly once per fish.
+
+### 5. SeagullEcologySystem
+
+Seagulls are surface opportunists.
+
+They should:
+
+- spawn in small flocks when school surface activity rises;
+- orbit, hover, and dive toward skimming/breaching fish;
+- occasionally peck at fish on deck or near the water surface;
+- add visual life without breaking FPS;
+- use existing world-space seagull rendering if present.
+
+Interest score:
+
+```txt
+gullInterest =
+  surfaceFishCount * meanFishScale +
+  recentFoodAwards * 0.75 +
+  activeSkimSeconds * 0.5
+```
+
+### 6. SharkEcologySystem
+
+Sharks are biomass/threat responders.
+
+They should:
+
+- react to dense fish schools, recent captures, chum/wounded fish, or long-lingering schools;
+- shadow the school before attacking;
+- increase school flee pressure;
+- occasionally breach or create a larger water disturbance;
+- be rarer and more threatening than gulls.
+
+Interest score:
+
+```txt
+sharkInterest =
+  schoolBiomass * 0.6 +
+  lingerSeconds * 0.2 +
+  recentCaptures * 0.8 +
+  woundedFishEvents * 1.0
+```
+
+### 7. GiantFishNetPerkSystem
+
+A perk/item that lets the player harvest multiple fish in open ocean.
+
+Rules:
+
+- castable or activated item, not passive hidden math;
+- circular/elliptical capture region in world coordinates;
+- cooldown/charge system;
+- capture chance depends on fish depth, local density, distance falloff, and perk rarity;
+- emits `NetCast`, `NetCaptureResolved`, water impulse, UI feedback, and food award.
+
+Events:
+
+```ts
+interface NetCastEvent {
+  type: 'NetCast';
+  centerX: number;
+  centerY: number;
+  radius: number;
+  rarity: 'common' | 'rare' | 'epic' | 'legendary';
+}
+
+interface NetCaptureResolvedEvent {
+  type: 'NetCaptureResolved';
+  capturedFishIds: string[];
+  foodAward: number;
+}
+```
+
+## Settings Schema
+
+Default next-pass settings:
+
+```json
+{
+  "schemaVersion": "pixelboats-fish-water-ecology-1",
+  "boxMode": true,
+  "debugSurface": true,
+  "fish": {
+    "activeCap": 100,
+    "jumpChancePct": 9,
+    "skimChancePct": 5,
+    "opacityUnderwater": 0.75,
+    "scaleVariance": 0,
+    "scaleTotal": 1
+  },
+  "schools": {
+    "maxActiveSchools": 5,
+    "minFishPerSchool": 8,
+    "maxFishPerSchool": 24,
+    "anchorTether": 0.8,
+    "variability": 0,
+    "naturalness": 0.75,
+    "spawnClearRadiusFromStart": 900
+  },
+  "water": {
+    "splashIntensity": 1.05,
+    "launchRippleScale": 0,
+    "landRippleScale": 0.45,
+    "rippleScaleTotal": 1,
+    "centerSplashLaunch": 2.5,
+    "centerSplashLand": 0,
+    "surfaceDistort": 1.25
+  },
+  "ecology": {
+    "gullInterestThreshold": 8,
+    "sharkInterestThreshold": 14,
+    "maxGullsPerSchool": 7,
+    "maxSharksActive": 1
+  },
+  "perks": {
+    "giantNetRadius": 2.5,
+    "giantNetCooldownSec": 12,
+    "giantNetMaxCatch": 12
+  },
+  "debug": {
+    "surfaceDotScale": 1,
+    "surfaceDotSpacing": 28,
+    "showFishSchoolBounds": true,
+    "showCatchVolumes": true
+  }
+}
+```
+
+## Integration Order
+
+Do not jump straight to sharks, gulls, and fancy water. That is how spaghetti gets promoted to admiral.
+
+1. Add docs/settings/contracts only.
+2. Add deterministic school data + debug boxes, no visuals beyond box mode.
+3. Add school spawning/drifting with spatial grid/culling.
+4. Add fish states and near-surface debug rendering.
+5. Add water event emission using existing ripple/wake/particle systems.
+6. Add fish-to-boat catch volume + food reward.
+7. Add giant net perk with debug capture volume.
+8. Add seagull flock interest and simple dive/hover states.
+9. Add shark interest and simple shadow/attack states.
+10. Replace debug boxes with sprites only after mechanics and performance pass.
+
+## Performance Rules
+
+- Use broadphase spatial grid/hash for school, fish, net, and boat queries.
+- Do not query water per fish every frame unless near surface or high LOD.
+- Do not allocate arrays/objects in frame hot paths.
+- Use fixed pools for fish, splash particles, ripples, and predators.
+- Far schools update as centroids, not individual fish.
+- Mobile profile caps fish/splash/gull counts first.
+- No `gl.readPixels`, `gl.finish`, GPU readback, or framebuffer debugging in gameplay loop.
+
+LOD suggestion:
+
+```txt
+Near: full fish states + water events + catch/predator logic
+Mid: fish subset updates + school centroid water query + capped events
+Far: school centroid + occasional analytic ripple only
+Offscreen: low-frequency school drift or despawn
+```
+
+## Render Layer Rules
+
+Target order:
+
+1. WebGL water/background
+2. sandbars/terrain/shallows
+3. underwater fish shadows/depth cues
+4. fish debug boxes / underwater fish
+5. boats/debris sorted by y-depth
+6. airborne fish and contact shadows
+7. wake/ripples/splashes/foam
+8. gulls/sharks as world entities
+9. debug overlays
+10. UI/HUD
+
+Pixel art must stay crisp:
+
+- canvas `imageSmoothingEnabled = false`;
+- WebGL sprite textures use nearest/pixel-safe filtering;
+- camera zoom must not affect collision math;
+- fish shadow and catch volumes are world-space, not screen-space hacks.
+
+## Validation Checklist
+
+Before claiming the feature integrated:
+
+- fixed seed + settings reproduces school spawn and fish event order;
+- multiple schools can spawn and drift from anchors;
+- schools avoid boat/collision hazards in world coordinates;
+- no full-world scan in frame loop;
+- fish splash power increases with landing entry angle at fixed speed/scale;
+- `centerSplashLaunch = 0` and `centerSplashLand = 0` disable those effects;
+- fish shadow scale is tied to fish scale;
+- box mode is readable and default-enabled in the test route;
+- a fish jumping into the boat grants food exactly once;
+- net capture volume catches multiple eligible fish and grants food once per resolved cast;
+- seagulls spawn from fish-school activity and stay bounded by caps;
+- sharks spawn rarely and increase flee pressure;
+- existing rocks/items/boat scale/start/death systems are not regressed;
+- desktop browser QA completed;
+- FPS remains stable with `--bots=3` and dense school debug scene.
+
+## Required Output From Agents
+
+When using this skill, return:
+
+1. diagnosis / current repo entry points;
+2. exact files touched;
+3. implementation stage completed;
+4. event contracts added or reused;
+5. performance/culling decisions;
+6. settings added and defaults;
+7. verification commands run;
+8. manual browser QA checklist;
+9. remaining risks;
+10. updated handoff/checkpoint.

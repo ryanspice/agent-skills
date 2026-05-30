@@ -8,7 +8,8 @@ description: Creates, critiques, and implements Windows Phone, Metro, Lumia, Zun
 tags: ["ui", "metro", "windows-phone", "lumia", "sveltekit", "compose", "tauri"]
 provenance_origin: "modified"
 provenance_source_path: "04_skills/generated/windows-phone-metro-design/SKILL.md"
-provenance_note: "Generated skill revised from a local source reference preserved in the skill reference folder."
+provenance_credit: "Ryan Spice-Finnie"
+provenance_note: "Generated skill revised by Ryan Spice-Finnie from a local source reference preserved in the skill reference folder."
 provenance_upstream: "04_skills/generated/windows-phone-metro-design/reference/source-universal-windows-phone-metro-design-v1.0.0.md"
 
 ---

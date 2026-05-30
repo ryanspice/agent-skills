@@ -1,0 +1,29 @@
+---
+title: Walking Cycle Generation Skill
+version: 0.1.0
+generated: 2026-05-22
+status: installed
+risk_tier: low
+preferred_agent: GPT-5.5 Thinking
+---
+
+# State
+
+Installed a practical AI Wiki skill for enforcing correct walking-cycle mechanics in AI-generated sprite sheets and animation prompts.
+
+# Decisions
+
+- Treat walk cycles as gait state machines, not pose collections.
+- Use persistent `L_FOOT` and `R_FOOT` identity.
+- Require Contact A and Contact B to prove opposite-foot alternation.
+- Use planted-foot lock as a hard acceptance test.
+- Include 5-frame and 8-frame structures.
+- Include front-facing special-case guidance because AI models often hide broken gait behind vertical bobbing.
+
+# Verification
+
+Manual content review only. No build/test step required.
+
+# Next Chat Checkpoint
+
+Next useful extension: add a companion visual QA script or HTML checker that lets the user mark foot anchors frame-by-frame and detect baseline/anchor drift.

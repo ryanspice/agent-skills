@@ -8,7 +8,8 @@ description: Designs optional verbose console output for CLI tools, scripts, and
 tags: [console, cli, powershell, python, logging, verbose, ux]
 provenance_origin: "original"
 provenance_source_path: "04_skills/generated/verbose-console-output-v0.0.1/SKILL.md"
-provenance_note: "Original AI Wiki generated skill."
+provenance_credit: "Ryan Spice-Finnie"
+provenance_note: "Original AI Wiki generated skill credited to Ryan Spice-Finnie."
 
 ---
 # Verbose Console Output
