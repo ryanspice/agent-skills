@@ -1,0 +1,105 @@
+{
+  "schema_version": "1.0",
+  "id": "ai-wiki",
+  "name": "AI Wiki MCP",
+  "version": "0.3.1",
+  "status": "connected-mapped",
+  "derived_from": {
+    "package_adapter": "mcp/ai-wiki/adapter.json",
+    "package_version": "0.3.0",
+    "source_sha256": "9e9eafe21255ecde464aae16d04e6b446bedff1d0e9f7c6c53674b93d9cc6426"
+  },
+  "discovery": {
+    "date": "2026-07-20",
+    "method": "live connected-session enumeration (Claude Code) + read-only inbound_list call",
+    "connected_tools": [
+      "vault_search", "vault_read", "search", "fetch", "context_pack",
+      "graph_neighbors", "inbound_list", "stage_inbound_note", "append_log",
+      "workbench_command_read", "workbench_command_search"
+    ]
+  },
+  "server": {
+    "name": "ai-wiki-mcp",
+    "transport": "discover",
+    "connection": "external",
+    "credentials": "not-stored"
+  },
+  "authority": {
+    "read": true,
+    "stage": true,
+    "write": false,
+    "promote": false
+  },
+  "capabilities": [
+    {
+      "alias": "knowledge.search",
+      "requirement": "required",
+      "access": "read",
+      "tool": "vault_search",
+      "status": "verified-connected",
+      "note": "Verified live 2026-07-20. Sibling 'search' tool also exists."
+    },
+    {
+      "alias": "knowledge.context-pack",
+      "requirement": "required",
+      "access": "read",
+      "tool": "context_pack",
+      "status": "verified-connected",
+      "note": "Verified live 2026-07-20."
+    },
+    {
+      "alias": "knowledge.read",
+      "requirement": "optional",
+      "access": "read",
+      "tool": "vault_read",
+      "status": "mapped",
+      "note": "Direct connected tool; enumerated 2026-07-20."
+    },
+    {
+      "alias": "knowledge.skill-list",
+      "requirement": "optional",
+      "access": "read",
+      "tool": null,
+      "status": "unmapped",
+      "note": "No dedicated connected tool. Workaround: vault_search scoped to 04_skills/. Fail closed."
+    },
+    {
+      "alias": "knowledge.skill-get",
+      "requirement": "optional",
+      "access": "read",
+      "tool": null,
+      "status": "unmapped",
+      "note": "No dedicated connected tool. Workaround: vault_read on the skill's canonical path. Fail closed."
+    },
+    {
+      "alias": "knowledge.stage",
+      "requirement": "optional",
+      "access": "stage",
+      "tool": "stage_inbound_note",
+      "status": "verified-connected",
+      "boundary": "<AI_WIKI_ROOT>/00_INBOX/proposed",
+      "note": "Package boundary 06_Inbound/proposed is legacy and absent on disk (verified 2026-07-20); legacy provenance consolidated into 00_INBOX. States: proposed/reviewed/rejected."
+    },
+    {
+      "alias": "knowledge.feedback-log",
+      "requirement": "optional",
+      "access": "stage",
+      "tool": "append_log",
+      "status": "verified-connected",
+      "note": "New alias for the skill Growth & Feedback loop: lightweight friction notes."
+    },
+    {
+      "alias": "knowledge.promote",
+      "requirement": "optional",
+      "access": "promote",
+      "tool": null,
+      "status": "unsupported",
+      "note": "Promotion is owner-gated through the pnpm-validated agent-skills workflow; never via MCP."
+    }
+  ],
+  "fallbacks": [
+    "Use Stage-SpiceFlowToAiWiki.ps1 for explicit local proposal staging when MCP staging is unavailable.",
+    "Do not fall back to active-shelf mutation."
+  ],
+  "smoke_tests": []
+}
