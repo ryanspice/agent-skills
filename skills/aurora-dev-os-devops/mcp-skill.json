@@ -1,0 +1,45 @@
+{
+  "schema_version": "1.0",
+  "name": "aurora-dev-os-devops",
+  "version": "1.0.0",
+  "status": "active",
+  "scope": "project",
+  "project_slug": "pixelboats",
+  "canonical_path": "04_skills/agent-skills/skills/aurora-dev-os-devops",
+  "entrypoint": "SKILL.md",
+  "tags": ["pixelboats", "aurora", "devos", "devops", "lab-route", "workspace", "ui", "shell", "suite", "registration"],
+  "triggers": [
+    "building a new lab route",
+    "adding a workspace panel",
+    "registering an app in the suite registry",
+    "wiring navigation in Aurora Dev OS",
+    "choosing shell patterns",
+    "building UI with Aurora design tokens"
+  ],
+  "required_capabilities": [],
+  "mirrors": [
+    "B:/Dev/PixelBoats/.claude/skills/aurora-dev-os-devops/SKILL.md",
+    "B:/Dev/PixelBoats/.ai/skills/aurora-dev-os-devops/SKILL.md"
+  ],
+  "provenance": {
+    "generator": "Claude Code lead + DeepSeek Pro review",
+    "source": "Exploration of PixelBoats Aurora Dev OS surfaces, suite registry, workspace, and lab conventions — planned via /plan, implemented as original skill, adversarially reviewed by DeepSeek Pro",
+    "created_utc": "2026-07-21T00:00:00Z",
+    "promoted_utc": "2026-07-21T00:00:00Z",
+    "generated": false,
+    "note": "Original skill, not SpiceFlow-generated. PixelBoats commit 123ad47f. Do not hand-edit without a versioned skill-forge derivation."
+  },
+  "growth": {
+    "feedback_log": "aiwiki append_log",
+    "growth_requests": "aiwiki stage_inbound_note -> AI-Wiki/00_INBOX/proposed",
+    "derivation": "skill-forge versioned candidate (semver bump, provenance hash chain)",
+    "promotion": "owner-gated via pnpm-validated agent-skills workflow"
+  },
+  "validation": {
+    "status": "adversarial-review",
+    "reviewer": "DeepSeek Pro (review-pro / deepseek-v4-pro)",
+    "gaps_found": 6,
+    "gaps_addressed": 6,
+    "note": "6 gaps identified (i18n, suite-os, server-side data, openIn, route groups, CSS scoping) — all addressed in v1.0.0. GLM 5.2 review attempted but at quota."
+  }
+}
