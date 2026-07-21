@@ -1,7 +1,7 @@
 ---
 name: aurora-dev-os-devops
 description: "Guide for building new labs, workspace panels, and UI within the Aurora Dev OS ecosystem of PixelBoats. Covers shell patterns, suite registration, lab route conventions, workspace panel authoring, Aurora UI primitives, design tokens, navigation wiring, route policy, and verification."
-version: 1.0.0
+version: 1.0.1
 status: active
 type: project-agent-skill
 risk: medium
@@ -38,6 +38,90 @@ node scripts/pixelboats/dev-server.mjs
 ```
 
 If the server is already running (check with `pixelboats_dev_server_status`), reuse it. Raw duplicates cost ~2.4 GB each and cause port conflicts. The MCP `pixelboats_queue` tool serializes server control across Claude Code, Codex, and Hermes.
+
+## Quick Start: Your First Lab
+
+A 5-step end-to-end walkthrough for building a minimal lab:
+
+**Step 1 — Create the route file:**
+```
+src/routes/(lab)/lab/my-first-lab/+page.svelte
+```
+
+```svelte
+<svelte:head><title>My First Lab · PixelBoats</title></svelte:head>
+
+<script lang="ts">
+  import LabPanel from '$lib/pixelboats/ui/lab/LabPanel.svelte';
+  import LabFab from '$lib/pixelboats/ui/lab/LabFab.svelte';
+  import type { LabSchema } from '$lib/pixelboats/ui/lab/lab-types';
+
+  const schema: LabSchema = {
+    title: 'My First Lab',
+    sections: [{
+      id: 'controls',
+      label: 'Controls',
+      controls: [
+        { key: 'size', label: 'Size', kind: 'slider', min: 1, max: 100, step: 1 },
+        { key: 'enabled', label: 'Enabled', kind: 'toggle' },
+      ],
+    }],
+  };
+
+  let values = $state<Record<string, number | boolean | string>>({ size: 50, enabled: true });
+  const ctx = {
+    set(key: string, value: number | boolean | string) { values[key] = value; },
+    reset() { values = { size: 50, enabled: true }; },
+  };
+
+  let panelOpen = $state(false);
+</script>
+
+<div class="lab-content aurora-viewport-bg">
+  <h1>My First Lab</h1>
+  <p>Size: {values.size} — Enabled: {values.enabled}</p>
+</div>
+
+<LabPanel schema={schema} values={values} {ctx} bind:open={panelOpen} persistKey="my-first-lab" />
+<LabFab bind:open={panelOpen} label="Controls" />
+
+<style>
+  .lab-content { padding: 2rem; min-height: 100dvh; color: var(--aurora-text); }
+  h1 { font-family: var(--aurora-font-sans); color: var(--aurora-text); }
+</style>
+```
+
+**Step 2 — Register in suite registry** (`src/lib/suite/suite-registry.ts`):
+```typescript
+{ id: "my-first-lab", href: "/lab/my-first-lab", label: "My First Lab", domain: "tools", status: "active", summary: "My first lab.", standalone: true, tags: ["demo"] },
+```
+
+**Step 3 — Start the dev server:**
+```bash
+node scripts/pixelboats/dev-server.mjs
+```
+
+**Step 4 — Verify in browser:**
+- Navigate to `http://localhost:5173/lab/my-first-lab`
+- Check: page renders, compact header FAB visible, LabFab opens LabPanel, controls work
+- Check: `consoleErrors=0` in browser console
+
+**Step 5 — Run reconciliation:**
+- Visit `/` dashboard — check the status rail for "unfiled" entries
+- Or check `reconcileSuite()` output on `/workspace`
+
+### Common Error Patterns
+
+| Symptom | Likely Cause | Fix |
+|---|---|---|
+| `$state` not updating UI | Values passed to LabPanel as plain object | Wrap in `$state()` |
+| LabPanel overlays everything | dock mode is 'right' or 'float' | Set `dock="inline"` for embedded use |
+| Route shows full GameShell | `standalone: true` missing from registry | Add to registry entry |
+| Compact header missing | Route not in STANDALONE_ROUTES list | Check registry `standalone: true` + URL |
+| `reconcileSuite` shows "unfiled" | Route file exists but no registry entry | Add SuiteApp entry |
+| `reconcileSuite` shows "missing" | Registry entry exists but no +page.svelte | Create the route file |
+| Lucide icons wrong size on /workspace | Tailwind not available on devops routes | Use explicit `w-3 h-3` classes |
+| LabPanel state leaks between pages | `persistKey` collision | Use unique key per lab |
 
 ## Aurora Dev OS Philosophy
 
@@ -822,23 +906,25 @@ Add its prefix to `DEVOS_ROUTE_PREFIXES` in `header-route-policy.ts`.
 
 **Location:** `src/lib/aurora-import/`
 
-A separate library of Svelte components, stores, and i18n imported from GLM 5.2. NOT part of the canonical Aurora shell — these are alternate implementations available as a component library.
+A library of Svelte UI components originally generated with **GLM 5.2 model assistance** and stored as a reusable component catalog. These are standard `.svelte` files — NOT a model runtime or AI inference dependency. They function as a standalone component library independent of any AI model.
+
+The name "Aurora Import" refers to the import/generation process (GLM 5.2 → Svelte components → repo), not to runtime model calls. Think of these as "components authored with AI assistance and archived for reuse."
 
 **Components:**
-- `components/Header.svelte` — Alternate header with menu bar, search, controls
-- `components/MainContent.svelte` — Main content area
-- `components/LeftSidebar.svelte`, `components/RightSidebar.svelte` — Side panels
-- `components/BottomPanel.svelte` — Bottom panel
-- `components/Taskbar.svelte` — Status bar
-- `components/ParticleField.svelte` — Background particles
+- `components/Header.svelte` — Alternate header with menu bar, search, language/profile/theme switchers
+- `components/MainContent.svelte` — Main content area placeholder
+- `components/LeftSidebar.svelte`, `components/RightSidebar.svelte` — Side panel layouts
+- `components/BottomPanel.svelte` — Bottom panel container
+- `components/Taskbar.svelte` — Status bar with shortcut row + status cluster
+- `components/ParticleField.svelte` — Background particle animation
 - `components/ResizablePanelGroup.svelte` — Resizable panel container
 - `components/controls/LanguageSwitcher.svelte`, `ThemeSwitcher.svelte`, `ProfileSwitcher.svelte`
 
-**Stores:** `$lib/aurora-import/stores/layout.svelte`, `$lib/aurora-import/i18n/language.svelte`
+**Stores:** `$lib/aurora-import/stores/layout.svelte` (layout state), `$lib/aurora-import/i18n/language.svelte` (i18n store with `.t()` function).
 
-**Lab showcase:** `/lab/aurora-import` — demonstrates the imported components.
+**Lab showcase:** `/lab/aurora-import` — demonstrates the imported components in a live page.
 
-**When to use Aurora Import vs canonical Aurora:** Prefer canonical Aurora shell (`src/lib/suite/aurora/`) for Dev OS pages. Use aurora-import components when you need a quick alternate layout or want to prototype with the imported design. The two systems are independent — they don't share state.
+**When to use Aurora Import vs canonical Aurora:** Prefer canonical Aurora shell (`src/lib/suite/aurora/`) for Dev OS pages — it's the maintained source of truth with real browser perf signals, route-aware chrome decisions, and suite-registry integration. Use aurora-import components when you need a quick alternate layout, want to prototype with the pre-generated design, or need components (like ResizablePanelGroup) that don't have a canonical equivalent yet. The two systems are independent — they don't share state or stores.
 
 ## Pitfalls and Traps
 

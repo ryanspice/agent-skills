@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "name": "aurora-dev-os-devops",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "status": "active",
   "scope": "project",
   "project_slug": "pixelboats",
@@ -37,9 +37,9 @@
   },
   "validation": {
     "status": "adversarial-review",
-    "reviewer": "DeepSeek Pro (review-pro / deepseek-v4-pro)",
-    "gaps_found": 6,
-    "gaps_addressed": 6,
-    "note": "6 gaps identified (i18n, suite-os, server-side data, openIn, route groups, CSS scoping) — all addressed in v1.0.0. GLM 5.2 review attempted but at quota."
+    "reviewers": ["DeepSeek Pro (review-pro)", "Nemotron (lead-nemotron)", "Vibethinker (verify-vibethinker)"],
+    "gaps_found": 9,
+    "gaps_addressed": 9,
+    "note": "3-reviewer pass: DeepSeek Pro (6 gaps — i18n/suite-os/server-data/openIn/route-groups/CSS-scoping), Nemotron (2 gaps — Aurora Import GLM confusion/file anchors), Vibethinker (1 gap — walkthrough/error-handling). All addressed in v1.0.1. GLM 5.2 at quota."
   }
 }
