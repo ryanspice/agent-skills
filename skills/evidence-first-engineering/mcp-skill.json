@@ -1,0 +1,26 @@
+{
+  "schema_version": "1.0",
+  "name": "evidence-first-engineering",
+  "version": "0.1.0",
+  "status": "candidate",
+  "scope": "universal",
+  "project_slug": null,
+  "canonical_path": "04_skills/agent-skills/skills/evidence-first-engineering",
+  "entrypoint": "SKILL.md",
+  "tags": ["evidence", "verification", "epistemics", "guardrail", "audit", "quality"],
+  "triggers": ["auditing code for gaps", "code review", "feature investigation", "declaring something missing or broken"],
+  "provenance": {
+    "generator": "Claude Code lead + Nemotron/Vibethinker review",
+    "source": "GPT-5.6 epistemic audit of Hermes/DeepSeek-Flash blind spots on PixelBoats. Corrected by Nemotron + Vibethinker adversarial review of GLM 5.2 blueprint.",
+    "created_utc": "2026-07-21T00:00:00Z",
+    "promoted_utc": null,
+    "generated": false,
+    "status": "staged-candidate",
+    "note": "Candidate — not yet canonical. Requires eval pass + Pro adversarial review + owner approval before promotion."
+  },
+  "review_status": {
+    "reviewers": ["Nemotron (lead-nemotron)", "Vibethinker (verify-vibethinker)"],
+    "status": "staged-candidate",
+    "blocked_by": ["eval-fixture-pass", "pro-adversarial-review", "owner-approval"]
+  }
+}
