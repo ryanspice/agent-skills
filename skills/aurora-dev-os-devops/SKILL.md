@@ -1,7 +1,7 @@
 ---
 name: aurora-dev-os-devops
-description: "Guide for building new labs, workspace panels, and UI within the Aurora Dev OS ecosystem of PixelBoats. Covers shell patterns, suite registration, lab route conventions, workspace panel authoring, Aurora UI primitives, design tokens, navigation wiring, route policy, and verification."
-version: 1.0.1
+description: "Guide for building new labs, workspace panels, and UI within the Aurora Dev OS ecosystem of PixelBoats. Covers shell patterns, suite registration, lab route conventions, workspace panel authoring, Aurora UI primitives, design tokens, navigation wiring, route policy, UX patterns (accordions, drag-to-resize, skeletons, a11y), WASM/Worker architecture integration, and verification."
+version: 1.1.0
 status: active
 type: project-agent-skill
 risk: medium
@@ -382,6 +382,36 @@ The workspace server load (`src/routes/(devops)/workspace/+page.server.ts`) is t
 
 **Important:** `+page.server.ts` files have full Node.js filesystem access but run only on the server. They cannot use browser APIs. The returned data is serialized as JSON to the client.
 
+## Architecture Integration (WASM / Workers / Heavy Engines)
+
+When wiring complex engines (audio DSP, physics, WASM) into a lab:
+
+**State extraction.** Move UI state out of the page component into dedicated runes modules. This keeps `+page.svelte` focused on layout and prevents state spaghetti:
+```
+src/lib/labs/<lab-name>/
+  audio/
+    runtime.ts       # engine state (Svelte 5 runes)
+    types.ts          # shared type definitions
+```
+
+**Web Workers for heavy computation.** Run WASM (e.g., Rapier.js physics) and heavy DSP in Web Workers. Communicate via `Comlink` or `postMessage`:
+```typescript
+// runtime.ts
+const worker = new Worker(new URL('./engine.worker.ts', import.meta.url), { type: 'module' });
+worker.postMessage({ kind: 'step', world });
+worker.onmessage = (e) => { /* apply results to UI state */ };
+```
+
+**Server loads for pre-flight.** Use `+page.server.ts` to verify API tokens, pre-fetch cache states, or validate configuration before rendering the client:
+```typescript
+export const load: PageServerLoad = async () => {
+  const cacheStats = await getIndexedDBCacheStats(); // server-side only
+  return { cacheReady: cacheStats.size > 0 };
+};
+```
+
+**Off-main-thread world state.** For simulation loops (audio, physics, ecology), keep the world state and stepping logic off the main thread. The UI reads snapshots, never mutates simulation state directly.
+
 ## Route Groups
 
 The repo uses four route groups. Each has different layout rules:
@@ -536,6 +566,50 @@ Shared top nav for `(mechanics)` route group labs: Fishing, Dunk Toss, Cursive L
 For wiki-style labs with markdown content, use the block-based parser from the `sveltekit-lab-route-authoring` skill. That skill covers the full pattern: `parseBlocks()`, sidebar with section groups, content footer with canon legend, and the two theme palettes (Dark/Gold for mechanical pages, Ocean/Teal for lore pages).
 
 **Load the `sveltekit-lab-route-authoring` skill alongside this one** when building wiki/lore labs.
+
+### Lab UX Patterns (from real build experience)
+
+These patterns emerged from building complex labs (e.g., aurora-audio) and apply to any lab with dense controls or async data.
+
+**Accordion sections for control panels.** When a lab has many control groups, wrap each group in `<details>` elements rather than showing everything at once. This prevents scroll overload and cognitive fatigue:
+```svelte
+<details class="section" open>
+  <summary><span class="section-title">Environment State</span><span class="badge">LIVE</span></summary>
+  <div class="section-content"><!-- controls --></div>
+</details>
+```
+
+**`openIn` pop-out affordances.** Complex panels (mixer, asset browser, inspector) should include a pop-out icon. Clicking it should allow opening in a separate window/tab for multi-monitor dev workflows:
+```svelte
+<button class="popout-btn" onclick={() => window.open(`${window.location.href}?panel=mixer`, '_blank')}>
+  <ExternalLink class="w-3 h-3" />
+</button>
+```
+
+**Drag-to-resize handles.** Bottom panels and side panels should feature a visible drag handle allowing developers to maximize the center viewport:
+```css
+.resize-handle { cursor: ns-resize; /* or col-resize for side panels */ }
+.resize-handle:hover .handle-grip { background: var(--aurora-cyan); }
+```
+
+**Skeleton loading with shimmer.** When fetching server-side data (IndexedDB stats, API assets, file trees), render skeleton placeholder cards with a shimmer animation rather than blocking the UI or showing a blank panel:
+```css
+.skeleton-card {
+  background: var(--aurora-surface);
+  border-radius: var(--aurora-radius-sm);
+  animation: shimmer 1.5s infinite;
+}
+@keyframes shimmer {
+  0% { opacity: 0.4; } 50% { opacity: 0.7; } 100% { opacity: 0.4; }
+}
+```
+
+**Accessibility baseline.**
+- Text contrast must meet WCAG AA (dim text ≥ `#6b7280` on `--aurora-surface` background)
+- Do not rely solely on color to indicate active states — use borders, icons, or text labels as secondary indicators
+- Interactive elements need visible focus rings (don't `outline: none` without a replacement)
+
+**CSS namespace rule.** Every lab page must wrap its layout in a root namespace class (e.g., `.aurora-audio-lab`, `.my-lab`) to prevent style leakage between labs. Never use bare global class names like `.btn` — prefix them (`.aurora-btn`) or rely on Svelte's scoped `<style>` blocks.
 
 ## Workspace Panel Authoring
 
@@ -978,6 +1052,15 @@ The skill primarily covers `(lab)` and `(devops)`. But `(mechanics)` (Fishing, D
 
 ### 16. Paraglide messages are expected in Dev OS pages
 Dev OS panels use `import { m } from '$lib/paraglide/messages.js'` for i18n. Plain English strings in Dev OS chrome will look out of place. Lab pages can use plain strings, but Dev OS shell panels should use `m.key_name()`.
+
+### 17. CSS token fallbacks are mandatory
+When using non-standard Aurora tokens (like `--aurora-accent-cyan`, `--aurora-accent-brass`, `--aurora-text-dim`), always provide hardcoded fallbacks: `var(--aurora-accent-cyan, #00e5ff)`. Standard tokens (`--aurora-surface`, `--aurora-text`, etc.) are safe without fallbacks. Non-standard tokens defined in a lab's own `tokens.css` need fallbacks for when the CSS file fails to load.
+
+### 18. Bare global class names leak between labs
+Never use `.btn`, `.panel`, `.section` as bare global class names. Either prefix with a lab namespace (`.aurora-btn`) or rely on Svelte's scoped `<style>` blocks. A class like `.btn` in one lab will collide with another lab's `.btn` when both pages are in the SPA navigation cache.
+
+### 19. Web Worker modules need correct MIME types
+When loading workers via `new Worker(new URL('./engine.worker.ts', import.meta.url), { type: 'module' })`, ensure the dev server and build toolchain serve `.ts` worker files with the correct MIME type. Vite handles this automatically with the `?worker` import suffix — prefer `import MyWorker from './engine.worker?worker'` over manual `new Worker()` construction in Vite-based projects.
 
 ## Verification Checklist
 
