@@ -37,9 +37,9 @@
   },
   "validation": {
     "status": "adversarial-review",
-    "reviewers": ["DeepSeek Pro (review-pro)", "Nemotron (lead-nemotron)", "Vibethinker (verify-vibethinker)", "Flash (code-flash / deepseek-v4-flash)"],
+    "reviewers": ["DeepSeek Pro (review-pro)", "Nemotron (lead-nemotron)", "Vibethinker (verify-vibethinker)", "GLM 5.2 (code-flash transport)"],
     "gaps_found": 13,
     "gaps_addressed": 13,
-    "note": "4-reviewer pass: DeepSeek Pro (6 gaps), Nemotron (2 gaps), Vibethinker (1 gap), Flash UX patterns from aurora-audio lab build (4 gaps — accordions/openIn/drag-resize/skeleton-loading/a11y/CSS-namespaces/Architecture-WASM-Workers). All addressed in v1.1.0. GLM 5.2 at quota."
+    "note": "4-reviewer pass: DeepSeek Pro (6 gaps), Nemotron (2 gaps), Vibethinker (1 gap), GLM 5.2 UX redesign from aurora-audio lab build (4 gaps — accordions/openIn/drag-resize/skeleton-loading/a11y/CSS-namespaces/Architecture-WASM-Workers). All addressed in v1.1.0. GLM 5.2 earlier HTTP 429 was on lead-glm52 profile — the code-flash transport used a different route."
   }
 }
