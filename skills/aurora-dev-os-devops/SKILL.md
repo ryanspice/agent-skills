@@ -1,7 +1,7 @@
 ---
 name: aurora-dev-os-devops
 description: "Guide for building new labs, workspace panels, and UI within the Aurora Dev OS ecosystem of PixelBoats. Covers shell patterns, suite registration, lab route conventions, workspace panel authoring, Aurora UI primitives, design tokens, navigation wiring, route policy, UX patterns (accordions, drag-to-resize, skeletons, a11y), WASM/Worker architecture integration, and verification."
-version: 1.1.0
+version: 1.2.0
 status: active
 type: project-agent-skill
 risk: medium
@@ -1061,6 +1061,85 @@ Never use `.btn`, `.panel`, `.section` as bare global class names. Either prefix
 
 ### 19. Web Worker modules need correct MIME types
 When loading workers via `new Worker(new URL('./engine.worker.ts', import.meta.url), { type: 'module' })`, ensure the dev server and build toolchain serve `.ts` worker files with the correct MIME type. Vite handles this automatically with the `?worker` import suffix — prefer `import MyWorker from './engine.worker?worker'` over manual `new Worker()` construction in Vite-based projects.
+
+## MCP Tool Integration
+
+The PixelBoats and AI-Wiki MCP servers expose tools that operationalize every phase of lab building. Use them — don't guess.
+
+### Phase 0: Scout Before Building
+
+Before writing any code, check what exists and what's being edited:
+
+| Tool | Purpose | When |
+|---|---|---|
+| `pixelboats_project_snapshot` | Get current git state, routes, skills, server health in one call | First action in any lab build session |
+| `pixelboats_lane_board` | Claim a lane scoped to your lab work so other agents don't collide | Before multi-file edits |
+| `pixelboats_changed_files` | See what files other lanes are editing | Before touching shared files |
+| `pixelboats_skill_search` | Find related skills that may already cover part of what you're building | Before designing a new lab's architecture |
+| `pixelboats_docs_search` | Search Svelte/SvelteKit docs for API patterns | When unsure about a SvelteKit API |
+| `aiwiki_vault_search` | Search AI-Wiki for prior art, design docs, or context | Before duplicating existing work |
+
+### Phase 1: Implement
+
+| Tool | Purpose | When |
+|---|---|---|
+| `pixelboats_dev_server_status` | Check if the singleton dev server is healthy | Before starting or requesting a browser test |
+| `pixelboats_queue` (op: `server-ensure`) | Ensure dev server is running | If server is down |
+| `pixelboats_queue` (op: `verify`, target: `svelte-check`) | Run targeted svelte-check on your lab's files | After each significant edit |
+| `pixelboats_queue` (op: `navigate`) | Open browser to your lab route | For runtime smoke testing |
+| `pixelboats_queue` (op: `screenshot`) | Capture visual evidence | When you need to verify visual output |
+| `pixelboats_build_task_packet` | Compose compact AI-Wiki context bridge for delegation | When dispatching a review or sub-task to another model |
+| `pixelboats_agent_catalog` | Check which models are available and at what quota | Before dispatching reviews or delegating |
+| `pixelboats_agent_workflow_health` | Check overall system health | When MCP tools behave unexpectedly |
+
+### Phase 2: Commit
+
+| Tool | Purpose | When |
+|---|---|---|
+| `pixelboats_commit_guard` | Verify your staged files don't import untracked producers (#1 break class) | Before every commit |
+| `pixelboats_changed_files` (base: `working-tree`) | Confirm only your intended files are staged | Before `git commit` |
+
+### Phase 3: Feedback & Growth
+
+| Tool | Purpose | When |
+|---|---|---|
+| `aiwiki_append_log` | Lightweight feedback — "discovered this pattern, skill should cover it" | When you discover a new convention or pattern |
+| `aiwiki_stage_inbound_note` | Propose a concrete skill improvement or new section | When a pattern is proven across multiple labs |
+| `pixelboats_write_evidence` | Save verification evidence for later review | After runtime smoke passes |
+
+### Example: Full Lab Build Session with MCP
+
+```typescript
+// 0. Scout
+const snapshot = await pixelboats_project_snapshot({ include: ["git", "routes", "skills"] });
+// → 19 routes, 20+ skills, main branch clean. Domain "audio" has 1 lab.
+
+await pixelboats_lane_board({ claim: { laneId: "aurora-audio-lab", status: "active", intent: "..." } });
+// → Lane claimed. No other agent editing audio routes.
+
+const skills = await pixelboats_skill_search({ query: "audio sfx procedural", project: "pixelboats" });
+// → Found pixelboats-adaptive-audio — read it for existing patterns.
+
+// 1. Implement
+await pixelboats_dev_server_status();
+// → Server healthy on port 5173.
+
+// ... build the lab ...
+
+await pixelboats_queue({ operation: "verify", target: "svelte-check", scope: "src/routes/(lab)/lab/aurora-audio/" });
+// → Clean. Proceed.
+
+await pixelboats_queue({ operation: "navigate", route: "/lab/aurora-audio" });
+await pixelboats_queue({ operation: "screenshot", screenshotName: "aurora-audio-smoke" });
+// → Visual evidence captured.
+
+// 2. Commit
+await pixelboats_commit_guard({ intendedPaths: ["src/routes/(lab)/lab/aurora-audio/", "src/lib/labs/aurora-audio/"] });
+// → No untracked producer imports. Safe to commit.
+
+// 3. Feedback
+await aiwiki_append_log({ entry: "aurora-audio lab built — accordion UX pattern proven. Skill could document this." });
+```
 
 ## Verification Checklist
 
