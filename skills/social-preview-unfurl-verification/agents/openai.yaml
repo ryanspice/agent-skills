@@ -1,0 +1,4 @@
+interface:
+  display_name: "Social Preview Verification"
+  short_description: "Diagnose and verify social link previews"
+  default_prompt: "Audit this URL or build for reliable Open Graph, Facebook, and Messenger link previews."
