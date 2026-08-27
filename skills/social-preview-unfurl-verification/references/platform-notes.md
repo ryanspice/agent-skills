@@ -34,6 +34,7 @@ Keep the first `og:image` internally consistent with its structured properties. 
 - Keep text large and sparse when text is necessary. The page title and description already provide text outside the image.
 - Match declared MIME type and dimensions to the bytes returned by the public server.
 - Use a new stable filename such as `article-v3.png` when changing the image. Query strings are less reliable as durable cache keys across platforms.
+- For app UI pages, a Playwright screenshot at 1200x630 with `waitUntil: 'networkidle'` is often more effective than a designed template. It shows the real product and builds trust at share time.
 
 ## Meta, Facebook, and Messenger
 

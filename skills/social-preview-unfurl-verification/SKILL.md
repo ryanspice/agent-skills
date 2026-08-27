@@ -2,7 +2,7 @@
 name: social-preview-unfurl-verification
 description: Diagnoses, implements, and verifies Open Graph and Twitter/X link-preview metadata, raster share images, crawler access, and cache refresh behavior. Use when a public URL has no preview, shows the wrong image in Facebook or Messenger, differs across sharing apps, or needs social SEO metadata tested before release.
 metadata:
-  version: "0.1.0"
+  version: "0.2.0"
   platforms: [windows, web, sveltekit, static-sites]
   tags: [seo, open-graph, social-preview, unfurl, facebook, messenger]
   risk: low
@@ -52,6 +52,51 @@ Read [references/platform-notes.md](references/platform-notes.md) when implement
 - Correct public `Content-Type` and successful crawler-style GETs for both HTML and image.
 - No authentication, WAF rule, hotlink protection, redirect loop, or response-header policy preventing the preview crawler from receiving the asset.
 - A versioned image filename when the image bytes materially change. Updating only the bytes at an already cached URL is unreliable.
+
+## Bulk OG image generation
+
+When a site has many routes, generate branded OG images programmatically rather than hand-crafting each one:
+
+1. Create a base SVG template with brand colors, typography, and a CTA button.
+2. Embed a web font (e.g., Inter woff2) as a data URI for consistent rendering across environments.
+3. Use sharp or @resvg/resvg-js to render 1200x630 PNGs from page-specific SVGs with title/subtitle text.
+4. Name images with a stable, route-derived convention: `og-{slug}.png`.
+5. Set `ogImage` on every indexable route in the metadata source of truth (e.g., `routes.ts`).
+6. Ensure localized routes (e.g., `/fr/...`) inherit the same `ogImage` from the base route config.
+
+Example script structure:
+
+```js
+const OG_PAGES = [
+  { file: "og-home.png", title: "Brand", subtitle: "Tagline" },
+  { file: "og-about.png", title: "About", subtitle: "What we do" },
+  // ...
+];
+
+function buildOgSvg({ title, subtitle, fontSource }) {
+  // Return SVG string with brand template, escaped title/subtitle, embedded font
+}
+
+async function main() {
+  for (const page of OG_PAGES) {
+    const svg = buildOgSvg({ title: page.title, subtitle: page.subtitle, fontSource });
+    await sharp(Buffer.from(svg)).png().toFile(path.join(staticDir, page.file));
+  }
+}
+```
+
+## Playwright screenshots for app pages
+
+For pages that show an application UI (e.g., a dashboard, console, or workspace), a real browser screenshot is more authentic than a branded template:
+
+1. Launch Playwright with a 1200x630 viewport.
+2. Navigate to the live or local URL with `waitUntil: 'networkidle'`.
+3. Wait for any async rendering (1-3 seconds).
+4. Capture with `page.screenshot({ type: 'png' })`.
+5. Verify the output is 1200x630 with sharp or the image detector.
+6. Save as the route's OG image (e.g., `og-fusion.png`).
+
+This approach works well for authenticated app landing pages, marketing previews of product UIs, or any route where showing the actual interface builds trust.
 
 ## Diagnosis order
 
