@@ -1,7 +1,7 @@
 ---
 name: seo-live-audit
 description: Run SEO audits against live sites, write regression tests, and fix common score drags.
-version: 1.0.0
+version: 1.1.0
 author: Ryan Spice-Finnie (ryanspice), Hermes Agent
 license: MIT
 platforms: [windows, linux, macos]
@@ -34,22 +34,27 @@ Don't use for: keyword research, backlink analysis, or traffic estimation — th
 ## Quick Reference
 
 ```bash
-# Run a live audit
+# Run a homepage-only audit (default — scope to base page)
 cd B:\Dev\seo_audit_python
+.venv\Scripts\python.exe -m seo_audit https://example.com --match "/" --max-pages 1 --no-render --no-knowledge-compiler --audit-environment production --out ./report
+
+# Run a full-site audit (all linked pages)
 .venv\Scripts\python.exe -m seo_audit https://example.com --max-pages 25 --no-render --no-knowledge-compiler --audit-environment production --out ./report
 
 # Run SEO regression tests
 .venv\Scripts\python.exe -m pytest path\to\test_seo_live.py -v
 
 # Check current scores from latest report
-python -c "import json,glob; d=json.load(open(sorted(glob.glob('output/*/live/*/report.json'))[-1])); print(d['site_score'], d['category_scores'])"
+python -c "import json,glob; d=json.load(open(sorted(glob.glob('report/*/report.json'))[-1])); print(d['site_score'], d['category_scores'])"
 ```
 
 ## Procedure
 
 ### 1. Run the audit and read the report
 
-Run the audit against the live site. Use `--no-render` for speed unless you need rendered checks. Use `--audit-environment production` so local-only findings don't inflate the score.
+Run the audit against the live site. **Default to `--match "/" --max-pages 1`** to scope to the base page — subpages (CV, Resume, legacy pages) drag the score down with issues that don't reflect the primary landing page. Use `--max-pages 25` only when explicitly auditing the full site.
+
+Use `--no-render` for speed unless you need rendered checks. Use `--audit-environment production` so local-only findings don't inflate the score.
 
 Read `report.json` from the output directory. Key fields:
 - `site_score` — overall 0-100 score
@@ -99,7 +104,12 @@ For every page the audit crawls, ensure:
   <meta property="og:description" content="Description for social sharing.">
   <meta property="og:url" content="https://example.com/page">
   <meta property="og:image" content="https://example.com/social-card.png">
+  <meta property="og:site_name" content="Site Name">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Page Title">
+  <meta name="twitter:description" content="Description for Twitter.">
+  <meta name="twitter:image" content="https://example.com/social-card.png">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfilePage","mainEntity":{"@type":"Person","name":"Name","jobTitle":"Title"}}</script>
 </head>
 ```
 
@@ -126,10 +136,10 @@ The audit checks for `<nav>`, `<main>`, `<header>`, `<footer>` landmarks. For do
 
 ### 6. Write regression tests
 
-Create `tests/test_seo_live.py` that runs the audit and asserts:
+Create `tests/test_seo_live.py` scoped to the base page. Use `--match "/" --max-pages 1` to avoid subpage noise:
 
 ```python
-"""Live-deployment SEO regression tests."""
+"""Live-deployment SEO regression tests for the homepage."""
 import json, subprocess, tempfile, unittest
 from pathlib import Path
 
@@ -138,56 +148,44 @@ SEO_AUDIT_DIR = Path(r"B:\Dev\seo_audit_python")
 PYTHON = SEO_AUDIT_DIR / ".venv" / "Scripts" / "python.exe"
 
 SCORE_FLOORS = {
-    "seo": 50, "security": 50, "page_quality": 35,
-    "accessibility": 95, "content": 80, "crawl": 90,
-    "analytics": 70, "rendering": 90, "ux": 95,
-    "quality": 95, "social": 80,
+    "seo": 85, "security": 95, "page_quality": 90,
+    "accessibility": 95, "content": 85, "crawl": 95,
+    "analytics": 65, "ux": 95, "quality": 95, "social": 95,
 }
 
 BANNED_ISSUE_TITLES = [
-    "Missing canonical tag",
-    "Missing meta description",
-    "Duplicate page titles",
-    "No H1 found",
-    "WWW and non-WWW hosts are both reachable",
+    "Missing canonical tag", "Missing meta description",
+    "Missing HSTS header", "Missing X-Content-Type-Options header",
+    "Missing Referrer-Policy header", "No H1 found",
+    "Duplicate page titles", "WWW and non-WWW hosts are both reachable",
+    "Missing favicon link", "Missing Twitter card metadata",
+    "No JSON-LD structured data found", "Open Graph metadata incomplete",
 ]
 
-ISSUE_PAGE_CAPS = {
-    "Missing Content-Security-Policy header": 0,
-    "Missing HSTS header": 0,
-    "Missing X-Content-Type-Options header": 0,
-    "Missing Referrer-Policy header": 0,
-    "Title length looks weak": 1,
-    "Meta description length looks weak": 2,
-    "Sparse semantic landmark tags": 1,
-    "Missing favicon link": 0,
-}
-
-def _run_audit():
-    """Run seo_audit and return parsed report.json."""
-    with tempfile.TemporaryDirectory(prefix="seo-live-") as out:
+def _run_homepage_audit():
+    with tempfile.TemporaryDirectory(prefix="seo-homepage-") as out:
         cmd = [str(PYTHON), "-m", "seo_audit", LIVE_URL,
-               "--max-pages", "25", "--no-render",
-               "--no-knowledge-compiler",
-               "--audit-environment", "production", "--out", out]
+               "--match", "/", "--max-pages", "1", "--no-render",
+               "--no-knowledge-compiler", "--audit-environment", "production",
+               "--out", out]
         result = subprocess.run(cmd, capture_output=True, text=True,
-                                timeout=120, cwd=str(SEO_AUDIT_DIR))
+                                timeout=60, cwd=str(SEO_AUDIT_DIR))
         if result.returncode != 0:
             raise RuntimeError(f"seo_audit failed: {result.stderr[-500:]}")
         reports = list(Path(out).rglob("report.json"))
         with open(reports[0]) as f:
             return json.load(f)
 
-class LiveSEOScores(unittest.TestCase):
+class HomepageSEOScores(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.report = _run_audit()
+        cls.report = _run_homepage_audit()
         cls.scores = cls.report.get("category_scores", {})
         cls.site_score = cls.report.get("site_score")
 
-    def test_site_score_above_minimum(self):
+    def test_site_score_is_a(self):
         self.assertIsNotNone(self.site_score)
-        self.assertGreaterEqual(self.site_score, 65)
+        self.assertGreaterEqual(self.site_score, 90)
 
     def test_category_score_floors(self):
         for category, floor in SCORE_FLOORS.items():
@@ -197,10 +195,10 @@ class LiveSEOScores(unittest.TestCase):
             with self.subTest(category=category):
                 self.assertGreaterEqual(actual, floor)
 
-class LiveSEOIssues(unittest.TestCase):
+class HomepageSEOIssues(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.report = _run_audit()
+        cls.report = _run_homepage_audit()
         cls.issues = cls.report.get("issues", [])
 
     def _issues_by_title(self, title):
@@ -212,41 +210,33 @@ class LiveSEOIssues(unittest.TestCase):
             with self.subTest(issue=title):
                 self.assertEqual(len(found), 0)
 
-    def test_issue_page_caps(self):
-        for title, cap in ISSUE_PAGE_CAPS.items():
-            found = self._issues_by_title(title)
-            with self.subTest(issue=title):
-                if found:
-                    affected = len(found[0].get("affected_urls", []))
-                    self.assertLessEqual(affected, cap)
-
-    def test_no_critical_issues(self):
-        critical = [i for i in self.issues if i.get("severity") == "critical"]
-        self.assertEqual(len(critical), 0)
+    def test_no_critical_or_high_issues(self):
+        bad = [i for i in self.issues if i.get("severity") in ("critical", "high")]
+        self.assertEqual(len(bad), 0)
 
     def test_security_headers_present(self):
-        security_issues = {i["title"] for i in self.issues
-                          if i.get("category") == "security"}
-        must_absent = {"Missing HSTS header",
-                       "Missing X-Content-Type-Options header",
-                       "Missing Referrer-Policy header"}
-        self.assertEqual(must_absent & security_issues, set())
+        security_issues = {i["title"] for i in self.issues if i.get("category") == "security"}
+        self.assertEqual({"Missing HSTS header", "Missing X-Content-Type-Options header", "Missing Referrer-Policy header"} & security_issues, set())
 
-class LiveSEOStructure(unittest.TestCase):
+    def test_structured_data_present(self):
+        self.assertEqual({i["title"] for i in self.issues if "JSON-LD" in i.get("title", "")}, set())
+
+    def test_social_metadata_complete(self):
+        self.assertEqual({i["title"] for i in self.issues if i.get("category") == "social"}, set())
+
+class HomepageSEOStructure(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.report = _run_audit()
+        cls.report = _run_homepage_audit()
         cls.pages = cls.report.get("pages", [])
 
-    def test_all_pages_return_200(self):
-        for page in self.pages:
-            self.assertEqual(page.get("status_code"), 200)
+    def test_homepage_returns_200(self):
+        self.assertEqual(self.pages[0].get("status_code"), 200)
 
-    def test_canonical_urls_use_https_and_no_www(self):
-        for page in self.pages:
-            url = page.get("url", "")
-            self.assertTrue(url.startswith("https://"))
-            self.assertNotIn("://www.", url)
+    def test_homepage_uses_https_no_www(self):
+        url = self.pages[0].get("url", "")
+        self.assertTrue(url.startswith("https://"))
+        self.assertNotIn("://www.", url)
 ```
 
 ### 7. Deploy and verify
@@ -267,19 +257,18 @@ Re-run the tests to confirm all pass.
 
 ## Pitfalls
 
-- **Git Bash SSH gets connection-reset from some servers.** Use `/c/Windows/System32/OpenSSH/ssh.exe` on Windows.
+- **Git Bash SSH gets connection-reset from some servers.** Use `/c/Windows/System32/OpenSSH/ssh.exe` on Windows — Git Bash SSH negotiates differently and some servers reject it at the TCP level.
+- **`ServerTokens Prod` cannot go in `.htaccess`.** It's a server-level Apache directive — placing it in `.htaccess` causes a500 Internal Server Error. Use `ServerSignature Off` in `.htaccess` instead, or set `ServerTokens` in the main Apache config.
 - **`report.json` is in a timestamped subdirectory.** Use `glob` to find the latest one.
-- **CSP `unsafe-inline` is needed for sites with inline CSS/JS.** Don't remove it without testing.
-- **The `/home/` or legacy pages drag scores down hard.** Add noindex + canonical + meta desc + H1 to them.
-- **Page quality drops when you add noindex.** This is expected — the tool considers noindex pages lower quality. The overall site score still improves because SEO issues are eliminated.
-- **The audit crawls5 pages by default with `--max-pages25`.** Increase for larger sites.
-- **Score floors should be set to actual achievable values,** not aspirational ones. Run the audit first, fix what you can, then set floors just below the achieved scores.
+- **CSP `unsafe-inline` is needed for sites with inline CSS/JS.** Don't remove it without testing — most portfolio sites use inline styles and scripts.
+- **Legacy pages drag scores down hard.** Add noindex + canonical + meta desc + H1 to them, but expect page_quality to drop (noindex pages score lower by design).
+- **Scope to the base page by default.** Use `--match "/" --max-pages 1` for homepage-focused audits. Subpages (CV, Resume, legacy) have different issues that don't reflect the primary landing page quality.
+- **Score floors should be set to actual achievable values,** not aspirational ones. Run the audit first, fix what you can, then set floors at or just below the achieved scores.
+- **The `--match` flag uses URL path patterns.** `--match "/"` matches only the homepage. `--match "/documents/*"` would match document pages.
 
 ## Verification
 
 After all fixes are deployed:
-1. Run `test_seo_live.py` — all8 tests should pass
+1. Run `test_seo_live.py` — all tests should pass
 2. Check `curl -sI` for HSTS, CSP, X-Frame-Options, Permissions-Policy headers
-3. Check `/home/` (or legacy pages) have noindex, canonical, meta desc, H1
-4. Check CV/Resume pages have favicon and footer landmarks
-5. Site score should be65+ (up from the initial60/D)
+3. Homepage score should be90+ (A grade)

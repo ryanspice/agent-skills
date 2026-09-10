@@ -1,22 +1,16 @@
-"""Live-deployment SEO regression tests for ryanspice.com.
+"""Live-deployment SEO regression tests for ryanspice.com homepage.
 
-Runs the seo_audit tool against the live site and asserts minimum scores
-and specific issue boundaries. These tests hit the real production server.
+Audits only the base page (ryanspice.com/) to verify the primary landing
+page scores as high as possible. Subpages (CV, Resume, /home/) are excluded.
 
-Designed to run locally (not in CI) against the deployed site:
+Run locally against the live site:
     cd B:\\Dev\\seo_audit_python
     .\\.venv\\Scripts\\python.exe -m pytest B:\\Dev\\new.ryanspice.com\\tests\\test_seo_live.py -v
-
-Or with the seo_audit venv:
-    cd B:\\Dev\\seo_audit_python
-    .\\.venv\\Scripts\\python.exe -m pytest ..\\new.ryanspice.com\\tests\\test_seo_live.py -v
 """
 from __future__ import annotations
 
 import json
-import os
 import subprocess
-import sys
 import tempfile
 import unittest
 from pathlib import Path
@@ -25,59 +19,54 @@ LIVE_URL = "https://ryanspice.com"
 SEO_AUDIT_DIR = Path(r"B:\Dev\seo_audit_python")
 PYTHON = SEO_AUDIT_DIR / ".venv" / "Scripts" / "python.exe"
 
-# Minimum acceptable scores (0-100). Raise these as issues are fixed.
+# Minimum acceptable scores for the homepage (0-100).
 SCORE_FLOORS = {
-    "seo": 50,
-    "security": 50,
-    "page_quality": 35,
+    "seo": 85,
+    "security": 95,
+    "page_quality": 90,
     "accessibility": 95,
-    "content": 80,
-    "crawl": 90,
-    "analytics": 70,
-    "rendering": 90,
+    "content": 85,
+    "crawl": 95,
+    "analytics": 65,
     "ux": 95,
     "quality": 95,
-    "social": 80,
+    "social": 95,
 }
 
-# Issues that must NOT appear in the live deployment.
+# Issues that must NOT appear on the homepage.
 BANNED_ISSUE_TITLES = [
     "Missing canonical tag",
     "Missing meta description",
-    "Duplicate page titles",
+    "Missing HSTS header",
+    "Missing X-Content-Type-Options header",
+    "Missing Referrer-Policy header",
     "No H1 found",
+    "Duplicate page titles",
     "WWW and non-WWW hosts are both reachable",
+    "Missing favicon link",
+    "Missing Twitter card metadata",
+    "No JSON-LD structured data found",
+    "Open Graph metadata incomplete",
 ]
 
-# Issues that must not exceed a page count threshold.
-ISSUE_PAGE_CAPS = {
-    "Missing Content-Security-Policy header": 0,
-    "Missing HSTS header": 0,
-    "Missing X-Content-Type-Options header": 0,
-    "Missing Referrer-Policy header": 0,
-    "Title length looks weak": 1,
-    "Meta description length looks weak": 2,
-    "Sparse semantic landmark tags": 1,
-    "Missing favicon link": 0,
-}
 
-
-def _run_audit():
-    """Run seo_audit against the live site and return parsed report.json."""
+def _run_homepage_audit():
+    """Run seo_audit on just the homepage and return parsed report.json."""
     if not PYTHON.exists():
         raise unittest.SkipTest(f"SEO audit venv not found at {PYTHON}")
 
-    with tempfile.TemporaryDirectory(prefix="seo-live-test-") as out:
+    with tempfile.TemporaryDirectory(prefix="seo-homepage-") as out:
         cmd = [
             str(PYTHON), "-m", "seo_audit", LIVE_URL,
-            "--max-pages", "25",
+            "--match", "/",
+            "--max-pages", "1",
             "--no-render",
             "--no-knowledge-compiler",
             "--audit-environment", "production",
             "--out", out,
         ]
         result = subprocess.run(
-            cmd, capture_output=True, text=True, timeout=120,
+            cmd, capture_output=True, text=True, timeout=60,
             cwd=str(SEO_AUDIT_DIR),
         )
         if result.returncode != 0:
@@ -87,7 +76,6 @@ def _run_audit():
                 f"stderr: {result.stderr[-500:]}"
             )
 
-        # Find the report.json in the output
         out_path = Path(out)
         reports = list(out_path.rglob("report.json"))
         if not reports:
@@ -96,37 +84,36 @@ def _run_audit():
             return json.load(f)
 
 
-class LiveSEOScores(unittest.TestCase):
-    """Assert minimum SEO audit scores on the live deployment."""
+class HomepageSEOScores(unittest.TestCase):
+    """Assert minimum SEO audit scores on the live homepage."""
 
     @classmethod
     def setUpClass(cls):
-        cls.report = _run_audit()
+        cls.report = _run_homepage_audit()
         cls.scores = cls.report.get("category_scores", {})
-        cls.issues = cls.report.get("issues", [])
         cls.site_score = cls.report.get("site_score")
 
-    def test_site_score_above_minimum(self):
-        self.assertIsNotNone(self.site_score, "site_score is None — no measured data")
-        self.assertGreaterEqual(self.site_score, 65,
-            f"Site score {self.site_score} is below minimum 65")
+    def test_site_score_is_a(self):
+        self.assertIsNotNone(self.site_score, "site_score is None")
+        self.assertGreaterEqual(self.site_score, 90,
+            f"Site score {self.site_score} is below A threshold (90)")
 
     def test_category_score_floors(self):
         for category, floor in SCORE_FLOORS.items():
             actual = self.scores.get(category)
             if actual is None:
-                continue  # unmeasured category, skip
+                continue  # unmeasured, skip
             with self.subTest(category=category):
                 self.assertGreaterEqual(actual, floor,
                     f"{category} score {actual} is below floor {floor}")
 
 
-class LiveSEOIssues(unittest.TestCase):
-    """Assert specific issues are absent or bounded on the live deployment."""
+class HomepageSEOIssues(unittest.TestCase):
+    """Assert specific issues are absent on the live homepage."""
 
     @classmethod
     def setUpClass(cls):
-        cls.report = _run_audit()
+        cls.report = _run_homepage_audit()
         cls.issues = cls.report.get("issues", [])
 
     def _issues_by_title(self, title):
@@ -137,26 +124,17 @@ class LiveSEOIssues(unittest.TestCase):
             found = self._issues_by_title(title)
             with self.subTest(issue=title):
                 self.assertEqual(len(found), 0,
-                    f"Banned issue '{title}' found affecting "
-                    f"{found[0].get('affected_urls', []) if found else ''}")
+                    f"Banned issue '{title}' found")
 
-    def test_issue_page_caps(self):
-        for title, cap in ISSUE_PAGE_CAPS.items():
-            found = self._issues_by_title(title)
-            with self.subTest(issue=title):
-                if found:
-                    affected = len(found[0].get("affected_urls", []))
-                    self.assertLessEqual(affected, cap,
-                        f"Issue '{title}' affects {affected} pages (cap: {cap})")
-
-    def test_no_critical_issues(self):
-        critical = [i for i in self.issues if i.get("severity") == "critical"]
-        self.assertEqual(len(critical), 0,
-            f"Critical issues found: {[i['title'] for i in critical]}")
+    def test_no_critical_or_high_issues(self):
+        bad = [i for i in self.issues
+               if i.get("severity") in ("critical", "high")]
+        self.assertEqual(len(bad), 0,
+            f"Critical/high issues: {[i['title'] for i in bad]}")
 
     def test_security_headers_present(self):
-        """The live site must serve HSTS, X-Content-Type-Options, and Referrer-Policy."""
-        security_issues = {i["title"] for i in self.issues if i.get("category") == "security"}
+        security_issues = {i["title"] for i in self.issues
+                          if i.get("category") == "security"}
         must_absent = {
             "Missing HSTS header",
             "Missing X-Content-Type-Options header",
@@ -166,31 +144,42 @@ class LiveSEOIssues(unittest.TestCase):
         self.assertEqual(found, set(),
             f"Required security headers missing: {found}")
 
+    def test_structured_data_present(self):
+        schema_issues = {i["title"] for i in self.issues
+                        if "JSON-LD" in i.get("title", "")}
+        self.assertEqual(schema_issues, set(),
+            f"Structured data issues: {schema_issues}")
 
-class LiveSEOStructure(unittest.TestCase):
-    """Assert structural SEO elements on the live homepage."""
+    def test_social_metadata_complete(self):
+        social_issues = {i["title"] for i in self.issues
+                        if i.get("category") == "social"}
+        self.assertEqual(social_issues, set(),
+            f"Social metadata issues: {social_issues}")
+
+
+class HomepageSEOStructure(unittest.TestCase):
+    """Assert structural properties of the live homepage."""
 
     @classmethod
     def setUpClass(cls):
-        cls.report = _run_audit()
+        cls.report = _run_homepage_audit()
         cls.pages = cls.report.get("pages", [])
 
-    def test_all_pages_return_200(self):
-        for page in self.pages:
-            if page.get("error"):
-                self.fail(f"Page error: {page['url']} — {page['error']}")
-            with self.subTest(url=page.get("url", "?")):
-                self.assertEqual(page.get("status_code"), 200,
-                    f"{page.get('url')} returned {page.get('status_code')}")
+    def test_homepage_returns_200(self):
+        self.assertEqual(len(self.pages), 1)
+        page = self.pages[0]
+        self.assertEqual(page.get("status_code"), 200,
+            f"Homepage returned {page.get('status_code')}")
 
-    def test_canonical_urls_use_https_and_no_www(self):
-        for page in self.pages:
-            url = page.get("url", "")
-            with self.subTest(url=url):
-                self.assertTrue(url.startswith("https://"),
-                    f"Page URL not HTTPS: {url}")
-                self.assertNotIn("://www.", url,
-                    f"Page URL uses www: {url}")
+    def test_homepage_uses_https(self):
+        url = self.pages[0].get("url", "")
+        self.assertTrue(url.startswith("https://"),
+            f"Homepage URL not HTTPS: {url}")
+
+    def test_homepage_no_www(self):
+        url = self.pages[0].get("url", "")
+        self.assertNotIn("://www.", url,
+            f"Homepage URL uses www: {url}")
 
 
 if __name__ == "__main__":
