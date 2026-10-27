@@ -26,7 +26,7 @@ Don't use for: keyword research, backlink analysis, or traffic estimation — th
 
 ## Prerequisites
 
-- `seo_audit` Python tool installed at `B:\Dev\seo_audit_python` (or equivalent)
+- `seo_audit` Python tool installed at `<SEO_AUDIT_DIR>` (or equivalent)
 - Python 3.11+ with `pymupdf`, `pytest` installed in the seo_audit venv
 - SSH access to the target server (for deploying fixes)
 - The site's HTML source files in the local repo
@@ -35,7 +35,7 @@ Don't use for: keyword research, backlink analysis, or traffic estimation — th
 
 ```bash
 # Run a homepage-only audit (default — scope to base page)
-cd B:\Dev\seo_audit_python
+cd <SEO_AUDIT_DIR>
 .venv\Scripts\python.exe -m seo_audit https://example.com --match "/" --max-pages 1 --no-render --no-knowledge-compiler --audit-environment production --out ./report
 
 # Run a full-site audit (all linked pages)
@@ -140,11 +140,11 @@ Create `tests/test_seo_live.py` scoped to the base page. Use `--match "/" --max-
 
 ```python
 """Live-deployment SEO regression tests for the homepage."""
-import json, subprocess, tempfile, unittest
+import json, os, subprocess, tempfile, unittest
 from pathlib import Path
 
 LIVE_URL = "https://example.com"
-SEO_AUDIT_DIR = Path(r"B:\Dev\seo_audit_python")
+SEO_AUDIT_DIR = Path(os.environ["SEO_AUDIT_DIR"])
 PYTHON = SEO_AUDIT_DIR / ".venv" / "Scripts" / "python.exe"
 
 SCORE_FLOORS = {
