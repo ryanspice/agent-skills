@@ -4,19 +4,20 @@ Audits only the base page (ryanspice.com/) to verify the primary landing
 page scores as high as possible. Subpages (CV, Resume, /home/) are excluded.
 
 Run locally against the live site:
-    cd B:\\Dev\\seo_audit_python
-    .\\.venv\\Scripts\\python.exe -m pytest B:\\Dev\\new.ryanspice.com\\tests\\test_seo_live.py -v
+    cd <SEO_AUDIT_DIR>
+    .\\.venv\\Scripts\\python.exe -m pytest <SITE_REPO_DIR>\\tests\\test_seo_live.py -v
 """
 from __future__ import annotations
 
 import json
+import os
 import subprocess
 import tempfile
 import unittest
 from pathlib import Path
 
 LIVE_URL = "https://ryanspice.com"
-SEO_AUDIT_DIR = Path(r"B:\Dev\seo_audit_python")
+SEO_AUDIT_DIR = Path(os.environ["SEO_AUDIT_DIR"])
 PYTHON = SEO_AUDIT_DIR / ".venv" / "Scripts" / "python.exe"
 
 # Minimum acceptable scores for the homepage (0-100).
