@@ -1,0 +1,10 @@
+---
+date:        CURRENT_SESSION
+script_type: meta
+skill_name:  creating-skills
+phase:       v0.1.3 PATCH
+outstanding:
+  - P1: registry paths awaiting scan test
+  - P8: 5 eval files confirm test-run
+  - P2: README/CHANGELOG install-completes
+---

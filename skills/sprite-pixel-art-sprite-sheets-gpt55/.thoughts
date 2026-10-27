@@ -1,0 +1,40 @@
+---
+title: Sprite Pixel Art GPT-5.5 AI Wiki Pack
+version: 0.1.0
+generated: 2026-05-22
+status: packaged
+current_phase: packaged for import
+risk_tier: low
+preferred_agent: GPT-5.5 Thinking
+next_action: import into AI Wiki and use as the default sprite research/skill baseline
+---
+
+# State
+
+Packaged a reusable AI Wiki drop containing:
+
+- a general generated skill
+- a PixelBoats project skill mirror
+- a PixelBoats research summary note
+- prompt pack files
+
+# Decisions
+
+- Put the canonical reusable version under `04_skills/generated`.
+- Mirror a project-focused copy under `04_skills/projects/pixelboats`.
+- Put the findings note under `07_Projects/pixelboats/research`.
+- Keep prompts near the canonical skill.
+- Treat GPT-5.5 primarily as planner/critic/QA brain instead of one-shot sprite artist.
+
+# Known Gaps
+
+- No deterministic helper script yet for baseline checking or sheet assembly.
+- Deep-research UI output was distilled manually into the reusable notes rather than imported verbatim.
+
+# Verification
+
+Manual content review only.
+
+# Next Chat Checkpoint
+
+Build a tiny sprite-sheet helper app or script for alignment, preview, cleanup, and export.

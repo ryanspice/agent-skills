@@ -1,0 +1,31 @@
+{
+  "slug": "windows-phone-metro-design",
+  "name": "Windows Phone Metro Design",
+  "version": "1.1.0",
+  "type": "universal-agent-skill",
+  "status": "active",
+  "canonical_path": "04_skills/universal/windows-phone-metro-design/SKILL.md",
+  "entrypoint": "04_skills/universal/windows-phone-metro-design/SKILL.md",
+  "description": "Creates, critiques, and implements Windows Phone/Metro/Lumia/Zune-inspired UI design systems, screenshots, prompt packs, asset packs, and implementation guidance.",
+  "invocation_phrases": [
+    "Windows Phone design",
+    "Metro UI",
+    "Lumia UI",
+    "Zune style",
+    "pivot panorama",
+    "action center",
+    "command bar",
+    "tile grid",
+    "OLED black UI",
+    "Metro asset pack"
+  ],
+  "allowed_mcp_tools": [
+    "vault_search",
+    "vault_read",
+    "graph_neighbors",
+    "context_pack"
+  ],
+  "write_policy": "Prefer design/spec output first. Repo or asset writes require explicit user request or reviewed package.",
+  "risk": "low by default; medium when generating repo code or asset extraction scripts.",
+  "updated_at": "2026-05-18T00:00:00-04:00"
+}

@@ -1,0 +1,16 @@
+{
+  "slug": "vibe-explain",
+  "name": "Vibe Explain",
+  "version": "0.1.0-aiwiki.1",
+  "type": "universal-agent-skill",
+  "status": "candidate",
+  "canonical_path": "04_skills/candidates/codecoincognition-vibe-guard-skills-adapted/vibe-explain/SKILL.md",
+  "entrypoint": "04_skills/candidates/codecoincognition-vibe-guard-skills-adapted/vibe-explain/SKILL.md",
+  "description": "Maps comprehension and cognitive debt in AI-assisted code by identifying opaque blocks, hidden assumptions, fragile coupling, magic constants, temporal coupling, and unowned logic. Use when the user needs to understand code before modifying, shipping, or accepting AI-generated work.",
+  "source_slug": "codecoincognition-vibe-guard-skills",
+  "source_url": "https://github.com/codecoincognition/vibe-guard-skills",
+  "source_path": "skills/vibe-explain.md",
+  "review_only": true,
+  "adapted": true,
+  "updated_at": "2026-05-20T00:00:00-04:00"
+}

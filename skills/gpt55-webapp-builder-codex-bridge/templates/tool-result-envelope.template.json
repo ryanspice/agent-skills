@@ -1,0 +1,20 @@
+{
+  "ok": false,
+  "runId": "run-YYYYMMDD-HHMMSS",
+  "tool": "run_command|apply_package|copy_clipboard|make_archive|extract_archive",
+  "cwd": "absolute path",
+  "command": [
+    "pwsh",
+    "-NoProfile",
+    "-File",
+    "script.ps1"
+  ],
+  "exitCode": null,
+  "timedOut": false,
+  "stdoutSummary": "",
+  "stderrSummary": "",
+  "changedFiles": [],
+  "backupPath": null,
+  "hashes": [],
+  "nextAction": "paste output back into ChatGPT"
+}

@@ -1,0 +1,16 @@
+{
+  "slug": "vibe-secure",
+  "name": "Vibe Secure",
+  "version": "0.1.0-aiwiki.1",
+  "type": "universal-agent-skill",
+  "status": "candidate",
+  "canonical_path": "04_skills/candidates/codecoincognition-vibe-guard-skills-adapted/vibe-secure/SKILL.md",
+  "entrypoint": "04_skills/candidates/codecoincognition-vibe-guard-skills-adapted/vibe-secure/SKILL.md",
+  "description": "Audits AI-assisted code for security risks: hardcoded secrets, injection surfaces, auth/authz gaps, insecure defaults, mass assignment, insecure deserialization, prototype pollution, weak crypto, dependency risk, and business-logic races. Use before commit/push, around auth/payments/uploads/client data, or when the user asks for a security pass.",
+  "source_slug": "codecoincognition-vibe-guard-skills",
+  "source_url": "https://github.com/codecoincognition/vibe-guard-skills",
+  "source_path": "skills/vibe-secure.md",
+  "review_only": true,
+  "adapted": true,
+  "updated_at": "2026-05-20T00:00:00-04:00"
+}

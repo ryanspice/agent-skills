@@ -1,0 +1,18 @@
+{
+  "skills": ["creating-skills", "rebuild_skills_registry"],
+  "query": "Run a dry registry rebuild and inspect the active skill list.",
+  "files": [],
+  "expected_behavior": [
+    "rebuild_skills_registry.py scans 04_skills/universal/ and skills/projects/",
+    "No scan root is 04_skills/projects/",
+    "PixelBoats project skills (pixelboats-adaptive-audio, pixelboats-p0-stabilization, etc.) appear in active list",
+    "Mirror roots under projects/<slug>/.ai/skills/ are noted but NOT in active list unless canonical",
+    "--dry-run returns status=0 with 'dry run' display and no file write unless --apply is passed"
+  ],
+  "failure_signs": [
+    "scan_roots contains '04_skills/projects'",
+    "PixelBoats skills missing from active list despite canonical path existing",
+    "projects/<slug>/.ai/skills/ entries appear in active list",
+    "Registry JSON is overwritten without --apply or --backup warning"
+  ]
+}

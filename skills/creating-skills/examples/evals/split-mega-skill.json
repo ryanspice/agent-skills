@@ -1,0 +1,16 @@
+{
+  "skills": ["creating-skills"],
+  "query": "Turn this supersized AGENTS.md into a library of composable skills.",
+  "files": ["AGENTS.md (2000 lines)"],
+  "expected_behavior": [
+    "Identifies at least three distinct trigger contexts",
+    "Proposes a split with boundaries for each sub-skill",
+    "Each proposed skill has a clear scope and unique purpose",
+    "Avoids allowed-tools over-approval"
+  ],
+  "failure_signs": [
+    "Produces one skill covering all contexts",
+    "Scope spans both Windows scripting and Linux server tasking",
+    "Allowed-tools are a kitchen sink: Bash(*) + Shell(*) + Write(*)"
+  ]
+}

@@ -1,0 +1,155 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://aiwiki.local/schemas/deep-research-state-v0.1.0.json",
+  "title": "Deep Research State",
+  "type": "object",
+  "required": [
+    "version",
+    "researchId",
+    "question",
+    "mode",
+    "status",
+    "paths",
+    "lanes",
+    "progress"
+  ],
+  "properties": {
+    "version": {
+      "type": "string"
+    },
+    "researchId": {
+      "type": "string"
+    },
+    "createdAt": {
+      "type": "string"
+    },
+    "updatedAt": {
+      "type": "string"
+    },
+    "question": {
+      "type": "string"
+    },
+    "mode": {
+      "type": "string",
+      "enum": [
+        "quick",
+        "standard",
+        "deep",
+        "ultradeep"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "scoped",
+        "searching",
+        "synthesizing",
+        "blocked",
+        "complete"
+      ]
+    },
+    "paths": {
+      "type": "object",
+      "properties": {
+        "root": {
+          "type": "string"
+        },
+        "outline": {
+          "type": "string"
+        },
+        "fields": {
+          "type": "string"
+        },
+        "sources": {
+          "type": "string"
+        },
+        "evidenceMatrix": {
+          "type": "string"
+        },
+        "claimsLedger": {
+          "type": "string"
+        },
+        "report": {
+          "type": "string"
+        }
+      }
+    },
+    "lanes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "progress": {
+      "type": "object",
+      "properties": {
+        "anglesCompleted": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "itemsCompleted": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "sourcesCollected": {
+          "type": "integer"
+        },
+        "claimsVerified": {
+          "type": "integer"
+        },
+        "openQuestions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "citations": {
+      "type": "object",
+      "properties": {
+        "nextNumber": {
+          "type": "integer"
+        },
+        "used": {
+          "type": "array",
+          "items": {
+            "type": "integer"
+          }
+        }
+      }
+    },
+    "quality": {
+      "type": "object",
+      "properties": {
+        "sourceCoverage": {
+          "type": "string"
+        },
+        "confidence": {
+          "type": "string",
+          "enum": [
+            "low",
+            "medium",
+            "high"
+          ]
+        },
+        "caveats": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "nextActions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

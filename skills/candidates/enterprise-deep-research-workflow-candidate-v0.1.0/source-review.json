@@ -1,0 +1,45 @@
+{
+  "version": "0.1.0",
+  "createdAt": "2026-05-22T00:00:00-04:00",
+  "candidate": "enterprise-deep-research-workflow-candidate",
+  "sourcesReviewed": [
+    {
+      "name": "199-biotechnologies/claude-deep-research-skill GitHub README",
+      "url": "https://github.com/199-biotechnologies/claude-deep-research-skill",
+      "notes": [
+        "Enterprise-grade research skill for Claude Code.",
+        "Uses an eight-phase research pipeline, multi-provider search, source credibility scoring, validation scripts, and multi-format output.",
+        "Transferable pattern is research orchestration and evidence validation, not direct source-code adoption."
+      ]
+    },
+    {
+      "name": "DeepWiki architecture view",
+      "url": "https://deepwiki.com/199-biotechnologies/claude-deep-research-skill",
+      "notes": [
+        "Explains orchestration, state management, progressive assembly, validation cascade, citation checks, and source scoring.",
+        "Useful for AI Wiki adaptation because it breaks the system into search, validation, state, and report-generation layers."
+      ]
+    }
+  ],
+  "aiWikiAdaptation": {
+    "keep": [
+      "mode-based depth selection",
+      "structured evidence objects",
+      "claim ledger",
+      "research-state.json",
+      "validation gates",
+      "progressive report assembly"
+    ],
+    "adapt": [
+      "search-cli concept -> local Search broker lanes",
+      "source scoring -> evidence metadata and stale-source warnings",
+      "auto-continuation -> .thoughts/research-state checkpointing",
+      "multi-format output -> markdown-first AI Wiki package"
+    ],
+    "defer": [
+      "PDF generation",
+      "giant autonomous agent orchestration",
+      "heavy schema enforcement for every AI Wiki note"
+    ]
+  }
+}

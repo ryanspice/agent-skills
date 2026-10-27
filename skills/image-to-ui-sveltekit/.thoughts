@@ -1,0 +1,54 @@
+---
+project: pixelboats
+skill_id: pixelboats-image-to-ui-sveltekit
+version: 0.1.0
+created: 2026-05-18
+status: active
+risk_tier: medium
+preferred_agent: GPT-5.5 Thinking / Claude / Codex with image input
+---
+
+# State
+
+Created a project-level skill for turning PixelBoats UI reference images into maintainable SvelteKit 2 + Svelte 5 components.
+
+# Source References
+
+Current reference images are 1672 × 941:
+
+- stormy seas exploration HUD
+- inventory/cargo panel
+- perks/quests/crew panel
+
+# Decisions
+
+- Skill is project-scoped under `skills/projects/pixelboats/`.
+- Skill intentionally rejects screenshot-as-final-UI implementation.
+- Svelte 5 runes are the default.
+- Componentization is required unless the pass is explicitly a throwaway prototype.
+- Bun is the default command runner.
+- Attached images are included under `references/images/`.
+
+# Risks
+
+- Exact bounds are approximate and should be re-measured if crop-perfect implementation is required.
+- Generated icons/art may not be shippable without asset tracking.
+- Over-polishing glass/animation before interaction contracts are stable will waste time.
+- One-file route growth is the main implementation risk.
+
+# Verification
+
+Package contains:
+
+- canonical SKILL.md
+- registry snippet
+- mirror snippet
+- reference audit
+- JSON template
+- paste-ready agent prompt
+- install script
+- reference images
+
+# Next Chat Checkpoint
+
+Use this skill when asking an agent to convert PixelBoats screenshots/mockups into real SvelteKit UI. First build the HUD shell vertical slice, then inventory, then progression panels.

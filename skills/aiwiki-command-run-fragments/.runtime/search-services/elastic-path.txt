@@ -1,0 +1,1 @@
+<SEARCH_ROOT>\.runtime\aiwiki-search\elastic\elasticsearch-9.1.0\bin\elasticsearch.bat

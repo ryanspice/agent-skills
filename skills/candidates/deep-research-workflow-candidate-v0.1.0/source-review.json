@@ -1,0 +1,32 @@
+{
+  "generatedAt": "2026-05-22",
+  "version": "0.1.0",
+  "sourceProjects": [
+    {
+      "name": "Weizhena/Deep-Research-skills",
+      "url": "https://github.com/Weizhena/deep-research-skills",
+      "license": "MIT per GitHub repository page",
+      "observedPatterns": [
+        "two-phase outline plus deep investigation",
+        "human-in-the-loop outline confirmation",
+        "outline.yaml and fields.yaml as reusable research contract",
+        "deep phase writes per-item JSON outputs and validates field coverage",
+        "Codex, Claude Code, and OpenCode skill packaging"
+      ]
+    },
+    {
+      "name": "199-biotechnologies/claude-deep-research-skill",
+      "url": "https://deepwiki.com/199-biotechnologies/claude-deep-research-skill",
+      "license": "Review upstream repo before copying code; this package does not vendor source code.",
+      "observedPatterns": [
+        "8-phase research pipeline",
+        "source triangulation and credibility scoring",
+        "progressive file assembly",
+        "citation verification and anti-hallucination gates",
+        "continuation state for long reports"
+      ]
+    }
+  ],
+  "notVendored": true,
+  "notes": "This package is an adapted candidate workflow/spec. It does not copy upstream source files. Keep upstream links for later review."
+}

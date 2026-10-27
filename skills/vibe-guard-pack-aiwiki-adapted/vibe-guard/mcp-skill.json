@@ -1,0 +1,16 @@
+{
+  "slug": "vibe-guard",
+  "name": "Vibe Guard",
+  "version": "0.1.0-aiwiki.1",
+  "type": "universal-agent-skill",
+  "status": "candidate",
+  "canonical_path": "04_skills/candidates/codecoincognition-vibe-guard-skills-adapted/vibe-guard/SKILL.md",
+  "entrypoint": "04_skills/candidates/codecoincognition-vibe-guard-skills-adapted/vibe-guard/SKILL.md",
+  "description": "Runs a three-pass pre-commit/pre-push audit for AI-assisted code: production resilience, security, and comprehension debt. Use when reviewing uncommitted changes, before commits/pushes, after AI coding sessions, or when the user asks for a vibe guard, quick safety pass, or full repo audit.",
+  "source_slug": "codecoincognition-vibe-guard-skills",
+  "source_url": "https://github.com/codecoincognition/vibe-guard-skills",
+  "source_path": "skills/vibe-guard.md",
+  "review_only": true,
+  "adapted": true,
+  "updated_at": "2026-05-20T00:00:00-04:00"
+}

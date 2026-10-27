@@ -1,0 +1,16 @@
+{
+  "slug": "vibe-check",
+  "name": "Vibe Check",
+  "version": "0.1.0-aiwiki.1",
+  "type": "universal-agent-skill",
+  "status": "candidate",
+  "canonical_path": "04_skills/candidates/codecoincognition-vibe-guard-skills-adapted/vibe-check/SKILL.md",
+  "entrypoint": "04_skills/candidates/codecoincognition-vibe-guard-skills-adapted/vibe-check/SKILL.md",
+  "description": "Audits AI-assisted code for production resilience issues: missing error handling, null/empty edge cases, scale failures, resource leaks, data integrity gaps, observability gaps, and rollout risks. Use before commit/push, during repo hardening, or when a feature seems to work locally but may fail under real load.",
+  "source_slug": "codecoincognition-vibe-guard-skills",
+  "source_url": "https://github.com/codecoincognition/vibe-guard-skills",
+  "source_path": "skills/vibe-check.md",
+  "review_only": true,
+  "adapted": true,
+  "updated_at": "2026-05-20T00:00:00-04:00"
+}

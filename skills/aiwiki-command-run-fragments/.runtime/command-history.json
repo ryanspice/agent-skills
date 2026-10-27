@@ -1,0 +1,60 @@
+{
+  "service::wait-elastic": {
+    "kind": "service",
+    "label": "Wait Elastic",
+    "lastSeconds": 36.55,
+    "updatedAt": "2026-05-22T09:35:33.4967738-04:00"
+  },
+  "run::run-dry-run": {
+    "kind": "run",
+    "label": "Run dry-run",
+    "lastSeconds": 0.57,
+    "updatedAt": "2026-05-22T09:18:47.7881083-04:00"
+  },
+  "search::search": {
+    "kind": "search",
+    "label": "search",
+    "avgSeconds": 6.84,
+    "count": 9,
+    "updatedAt": "2026-05-22T09:59:56.9421534-04:00"
+  },
+  "service::service": {
+    "kind": "service",
+    "label": "service",
+    "avgSeconds": 36.55,
+    "count": 1,
+    "updatedAt": "2026-05-22T09:35:33.4969555-04:00"
+  },
+  "run::run": {
+    "kind": "run",
+    "label": "run",
+    "avgSeconds": 0.51,
+    "count": 3,
+    "updatedAt": "2026-05-22T09:18:48.8501262-04:00"
+  },
+  "run::run-delete-dry-run": {
+    "kind": "run",
+    "label": "Run delete dry-run",
+    "lastSeconds": 0.38,
+    "updatedAt": "2026-05-22T09:18:48.8500135-04:00"
+  },
+  "search::search-deep-research-skill-copy": {
+    "kind": "search",
+    "label": "Search deep research skill copy",
+    "lastSeconds": 5.56,
+    "updatedAt": "2026-05-22T09:59:56.9419498-04:00"
+  },
+  "reindex::reindex": {
+    "kind": "reindex",
+    "label": "reindex",
+    "avgSeconds": 63.96,
+    "count": 2,
+    "updatedAt": "2026-05-22T09:49:49.0761817-04:00"
+  },
+  "run::run-apply": {
+    "kind": "run",
+    "label": "Run apply",
+    "lastSeconds": 0.58,
+    "updatedAt": "2026-05-22T09:18:48.412872-04:00"
+  }
+}

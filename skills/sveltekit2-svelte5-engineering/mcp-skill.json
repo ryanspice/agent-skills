@@ -1,0 +1,10 @@
+{
+  "slug": "sveltekit2-svelte5-engineering",
+  "name": "sveltekit2-svelte5-engineering",
+  "version": "0.1.0",
+  "type": "universal-agent-skill",
+  "status": "active",
+  "canonical_path": "04_skills/universal/sveltekit2-svelte5-engineering/SKILL.md",
+  "entrypoint": "04_skills/universal/sveltekit2-svelte5-engineering/SKILL.md",
+  "description": "Builds, repairs, reviews, and audits SvelteKit 2 and Svelte 5 apps, routes, components, load functions, accessibility, performance, hydration, prerendering, and TypeScript architecture."
+}

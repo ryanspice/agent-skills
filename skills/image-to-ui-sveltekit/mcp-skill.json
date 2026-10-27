@@ -1,0 +1,29 @@
+{
+  "slug": "image-to-ui-sveltekit",
+  "name": "Image to UI SvelteKit",
+  "version": "0.1.0",
+  "type": "project-agent-skill",
+  "status": "active",
+  "project": "pixelboats",
+  "canonical_path": "04_skills/projects/pixelboats/image-to-ui-sveltekit/SKILL.md",
+  "entrypoint": "04_skills/projects/pixelboats/image-to-ui-sveltekit/SKILL.md",
+  "description": "Use when converting screenshots, mockups, generated image assets, UI references, or visual design packs into SvelteKit 2 / Svelte 5 implementation plans, components, routes, asset extraction specs, and QA checklists for PixelBoats.",
+  "invocation_phrases": [
+    "image to ui",
+    "screenshot to sveltekit",
+    "convert this mockup to Svelte",
+    "asset pack to UI",
+    "visual design to route",
+    "SvelteKit UI from image",
+    "PixelBoats UI implementation"
+  ],
+  "allowed_mcp_tools": [
+    "vault_search",
+    "vault_read",
+    "graph_neighbors",
+    "context_pack"
+  ],
+  "write_policy": "Prefer staged implementation plans or prompt packs. Repo file edits require explicit user direction or a reviewed apply package.",
+  "risk": "medium because visual-to-code work can create large UI changes and asset churn.",
+  "updated_at": "2026-05-18T07:54:37.3286721-04:00"
+}

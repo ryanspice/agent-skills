@@ -1,0 +1,30 @@
+{
+  "slug": "creating-skills",
+  "name": "Creating Skills",
+  "version": "0.1.3",
+  "type": "universal-agent-skill",
+  "status": "active",
+  "canonical_path": "04_skills/universal/creating-skills/SKILL.md",
+  "entrypoint": "04_skills/universal/creating-skills/SKILL.md",
+  "description": "Creates, audits, improves, splits, validates, and packages reusable agent skills from prompts, transcripts, research, examples, screenshots, repo notes, and workflow constraints.",
+  "invocation_phrases": [
+    "make a skill",
+    "create a skill",
+    "improve this skill",
+    "split this mega-skill",
+    "convert these transcripts into a skill",
+    "audit my skill library",
+    "rebuild the skills registry",
+    "package this as an AI Wiki skill"
+  ],
+  "allowed_mcp_tools": [
+    "vault_search",
+    "vault_read",
+    "graph_neighbors",
+    "context_pack"
+  ],
+  "optional_write_tool": "stage_inbound_note",
+  "write_policy": "Prefer staging proposed durable wiki edits into 07_inbound/proposed for human review. Do not mutate 02_wiki pages directly. Reviewed installers may update 04_skills and 03_indexes with backups.",
+  "risk": "low-by-default; medium when authoring scripts or install commands; high only if a skill performs deploy, send, delete, credential, billing, or production actions.",
+  "updated_at": "2026-05-19T05:17:25-04:00"
+}

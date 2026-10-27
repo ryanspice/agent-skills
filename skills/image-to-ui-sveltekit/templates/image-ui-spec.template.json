@@ -1,0 +1,71 @@
+{
+  "project": "pixelboats",
+  "skill": "pixelboats-image-to-ui-sveltekit",
+  "version": "0.1.0",
+  "references": [
+    {
+      "path": "references/images/stormy_seas_and_pirate_adventure_hud.png",
+      "width": 1672,
+      "height": 941,
+      "view": "exploration-hud",
+      "surfaces": [
+        {
+          "surface": "PlayerStatusStack",
+          "bounds_px": {
+            "x": 20,
+            "y": 22,
+            "w": 190,
+            "h": 245
+          },
+          "component": "src/lib/pixelboats/ui/hud/PlayerStatusStack.svelte",
+          "anchor": "top-left",
+          "interactions": []
+        },
+        {
+          "surface": "WeatherRoutePill",
+          "bounds_px": {
+            "x": 520,
+            "y": 27,
+            "w": 760,
+            "h": 58
+          },
+          "component": "src/lib/pixelboats/ui/hud/WeatherRoutePill.svelte",
+          "anchor": "top-center",
+          "interactions": []
+        },
+        {
+          "surface": "MiniMap",
+          "bounds_px": {
+            "x": 1335,
+            "y": 15,
+            "w": 320,
+            "h": 325
+          },
+          "component": "src/lib/pixelboats/ui/hud/MiniMap.svelte",
+          "anchor": "top-right",
+          "interactions": [
+            "zoomIn",
+            "zoomOut",
+            "centerOnPlayer",
+            "collapse"
+          ]
+        },
+        {
+          "surface": "CommandBar",
+          "bounds_px": {
+            "x": 500,
+            "y": 805,
+            "w": 755,
+            "h": 110
+          },
+          "component": "src/lib/pixelboats/ui/command/CommandBar.svelte",
+          "anchor": "bottom-center",
+          "interactions": [
+            "selectHotbarSlot",
+            "useSelectedItem"
+          ]
+        }
+      ]
+    }
+  ]
+}

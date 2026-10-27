@@ -1,0 +1,39 @@
+---
+project: gpt55-webapp-builder-codex-bridge
+version: 0.1.0
+created: 2026-05-19
+status: generated-skill-package
+canonical_target: <AI_WIKI_ROOT>\04_skills\generated\gpt55-webapp-builder-codex-bridge
+risk: medium-by-default
+---
+
+# State
+
+Generated from research on using ChatGPT/GPT-5.5 web sessions as a Codex-style builder bridge.
+
+# Decisions
+
+- Treat ChatGPT web as planner/reviewer/package generator, not direct executor.
+- Use human-mediated scripts, clipboard, TAR.GZ, manifests, hashes, and explicit approval gates.
+- Install as generated AI Wiki skill first, not universal/promoted.
+- Include templates and evals so the skill can improve without bloating `SKILL.md`.
+
+# Risks
+
+- Users may blindly run generated scripts.
+- Archive extraction can write unexpected paths if not isolated and inspected.
+- Clipboard may contain secrets.
+- Self-deleting scripts are cleanup only, not secure erasure.
+- Native helpers/browser extension bridges create a much bigger trust boundary.
+
+# Verification
+
+- Validate package structure with `scripts/validate-skill-package.py`.
+- Install with dry-run first.
+- Confirm destination `SKILL.md` exists after apply.
+
+# Next iteration
+
+- Add a reusable repo apply-script generator if this skill proves useful.
+- Add a native-helper architecture skill only if needed.
+- Promote to universal only after repeated successful use.
