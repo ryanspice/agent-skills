@@ -1,6 +1,7 @@
 # Skill originality assessment
 
-A delegated review assessed all 82 skills in the catalog. Scores are coarse
+A delegated review assessed 82 skills; the Wayfinder Spice record was added
+after package recovery. Scores are coarse
 judgments of Ryan/AI Wiki authorship and customization, not measured text
 percentages, legal ownership, proof of novel ideas, or quality ratings.
 
@@ -18,6 +19,7 @@ comparisons. Source credits in skill files remain authoritative as recorded.
 | [cross-machine-media](../skills/cross-machine-media/SKILL.md) | 100% | low | Manifest records original Ryan/AI Wiki origin; estimate follows that claim and is not an independent source or authorship comparison. |
 | [send-it](../skills/send-it/SKILL.md) | 100% | high | Owner explicitly identified this as an original Ryan workflow; no independent authorship audit. |
 | [code-and-plan](../skills/code-and-plan/SKILL.md) | 100% | high | Owner explicitly identified this as an original Ryan workflow; no independent authorship audit. |
+| [wayfinder-spice](../skills/wayfinder-spice/SKILL.md) | ? | low | Package credits Matt Pocock's Wayfinder and Ryan's customization; no comparative assessment supports a percentage. |
 | [grill-spice](../skills/grill-spice/SKILL.md) | 80% | low | Subjective adaptation estimate: compared with credited Matt Pocock grilling skills, this has substantial personalized workflow and boundaries while retaining the grilling premise. |
 | [chalk-it-up](../skills/chalk-it-up/SKILL.md) | 100% | high | Owner explicitly identified this as an original Ryan workflow; no independent authorship audit. |
 | [spiceflow](../skills/spiceflow/SKILL.md) | ? | low | Part of the SpiceFlow package; an earlier influence is acknowledged but unidentified, preventing a defensible percentage. |
