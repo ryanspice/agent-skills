@@ -1,0 +1,6 @@
+interface:
+  display_name: "WAYFINDER / Spice"
+  short_description: "Repo-native decision maps and evidence-backed handoffs"
+  default_prompt: "Use $wayfinder-spice to find the next defensible decision for this effort. Inspect repository truth, preserve my working setup, and keep implementation outside planning unless I explicitly authorize it."
+policy:
+  allow_implicit_invocation: false

@@ -110,3 +110,4 @@ Active default selection metadata is tracked in `skills/provenance.json` where a
 | `systematic-debugging` | `modified` | Hermes Agent | `skills/systematic-debugging/SKILL.md` | `04_skills/agent-skills/skills/systematic-debugging/SKILL.md` |
 | `tauri-sveltekit` | `unknown` | Unverified | `skills/tauri-sveltekit-svelte/SKILL.md` | `04_skills/agent-skills/skills/tauri-sveltekit-svelte/SKILL.md` |
 | `vibe-guard` | `unknown` | Unverified | `skills/vibe-guard/SKILL.md` | `04_skills/agent-skills/skills/vibe-guard/SKILL.md` |
+| `wayfinder-spice` | `modified` | Ryan Spice-Finnie; adapted from Matt Pocock | `skills/wayfinder-spice/SKILL.md` | `04_skills/agent-skills/skills/wayfinder-spice/SKILL.md` |

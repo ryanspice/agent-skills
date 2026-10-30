@@ -9,8 +9,8 @@
     "unknown": "Prior authorship or upstream source has not been independently established."
   },
   "credit_policy": "Ryan Spice-Finnie is credited for created and locally mutated AI Wiki skills. Modified/adapted skills also retain upstream/source-reference credit where known. Ingesting them directly into this repository makes ryanspice/agent-skills the owned distribution surface.",
-  "source_file_count": 276,
-  "skill_document_count": 82,
+  "source_file_count": 300,
+  "skill_document_count": 83,
   "source_files": [
     {
       "path": "skills/agent-conversation-recovery/SKILL.md",
@@ -2165,6 +2165,198 @@
       "ingested_as": "ryanspice/agent-skills owned skill"
     },
     {
+      "path": "skills/wayfinder-spice/.thoughts/CONTINUATION.md",
+      "source_path": "04_skills/agent-skills/skills/wayfinder-spice/.thoughts/CONTINUATION.md",
+      "kind": "support-file",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "fee37f80c2c9777346371115f8c7fca80c445048584f6ffae5bd1d0f72551900",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/wayfinder-spice/CHANGELOG.md",
+      "source_path": "04_skills/agent-skills/skills/wayfinder-spice/CHANGELOG.md",
+      "kind": "support-file",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "1267b534f1c0919ef5597779056d28aba20b623f318307bcf42d634ead4e0f84",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/wayfinder-spice/LICENSE.txt",
+      "source_path": "04_skills/agent-skills/skills/wayfinder-spice/LICENSE.txt",
+      "kind": "support-file",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "0e7ac423bf2c6e223b7c5b156f8cf72da49d748e56a1641402c31f22ad07dbb5",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/wayfinder-spice/MANIFEST.sha256",
+      "source_path": "04_skills/agent-skills/skills/wayfinder-spice/MANIFEST.sha256",
+      "kind": "support-file",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "ac2904c6fee07060bb35ea7dcf04e44c0ad4e57025c65f7ec4a86c20cc809e1e",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/wayfinder-spice/NOTICE.md",
+      "source_path": "04_skills/agent-skills/skills/wayfinder-spice/NOTICE.md",
+      "kind": "support-file",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "0dac83c195ca73644b4df467769d8ae396eab4aaf191b2c7ae5e967e65b4d209",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/wayfinder-spice/README.md",
+      "source_path": "04_skills/agent-skills/skills/wayfinder-spice/README.md",
+      "kind": "support-file",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "174dc4ee967386a15c09467ff2d92724c7bbfee8dc4746659396b088767e36be",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/wayfinder-spice/SKILL.md",
+      "source_path": "04_skills/agent-skills/skills/wayfinder-spice/SKILL.md",
+      "kind": "skill-document",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "804baf8f3fb8668f4906daf0fe5de455776908e51f5ae297978acbd5f80f90a7",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/wayfinder-spice/VERIFICATION.md",
+      "source_path": "04_skills/agent-skills/skills/wayfinder-spice/VERIFICATION.md",
+      "kind": "support-file",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "f83c2e661fc3ca554a80abb3db00f9ed4ccd979c9ce6babb093681a1f720e295",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/wayfinder-spice/agents/openai.yaml",
+      "source_path": "04_skills/agent-skills/skills/wayfinder-spice/agents/openai.yaml",
+      "kind": "support-file",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "97c3524cb6277b4e6ff8455919a42a28ae41c43ed241b0276d35972cec8791e2",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/wayfinder-spice/assets/DECISION.template.md",
+      "source_path": "04_skills/agent-skills/skills/wayfinder-spice/assets/DECISION.template.md",
+      "kind": "support-file",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "24a1ab37f8bb0f2b176c12344aac4fe4dc552e0dfc9e30692a379d7a1f31bd7f",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/wayfinder-spice/assets/HANDOFF.template.md",
+      "source_path": "04_skills/agent-skills/skills/wayfinder-spice/assets/HANDOFF.template.md",
+      "kind": "support-file",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "4c98940509b00ba98db6702240aea09dd5e9800c27e819f291ff86dd15ba9724",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/wayfinder-spice/assets/MAP.template.md",
+      "source_path": "04_skills/agent-skills/skills/wayfinder-spice/assets/MAP.template.md",
+      "kind": "support-file",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "86211b394b691c3c4cdff7a2cfea9507b66f68b25018e43661c0a6556159424d",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/wayfinder-spice/assets/WORKER.template.md",
+      "source_path": "04_skills/agent-skills/skills/wayfinder-spice/assets/WORKER.template.md",
+      "kind": "support-file",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "eeb15b6f7b972dddc3fdcd15eb9487e0c6e2717dfa7b0fb68b23715899ab03bf",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/wayfinder-spice/assets/claude-wrapper.template.md",
+      "source_path": "04_skills/agent-skills/skills/wayfinder-spice/assets/claude-wrapper.template.md",
+      "kind": "support-file",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "e535d95278c23be276e1f340f211f061cd5e1b23b0222122e362f362662f8184",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/wayfinder-spice/evals/README.md",
+      "source_path": "04_skills/agent-skills/skills/wayfinder-spice/evals/README.md",
+      "kind": "support-file",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "5f60e2f5edb469e432d85b6c7f95a0c1e015d800bb80cd293a74d41ad3f46658",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/wayfinder-spice/evals/scenarios.json",
+      "source_path": "04_skills/agent-skills/skills/wayfinder-spice/evals/scenarios.json",
+      "kind": "support-file",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "3f15ba3a3ddb0f19da836fe20fc8493341c666cd8435aaaed83c308f0121747a",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/wayfinder-spice/examples/EXAMPLES.md",
+      "source_path": "04_skills/agent-skills/skills/wayfinder-spice/examples/EXAMPLES.md",
+      "kind": "support-file",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "d2ddf0df77535f158f73765c5fe1e5b35e86c95c707d6ef949347f632e8d7332",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/wayfinder-spice/references/decision-protocol.md",
+      "source_path": "04_skills/agent-skills/skills/wayfinder-spice/references/decision-protocol.md",
+      "kind": "support-file",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "a1b83a7f365bd87d236d8b10d3ab66128f8c9f7c79712e9f0eb80fab8be984d4",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/wayfinder-spice/references/harness-integration.md",
+      "source_path": "04_skills/agent-skills/skills/wayfinder-spice/references/harness-integration.md",
+      "kind": "support-file",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "a18b7af7e98c069d318345db4c74f42d24a95389d898206ba053f3aec1b24edb",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/wayfinder-spice/references/ryan-profile.md",
+      "source_path": "04_skills/agent-skills/skills/wayfinder-spice/references/ryan-profile.md",
+      "kind": "support-file",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "f37819a04523465bc10f712d1d4f8810300d66dd79bdd724fb4c1d88febc7089",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/wayfinder-spice/references/verification.md",
+      "source_path": "04_skills/agent-skills/skills/wayfinder-spice/references/verification.md",
+      "kind": "support-file",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "90610f3aa67e5d632ad76187d66b82544d8f0de36435a630dd6dd9aaaef2634f",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/wayfinder-spice/scripts/Get-WayfinderContext.ps1",
+      "source_path": "04_skills/agent-skills/skills/wayfinder-spice/scripts/Get-WayfinderContext.ps1",
+      "kind": "support-file",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "d05dcde5064ce9111ba08d97247e1632dadddb91fdcf1b4a57c8caadcd066d0c",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/wayfinder-spice/scripts/verify_package.py",
+      "source_path": "04_skills/agent-skills/skills/wayfinder-spice/scripts/verify_package.py",
+      "kind": "support-file",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "b4a0d893e6c9424116a53b643aacbd8193a3131fc3f380d491107c98667f39f5",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/wayfinder-spice/tests/test_verify_package.py",
+      "source_path": "04_skills/agent-skills/skills/wayfinder-spice/tests/test_verify_package.py",
+      "kind": "support-file",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "f4c722db44046b03e45811fe4cfa3f232de639351dcd600e62a2d9c4d95dfb17",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
       "path": "skills/windows-phone-metro-design/SKILL.md",
       "source_path": "04_skills/agent-skills/skills/windows-phone-metro-design/SKILL.md",
       "kind": "skill-document",
@@ -3043,6 +3235,16 @@
       "credit": "Ryan Spice-Finnie",
       "note": "Original AI Wiki local skill credited to Ryan Spice-Finnie.",
       "upstream": "",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "name": "wayfinder-spice",
+      "path": "skills/wayfinder-spice/SKILL.md",
+      "origin": "modified",
+      "source_path": "04_skills/agent-skills/skills/wayfinder-spice/SKILL.md",
+      "credit": "Ryan Spice-Finnie",
+      "note": "Ryan Spice-Finnie customization of Matt Pocock Wayfinder; recovered from the maintained 1.0.1 package and adapted for public distribution.",
+      "upstream": "https://github.com/mattpocock/skills/blob/main/skills/engineering/wayfinder/SKILL.md",
       "ingested_as": "ryanspice/agent-skills owned skill"
     },
     {
