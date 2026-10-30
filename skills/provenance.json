@@ -8,8 +8,8 @@
     "modified": "Adapted, revised, copied, or derived from another skill/source/reference, with upstream/source credit retained."
   },
   "credit_policy": "Ryan Spice-Finnie is credited for created and locally mutated AI Wiki skills. Modified/adapted skills also retain upstream/source-reference credit where known. Ingesting them directly into this repository makes ryanspice/agent-skills the owned distribution surface.",
-  "source_file_count": 178,
-  "skill_document_count": 53,
+  "source_file_count": 179,
+  "skill_document_count": 54,
   "source_files": [
     {
       "path": "skills/ai-wiki-file-management/mcp-skill.json",
@@ -1434,6 +1434,14 @@
       "credit": "Ryan Spice-Finnie",
       "sha256": "29b241d8182975b0267eeb5bf7522651c56eb6432262f87925da537d20e2658b",
       "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/cross-machine-media/SKILL.md",
+      "source_path": "04_skills/agent-skills/skills/cross-machine-media/SKILL.md",
+      "kind": "skill-document",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "db52ca2a3a44607da4a74318629e41ab38f889fab1399422601407faedcd0631",
+      "ingested_as": "ryanspice/agent-skills owned skill"
     }
   ],
   "skills": [
@@ -2005,6 +2013,16 @@
       "source_path": "04_skills/agent-skills/skills/windows-tar-package-installer-workflow/SKILL.md",
       "credit": "Ryan Spice-Finnie",
       "note": "Original AI Wiki local skill credited to Ryan Spice-Finnie.",
+      "upstream": "",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "name": "cross-machine-media",
+      "path": "skills/cross-machine-media/SKILL.md",
+      "origin": "original",
+      "source_path": "04_skills/agent-skills/skills/cross-machine-media/SKILL.md",
+      "credit": "Ryan Spice-Finnie",
+      "note": "Original owner-directed cross-machine media workflow curated from the AI Wiki skill.",
       "upstream": "",
       "ingested_as": "ryanspice/agent-skills owned skill"
     }

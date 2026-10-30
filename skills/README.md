@@ -31,6 +31,7 @@ Active default selection metadata is tracked in `skills/provenance.json` where a
 | `ai-wiki-file-management` | `original` | Ryan Spice-Finnie | `skills/ai-wiki-file-management/SKILL.md` | `04_skills/agent-skills/skills/ai-wiki-file-management/SKILL.md` |
 | `AI Wiki Command Layer Notes` | `original` | Ryan Spice-Finnie | `skills/aiwiki-command-layer-notes/SKILL.md` | `04_skills/agent-skills/skills/aiwiki-command-layer-notes/SKILL.md` |
 | `aiwiki-command-run-fragments` | `original` | Ryan Spice-Finnie | `skills/aiwiki-command-run-fragments/SKILL.md` | `04_skills/agent-skills/skills/aiwiki-command-run-fragments/SKILL.md` |
+| `cross-machine-media` | `original` | Ryan Spice-Finnie | `skills/cross-machine-media/SKILL.md` | `04_skills/agent-skills/skills/cross-machine-media/SKILL.md` |
 | `AI Wiki Console Output` | `original` | Ryan Spice-Finnie | `skills/aiwiki-console-output/SKILL.md` | `04_skills/agent-skills/skills/aiwiki-console-output/SKILL.md` |
 | `aiwiki-deep-research-orchestrator` | `original` | Ryan Spice-Finnie | `skills/aiwiki-deep-research-orchestrator/SKILL.md` | `04_skills/agent-skills/skills/aiwiki-deep-research-orchestrator/SKILL.md` |
 | `aiwiki-external-skill-intake` | `original` | Ryan Spice-Finnie | `skills/aiwiki-external-skill-intake/SKILL.md` | `04_skills/agent-skills/skills/aiwiki-external-skill-intake/SKILL.md` |
