@@ -6,6 +6,11 @@ author: Ryan Spice-Finnie (ryanspice), Hermes Agent
 license: MIT
 platforms: [windows, linux, macos]
 metadata:
+  provenance_origin: "unknown"
+  provenance_source_path: "04_skills/agent-skills/skills/resume-tailoring/SKILL.md"
+  provenance_credit: "Ryan Spice-Finnie and Hermes Agent"
+  provenance_ingested_as: "ryanspice/agent-skills owned skill"
+  provenance_note: "Skill credits Ryan Spice-Finnie and Hermes Agent; original source and contribution proportions are unverified."
   hermes:
     tags: [resume, career, jobs, applications, tailoring]
     related_skills: [seo-live-audit]

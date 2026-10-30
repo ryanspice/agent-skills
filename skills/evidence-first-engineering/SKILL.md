@@ -8,6 +8,11 @@ risk: low
 tags: ["evidence", "verification", "epistemics", "guardrail", "audit", "quality"]
 created_at: 2026-07-21
 metadata:
+  provenance_origin: "unknown"
+  provenance_source_path: "04_skills/agent-skills/skills/evidence-first-engineering/SKILL.md"
+  provenance_credit: "Unverified"
+  provenance_ingested_as: "ryanspice/agent-skills owned skill"
+  provenance_note: "Earlier authorship and source have not been independently verified."
   review_status: staged-candidate
   reviewers: [Nemotron, Vibethinker]
   replaces: none

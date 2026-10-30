@@ -6,6 +6,12 @@ author: Hermes Agent (adapted from obra/superpowers + MorAlekss)
 license: MIT
 platforms: [linux, macos, windows]
 metadata:
+  provenance_origin: "modified"
+  provenance_source_path: "04_skills/agent-skills/skills/requesting-code-review/SKILL.md"
+  provenance_credit: "Hermes Agent"
+  provenance_ingested_as: "ryanspice/agent-skills owned skill"
+  provenance_note: "Adapted by Hermes Agent from obra/superpowers and MorAlekss; Ryan-specific contribution not established."
+  provenance_upstream: "obra/superpowers and MorAlekss"
   hermes:
     tags: [code-review, security, verification, quality, pre-commit, auto-fix]
     related_skills: [subagent-driven-development, writing-plans, test-driven-development, github-code-review]

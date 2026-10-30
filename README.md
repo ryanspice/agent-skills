@@ -95,7 +95,7 @@ For fleet use, the canonical repo source is `AI-Wiki/04_skills/agent-skills/skil
 link or route a harness to the selected skill rather than making an unmanaged
 copy. A listed skill is not necessarily installed, active, or compatible with
 every harness. Candidates and templates are not automatic production skills.
-Unregistered entries need provenance review.
+Some registered entries still have unknown or unverified origins.
 
 **Originality estimates:** The circle indicates estimated contribution: filled
 is 100%, three-quarter is around 80%, half is around 50%, and `?` means there
@@ -118,9 +118,9 @@ Grill Spice is customized support with upstream credit.
 | ⭐ 🤓 [grill-spice](skills/grill-spice/SKILL.md) | ◕ ~80% (low confidence); Ryan adaptation; Matt Pocock | 7,366 | AI Wiki repo skill source | Challenges one consequential decision at a time using evidence. |
 | ⭐ 🧠 [neanderthal](skills/neanderthal/SKILL.md) | ● ~100% (low confidence); Recorded original (Ryan/AI Wiki) | 2,451 | AI Wiki repo skill source | Compressed, high-signal engineering mode for low-token handoffs and execution. |
 | ⭐ 💻 [powershell-script-authoring](skills/powershell-script-authoring/SKILL.md) | ● ~100% (low confidence); Recorded original (Ryan/AI Wiki) | 13,841 | AI Wiki repo skill source | Focuses on Windows PowerShell scripts, installers, and packaging. |
-| ⭐ 🔧 [chalk-it-up](skills/chalk-it-up/SKILL.md) | ● 100% (owner-confirmed); Recorded original (Ryan/AI Wiki); not in manifest | 3,003 | Repo checkout; reconcile provenance | Wraps up completed work through issue, PR, checks, and an explicitly requested merge. |
-| ⭐ ❤️ [spiceflow](skills/spiceflow/SKILL.md) | ❔ ? (low confidence); Customized; influence unknown; unregistered | 28,903 | Repo checkout; reconcile provenance | A broad personal operating mode spanning engineering, research, and creative work. |
-| ⭐ 🧭 [evidence-first-engineering](skills/evidence-first-engineering/SKILL.md) | ❔ ? (low confidence); Not established; not in manifest | 4,608 | Repo checkout; reconcile provenance | Requires evidence before asserting gaps, absence, or severity. |
+| ⭐ 🔧 [chalk-it-up](skills/chalk-it-up/SKILL.md) | ● 100% (owner-confirmed); Recorded original (Ryan/AI Wiki) | 3,076 | AI Wiki repo skill source | Wraps up completed work through issue, PR, checks, and an explicitly requested merge. |
+| ⭐ ❤️ [spiceflow](skills/spiceflow/SKILL.md) | ❔ ? (low confidence); Customized; influence unknown | 29,271 | AI Wiki repo skill source | A broad personal operating mode spanning engineering, research, and creative work. |
+| ⭐ 🧭 [evidence-first-engineering](skills/evidence-first-engineering/SKILL.md) | ❔ ? (low confidence); Not established | 4,919 | AI Wiki repo skill source | Requires evidence before asserting gaps, absence, or severity. |
 
 ### ❤️ Personal orchestration
 
@@ -129,10 +129,10 @@ here as well as among the standouts; its earlier influence remains unidentified.
 
 | Skill | Estimated originality and recorded origin | SKILL.md bytes | Suggested fleet reference | What sets it apart |
 | --- | --- | ---: | --- | --- |
-| ⭐ ❤️ [spiceflow](skills/spiceflow/SKILL.md) | ❔ ? (low confidence); Customized; influence unknown; unregistered | 28,903 | Repo checkout; reconcile provenance | A broad personal operating mode spanning engineering, research, and creative work. |
-| ❤️ [spiceflow-artifact-forge](skills/artifact-forge/SKILL.md) | ❔ ? (low confidence); Not established; not in manifest | 5,014 | Repo checkout; reconcile provenance | Packages durable, versioned TAR.GZ handoffs and implementation bundles. |
-| ❤️ [spiceflow-mcp-bridge](skills/mcp-bridge/SKILL.md) | ❔ ? (low confidence); Not established; not in manifest | 4,863 | Repo checkout; reconcile provenance | Maps connected sources through capability-based MCP adapters. |
-| ❤️ [spiceflow-skill-forge](skills/skill-forge/SKILL.md) | ❔ ? (low confidence); Not established; not in manifest | 5,408 | Repo checkout; reconcile provenance | Derives reusable skills from repeated workflows and evidence. |
+| ⭐ ❤️ [spiceflow](skills/spiceflow/SKILL.md) | ❔ ? (low confidence); Customized; influence unknown | 29,271 | AI Wiki repo skill source | A broad personal operating mode spanning engineering, research, and creative work. |
+| ❤️ [spiceflow-artifact-forge](skills/artifact-forge/SKILL.md) | ❔ ? (low confidence); Not established | 5,387 | AI Wiki repo skill source | Packages durable, versioned TAR.GZ handoffs and implementation bundles. |
+| ❤️ [spiceflow-mcp-bridge](skills/mcp-bridge/SKILL.md) | ❔ ? (low confidence); Not established | 5,232 | AI Wiki repo skill source | Maps connected sources through capability-based MCP adapters. |
+| ❤️ [spiceflow-skill-forge](skills/skill-forge/SKILL.md) | ❔ ? (low confidence); Not established | 5,778 | AI Wiki repo skill source | Derives reusable skills from repeated workflows and evidence. |
 
 ### Browse by topic
 
@@ -177,7 +177,7 @@ Groups are for navigation and do not by themselves establish authorship.
 | 🛡️ [vibe-check](skills/vibe-guard-pack-aiwiki-adapted/vibe-check/SKILL.md) | ◐ ~50% (low confidence); Ryan adaptation; CodeCoincognition | 4,596 | AI Wiki repo skill source | Focuses on production resilience and failure modes. |
 | 💬 [vibe-explain](skills/vibe-guard-pack-aiwiki-adapted/vibe-explain/SKILL.md) | ◐ ~50% (low confidence); Ryan adaptation; CodeCoincognition | 4,596 | AI Wiki repo skill source | Focuses on comprehension and cognitive debt. |
 | 🛡️ [vibe-guard](skills/vibe-guard-pack-aiwiki-adapted/vibe-guard/SKILL.md) | ◐ ~50% (low confidence); Ryan adaptation; CodeCoincognition | 4,825 | AI Wiki repo skill source | Orchestrates resilience, security, and comprehension review. |
-| 🛡️ [vibe-guard](skills/vibe-guard/SKILL.md) | ❔ ? (low confidence); Not established; not in manifest | 16,629 | Repo checkout; reconcile provenance | Broad repo-wide guardrails for AI-generated changes; distinct from the adapted audit pack. |
+| 🛡️ [vibe-guard](skills/vibe-guard/SKILL.md) | ❔ ? (low confidence); Not established | 16,940 | AI Wiki repo skill source | Broad repo-wide guardrails for AI-generated changes; distinct from the adapted audit pack. |
 | 🔒 [vibe-secure](skills/vibe-guard-pack-aiwiki-adapted/vibe-secure/SKILL.md) | ◐ ~50% (low confidence); Ryan adaptation; CodeCoincognition | 5,234 | AI Wiki repo skill source | Focuses specifically on security risk in AI-assisted code. |
 
 </details>
@@ -207,12 +207,12 @@ Groups are for navigation and do not by themselves establish authorship.
 | --- | --- | ---: | --- | --- |
 | 🌐 [cjk-ui-lab](skills/cjk-ui-lab/SKILL.md) | ● ~100% (low confidence); Recorded original (Ryan/AI Wiki) | 8,402 | AI Wiki repo skill source | Focuses on Japanese/Korean UI, typography, and localization. |
 | <img src="assets/icons/svelte.svg" alt="Svelte" width="16" height="16"> [image-to-ui-sveltekit](skills/image-to-ui-sveltekit/SKILL.md) | ● ~100% (low confidence); Recorded original (Ryan/AI Wiki) | 15,068 | AI Wiki repo skill source | Translates visual references into SvelteKit implementation guidance. |
-| <img src="assets/icons/svelte.svg" alt="Svelte" width="16" height="16"> [Svelte 5 Virtual List](skills/svelte5-virtual-list/SKILL.md) | ❔ ? (low confidence); Not established; not in manifest | 17,009 | Repo checkout; reconcile provenance | Addresses virtualization for large lists, tables, grids, and feeds. |
+| <img src="assets/icons/svelte.svg" alt="Svelte" width="16" height="16"> [Svelte 5 Virtual List](skills/svelte5-virtual-list/SKILL.md) | ❔ ? (low confidence); Not established | 17,324 | AI Wiki repo skill source | Addresses virtualization for large lists, tables, grids, and feeds. |
 | <img src="assets/icons/svelte.svg" alt="Svelte" width="16" height="16"> [svelte-lab-demo-ingestion](skills/svelte-lab-demo-ingestion/SKILL.md) | ● ~100% (low confidence); Recorded original (Ryan/AI Wiki) | 1,112 | AI Wiki repo skill source | Moves Svelte lab demos into the AI Wiki ingestion workflow. |
-| <img src="assets/icons/svelte.svg" alt="Svelte" width="16" height="16"> [sveltekit-lab-route-authoring](skills/sveltekit-lab-route-authoring/SKILL.md) | ❔ ? (low confidence); Not established; not in manifest | 28,507 | Repo checkout; reconcile provenance | Creates SvelteKit lab routes and project debug/documentation pages. |
+| <img src="assets/icons/svelte.svg" alt="Svelte" width="16" height="16"> [sveltekit-lab-route-authoring](skills/sveltekit-lab-route-authoring/SKILL.md) | ❔ ? (low confidence); Not established | 28,821 | AI Wiki repo skill source | Creates SvelteKit lab routes and project debug/documentation pages. |
 | <img src="assets/icons/svelte.svg" alt="Svelte" width="16" height="16"> [sveltekit2-bootstrap-discipline](skills/sveltekit2-bootstrap-discipline/SKILL.md) | ● ~100% (low confidence); Recorded original (Ryan/AI Wiki) | 3,790 | AI Wiki repo skill source | Targets new-project setup, official add-ons, and migrations. |
 | <img src="assets/icons/svelte.svg" alt="Svelte" width="16" height="16"> [sveltekit2-svelte5-engineering](skills/sveltekit2-svelte5-engineering/SKILL.md) | ● ~100% (low confidence); Recorded original (Ryan/AI Wiki) | 11,053 | AI Wiki repo skill source | Covers SvelteKit routes, Svelte 5 runes, data loading, and hydration. |
-| <img src="assets/icons/tauri.svg" alt="Tauri" width="16" height="16"> <img src="assets/icons/svelte.svg" alt="Svelte" width="16" height="16"> [tauri-sveltekit](skills/tauri-sveltekit-svelte/SKILL.md) | ❔ ? (low confidence); Not established; not in manifest | 5,130 | Repo checkout; reconcile provenance | Adds desktop, Rust, tray, and window concerns to SvelteKit work. |
+| <img src="assets/icons/tauri.svg" alt="Tauri" width="16" height="16"> <img src="assets/icons/svelte.svg" alt="Svelte" width="16" height="16"> [tauri-sveltekit](skills/tauri-sveltekit-svelte/SKILL.md) | ❔ ? (low confidence); Not established | 5,453 | AI Wiki repo skill source | Adds desktop, Rust, tray, and window concerns to SvelteKit work. |
 
 </details>
 
@@ -222,9 +222,9 @@ Groups are for navigation and do not by themselves establish authorship.
 | Skill | Estimated originality and recorded origin | SKILL.md bytes | Suggested fleet reference | What sets it apart |
 | --- | --- | ---: | --- | --- |
 | 🔧 [blog-publish](skills/blog-publish/SKILL.md) | ● ~100% (low confidence); Recorded original (Ryan/AI Wiki) | 8,376 | AI Wiki repo skill source | Targets the two existing blogs and their article-release workflows. |
-| 📄 [resume-tailoring](skills/resume-tailoring/SKILL.md) | ❔ ? (low confidence); Recorded author: Ryan Spice-Finnie (ryanspice), Hermes Agent; not in manifest | 7,314 | Repo checkout; reconcile provenance | Tailors a resume from canonical career data while preserving factual boundaries. |
-| 🔎 [seo-live-audit](skills/seo-live-audit/SKILL.md) | ❔ ? (low confidence); Recorded author: Ryan Spice-Finnie (ryanspice), Hermes Agent; not in manifest | 12,612 | Repo checkout; reconcile provenance | Audits live pages and turns SEO findings into regression checks. |
-| 🔗 [social-preview-unfurl-verification](skills/social-preview-unfurl-verification/SKILL.md) | ● ~100% (low confidence); Recorded original (Ryan/AI Wiki); not in manifest | 6,871 | Repo checkout; reconcile provenance | Verifies crawler-visible Open Graph and social preview behavior. |
+| 📄 [resume-tailoring](skills/resume-tailoring/SKILL.md) | ❔ ? (low confidence); Recorded author: Ryan Spice-Finnie (ryanspice), Hermes Agent | 7,682 | AI Wiki repo skill source | Tailors a resume from canonical career data while preserving factual boundaries. |
+| 🔎 [seo-live-audit](skills/seo-live-audit/SKILL.md) | ❔ ? (low confidence); Recorded author: Ryan Spice-Finnie (ryanspice), Hermes Agent | 12,978 | AI Wiki repo skill source | Audits live pages and turns SEO findings into regression checks. |
+| 🔗 [social-preview-unfurl-verification](skills/social-preview-unfurl-verification/SKILL.md) | ● ~100% (low confidence); Recorded original (Ryan/AI Wiki) | 6,871 | AI Wiki repo skill source | Verifies crawler-visible Open Graph and social preview behavior. |
 
 </details>
 
@@ -233,8 +233,8 @@ Groups are for navigation and do not by themselves establish authorship.
 
 | Skill | Estimated originality and recorded origin | SKILL.md bytes | Suggested fleet reference | What sets it apart |
 | --- | --- | ---: | --- | --- |
-| 🔍 [requesting-code-review](skills/requesting-code-review/SKILL.md) | ❔ ? (low confidence); Hermes adaptation; obra/superpowers, MorAlekss | 8,483 | Repo checkout; reconcile provenance | Runs pre-commit security and quality checks. |
-| 🐛 [systematic-debugging](skills/systematic-debugging/SKILL.md) | ❔ ? (low confidence); Hermes adaptation; obra/superpowers | 10,480 | Repo checkout; reconcile provenance | Uses four root-cause phases before proposing fixes. |
+| 🔍 [requesting-code-review](skills/requesting-code-review/SKILL.md) | ❔ ? (low confidence); Hermes adaptation; obra/superpowers, MorAlekss | 8,886 | AI Wiki repo skill source | Runs pre-commit security and quality checks. |
+| 🐛 [systematic-debugging](skills/systematic-debugging/SKILL.md) | ❔ ? (low confidence); Hermes adaptation; obra/superpowers | 10,853 | AI Wiki repo skill source | Uses four root-cause phases before proposing fixes. |
 
 </details>
 
@@ -320,9 +320,9 @@ npm run build
 ```
 
 The three commands currently run the same dependency-free provenance
-validator, which also checks Git-tracked and nonignored text files for common
-personal absolute paths. The CI badge reflects that workflow; it does not
-establish that every skill is registered, valid for every harness, or tested at runtime.
+validator, which checks that every skill document is registered and scans
+Git-tracked and nonignored text files for common personal absolute paths.
+It does not establish authorship, cross-harness compatibility, or runtime behavior.
 Validate the relevant skill and harness separately before relying on it.
 
 Svelte and Tauri icons are from [Simple Icons](assets/icons/README.md).

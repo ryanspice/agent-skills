@@ -4,6 +4,11 @@ description: "Create lab/debug/doc routes in SvelteKit projects, including SPA-s
 version: 1.0.0
 platforms: [windows, linux, macos]
 metadata:
+  provenance_origin: "unknown"
+  provenance_source_path: "04_skills/agent-skills/skills/sveltekit-lab-route-authoring/SKILL.md"
+  provenance_credit: "Unverified"
+  provenance_ingested_as: "ryanspice/agent-skills owned skill"
+  provenance_note: "Earlier authorship and source have not been independently verified."
   hermes:
     tags: [sveltekit, svelte5, lab-route, wiki, documentation]
     related_skills: [sveltekit-blog-article-authoring, sketch]

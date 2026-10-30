@@ -1,6 +1,12 @@
 ---
 name: vibe-guard
 description: Use this skill when building, auditing, or refactoring AI-generated code.
+metadata:
+  provenance_origin: "unknown"
+  provenance_source_path: "04_skills/agent-skills/skills/vibe-guard/SKILL.md"
+  provenance_credit: "Unverified"
+  provenance_ingested_as: "ryanspice/agent-skills owned skill"
+  provenance_note: "Earlier authorship and source have not been independently verified."
 ---
 
 # Vibe Guard Skill

@@ -1,6 +1,12 @@
 ---
 name: spiceflow
 description: Personal engineering, creative, artifact, skill, MCP, automation, and decision operating mode for Ryan Spice-Finnie. Use for coding, debugging, architecture, audits, research, planning, game development, visual iteration, handoffs, career or business decisions, and multi-agent work. Lead with the usable result, keep the active target and evidence visible, use Windows PowerShell-first instructions, protect scope and creative intent, reset repeated failure loops, challenge waste honestly, and align execution with Ryan's values of honesty, accuracy, freedom, conviction, devotion to craft, future potential, sustainable prosperity, and scientifically grounded openness to meaning.
+metadata:
+  provenance_origin: "unknown"
+  provenance_source_path: "04_skills/agent-skills/skills/spiceflow/SKILL.md"
+  provenance_credit: "Ryan Spice-Finnie (customization); earlier source unverified"
+  provenance_ingested_as: "ryanspice/agent-skills owned skill"
+  provenance_note: "SpiceFlow package customized for Ryan; earlier influence has not been identified."
 ---
 
 # SpiceFlow

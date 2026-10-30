@@ -11,8 +11,8 @@ Duplicate resolution is policy-driven through:
 
 Every ingested skill document carries provenance fields:
 
-- `provenance_origin`: `original` or `modified`.
-- `provenance_credit`: `Ryan Spice-Finnie` for Ryan-created and locally mutated AI Wiki skills.
+- `provenance_origin`: `original`, `modified`, or `unknown` when the source is unverified.
+- `provenance_credit`: the recorded creator or adapter, or `Unverified` where unknown.
 - `provenance_ingested_as`: `ryanspice/agent-skills owned skill`.
 - `provenance_upstream`: present when a skill was adapted from an upstream/source reference.
 
@@ -95,3 +95,18 @@ Active default selection metadata is tracked in `skills/provenance.json` where a
 | `hermes-table-renderer` | `original` | Ryan Spice-Finnie | `skills/hermes-table-renderer/SKILL.md` | `04_skills/agent-skills/skills/hermes-table-renderer/SKILL.md` |
 | `research-harness-archive-operator` | `original` | Ryan Spice-Finnie | `skills/research-harness-archive-operator/SKILL.md` | `04_skills/agent-skills/skills/research-harness-archive-operator/SKILL.md` |
 | `workbench-console-safety-operator` | `original` | Ryan Spice-Finnie | `skills/workbench-console-safety-operator/SKILL.md` | `04_skills/agent-skills/skills/workbench-console-safety-operator/SKILL.md` |
+| `spiceflow-artifact-forge` | `unknown` | Ryan Spice-Finnie (customization); earlier source unverified | `skills/artifact-forge/SKILL.md` | `04_skills/agent-skills/skills/artifact-forge/SKILL.md` |
+| `chalk-it-up` | `original` | Ryan Spice-Finnie | `skills/chalk-it-up/SKILL.md` | `04_skills/agent-skills/skills/chalk-it-up/SKILL.md` |
+| `evidence-first-engineering` | `unknown` | Unverified | `skills/evidence-first-engineering/SKILL.md` | `04_skills/agent-skills/skills/evidence-first-engineering/SKILL.md` |
+| `spiceflow-mcp-bridge` | `unknown` | Ryan Spice-Finnie (customization); earlier source unverified | `skills/mcp-bridge/SKILL.md` | `04_skills/agent-skills/skills/mcp-bridge/SKILL.md` |
+| `requesting-code-review` | `modified` | Hermes Agent | `skills/requesting-code-review/SKILL.md` | `04_skills/agent-skills/skills/requesting-code-review/SKILL.md` |
+| `resume-tailoring` | `unknown` | Ryan Spice-Finnie and Hermes Agent | `skills/resume-tailoring/SKILL.md` | `04_skills/agent-skills/skills/resume-tailoring/SKILL.md` |
+| `seo-live-audit` | `unknown` | Ryan Spice-Finnie and Hermes Agent | `skills/seo-live-audit/SKILL.md` | `04_skills/agent-skills/skills/seo-live-audit/SKILL.md` |
+| `spiceflow-skill-forge` | `unknown` | Ryan Spice-Finnie (customization); earlier source unverified | `skills/skill-forge/SKILL.md` | `04_skills/agent-skills/skills/skill-forge/SKILL.md` |
+| `social-preview-unfurl-verification` | `original` | Ryan Spice-Finnie | `skills/social-preview-unfurl-verification/SKILL.md` | `04_skills/agent-skills/skills/social-preview-unfurl-verification/SKILL.md` |
+| `spiceflow` | `unknown` | Ryan Spice-Finnie (customization); earlier source unverified | `skills/spiceflow/SKILL.md` | `04_skills/agent-skills/skills/spiceflow/SKILL.md` |
+| `Svelte 5 Virtual List` | `unknown` | Unverified | `skills/svelte5-virtual-list/SKILL.md` | `04_skills/agent-skills/skills/svelte5-virtual-list/SKILL.md` |
+| `sveltekit-lab-route-authoring` | `unknown` | Unverified | `skills/sveltekit-lab-route-authoring/SKILL.md` | `04_skills/agent-skills/skills/sveltekit-lab-route-authoring/SKILL.md` |
+| `systematic-debugging` | `modified` | Hermes Agent | `skills/systematic-debugging/SKILL.md` | `04_skills/agent-skills/skills/systematic-debugging/SKILL.md` |
+| `tauri-sveltekit` | `unknown` | Unverified | `skills/tauri-sveltekit-svelte/SKILL.md` | `04_skills/agent-skills/skills/tauri-sveltekit-svelte/SKILL.md` |
+| `vibe-guard` | `unknown` | Unverified | `skills/vibe-guard/SKILL.md` | `04_skills/agent-skills/skills/vibe-guard/SKILL.md` |

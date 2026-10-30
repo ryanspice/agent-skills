@@ -13,6 +13,12 @@ preferred_stack:
   - ESM
   - minimal dependencies
 risk_tier: medium
+metadata:
+  provenance_origin: "unknown"
+  provenance_source_path: "04_skills/agent-skills/skills/svelte5-virtual-list/SKILL.md"
+  provenance_credit: "Unverified"
+  provenance_ingested_as: "ryanspice/agent-skills owned skill"
+  provenance_note: "Earlier authorship and source have not been independently verified."
 ---
 
 # Svelte 5 Virtual List Skill
