@@ -56,10 +56,10 @@ Never: route existence, gameplay behavior alone, file counts
 Priority: canonical AI-Wiki + adoption documents + repo-local catalogs
 Scope: external-ai-wiki or repo-documentation
 Roots (MUST search ALL before claiming absence):
-  1. S:/OneDrive/Obsidan/AI-Wiki (canonical lore authority)
-  2. B:/Dev/PixelBoats/docs/ (project documentation)
-  3. B:/Dev/PixelBoats/src/lib/ (typed catalogs, lore modules)
-  4. B:/Dev/PixelBoats/src/routes/(lab)/lab/lore/ (lore wiki)
+  1. <AI_WIKI_ROOT> (canonical lore authority)
+  2. <PIXELBOATS_ROOT>/docs/ (project documentation)
+  3. <PIXELBOATS_ROOT>/src/lib/ (typed catalogs, lore modules)
+  4. <PIXELBOATS_ROOT>/src/routes/(lab)/lab/lore/ (lore wiki)
 Never: repo-local grep only, single-directory search
 ```
 
@@ -110,7 +110,7 @@ Every claim must use one of these scope prefixes:
 | `repo-lab` | Prototype, not yet in canonical runtime |
 | `repo-documentation` | Written in repo docs, not necessarily implemented |
 | `repo-static` | Found via code analysis only |
-| `external-ai-wiki` | Found in `S:/OneDrive/Obsidan/AI-Wiki` |
+| `external-ai-wiki` | Found in `<AI_WIKI_ROOT>` |
 | `formal-stage-criteria` | Measured against BEDROCK_FOUNDATION.md exit gates |
 | `runtime-observation` | Seen during manual testing |
 | `historical-archive` | In archived/superseded code |
@@ -120,7 +120,7 @@ Every claim must use one of these scope prefixes:
 The canonical external authority path is:
 
 ```
-S:\OneDrive\Obsidan\AI-Wiki
+<AI_WIKI_ROOT>
 ```
 
 Do not "correct" `Obsidan` to `Obsidian`. The established path uses `Obsidan`. This path is case-sensitive on some operations.

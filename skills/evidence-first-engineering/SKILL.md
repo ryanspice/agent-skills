@@ -80,7 +80,7 @@ Every claim about presence or absence must prefix with one of:
 - `repo-lab` — Behavior in lab/prototype route
 - `repo-documentation` — Written in repo docs
 - `repo-static` — Found via code analysis only
-- `external-ai-wiki` — Found in AI-Wiki at `S:/OneDrive/Obsidan/AI-Wiki`
+- `external-ai-wiki` — Found in the canonical AI Wiki at `<AI_WIKI_ROOT>`
 - `formal-stage-criteria` — Measured against BEDROCK_FOUNDATION.md exit gates
 - `runtime-observation` — Seen during manual testing
 - `historical-archive` — In archived/superseded code

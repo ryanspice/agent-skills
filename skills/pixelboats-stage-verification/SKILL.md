@@ -23,7 +23,7 @@ Load this skill before evaluating whether a bedrock foundation stage (S0–S7) i
 ## Source of Truth
 
 ```
-B:/Dev/PixelBoats/BEDROCK_FOUNDATION.md
+<PIXELBOATS_ROOT>/BEDROCK_FOUNDATION.md
 ```
 
 Every stage has a formal definition, a deliverable, and exit gates. This skill enforces evaluation against those gates — not against gameplay impressions.

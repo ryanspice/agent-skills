@@ -1,6 +1,6 @@
 {
   "schema_version": "1.2.0",
-  "generated_at": "2026-05-30T14:07:51.312Z",
+  "generated_at": "2026-05-30T10:44:18.869Z",
   "source": "AI Wiki 04_skills/agent-skills/skills route ingested into owned agent-skills repo",
   "export_policy": "All current files under the AI Wiki 04_skills/agent-skills/skills route are ingested directly under skills/. Text files are normalized for public review by replacing local machine roots and hostnames with placeholders; binary package/image files are copied byte-for-byte.",
   "origin_labels": {
@@ -8,8 +8,8 @@
     "modified": "Adapted, revised, copied, or derived from another skill/source/reference, with upstream/source credit retained."
   },
   "credit_policy": "Ryan Spice-Finnie is credited for created and locally mutated AI Wiki skills. Modified/adapted skills also retain upstream/source-reference credit where known. Ingesting them directly into this repository makes ryanspice/agent-skills the owned distribution surface.",
-  "source_file_count": 178,
-  "skill_document_count": 55,
+  "source_file_count": 181,
+  "skill_document_count": 56,
   "source_files": [
     {
       "path": "skills/ai-wiki-file-management/mcp-skill.json",
@@ -273,14 +273,6 @@
       "kind": "support-file",
       "credit": "Ryan Spice-Finnie",
       "sha256": "0f99003c164527a66de8897366292c989cafe6615a8c598211396445fdc86b9f",
-      "ingested_as": "ryanspice/agent-skills owned skill"
-    },
-    {
-      "path": "skills/candidates/deepseek-research-api-substrate-v0.1.0/SKILL.md",
-      "source_path": "04_skills/agent-skills/skills/candidates/deepseek-research-api-substrate-v0.1.0/SKILL.md",
-      "kind": "skill-document",
-      "credit": "Ryan Spice-Finnie",
-      "sha256": "485b5b276bc972788f784fa24fe85386856352030b882f3d62b1622dcfe32339",
       "ingested_as": "ryanspice/agent-skills owned skill"
     },
     {
@@ -601,22 +593,6 @@
       "kind": "skill-document",
       "credit": "Ryan Spice-Finnie",
       "sha256": "c6e8ef80b47808e27acc7bc896a6434ac1f51340dfe57364d599ff12f814103f",
-      "ingested_as": "ryanspice/agent-skills owned skill"
-    },
-    {
-      "path": "skills/deep-research-workflow/SKILL.md",
-      "source_path": "04_skills/agent-skills/skills/deep-research-workflow/SKILL.md",
-      "kind": "skill-document",
-      "credit": "Ryan Spice-Finnie",
-      "sha256": "83ac4db57f2616e4b6428fb07e6c19f8cd415e1bac6b04b294d7f2547cf84665",
-      "ingested_as": "ryanspice/agent-skills owned skill"
-    },
-    {
-      "path": "skills/enterprise-deep-research-workflow/SKILL.md",
-      "source_path": "04_skills/agent-skills/skills/enterprise-deep-research-workflow/SKILL.md",
-      "kind": "skill-document",
-      "credit": "Ryan Spice-Finnie",
-      "sha256": "a166af201c178a6c50b27176c8043ad77077a590b8b1bdb7e916453a624cb504",
       "ingested_as": "ryanspice/agent-skills owned skill"
     },
     {
@@ -1116,6 +1092,38 @@
       "ingested_as": "ryanspice/agent-skills owned skill"
     },
     {
+      "path": "skills/repo-skill-recommender-copy/mcp-skill.json",
+      "source_path": "04_skills/agent-skills/skills/repo-skill-recommender-copy/mcp-skill.json",
+      "kind": "support-file",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "7e47fa3d2b8c8d04a3982461ff3b67d3b710976e12dd99603c4c54efa443fd0f",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/repo-skill-recommender-copy/reference/repo-audit-question-model.md",
+      "source_path": "04_skills/agent-skills/skills/repo-skill-recommender-copy/reference/repo-audit-question-model.md",
+      "kind": "support-file",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "a60c9a708e8dbd4a23285a1d3184886707842eabed3fa8c28e67774672e818c4",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/repo-skill-recommender-copy/scripts/run-repo-skill-recommendation.ps1",
+      "source_path": "04_skills/agent-skills/skills/repo-skill-recommender-copy/scripts/run-repo-skill-recommendation.ps1",
+      "kind": "support-file",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "2f2dde509f49a6ddf00a251a3cb75f5993429fc551f4271c9f2082690469b141",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/repo-skill-recommender-copy/SKILL.md",
+      "source_path": "04_skills/agent-skills/skills/repo-skill-recommender-copy/SKILL.md",
+      "kind": "skill-document",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "a4ae2d2575500e97105950c05876d8bf00d5d5770906619de7095a2a3a6d6b4d",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
       "path": "skills/repo-skill-recommender/mcp-skill.json",
       "source_path": "04_skills/agent-skills/skills/repo-skill-recommender/mcp-skill.json",
       "kind": "support-file",
@@ -1404,14 +1412,6 @@
       "ingested_as": "ryanspice/agent-skills owned skill"
     },
     {
-      "path": "skills/windows-phone-metro-design/SKILL_windows-phone-metro-design.md",
-      "source_path": "04_skills/agent-skills/skills/windows-phone-metro-design/SKILL_windows-phone-metro-design.md",
-      "kind": "support-file",
-      "credit": "Ryan Spice-Finnie",
-      "sha256": "3696ef8b3070defe409d09e237d8b5960f777fb4e72ddc41bddac7d571156458",
-      "ingested_as": "ryanspice/agent-skills owned skill"
-    },
-    {
       "path": "skills/windows-phone-metro-design/SKILL.md",
       "source_path": "04_skills/agent-skills/skills/windows-phone-metro-design/SKILL.md",
       "kind": "skill-document",
@@ -1433,6 +1433,30 @@
       "kind": "skill-document",
       "credit": "Ryan Spice-Finnie",
       "sha256": "29b241d8182975b0267eeb5bf7522651c56eb6432262f87925da537d20e2658b",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/candidates/deepseek-research-api-substrate-v0.1.0/SKILL.md",
+      "source_path": "04_skills/agent-skills/skills/candidates/deepseek-research-api-substrate-v0.1.0/SKILL.md",
+      "kind": "skill-document",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "485b5b276bc972788f784fa24fe85386856352030b882f3d62b1622dcfe32339",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/deep-research-workflow/SKILL.md",
+      "source_path": "04_skills/agent-skills/skills/deep-research-workflow/SKILL.md",
+      "kind": "skill-document",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "83ac4db57f2616e4b6428fb07e6c19f8cd415e1bac6b04b294d7f2547cf84665",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/enterprise-deep-research-workflow/SKILL.md",
+      "source_path": "04_skills/agent-skills/skills/enterprise-deep-research-workflow/SKILL.md",
+      "kind": "skill-document",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "a166af201c178a6c50b27176c8043ad77077a590b8b1bdb7e916453a624cb504",
       "ingested_as": "ryanspice/agent-skills owned skill"
     }
   ],
@@ -1528,14 +1552,6 @@
       "ingested_as": "ryanspice/agent-skills owned skill"
     },
     {
-      "name": "deepseek-research-api-substrate",
-      "path": "skills/candidates/deepseek-research-api-substrate-v0.1.0/SKILL.md",
-      "source_path": "04_skills/agent-skills/skills/candidates/deepseek-research-api-substrate-v0.1.0/SKILL.md",
-      "origin": "original",
-      "credit": "Ryan Spice-Finnie",
-      "note": "Candidate skill for DeepSeek as a research API substrate, held as candidate pending deeper source and API validation."
-    },
-    {
       "name": "Enterprise Deep Research Workflow Candidate",
       "path": "skills/candidates/enterprise-deep-research-workflow-candidate-v0.1.0/SKILL.md",
       "origin": "modified",
@@ -1613,7 +1629,9 @@
       "credit": "Ryan Spice-Finnie",
       "note": "Original AI Wiki local skill credited to Ryan Spice-Finnie.",
       "upstream": "",
-      "ingested_as": "ryanspice/agent-skills owned skill"
+      "ingested_as": "ryanspice/agent-skills owned skill",
+      "selected_by_default": false,
+      "selection_reason": "inactive by policy: 04_skills/agent-skills/skills/decorated-wait-action-output-v0.0.5/SKILL.md is canonical"
     },
     {
       "name": "decorated-wait-action-output",
@@ -1623,25 +1641,9 @@
       "credit": "Ryan Spice-Finnie",
       "note": "Revised generated draft credited to Ryan Spice-Finnie, derived from the v0.0.1 decorated wait action output skill.",
       "upstream": "04_skills/agent-skills/skills/decorated-wait-action-output-v0.0.1/SKILL.md",
-      "ingested_as": "ryanspice/agent-skills owned skill"
-    },
-    {
-      "name": "deep-research-workflow",
-      "path": "skills/deep-research-workflow/SKILL.md",
-      "source_path": "04_skills/agent-skills/skills/deep-research-workflow/SKILL.md",
-      "origin": "modified",
-      "credit": "Ryan Spice-Finnie",
-      "note": "Promoted research workflow skill based on Ryan Spice-Finnie AI Wiki research operations adaptation.",
-      "upstream": "Promoted from skills/candidates/deep-research-workflow-candidate-v0.1.0 after Prompt Operations deep research review."
-    },
-    {
-      "name": "enterprise-deep-research-workflow",
-      "path": "skills/enterprise-deep-research-workflow/SKILL.md",
-      "source_path": "04_skills/agent-skills/skills/enterprise-deep-research-workflow/SKILL.md",
-      "origin": "modified",
-      "credit": "Ryan Spice-Finnie",
-      "note": "Promoted enterprise research workflow skill based on Ryan Spice-Finnie AI Wiki research operations adaptation.",
-      "upstream": "Promoted from skills/candidates/enterprise-deep-research-workflow-candidate-v0.1.0 after Prompt Operations deep research review."
+      "ingested_as": "ryanspice/agent-skills owned skill",
+      "selected_by_default": true,
+      "selection_reason": "active default: selected by policy (decorated-wait-action-output)"
     },
     {
       "name": "gpt55-webapp-builder-codex-bridge",
@@ -1671,7 +1673,9 @@
       "credit": "Ryan Spice-Finnie",
       "note": "Original AI Wiki local skill credited to Ryan Spice-Finnie.",
       "upstream": "",
-      "ingested_as": "ryanspice/agent-skills owned skill"
+      "ingested_as": "ryanspice/agent-skills owned skill",
+      "selected_by_default": true,
+      "selection_reason": "active default: selected by policy (image-to-ui-sveltekit)"
     },
     {
       "name": "local-first-storage-architecture",
@@ -1701,7 +1705,9 @@
       "credit": "Ryan Spice-Finnie",
       "note": "Original AI Wiki local skill credited to Ryan Spice-Finnie.",
       "upstream": "",
-      "ingested_as": "ryanspice/agent-skills owned skill"
+      "ingested_as": "ryanspice/agent-skills owned skill",
+      "selected_by_default": true,
+      "selection_reason": "active default: selected by policy (pixelboats-fish-water-ecology)"
     },
     {
       "name": "pixelboats-stormy-hud-lab",
@@ -1711,7 +1717,9 @@
       "credit": "Ryan Spice-Finnie",
       "note": "Original AI Wiki local skill credited to Ryan Spice-Finnie.",
       "upstream": "",
-      "ingested_as": "ryanspice/agent-skills owned skill"
+      "ingested_as": "ryanspice/agent-skills owned skill",
+      "selected_by_default": true,
+      "selection_reason": "active default: selected by policy (pixelboats-stormy-hud-lab)"
     },
     {
       "name": "powershell-script-authoring",
@@ -1751,7 +1759,9 @@
       "credit": "Ryan Spice-Finnie",
       "note": "Original AI Wiki local skill credited to Ryan Spice-Finnie.",
       "upstream": "",
-      "ingested_as": "ryanspice/agent-skills owned skill"
+      "ingested_as": "ryanspice/agent-skills owned skill",
+      "selected_by_default": true,
+      "selection_reason": "active default: selected by policy (book-repo-automation)"
     },
     {
       "name": "ebook-pdf-accessibility-qa",
@@ -1761,7 +1771,9 @@
       "credit": "Ryan Spice-Finnie",
       "note": "Original AI Wiki local skill credited to Ryan Spice-Finnie.",
       "upstream": "",
-      "ingested_as": "ryanspice/agent-skills owned skill"
+      "ingested_as": "ryanspice/agent-skills owned skill",
+      "selected_by_default": true,
+      "selection_reason": "active default: selected by policy (ebook-pdf-accessibility-qa)"
     },
     {
       "name": "manuscript-editing",
@@ -1791,7 +1803,9 @@
       "credit": "Ryan Spice-Finnie",
       "note": "Original AI Wiki local skill credited to Ryan Spice-Finnie.",
       "upstream": "",
-      "ingested_as": "ryanspice/agent-skills owned skill"
+      "ingested_as": "ryanspice/agent-skills owned skill",
+      "selected_by_default": true,
+      "selection_reason": "active default: selected by policy (prompt-operations-handbook)"
     },
     {
       "name": "prompt-operations-release-kit",
@@ -1801,7 +1815,9 @@
       "credit": "Ryan Spice-Finnie",
       "note": "Original AI Wiki local skill credited to Ryan Spice-Finnie.",
       "upstream": "",
-      "ingested_as": "ryanspice/agent-skills owned skill"
+      "ingested_as": "ryanspice/agent-skills owned skill",
+      "selected_by_default": true,
+      "selection_reason": "active default: selected by policy (prompt-operations-release-kit)"
     },
     {
       "name": "prompt-operations-storefront",
@@ -1811,7 +1827,9 @@
       "credit": "Ryan Spice-Finnie",
       "note": "Original AI Wiki local skill credited to Ryan Spice-Finnie.",
       "upstream": "",
-      "ingested_as": "ryanspice/agent-skills owned skill"
+      "ingested_as": "ryanspice/agent-skills owned skill",
+      "selected_by_default": true,
+      "selection_reason": "active default: selected by policy (prompt-operations-storefront)"
     },
     {
       "name": "publishing-release-operations",
@@ -1821,7 +1839,9 @@
       "credit": "Ryan Spice-Finnie",
       "note": "Original AI Wiki local skill credited to Ryan Spice-Finnie.",
       "upstream": "",
-      "ingested_as": "ryanspice/agent-skills owned skill"
+      "ingested_as": "ryanspice/agent-skills owned skill",
+      "selected_by_default": true,
+      "selection_reason": "active default: selected by policy (publishing-release-operations)"
     },
     {
       "name": "university-textbook-design",
@@ -1835,13 +1855,28 @@
     },
     {
       "name": "repo-skill-recommender",
+      "path": "skills/repo-skill-recommender-copy/SKILL.md",
+      "origin": "modified",
+      "source_path": "04_skills/agent-skills/skills/repo-skill-recommender-copy/SKILL.md",
+      "credit": "Ryan Spice-Finnie",
+      "note": "Modified local copy credited to Ryan Spice-Finnie as a mutation of repo-skill-recommender.",
+      "upstream": "04_skills/agent-skills/skills/repo-skill-recommender/SKILL.md",
+      "ingested_as": "ryanspice/agent-skills owned skill",
+      "selected_by_default": false,
+      "selection_reason": "inactive by policy: 04_skills/agent-skills/skills/repo-skill-recommender/SKILL.md is canonical",
+      "sha256": "a4ae2d2575500e97105950c05876d8bf00d5d5770906619de7095a2a3a6d6b4d"
+    },
+    {
+      "name": "repo-skill-recommender",
       "path": "skills/repo-skill-recommender/SKILL.md",
       "origin": "original",
       "source_path": "04_skills/agent-skills/skills/repo-skill-recommender/SKILL.md",
       "credit": "Ryan Spice-Finnie",
       "note": "Original AI Wiki local skill credited to Ryan Spice-Finnie.",
       "upstream": "",
-      "ingested_as": "ryanspice/agent-skills owned skill"
+      "ingested_as": "ryanspice/agent-skills owned skill",
+      "selected_by_default": true,
+      "selection_reason": "active default: selected by policy (repo-skill-recommender)"
     },
     {
       "name": "sprite-pixel-art-sprite-sheets-gpt55",
@@ -1851,7 +1886,9 @@
       "credit": "Ryan Spice-Finnie",
       "note": "Original AI Wiki local skill credited to Ryan Spice-Finnie.",
       "upstream": "",
-      "ingested_as": "ryanspice/agent-skills owned skill"
+      "ingested_as": "ryanspice/agent-skills owned skill",
+      "selected_by_default": true,
+      "selection_reason": "active default: selected by policy (sprite-pixel-art-sprite-sheets-gpt55)"
     },
     {
       "name": "Svelte Lab Demo Ingestion",
@@ -1901,7 +1938,9 @@
       "credit": "Ryan Spice-Finnie",
       "note": "Original AI Wiki local skill credited to Ryan Spice-Finnie.",
       "upstream": "",
-      "ingested_as": "ryanspice/agent-skills owned skill"
+      "ingested_as": "ryanspice/agent-skills owned skill",
+      "selected_by_default": false,
+      "selection_reason": "inactive by policy: 04_skills/agent-skills/skills/verbose-console-output-v0.0.5/SKILL.md is canonical"
     },
     {
       "name": "verbose-console-output",
@@ -1911,7 +1950,9 @@
       "credit": "Ryan Spice-Finnie",
       "note": "Revised generated draft credited to Ryan Spice-Finnie, derived from the v0.0.1 verbose console output skill.",
       "upstream": "04_skills/agent-skills/skills/verbose-console-output-v0.0.1/SKILL.md",
-      "ingested_as": "ryanspice/agent-skills owned skill"
+      "ingested_as": "ryanspice/agent-skills owned skill",
+      "selected_by_default": true,
+      "selection_reason": "active default: selected by policy (verbose-console-output)"
     },
     {
       "name": "vibe-check",
@@ -1921,7 +1962,9 @@
       "credit": "Ryan Spice-Finnie",
       "note": "AI Wiki adaptation credited to Ryan Spice-Finnie, based on the external vibe-guard skill pack.",
       "upstream": "codecoincognition/vibe-guard-skills https://github.com/codecoincognition/vibe-guard-skills",
-      "ingested_as": "ryanspice/agent-skills owned skill"
+      "ingested_as": "ryanspice/agent-skills owned skill",
+      "selected_by_default": true,
+      "selection_reason": "active default: selected by policy (vibe-check)"
     },
     {
       "name": "vibe-explain",
@@ -1931,7 +1974,9 @@
       "credit": "Ryan Spice-Finnie",
       "note": "AI Wiki adaptation credited to Ryan Spice-Finnie, based on the external vibe-guard skill pack.",
       "upstream": "codecoincognition/vibe-guard-skills https://github.com/codecoincognition/vibe-guard-skills",
-      "ingested_as": "ryanspice/agent-skills owned skill"
+      "ingested_as": "ryanspice/agent-skills owned skill",
+      "selected_by_default": true,
+      "selection_reason": "active default: selected by policy (vibe-explain)"
     },
     {
       "name": "vibe-guard",
@@ -1941,7 +1986,9 @@
       "credit": "Ryan Spice-Finnie",
       "note": "AI Wiki adaptation credited to Ryan Spice-Finnie, based on the external vibe-guard skill pack.",
       "upstream": "codecoincognition/vibe-guard-skills https://github.com/codecoincognition/vibe-guard-skills",
-      "ingested_as": "ryanspice/agent-skills owned skill"
+      "ingested_as": "ryanspice/agent-skills owned skill",
+      "selected_by_default": false,
+      "selection_reason": "inactive by policy: 04_skills/agent-skills/skills/vibe-guard/SKILL.md is canonical"
     },
     {
       "name": "vibe-secure",
@@ -1951,7 +1998,9 @@
       "credit": "Ryan Spice-Finnie",
       "note": "AI Wiki adaptation credited to Ryan Spice-Finnie, based on the external vibe-guard skill pack.",
       "upstream": "codecoincognition/vibe-guard-skills https://github.com/codecoincognition/vibe-guard-skills",
-      "ingested_as": "ryanspice/agent-skills owned skill"
+      "ingested_as": "ryanspice/agent-skills owned skill",
+      "selected_by_default": true,
+      "selection_reason": "active default: selected by policy (vibe-secure)"
     },
     {
       "name": "walking-cycle-generation",
@@ -1982,7 +2031,39 @@
       "note": "Original AI Wiki local skill credited to Ryan Spice-Finnie.",
       "upstream": "",
       "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "name": "deepseek-research-api-substrate",
+      "path": "skills/candidates/deepseek-research-api-substrate-v0.1.0/SKILL.md",
+      "source_path": "04_skills/agent-skills/skills/candidates/deepseek-research-api-substrate-v0.1.0/SKILL.md",
+      "origin": "original",
+      "credit": "Ryan Spice-Finnie",
+      "note": "Candidate skill for DeepSeek as a research API substrate, held as candidate pending deeper source and API validation."
+    },
+    {
+      "name": "deep-research-workflow",
+      "path": "skills/deep-research-workflow/SKILL.md",
+      "source_path": "04_skills/agent-skills/skills/deep-research-workflow/SKILL.md",
+      "origin": "modified",
+      "credit": "Ryan Spice-Finnie",
+      "note": "Promoted research workflow skill based on Ryan Spice-Finnie AI Wiki research operations adaptation.",
+      "upstream": "Promoted from skills/candidates/deep-research-workflow-candidate-v0.1.0 after Prompt Operations deep research review."
+    },
+    {
+      "name": "enterprise-deep-research-workflow",
+      "path": "skills/enterprise-deep-research-workflow/SKILL.md",
+      "source_path": "04_skills/agent-skills/skills/enterprise-deep-research-workflow/SKILL.md",
+      "origin": "modified",
+      "credit": "Ryan Spice-Finnie",
+      "note": "Promoted enterprise research workflow skill based on Ryan Spice-Finnie AI Wiki research operations adaptation.",
+      "upstream": "Promoted from skills/candidates/enterprise-deep-research-workflow-candidate-v0.1.0 after Prompt Operations deep research review."
     }
   ],
-  "ownership_policy": "The repository paths under skills/ are the owned skill library layout; retired local-created shelf records are historical provenance only."
+  "ownership_policy": "The repository paths under skills/ are the owned skill library layout; retired local-created shelf records are historical provenance only.",
+  "duplicate_policy": {
+    "version": "1.0.0",
+    "ref": "scripts/skill-dedup-policy.json",
+    "normalization_notes": "active duplicate selections are now policy-driven; non-selected entries remain preserved for history",
+    "last_updated": "2026-05-30T10:24:14.000Z"
+  }
 }

@@ -18,8 +18,8 @@
   ],
   "required_capabilities": [],
   "mirrors": [
-    "B:/Dev/PixelBoats/.claude/skills/aurora-dev-os-devops/SKILL.md",
-    "B:/Dev/PixelBoats/.ai/skills/aurora-dev-os-devops/SKILL.md"
+    "<PIXELBOATS_ROOT>/.claude/skills/aurora-dev-os-devops/SKILL.md",
+    "<PIXELBOATS_ROOT>/.ai/skills/aurora-dev-os-devops/SKILL.md"
   ],
   "provenance": {
     "generator": "Claude Code lead + DeepSeek Pro review",
