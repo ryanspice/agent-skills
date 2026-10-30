@@ -25,6 +25,14 @@ surface. Each skill document includes provenance and credit fields:
 See `skills/provenance.json` and `skills/README.md` for the full file and
 skill index.
 
+## Send It
+
+When you want an agent to turn the current authorized work into reviewable
+pull requests, invoke **Send It** or point it to [skills/send-it/SKILL.md](skills/send-it/SKILL.md).
+The skill scopes the changes, updates relevant documentation, runs appropriate
+checks, and prepares one or more PRs. Merging and deployment require separate
+authorization. It can use the AI Wiki's repo-backed skill discovery below.
+
 ## Checks
 
 ```powershell

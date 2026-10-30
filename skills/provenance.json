@@ -8,9 +8,33 @@
     "modified": "Adapted, revised, copied, or derived from another skill/source/reference, with upstream/source credit retained."
   },
   "credit_policy": "Ryan Spice-Finnie is credited for created and locally mutated AI Wiki skills. Modified/adapted skills also retain upstream/source-reference credit where known. Ingesting them directly into this repository makes ryanspice/agent-skills the owned distribution surface.",
-  "source_file_count": 178,
-  "skill_document_count": 53,
+  "source_file_count": 181,
+  "skill_document_count": 56,
   "source_files": [
+    {
+      "path": "skills/code-and-plan/SKILL.md",
+      "source_path": "04_skills/agent-skills/skills/code-and-plan/SKILL.md",
+      "kind": "skill-document",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "d80b8f8a55b5d30e6f39fa37770b38cfe9aa98b221396a474690e3619d4cc867",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/grill-spice/SKILL.md",
+      "source_path": "04_skills/agent-skills/skills/grill-spice/SKILL.md",
+      "kind": "skill-document",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "8b14591ef55445853441b60f9930aec775e325e94e8b448a214e46d56b0f37e6",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/send-it/SKILL.md",
+      "source_path": "04_skills/agent-skills/skills/send-it/SKILL.md",
+      "kind": "skill-document",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "58715970df1455eaf1a680fa56e97329270282f4c9015fcd6fa1a1532adf734e",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
     {
       "path": "skills/ai-wiki-file-management/mcp-skill.json",
       "source_path": "04_skills/agent-skills/skills/ai-wiki-file-management/mcp-skill.json",
@@ -1437,6 +1461,36 @@
     }
   ],
   "skills": [
+    {
+      "name": "code-and-plan",
+      "path": "skills/code-and-plan/SKILL.md",
+      "origin": "original",
+      "source_path": "04_skills/agent-skills/skills/code-and-plan/SKILL.md",
+      "credit": "Ryan Spice-Finnie",
+      "note": "Imported from user-provided Code n? Plan skill attachment.",
+      "upstream": "",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "name": "grill-spice",
+      "path": "skills/grill-spice/SKILL.md",
+      "origin": "modified",
+      "source_path": "04_skills/agent-skills/skills/grill-spice/SKILL.md",
+      "credit": "Ryan Spice-Finnie",
+      "note": "Imported from user-provided Grill Spice skill attachment.",
+      "upstream": "https://github.com/mattpocock/skills",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "name": "send-it",
+      "path": "skills/send-it/SKILL.md",
+      "origin": "original",
+      "source_path": "04_skills/agent-skills/skills/send-it/SKILL.md",
+      "credit": "Ryan Spice-Finnie",
+      "note": "Created for reviewable pull-request handoff.",
+      "upstream": "",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
     {
       "name": "ai-wiki-file-management",
       "path": "skills/ai-wiki-file-management/SKILL.md",
