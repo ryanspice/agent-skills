@@ -8,8 +8,8 @@
     "modified": "Adapted, revised, copied, or derived from another skill/source/reference, with upstream/source credit retained."
   },
   "credit_policy": "Ryan Spice-Finnie is credited for created and locally mutated AI Wiki skills. Modified/adapted skills also retain upstream/source-reference credit where known. Ingesting them directly into this repository makes ryanspice/agent-skills the owned distribution surface.",
-  "source_file_count": 181,
-  "skill_document_count": 56,
+  "source_file_count": 184,
+  "skill_document_count": 59,
   "source_files": [
     {
       "path": "skills/code-and-plan/SKILL.md",
@@ -168,7 +168,7 @@
       "source_path": "04_skills/agent-skills/skills/aiwiki-deep-research-orchestrator/SKILL.md",
       "kind": "skill-document",
       "credit": "Ryan Spice-Finnie",
-      "sha256": "3cf3ae872a5260241d72afbf682473ee68222f5950ec9237add1093fccba77f8",
+      "sha256": "40cfbf5e9aada6dc222c21f1b0b2f0ba7a642843b40bcbfd83c5db281fd49683",
       "ingested_as": "ryanspice/agent-skills owned skill"
     },
     {
@@ -1458,6 +1458,30 @@
       "credit": "Ryan Spice-Finnie",
       "sha256": "29b241d8182975b0267eeb5bf7522651c56eb6432262f87925da537d20e2658b",
       "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/candidates/deepseek-research-api-substrate-v0.1.0/SKILL.md",
+      "source_path": "04_skills/agent-skills/skills/candidates/deepseek-research-api-substrate-v0.1.0/SKILL.md",
+      "kind": "skill-document",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "485b5b276bc972788f784fa24fe85386856352030b882f3d62b1622dcfe32339",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/deep-research-workflow/SKILL.md",
+      "source_path": "04_skills/agent-skills/skills/deep-research-workflow/SKILL.md",
+      "kind": "skill-document",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "83ac4db57f2616e4b6428fb07e6c19f8cd415e1bac6b04b294d7f2547cf84665",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/enterprise-deep-research-workflow/SKILL.md",
+      "source_path": "04_skills/agent-skills/skills/enterprise-deep-research-workflow/SKILL.md",
+      "kind": "skill-document",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "a166af201c178a6c50b27176c8043ad77077a590b8b1bdb7e916453a624cb504",
+      "ingested_as": "ryanspice/agent-skills owned skill"
     }
   ],
   "skills": [
@@ -2061,6 +2085,32 @@
       "note": "Original AI Wiki local skill credited to Ryan Spice-Finnie.",
       "upstream": "",
       "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "name": "deepseek-research-api-substrate",
+      "path": "skills/candidates/deepseek-research-api-substrate-v0.1.0/SKILL.md",
+      "source_path": "04_skills/agent-skills/skills/candidates/deepseek-research-api-substrate-v0.1.0/SKILL.md",
+      "origin": "original",
+      "credit": "Ryan Spice-Finnie",
+      "note": "Candidate skill for DeepSeek as a research API substrate, held as candidate pending deeper source and API validation."
+    },
+    {
+      "name": "deep-research-workflow",
+      "path": "skills/deep-research-workflow/SKILL.md",
+      "source_path": "04_skills/agent-skills/skills/deep-research-workflow/SKILL.md",
+      "origin": "modified",
+      "credit": "Ryan Spice-Finnie",
+      "note": "Promoted research workflow skill based on Ryan Spice-Finnie AI Wiki research operations adaptation.",
+      "upstream": "Promoted from skills/candidates/deep-research-workflow-candidate-v0.1.0 after Prompt Operations deep research review."
+    },
+    {
+      "name": "enterprise-deep-research-workflow",
+      "path": "skills/enterprise-deep-research-workflow/SKILL.md",
+      "source_path": "04_skills/agent-skills/skills/enterprise-deep-research-workflow/SKILL.md",
+      "origin": "modified",
+      "credit": "Ryan Spice-Finnie",
+      "note": "Promoted enterprise research workflow skill based on Ryan Spice-Finnie AI Wiki research operations adaptation.",
+      "upstream": "Promoted from skills/candidates/enterprise-deep-research-workflow-candidate-v0.1.0 after Prompt Operations deep research review."
     }
   ],
   "ownership_policy": "The repository paths under skills/ are the owned skill library layout; retired local-created shelf records are historical provenance only.",

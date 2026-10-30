@@ -1,0 +1,18 @@
+{
+  "schema_version": "1.0",
+  "name": "pixelboats-stage-verification",
+  "version": "0.1.0",
+  "status": "candidate",
+  "scope": "project",
+  "project_slug": "pixelboats",
+  "canonical_path": "04_skills/agent-skills/skills/pixelboats-stage-verification",
+  "entrypoint": "SKILL.md",
+  "tags": ["pixelboats", "bedrock", "stages", "verification", "architecture", "exit-criteria"],
+  "triggers": ["evaluating whether a bedrock stage is complete", "S0-S7 status check", "architectural audit"],
+  "provenance": {
+    "generator": "Claude Code lead + Nemotron/Vibethinker review",
+    "source": "GPT-5.6 audit identified 'feature existence = stage completion' conflation. Nemotron corrected with criterion-by-criterion evaluation, versioned YAML criteria, and mandatory performance/manual sign-off dimensions.",
+    "created_utc": "2026-07-21T00:00:00Z",
+    "status": "staged-candidate"
+  }
+}

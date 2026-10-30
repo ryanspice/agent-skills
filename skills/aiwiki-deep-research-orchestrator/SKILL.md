@@ -1,7 +1,7 @@
 ---
 name: aiwiki-deep-research-orchestrator
-version: 0.1.0
-status: generated
+version: 0.2.0
+status: promoted
 skill_type: orchestration
 tags:
   - ai-wiki
@@ -10,21 +10,21 @@ tags:
   - skill-composition
   - evidence
   - source-weighting
+  - prompt-operations
 provenance_origin: "original"
-provenance_source_path: "04_skills/agent-skills/skills/aiwiki-deep-research-orchestrator/SKILL.md"
 provenance_credit: "Ryan Spice-Finnie"
 provenance_ingested_as: "ryanspice/agent-skills owned skill"
+provenance_promoted_from: "skills/aiwiki-deep-research-orchestrator/SKILL.md v0.1.0 generated"
 provenance_note: "Original AI Wiki local skill credited to Ryan Spice-Finnie."
+provenance_source_path: "04_skills/agent-skills/skills/aiwiki-deep-research-orchestrator/SKILL.md"
 
 ---
 
 # AI Wiki Deep Research Orchestrator
 
-## Purpose
-
 Use this skill when a research task should combine multiple AI Wiki skills, candidate skills, local search lanes, web/current sources, and evidence ledgers.
 
-This is not a replacement for the lighter deep-research workflow or the enterprise workflow. It is an orchestrator that chooses which skills and rigor level to apply.
+This is not a replacement for the lighter deep-research workflow or the enterprise workflow. It chooses which rigor level and which skills to apply.
 
 ## Core doctrine
 
@@ -42,17 +42,15 @@ The orchestrator should:
 
 ## Skill composition order
 
-Use this order:
-
-```txt
-1. aiwiki-skill-copy-workflow        # find/copy relevant skills first
-2. local-first-storage-architecture  # when storage/index/canonicality matters
-3. deep-research-workflow-candidate  # default research structure
-4. enterprise-deep-research-workflow # decision-grade rigor only
+```text
+1. aiwiki-skill-copy-workflow             # find/copy relevant skills first
+2. local-first-storage-architecture       # storage/index/canonicality
+3. deep-research-workflow                 # default research structure
+4. enterprise-deep-research-workflow      # decision-grade rigor only
 5. windows-tar-package-installer-workflow # packaging/install/run workflow
 ```
 
-If the skill-copy workflow does not exist yet, the orchestrator should say that this is the missing P0 tool and proceed manually.
+If the skill-copy workflow does not exist yet, mark it as the missing P0 tool and proceed manually.
 
 ## Mode selection
 
@@ -67,9 +65,7 @@ Do not run enterprise mode for simple lookups, tiny code fixes, or basic brainst
 
 ## Required lanes
 
-For AI Wiki/local work, search lanes should be labelled:
-
-```txt
+```text
 local.skills-universal
 local.skills-project
 local.skills-generated
@@ -77,19 +73,19 @@ local.skills-candidates
 local.project-notes
 local.project-state
 repo.code
+repo.docs
 web.primary
 web.current
 web.community
 runtime.index-cache
+manual.user-provided
 ```
 
 Runtime/index/cache/download hits can help find paths. They do not prove preference or truth.
 
 ## Evidence rule
 
-Search finds candidates.
-Source weighting creates evidence.
-Curated files decide.
+Search finds candidates. Source weighting creates evidence. Curated files decide.
 
 Major claims in serious research must appear in an evidence matrix or claims ledger, or be labelled as inference.
 
@@ -97,10 +93,10 @@ Major claims in serious research must appear in an evidence matrix or claims led
 
 Add typed links when installing/promoting notes:
 
-```md
+```markdown
 ## Related
-- [[deep-research-workflow-candidate]]
-- [[enterprise-deep-research-workflow-candidate]]
+- [[deep-research-workflow]]
+- [[enterprise-deep-research-workflow]]
 - [[aiwiki-skill-copy-workflow]]
 - [[aiwiki-skill-create-workflow]]
 - [[local-storage-rd-reference]]
@@ -114,10 +110,21 @@ Do not build full `Search -Mode Research` first.
 
 Build:
 
-```txt
+```text
 P0: Search -Skills -SelectMany -CopyFullContent
 P1: Search -Mode Evidence -Emit evidence-matrix
 P2: New-ResearchRun scaffold
 P3: Search -Mode Research
 P4: Enterprise validation/HTML/PDF profile
 ```
+
+## Output contract
+
+When invoked, return:
+
+1. selected mode,
+2. selected skill stack,
+3. source lanes,
+4. evidence artifacts required,
+5. next action,
+6. stop condition.
