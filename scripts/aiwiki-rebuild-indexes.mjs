@@ -3,10 +3,10 @@ import { copyFileSync, existsSync, mkdirSync, readdirSync, readFileSync, statSyn
 import path from 'node:path';
 import process from 'node:process';
 import { fileURLToPath } from 'node:url';
+import { findAiWikiRoot, requireAiWikiRoot } from './aiwiki-root.mjs';
 
 const scriptDir = path.dirname(fileURLToPath(import.meta.url));
 const repoRoot = path.resolve(scriptDir, '..');
-const defaultAiWikiRoot = 'S:\\OneDrive\\Obsidan\\AI-Wiki';
 const repoSourceRootRel = '04_skills/agent-skills/skills';
 const repoSourceSlug = 'ryanspice-agent-skills';
 const policyFileName = 'skill-dedup-policy.json';
@@ -85,7 +85,7 @@ function loadDedupPolicy(aiWikiRoot) {
 
 function parseArgs(argv) {
   const args = {
-    aiWikiRoot: process.env.AIWIKI_ROOT || defaultAiWikiRoot,
+    aiWikiRoot: findAiWikiRoot(repoRoot),
     apply: false,
     backup: true
   };
@@ -104,7 +104,7 @@ function parseArgs(argv) {
 function printHelp() {
   console.log(`Usage:
   npm run aiwiki:rebuild-indexes -- --apply
-  node scripts/aiwiki-rebuild-indexes.mjs --ai-wiki-root S:\\OneDrive\\Obsidan\\AI-Wiki --apply
+  node scripts/aiwiki-rebuild-indexes.mjs --ai-wiki-root <AI_WIKI_ROOT> --apply
 
 Without --apply, this prints a dry-run summary and writes nothing.
 `);
@@ -469,7 +469,7 @@ if (args.help) {
   process.exit(0);
 }
 
-const aiWikiRoot = path.resolve(args.aiWikiRoot);
+const aiWikiRoot = requireAiWikiRoot(repoRoot, args.aiWikiRoot);
 const cloneRoot = path.join(aiWikiRoot, '04_skills', 'agent-skills');
 if (!existsSync(aiWikiRoot)) {
   throw new Error(`AI Wiki root not found: ${aiWikiRoot}`);

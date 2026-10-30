@@ -2,6 +2,7 @@ import { createHash } from 'node:crypto';
 import { existsSync, readFileSync, readdirSync, statSync } from 'node:fs';
 import path from 'node:path';
 import process from 'node:process';
+import { auditPublicPaths } from './audit-public-paths.mjs';
 
 const repoRoot = process.cwd();
 const skillsRoot = path.join(repoRoot, 'skills');
@@ -11,7 +12,6 @@ const legacyBucketPath = ['skills', 'aiwiki-generated'].join('/');
 const expectedOwnedSourceRoot = '04_skills/agent-skills/skills/';
 const blockedPathPatterns = [
   /S:[\\/]+OneDrive[\\/]+Obsidan/i,
-  /S:\/OneDrive\/Obsidan/i,
   /B:[\\/]+Dev/i,
   /B:\/Dev/i,
   /B:[\\/]+Search/i,
@@ -247,6 +247,10 @@ for (const filePath of allFiles) {
     const text = readFileSync(filePath, 'utf8');
     validateNoBlockedRoots(repoPath, text);
   }
+}
+
+for (const repoPath of auditPublicPaths(repoRoot)) {
+  fail(`${repoPath}: contains a personal absolute path outside the skill-only scan`);
 }
 
 if (errors.length > 0) {
