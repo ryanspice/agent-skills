@@ -1,8 +1,9 @@
 ---
 name: aiwiki-command-run-fragments
-version: 0.1.7
+version: 0.2.1
 status: generated
 skill_type: powershell-snippets
+description: Use when loading the AI Wiki Run and Search PowerShell command fragments with progress reporting, service health checks, and flash-safe no-window subprocess handling.
 tags:
   - ai-wiki
   - powershell
@@ -29,6 +30,10 @@ provenance_note: "Original AI Wiki local skill credited to Ryan Spice-Finnie."
 Standardize short PowerShell command fragments for AI Wiki package/research workflows, with visible progress, ETA history, and hidden search service startup.
 
 ## Commands
+
+The canonical loader is
+`scripts/Load-AiWikiCommandFragments.ps1`; its optional polish layers are
+loaded automatically from the same `scripts/` directory.
 
 ```powershell
 Use-Run
@@ -81,6 +86,11 @@ Startup order:
 3. Docker Elastic/Elasticsearch container;
 4. direct `elasticsearch.bat` under `<SEARCH_ROOT>\.runtime`, hidden;
 5. `<SEARCH_ROOT>\scripts\Start-Elastic*.ps1`, hidden fallback.
+
+All shell-backed service and spinner subprocesses use
+`ProcessStartInfo.CreateNoWindow = $true`. `WindowStyle Hidden`,
+`Start-Process`, and `Start-Job` are not sufficient for routine background
+launches because they can still flash a console before it is hidden.
 
 `Search`, `Index`, and `Reindex` call `Start-SearchServices` first, then continue with fallback lanes if Elastic or Everything are unavailable.
 

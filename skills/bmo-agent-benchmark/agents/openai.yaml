@@ -1,0 +1,4 @@
+interface:
+  display_name: "BMO Agent Benchmark"
+  short_description: "Run the bounded BMO agent benchmark safely"
+  default_prompt: "Use $bmo-agent-benchmark to orchestrate, resume, score, and browser-review the approved 16-cell path without asking me to relay internal plan hashes."

@@ -54,7 +54,7 @@ Hermes stack launcher:
 AI Wiki repo-backed skills shelf:
 
 ```text
-<AI_WIKI_ROOT>\04_skills\generated
+<AI_WIKI_ROOT>\04_skills\agent-skills\skills
 ```
 
 Universal AI Wiki skills:
@@ -80,18 +80,26 @@ Nemotron performance eval:
 Preferred launch:
 
 ```powershell
-haiwiki-stack.ps1 -Workspace aiwiki
+& "<AI_WIKI_ROOT>\00_Kit\scripts\hermes\start-aiwiki-hermes-stack.ps1" -Workspace aiwiki
 ```
 
 Other workspaces:
 
 ```powershell
-haiwiki-stack.ps1 -Workspace dev
-haiwiki-stack.ps1 -Workspace pixelboats
-haiwiki-stack.ps1 -Workspace here
+& "<AI_WIKI_ROOT>\00_Kit\scripts\hermes\start-aiwiki-hermes-stack.ps1" -Workspace dev
+& "<AI_WIKI_ROOT>\00_Kit\scripts\hermes\start-aiwiki-hermes-stack.ps1" -Workspace pixelboats
+& "<AI_WIKI_ROOT>\00_Kit\scripts\hermes\start-aiwiki-hermes-stack.ps1" -Workspace here
 ```
 
-The stack launcher starts the local AI Wiki MCP HTTP server, sets AI Wiki root environment variables, launches Hermes from the requested workspace, and avoids editing or restructuring the wiki.
+The stack launcher starts the local AI Wiki MCP HTTP bridge through `Start-AiWikiBridge.ps1`, sets AI Wiki root environment variables, launches Hermes from the requested workspace, and avoids editing or restructuring the wiki. The bridge is a hidden background process; Hermes remains in the current console.
+
+## Console and MCP process policy
+
+- MCP child processes must use native stdio with the host's hidden Windows process flags, or the hidden AI Wiki HTTP bridge.
+- Skills and normal launchers must not create a second terminal window.
+- Do not use a visible PowerShell, Windows Terminal, Command Prompt, or console-host wrapper for MCP startup.
+- Foreground bridge mode is debugging-only and must never be called by this skill or written into a client MCP configuration.
+- If a host cannot prove hidden stdio spawning, use the HTTP bridge or the approved windowless relay; do not fall back to a visible shell.
 
 Expected MCP server:
 
@@ -270,7 +278,7 @@ Expected result includes custom AI Wiki skills.
 Run:
 
 ```powershell
-haiwiki-stack.ps1 -Workspace aiwiki
+& "<AI_WIKI_ROOT>\00_Kit\scripts\hermes\start-aiwiki-hermes-stack.ps1" -Workspace aiwiki
 ```
 
 Expected Hermes startup includes:

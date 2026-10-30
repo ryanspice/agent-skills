@@ -1,0 +1,20 @@
+---
+status: promoted
+skill: fugu-free-model-fleet-operator
+version: 0.2.0
+reviewed: 2026-09-13
+---
+
+# Promotion state
+
+The reviewed skill is owned by the agent-skills repository. Live model availability, provider entitlement, and T3 UI state remain runtime evidence and are intentionally not frozen into this skill.
+
+Review findings closed:
+
+- repo source now has provenance fields and portable placeholders;
+- the repeatable snapshot script has explicit path bindings;
+- Luna handoff and final report shapes are reusable templates;
+- happy-path, ambiguity, safety, regression, and composability eval cases are included;
+- paid fallback and protected-boundary rules remain fail-closed.
+
+Future changes should update the smallest durable surface and bump the skill version when behavior changes.

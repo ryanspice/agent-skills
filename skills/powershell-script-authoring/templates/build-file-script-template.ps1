@@ -26,4 +26,4 @@ if (-not $NoSelfDelete -and $PSCommandPath) {
 }
 '@ | Set-Content -LiteralPath $ScriptPath -Encoding utf8NoBOM
 
-pwsh -NoProfile -ExecutionPolicy Bypass -File $ScriptPath
+& $ScriptPath

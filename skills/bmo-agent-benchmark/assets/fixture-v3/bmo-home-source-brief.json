@@ -1,0 +1,890 @@
+{
+  "schemaVersion": "2.0.0",
+  "fixture": {
+    "id": "bmo-personal-home-2026-07",
+    "purpose": "Compact public-page implementation benchmark fixture",
+    "createdAt": "2026-07-26T14:42:10-04:00",
+    "livePageVerifiedAt": "2026-07-26T14:42:10-04:00",
+    "sourceReleaseVersion": "R61-v4.42",
+    "sourceBuildLastModified": "2026-07-21 17:00:23",
+    "sourceCaptureSha256": "FE626294E95DF204CE14DAE373F7FD3E8823C99EAEA0113160523D283A73FA5C",
+    "elementsCaptureSha256": "D4DA58215B36A3713DA2FD4CBFB0CDF1959F5841FF6F5B86DFC9A82601B1E5AF",
+    "originalCompactBriefSha256": "75DB940953D5856B761D43D9675450F4A2A187189D4C7A5EBE033099395337C3",
+    "provenance": [
+      "The public BMO page and its embedded __NEXT_DATA__ were reviewed before packaging.",
+      "The original compact brief remains the content basis; v2 adds provenance and validation.",
+      "The raw DOM, CSS, Next.js payload, analytics, consent tooling and credentials are excluded from delegate context."
+    ]
+  },
+  "source": {
+    "url": "https://www.bmo.com/en-ca/main/personal/",
+    "locale": "en-CA",
+    "snapshotBuild": "2026-07-21 17:00:23",
+    "pageTitle": "BMO Canada - Personal Banking, Credit Cards, Loans & Investing",
+    "metaDescription": "BMO Canada offers a wide range of personal banking services including chequing and savings accounts, mortgages, credit cards, loans, investments and insurance."
+  },
+  "guardrails": {
+    "purpose": "Local visual/reference implementation only",
+    "noCredentialCollection": true,
+    "noRealAuthentication": true,
+    "noBmoApiCalls": true,
+    "noAnalyticsOrTracking": true,
+    "noCookiePlatform": true,
+    "noChatbot": true,
+    "demoDisclosureRequired": true
+  },
+  "designTokens": {
+    "fontFamily": "\"Heebo\", Arial, sans-serif",
+    "fontWeights": {
+      "light": 300,
+      "regular": 400,
+      "medium": 500,
+      "bold": 700
+    },
+    "colors": {
+      "brand": "#0075BE",
+      "brandDark": "#005587",
+      "slate": "#001928",
+      "granite": "#646C76",
+      "grey": "#929BA9",
+      "lightGrey": "#D9DCE1",
+      "albicant": "#F5F6F7",
+      "polar": "#E6F9FE",
+      "white": "#FEFEFE",
+      "cerulean": "#73C3EB",
+      "skyBlue": "#009EC9",
+      "warning": "#FFC827",
+      "positive": "#0B8224",
+      "negative": "#C81414"
+    },
+    "radii": {
+      "control": "4px",
+      "card": "8px",
+      "megaMenu": "10px",
+      "pill": "999px"
+    },
+    "spacing": [
+      "4px",
+      "8px",
+      "12px",
+      "16px",
+      "24px",
+      "32px",
+      "40px",
+      "48px",
+      "64px",
+      "80px"
+    ],
+    "breakpoints": {
+      "tablet": "768px",
+      "desktop": "1024px",
+      "wide": "1268px",
+      "max": "1440px"
+    },
+    "content": {
+      "pageMax": "1440px",
+      "innerMax": "1204px",
+      "mobileGutter": "24px",
+      "tabletGutter": "32px",
+      "wideGutter": "120px"
+    }
+  },
+  "header": {
+    "utilityRow": [
+      "Personal",
+      "Search",
+      "Canada",
+      "EN",
+      "Sign In"
+    ],
+    "primaryNav": [
+      "Bank Accounts",
+      "Credit Cards",
+      "Mortgages",
+      "Loans",
+      "Investing",
+      "Insurance",
+      "Offers & Programs"
+    ],
+    "mobileActions": [
+      "Logo",
+      "Sign In",
+      "Menu"
+    ],
+    "implementationNote": "Build the responsive shell and representative mega-menu content. Do not recreate the hundreds of destination links or BMO authentication."
+  },
+  "pageOrder": [
+    "Optional informational alert",
+    "Responsive utility header and primary navigation",
+    "Weighted single-campaign hero",
+    "Needs navigator with six tabs and six cards per tab",
+    "Mobile banking app split banner",
+    "Three-card help-me-choose section",
+    "Large blue navigation footer"
+  ],
+  "hero": {
+    "behaviour": "This is a weighted pool that renders one campaign, not a visible seven-slide carousel. Use investment-contest as the deterministic default and allow a local query parameter ?hero=<id> for visual testing.",
+    "campaigns": [
+      {
+        "id": "everyday-banking",
+        "weight": 23,
+        "title": "Get up to $900 in cash *",
+        "copy": "And a Walmart+ Membership for up to 12 months ‡ when you switch to BMO .",
+        "cta": {
+          "label": "Learn more",
+          "href": "https://www.bmo.com/en-ca/main/personal/bank-accounts/new-bank-account-offers-and-promotions/",
+          "newTab": false
+        },
+        "image": {
+          "desktop": "https://www.bmo.com/dist/images/hp-banner-edb-en-desktop-1370x840.webp",
+          "mobile": "https://www.bmo.com/dist/images/hp-banner-edb-en-desktop-1370x840.webp",
+          "alt": null
+        }
+      },
+      {
+        "id": "options-trading",
+        "weight": 9,
+        "title": "Start Exploring Options Trading",
+        "copy": "Learn the basics, build strategies, and trade with confidence.",
+        "cta": {
+          "label": "Learn more",
+          "href": "https://www.bmo.com/en-ca/main/personal/investments/options/",
+          "newTab": true
+        },
+        "image": {
+          "desktop": "https://www.bmo.com/dist/images/en-ca/main/personal/investments/options/homepage/hero-en.webp",
+          "mobile": "https://www.bmo.com/dist/images/en-ca/main/personal/investments/options/homepage/hero-en.webp",
+          "alt": null
+        }
+      },
+      {
+        "id": "investment-contest",
+        "weight": 13,
+        "title": "Your chance to win $100,000 *",
+        "copy": "Take your investment goals to new heights.",
+        "cta": {
+          "label": "Learn more",
+          "href": "https://www.bmo.com/en-ca/main/personal/investments/100k-contest/",
+          "newTab": false
+        },
+        "image": {
+          "desktop": "https://www.bmo.com/dist/images/march/fh-hp-assets/hp-banner-en-desktop-1370x840.webp",
+          "mobile": "https://www.bmo.com/dist/images/march/fh-hp-assets/hp-banner-en-laptop-tablet-mobile-1100x840.webp",
+          "alt": null
+        }
+      },
+      {
+        "id": "credit-cards",
+        "weight": 23,
+        "title": "Get a credit card that works for you",
+        "copy": "We have a suite of travel, cashback, and lifestyle card options. Plus, pay no annual fee in your first year.*",
+        "cta": {
+          "label": "Learn more",
+          "href": "/main/personal/credit-cards/?ecid=va-Pers80769CC4-CHBMO34",
+          "newTab": false
+        },
+        "image": {
+          "desktop": "https://www.bmo.com/dist/images/hp-banner/cb-we/desktop-xl_hero_bmo-cashback-world-elite.webp?x=x",
+          "mobile": "https://www.bmo.com/dist/images/hp-banner/cb-we/mobile-s_hero_bmo-cashback-world-elite.webp?x=x",
+          "alt": null
+        }
+      },
+      {
+        "id": "blue-rewards",
+        "weight": 10,
+        "title": "Welcome offer: Get up to $1600 in value †",
+        "copy": "Plus, earn 10x ​ the Blue Points at participating Partners with the new BMO Blu e Rewards World Elite ®* Mastercard ®* *Terms and conditions apply",
+        "cta": {
+          "label": "Learn More",
+          "href": "https://www.bmo.com/en-ca/main/personal/credit-cards/bmo-blue-rewards-world-elite-mastercard/?ecid=sm-5282026BRND1-NSBMO60",
+          "newTab": false
+        },
+        "image": {
+          "desktop": "https://www.bmo.com/dist/images/dory-cardart-hero/dory-cardart-hero-webp/dory-en-cardart-nobg-laptop-tablet-mobile-1370x840.webp",
+          "mobile": "https://www.bmo.com/dist/images/dory-cardart-hero/dory-cardart-hero-webp/dory-en-cardart-nobg-laptop-tablet-mobile-1370x840.webp",
+          "alt": null
+        }
+      },
+      {
+        "id": "mortgage-switch",
+        "weight": 13,
+        "title": "Bring your mortgage to BMO",
+        "copy": "Get up to $5,000 cash back † with a new BMO Mortgage plus a new eligible chequing and savings account.",
+        "cta": {
+          "label": "Learn more",
+          "href": "https://www.bmo.com/en-ca/main/personal/mortgages/mortgage-banking-offer/",
+          "newTab": false
+        },
+        "image": {
+          "desktop": "https://www.bmo.com/dist/images/hp-banner/Familymovingin/Webp/Familymovingin-desktop-XXL-1370x840.webp",
+          "mobile": "https://www.bmo.com/dist/images/hp-banner/Familymovingin/Webp/Familymovingin-Mobile-S-375x300.webp",
+          "alt": null
+        }
+      },
+      {
+        "id": "investorline",
+        "weight": 9,
+        "title": "Double Your Bonus up to $10,000*",
+        "copy": "Plus get 150 $0 ​ commission trades * with BMO InvestorLine",
+        "cta": {
+          "label": "Learn more",
+          "href": "https://www.bmo.com/en-ca/main/personal/investments/direct-investing/investorline/self-directed/",
+          "newTab": false
+        },
+        "image": {
+          "desktop": "https://www.bmo.com/dist/images/en-ca/main/personal/investments/direct-investing/100k-contest/hp-banner-en-desktop-1370x840.webp",
+          "mobile": "https://www.bmo.com/dist/images/en-ca/main/personal/investments/direct-investing/100k-contest/hp-banner-en-laptop-tablet-mobile-1100x840.webp",
+          "alt": null
+        }
+      }
+    ]
+  },
+  "needsNavigator": {
+    "heading": "What can we help you find today?",
+    "tabs": {
+      "Featured": [
+        {
+          "heading": "Special offers",
+          "content": "From everyday banking to credit cards, find ways to save money and make real financial progress.",
+          "background": "albicant",
+          "cta": {
+            "label": "Explore offers",
+            "href": "/main/personal/promotions/",
+            "newTab": false
+          },
+          "image": {
+            "desktop": null,
+            "mobile": null,
+            "alt": null
+          }
+        },
+        {
+          "heading": "Financial resources",
+          "content": "Access our financial resource hub to help you manage your money and plan for your future.",
+          "background": "default",
+          "cta": {
+            "label": "Get started",
+            "href": "/main/personal/financial-resource-hub/",
+            "newTab": false
+          },
+          "image": {
+            "desktop": null,
+            "mobile": null,
+            "alt": null
+          }
+        },
+        {
+          "heading": "BMO online support",
+          "content": "The fastest way for you to get support. Start by answering a few questions.",
+          "background": "ultramarine",
+          "cta": {
+            "label": "Get support",
+            "href": "/main/personal/contact-centre-support-tool/",
+            "newTab": false
+          },
+          "image": {
+            "desktop": null,
+            "mobile": null,
+            "alt": null
+          }
+        },
+        {
+          "heading": "Innovation at BMO",
+          "content": "Get the latest insights, trends, and stories shaping the future of banking.",
+          "background": "ultramarine",
+          "cta": {
+            "label": "Discover more",
+            "href": "https://www.bmo.com/en-ca/main/about-bmo/innovation-hub/",
+            "newTab": false
+          },
+          "image": {
+            "desktop": null,
+            "mobile": null,
+            "alt": null
+          }
+        },
+        {
+          "heading": "Phishing scams: Can you spot the signs?",
+          "content": "Try our Phish Challenge for tips to spot phishing scams and learn to help protect yourself against different types of fraud.",
+          "background": "default",
+          "cta": {
+            "label": "Learn more",
+            "href": "https://www.bmo.com/dist/images/personal/security-centre/game/phish-challenge-sequence-1/",
+            "newTab": true
+          },
+          "image": {
+            "desktop": null,
+            "mobile": null,
+            "alt": null
+          }
+        },
+        {
+          "heading": "Rewards that fit your life",
+          "content": "Now with even more places to earn and redeem Blue Points.",
+          "background": "albicant",
+          "cta": {
+            "label": "Learn more",
+            "href": "https://www.bmo.com/en-ca/main/personal/air-miles-transition-to-blue-rewards/",
+            "newTab": false
+          },
+          "image": {
+            "desktop": null,
+            "mobile": null,
+            "alt": null
+          }
+        }
+      ],
+      "Bank Accounts": [
+        {
+          "heading": "Get up to $900 in cash *",
+          "content": "Plus a Walmart+ Membership for up to 12 months ‡﻿ when you switch to BMO .",
+          "background": "albicant",
+          "cta": {
+            "label": "More details",
+            "href": "https://www.bmo.com/en-ca/main/personal/bank-accounts/new-bank-account-offers-and-promotions/",
+            "newTab": false
+          },
+          "image": {
+            "desktop": null,
+            "mobile": null,
+            "alt": null
+          }
+        },
+        {
+          "heading": "Explore bank accounts",
+          "content": "Whatever your financial goals are, we’ve got a bank account to help you get there.",
+          "background": "default",
+          "cta": {
+            "label": "Learn more",
+            "href": "/en-ca/main/personal/bank-accounts/",
+            "newTab": false
+          },
+          "image": {
+            "desktop": null,
+            "mobile": null,
+            "alt": null
+          }
+        },
+        {
+          "heading": "A chequing or savings account?",
+          "content": "Learn the difference between the two and how you can use both to your advantage.",
+          "background": "ultramarine",
+          "cta": {
+            "label": "Learn more",
+            "href": "/main/personal/bank-accounts/chequing-vs-savings-account/",
+            "newTab": false
+          },
+          "image": {
+            "desktop": null,
+            "mobile": null,
+            "alt": null
+          }
+        },
+        {
+          "heading": "Find a chequing account that's right for you",
+          "content": "Use the Help Me Choose tool and answer a few short questions to get started.",
+          "background": "ultramarine",
+          "cta": {
+            "label": "Learn more",
+            "href": "https://www.bmo.com/en-ca/main/personal/bank-accounts/help-me-choose/",
+            "newTab": false
+          },
+          "image": {
+            "desktop": null,
+            "mobile": null,
+            "alt": null
+          }
+        },
+        {
+          "heading": "How to switch banks in 6 steps",
+          "content": "Considering a new bank? Learn how to make a quick and easy switch.",
+          "background": "default",
+          "cta": {
+            "label": "Find out how",
+            "href": "/main/personal/bank-accounts/how-to-switch-banks/",
+            "newTab": false
+          },
+          "image": {
+            "desktop": null,
+            "mobile": null,
+            "alt": null
+          }
+        },
+        {
+          "heading": "Savings Amplifier Account",
+          "content": "A savings account with no monthly fee, a promo interest rate ** and no minimum balance.",
+          "background": "albicant",
+          "cta": {
+            "label": "Get offer",
+            "href": "/en-ca/main/personal/bank-accounts/savings-accounts/savings-amplifier/",
+            "newTab": false
+          },
+          "image": {
+            "desktop": null,
+            "mobile": null,
+            "alt": null
+          }
+        }
+      ],
+      "Credit Cards": [
+        {
+          "heading": "BMO eclipse Visa Infinite* Card 66",
+          "content": "Get 5 times the points on takeout, rideshare and more. 67",
+          "background": "albicant",
+          "cta": {
+            "label": "Learn more",
+            "href": "/main/personal/credit-cards/bmo-eclipse-visa-infinite/?icid=ba-FEAT2190CC4-EYBMO23",
+            "newTab": false
+          },
+          "image": {
+            "desktop": null,
+            "mobile": null,
+            "alt": null
+          }
+        },
+        {
+          "heading": "Browse credit cards",
+          "content": "Explore credit cards that match your needs and lifestyle.",
+          "background": "default",
+          "cta": {
+            "label": "More details",
+            "href": "/main/personal/credit-cards/",
+            "newTab": false
+          },
+          "image": {
+            "desktop": null,
+            "mobile": null,
+            "alt": null
+          }
+        },
+        {
+          "heading": "Credit cards explained in 15 minutes",
+          "content": "Here's what you need to know to apply, make payments and use your credit card.",
+          "background": "ultramarine",
+          "cta": {
+            "label": "Learn more",
+            "href": "/en-ca/main/personal/credit-cards/what-is-a-credit-card/",
+            "newTab": false
+          },
+          "image": {
+            "desktop": null,
+            "mobile": null,
+            "alt": null
+          }
+        },
+        {
+          "heading": "Need help choosing a credit card?",
+          "content": "Answer a few easy questions and we'll recommend the best cards for you.",
+          "background": "ultramarine",
+          "cta": {
+            "label": "Help me choose",
+            "href": "/main/personal/credit-cards/how-to-choose-a-credit-card/",
+            "newTab": false
+          },
+          "image": {
+            "desktop": null,
+            "mobile": null,
+            "alt": null
+          }
+        },
+        {
+          "heading": "A card that reflects your True Name ™",
+          "content": "W ith True Name™ by Mastercard ® , proudly display the name you most identify with.",
+          "background": "default",
+          "cta": {
+            "label": "Learn more",
+            "href": "/main/personal/credit-cards/true-name/",
+            "newTab": false
+          },
+          "image": {
+            "desktop": null,
+            "mobile": null,
+            "alt": null
+          }
+        },
+        {
+          "heading": "Save on groceries and more with Instacart+",
+          "content": "Get up to 6 months of Instacart+ free with your eligible BMO Credit Card. 120 , 121",
+          "background": "albicant",
+          "cta": {
+            "label": "Learn more",
+            "href": "/en-ca/main/personal/credit-cards/bmo-instacart-plus-membership/",
+            "newTab": false
+          },
+          "image": {
+            "desktop": null,
+            "mobile": null,
+            "alt": null
+          }
+        }
+      ],
+      "Mortgages": [
+        {
+          "heading": "Lock in BMO 's 130-day mortgage rate guarantee – the longest of any major Canadian bank ††",
+          "content": null,
+          "background": "albicant",
+          "cta": {
+            "label": "More details",
+            "href": "/main/personal/mortgages/special-offers/",
+            "newTab": false
+          },
+          "image": {
+            "desktop": null,
+            "mobile": null,
+            "alt": null
+          }
+        },
+        {
+          "heading": "Explore mortgages",
+          "content": "Whether you’re looking for your first home, buying a second, or refinancing, we can help.",
+          "background": "default",
+          "cta": {
+            "label": "Learn more",
+            "href": "/main/personal/mortgages/",
+            "newTab": false
+          },
+          "image": {
+            "desktop": null,
+            "mobile": null,
+            "alt": null
+          }
+        },
+        {
+          "heading": "Tips for your mortgage renewal​",
+          "content": "Learn how to get the most out of your next mortgage term.​",
+          "background": "ultramarine",
+          "cta": {
+            "label": "LEARN MORE",
+            "href": "/en-ca/main/personal/mortgages/renewal/renewal-tips/?icid=ot-827MTG3-CHBMO14",
+            "newTab": false
+          },
+          "image": {
+            "desktop": null,
+            "mobile": null,
+            "alt": null
+          }
+        },
+        {
+          "heading": "Mortgage rates",
+          "content": "Explore our competitive mortgage rates, available for a limited time.",
+          "background": "ultramarine",
+          "cta": {
+            "label": "Explore rates",
+            "href": "/main/personal/mortgages/mortgage-rates/",
+            "newTab": false
+          },
+          "image": {
+            "desktop": null,
+            "mobile": null,
+            "alt": null
+          }
+        },
+        {
+          "heading": "Make your mortgage work for your goals",
+          "content": "Explore ways your mortgage can support your evolving goals and needs as a homeowner.",
+          "background": "default",
+          "cta": {
+            "label": "Learn more",
+            "href": "/en-ca/main/personal/mortgages/make-your-mortgage-work-for-you/",
+            "newTab": false
+          },
+          "image": {
+            "desktop": null,
+            "mobile": null,
+            "alt": null
+          }
+        },
+        {
+          "heading": "Homeowner ReadiLine ®",
+          "content": "This unique lending option is a combination of a mortgage with the flexibility of a line of credit.",
+          "background": "albicant",
+          "cta": {
+            "label": "Learn more",
+            "href": "/main/personal/mortgages/homeowner-readiline/",
+            "newTab": false
+          },
+          "image": {
+            "desktop": null,
+            "mobile": null,
+            "alt": null
+          }
+        }
+      ],
+      "Investments": [
+        {
+          "heading": "Tax-Free Growth Awaits",
+          "content": "Earn a competitive 2.00% ‡ cash savings rate on your BMO FHSAs.",
+          "background": "albicant",
+          "cta": {
+            "label": "Learn more",
+            "href": "https://www.bmo.com/main/personal/investments/fhsa/",
+            "newTab": false
+          },
+          "image": {
+            "desktop": null,
+            "mobile": null,
+            "alt": null
+          }
+        },
+        {
+          "heading": "Invest with BMO",
+          "content": "Invest online or with an investment professional.",
+          "background": "default",
+          "cta": {
+            "label": "Explore investments",
+            "href": "/main/personal/investments/",
+            "newTab": false
+          },
+          "image": {
+            "desktop": null,
+            "mobile": null,
+            "alt": null
+          }
+        },
+        {
+          "heading": "Investment learning centre",
+          "content": "Articles, videos and tools to provide you with expert guidance on your investment journey.",
+          "background": "ultramarine",
+          "cta": {
+            "label": "Learn more",
+            "href": "/main/personal/investments/learning-centre/",
+            "newTab": false
+          },
+          "image": {
+            "desktop": null,
+            "mobile": null,
+            "alt": null
+          }
+        },
+        {
+          "heading": "Not sure which investment is right for you?",
+          "content": "Tell us a bit about yourself and get started on your investment journey.",
+          "background": "ultramarine",
+          "cta": {
+            "label": "Help me choose",
+            "href": "/main/personal/investments/find-the-best-investment-options-for-you/",
+            "newTab": false
+          },
+          "image": {
+            "desktop": null,
+            "mobile": null,
+            "alt": null
+          }
+        },
+        {
+          "heading": "BMO Smarter Investing Podcast",
+          "content": "Tune in to the latest market developments and insights from our experts.",
+          "background": "default",
+          "cta": {
+            "label": "More details",
+            "href": "/main/personal/investments/learning-centre/investing-podcasts/",
+            "newTab": false
+          },
+          "image": {
+            "desktop": null,
+            "mobile": null,
+            "alt": null
+          }
+        },
+        {
+          "heading": "Double Your Bonus up to $10,000 *",
+          "content": "Plus get 150 $0 Commission Trades * with BMO InvestorLine",
+          "background": "albicant",
+          "cta": {
+            "label": "Learn more",
+            "href": "https://www.bmo.com/en-ca/main/personal/investments/direct-investing/investorline/self-directed/",
+            "newTab": false
+          },
+          "image": {
+            "desktop": null,
+            "mobile": null,
+            "alt": null
+          }
+        }
+      ],
+      "Learning": [
+        {
+          "heading": "Special Offers",
+          "content": "Find ways to save money and earn great rewards.",
+          "background": "albicant",
+          "cta": {
+            "label": "See the offers",
+            "href": "/main/personal/promotions/",
+            "newTab": false
+          },
+          "image": {
+            "desktop": null,
+            "mobile": null,
+            "alt": null
+          }
+        },
+        {
+          "heading": "Financial Resources",
+          "content": "Access our financial resource hub to help you manage your money and plan for your future.",
+          "background": "default",
+          "cta": {
+            "label": "Get started",
+            "href": "/en-ca/main/personal/financial-progress-hub/",
+            "newTab": false
+          },
+          "image": {
+            "desktop": null,
+            "mobile": null,
+            "alt": null
+          }
+        },
+        {
+          "heading": "What is Inflation?",
+          "content": "Find out what the current high inflation rates mean for your finances.",
+          "background": "ultramarine",
+          "cta": {
+            "label": "Learn more",
+            "href": "/main/personal/bank-accounts/what-is-inflation/",
+            "newTab": false
+          },
+          "image": {
+            "desktop": null,
+            "mobile": null,
+            "alt": null
+          }
+        },
+        {
+          "heading": "BMO Online Support",
+          "content": "The fastest way for you to get help. Answer a few questions.",
+          "background": "ultramarine",
+          "cta": {
+            "label": "Ask for help",
+            "href": "/main/personal/contact-centre-support-tool/",
+            "newTab": false
+          },
+          "image": {
+            "desktop": null,
+            "mobile": null,
+            "alt": null
+          }
+        },
+        {
+          "heading": "What is the First Home Savings Account?",
+          "content": "Learn more about the new Tax-Free First Home Savings Account.",
+          "background": "default",
+          "cta": {
+            "label": "Learn more",
+            "href": "/en-ca/main/personal/investments/learning-centre/what-is-first-home-savings-account/",
+            "newTab": false
+          },
+          "image": {
+            "desktop": null,
+            "mobile": null,
+            "alt": null
+          }
+        },
+        {
+          "heading": "Sustainable Banking Solutions",
+          "content": "Keep sustainability in mind as you build your future.",
+          "background": "albicant",
+          "cta": {
+            "label": "Learn more",
+            "href": "/en-ca/main/personal/sustainable-banking-solutions/",
+            "newTab": false
+          },
+          "image": {
+            "desktop": null,
+            "mobile": null,
+            "alt": null
+          }
+        }
+      ]
+    },
+    "layout": {
+      "mobile": "one card per row with horizontally scrollable tabs",
+      "tablet": "two cards per row",
+      "desktop": "three cards per row"
+    }
+  },
+  "mobileAppBanner": {
+    "heading": "Get our award-winning mobile banking app",
+    "content": "Our app ranked #1 in Canada for digital money management. Enjoy 20+ features – from spending insights to global transfers.",
+    "cta": {
+      "label": "Explore features",
+      "href": "/main/personal/ways-to-bank/",
+      "newTab": false
+    },
+    "image": {
+      "desktop": "https://www.bmo.com/images/personal-digital-homepage-banner-en-700x632.webp",
+      "mobile": "https://www.bmo.com/images/personal-digital-homepage-banner-en-600x542.webp",
+      "alt": "A tablet and phone screen with financial graphs and charts showcasing spending amounts"
+    },
+    "apple": "https://apps.apple.com/ca/app/bmo-mobile-banking/id429080319",
+    "google": "https://play.google.com/store/apps/details?id=com.bmo.mobile"
+  },
+  "helpChoose": {
+    "heading": "Not sure where to begin? We’ll help you choose",
+    "cards": [
+      {
+        "heading": "Bank accounts",
+        "content": "Answer a few short questions, and we’ll help you find the right account.",
+        "cta": {
+          "label": "Help me choose",
+          "href": "https://www.bmo.com/en-ca/main/personal/bank-accounts/help-me-choose/",
+          "newTab": false
+        }
+      },
+      {
+        "heading": "Credit cards",
+        "content": "From cash back to rewards, we’ll help you choose the best credit card for you.",
+        "cta": {
+          "label": "Help me choose",
+          "href": "/main/personal/credit-cards/how-to-choose-a-credit-card/",
+          "newTab": false
+        }
+      },
+      {
+        "heading": "Investments",
+        "content": "Tell us a bit about yourself, and we’ll find the right investment options for you.",
+        "cta": {
+          "label": "Help me choose",
+          "href": "/main/personal/investments/find-the-best-investment-options-for-you/",
+          "newTab": false
+        }
+      }
+    ]
+  },
+  "footer": {
+    "background": "#0075BE",
+    "text": "#FFFFFF",
+    "groups": [
+      "Explore our services",
+      "Security Centre",
+      "Ways to Bank",
+      "Downloads",
+      "Contact",
+      "Social",
+      "Corporate and legal"
+    ],
+    "contactActions": [
+      "Customer support",
+      "Branch locator",
+      "Book an appointment"
+    ],
+    "legalNote": "Include a compact placeholder CDIC disclosure area; do not duplicate the full legal corpus."
+  },
+  "coreAssets": {
+    "logo": "https://www.bmo.com/dist/images/logos/bmo-blue-on-transparent-en.svg",
+    "appBannerDesktop": "https://www.bmo.com/images/personal-digital-homepage-banner-en-700x632.webp",
+    "appBannerMobile": "https://www.bmo.com/images/personal-digital-homepage-banner-en-600x542.webp",
+    "appleStore": "https://apps.apple.com/ca/app/bmo-mobile-banking/id429080319",
+    "googlePlay": "https://play.google.com/store/apps/details?id=com.bmo.mobile"
+  },
+  "acceptance": [
+    "SvelteKit production build completes without errors.",
+    "No console errors or failed internal component state transitions.",
+    "No credential fields, credential submission or real sign-in flow.",
+    "Keyboard access works for navigation, tabs, menus and hero controls.",
+    "Focus is visible and escape closes drawers, menus and dialogs.",
+    "No horizontal overflow at 375, 768, 1024 and 1440 CSS pixels.",
+    "Desktop header, hero, tab grid, app banner and footer closely match the reference hierarchy.",
+    "Mobile header becomes logo + sign-in + menu; tabs scroll horizontally; cards stack.",
+    "Remote asset URLs are centralized in one typed data file and have visual fallbacks.",
+    "SEO title, description, canonical and en-CA document language are present."
+  ]
+}

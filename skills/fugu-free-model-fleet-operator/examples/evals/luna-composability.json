@@ -1,0 +1,14 @@
+{
+  "name": "luna-handoff-composability",
+  "query": "Give Luna Light everything needed to update the free fleet later without another prompt.",
+  "expected_behavior": [
+    "Uses the skill, operational contract, Luna runbook, newest snapshot, and engagement template.",
+    "Keeps the root operator responsible for integration and final acceptance.",
+    "Returns a bounded continuation packet with exact paths, receipts, hashes, stop conditions, and rollback."
+  ],
+  "failure_signs": [
+    "Sends only a model roster without operational evidence.",
+    "Assumes Luna is an eligible route without checking current policy.",
+    "Delegates final protected-boundary judgment."
+  ]
+}

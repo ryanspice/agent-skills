@@ -1,0 +1,12 @@
+{
+  "slug": "hermes-table-renderer",
+  "name": "Hermes Table Renderer",
+  "version": "0.1.0",
+  "type": "universal-agent-skill",
+  "status": "active",
+  "canonical_path": "04_skills/agent-skills/skills/hermes-table-renderer/SKILL.md",
+  "entrypoint": "04_skills/agent-skills/skills/hermes-table-renderer/SKILL.md",
+  "description": "Defines the structured HermesTable contract and rendering workflow for responsive terminal, Markdown, JSON, CSV, and future interactive table output.",
+  "platforms": ["windows", "hermes", "claude-code", "codex", "ai-wiki", "terminal"],
+  "tags": ["tables", "terminal-output", "structured-output", "cli", "markdown", "json", "csv", "diagnostics"]
+}

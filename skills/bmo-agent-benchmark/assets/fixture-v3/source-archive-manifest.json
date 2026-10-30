@@ -1,0 +1,36 @@
+{
+  "schemaVersion": "bmo.source-archive.v1",
+  "createdAt": "2026-07-28T18:55:00-04:00",
+  "sourceUrl": "https://www.bmo.com/en-ca/main/personal/",
+  "archivePath": "<DEV_ROOT>\\deepseek.workspace\\bmo-agent-benchmark\\source-archives\\bmo-source-20260728\\bmo-source-20260728.tar.gz",
+  "archiveSha256": "A650B6C770F01D30CDC86DDAF299DA04BFB6F861B4041B50D740F8C29E2BC7D5",
+  "archiveBytes": 537510,
+  "delegateEgress": false,
+  "files": [
+    {
+      "name": "bmo.elements.txt",
+      "bytes": 2755720,
+      "sha256": "D4DA58215B36A3713DA2FD4CBFB0CDF1959F5841FF6F5B86DFC9A82601B1E5AF"
+    },
+    {
+      "name": "bmo.src.txt",
+      "bytes": 2549858,
+      "sha256": "FE626294E95DF204CE14DAE373F7FD3E8823C99EAEA0113160523D283A73FA5C"
+    },
+    {
+      "name": "deepseek-v4-flash-bmo-prompt.md",
+      "bytes": 8272,
+      "sha256": "9F4BD692CE910D554862C1DC9E4C7CF4575E99804E52F2B44ADA06EB51EB0406"
+    },
+    {
+      "name": "bmo-home-source-brief.original.json",
+      "bytes": 30059,
+      "sha256": "75DB940953D5856B761D43D9675450F4A2A187189D4C7A5EBE033099395337C3"
+    }
+  ],
+  "notes": [
+    "The archive is a frozen provenance source and never enters a model packet.",
+    "The benchmark uses the curated fixture-v3 source brief as delegate-authoritative content.",
+    "Heavy source payloads remain outside OneDrive."
+  ]
+}

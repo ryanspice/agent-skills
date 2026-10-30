@@ -2,6 +2,11 @@
 
 This repository publishes reusable agent skills.
 
+This working set adds skills for conversation recovery, blog publishing,
+agent benchmarking, CJK UI work, model-fleet operations, Hermes delegation
+and tables, research archives, and workbench console safety. See the skill
+files under `skills/` for their scope and authorization boundaries.
+
 Current contents:
 
 - `skills/tauri-sveltekit-svelte`

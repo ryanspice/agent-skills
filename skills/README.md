@@ -84,3 +84,12 @@ Active default selection metadata is tracked in `skills/provenance.json` where a
 | `deep-research-workflow` | `modified` | Ryan Spice-Finnie | `skills/deep-research-workflow/SKILL.md` | `04_skills/agent-skills/skills/deep-research-workflow/SKILL.md` |
 | `enterprise-deep-research-workflow` | `modified` | Ryan Spice-Finnie | `skills/enterprise-deep-research-workflow/SKILL.md` | `04_skills/agent-skills/skills/enterprise-deep-research-workflow/SKILL.md` |
 | `deepseek-research-api-substrate` | `original` | Ryan Spice-Finnie | `skills/candidates/deepseek-research-api-substrate-v0.1.0/SKILL.md` | `04_skills/agent-skills/skills/candidates/deepseek-research-api-substrate-v0.1.0/SKILL.md` |
+| `blog-publish` | `original` | Ryan Spice-Finnie | `skills/blog-publish/SKILL.md` | `04_skills/agent-skills/skills/blog-publish/SKILL.md` |
+| `cjk-ui-lab` | `original` | Ryan Spice-Finnie | `skills/cjk-ui-lab/SKILL.md` | `04_skills/agent-skills/skills/cjk-ui-lab/SKILL.md` |
+| `fugu-free-model-fleet-operator` | `original` | Ryan Spice-Finnie | `skills/fugu-free-model-fleet-operator/SKILL.md` | `04_skills/agent-skills/skills/fugu-free-model-fleet-operator/SKILL.md` |
+| `hermes-subprocess-delegation` | `original` | Ryan Spice-Finnie | `skills/hermes-subprocess-delegation/SKILL.md` | `04_skills/agent-skills/skills/hermes-subprocess-delegation/SKILL.md` |
+| `agent-conversation-recovery` | `original` | Ryan Spice-Finnie | `skills/agent-conversation-recovery/SKILL.md` | `04_skills/agent-skills/skills/agent-conversation-recovery/SKILL.md` |
+| `bmo-agent-benchmark` | `original` | Ryan Spice-Finnie | `skills/bmo-agent-benchmark/SKILL.md` | `04_skills/agent-skills/skills/bmo-agent-benchmark/SKILL.md` |
+| `hermes-table-renderer` | `original` | Ryan Spice-Finnie | `skills/hermes-table-renderer/SKILL.md` | `04_skills/agent-skills/skills/hermes-table-renderer/SKILL.md` |
+| `research-harness-archive-operator` | `original` | Ryan Spice-Finnie | `skills/research-harness-archive-operator/SKILL.md` | `04_skills/agent-skills/skills/research-harness-archive-operator/SKILL.md` |
+| `workbench-console-safety-operator` | `original` | Ryan Spice-Finnie | `skills/workbench-console-safety-operator/SKILL.md` | `04_skills/agent-skills/skills/workbench-console-safety-operator/SKILL.md` |
