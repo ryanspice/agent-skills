@@ -34,8 +34,8 @@ const defaultPolicy = {
   // Keep this section explicit so future policy changes survive rebuilds.
   followup_notes: {
     'image-to-ui-sveltekit': 'project mirror kept as historical until the repo copy is decommissioned.',
-    'pixelboats-fish-water-ecology': 'project mirror kept as historical; repo lane is primary.',
-    'pixelboats-stormy-hud-lab': 'project mirror kept as historical; repo lane is primary.',
+    'pixelboats-fish-water-ecology': 'project skill: use the AI Wiki PixelBoats shelf as the source.',
+    'pixelboats-stormy-hud-lab': 'project skill: use the AI Wiki PixelBoats shelf as the source.',
     'sprite-pixel-art-sprite-sheets-gpt55': 'project mirror kept as historical; repo lane is primary.',
     'prompt-operations-handbook': 'project mirror kept as historical; repo lane is primary.',
     'prompt-operations-release-kit': 'project mirror kept as historical; repo lane is primary.',

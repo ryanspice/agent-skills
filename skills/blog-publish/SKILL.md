@@ -20,7 +20,7 @@ Streamlined workflow for publishing articles to both blogs from any project.
 
 ## Editorial contract
 
-- Inspect the current repo state, `docs/WRITING.md`, the project-local skill, and a recent rendered article before editing. Preserve unrelated working-tree changes.
+- Inspect the current repo state, the project's writing guidance, the project-local skill, and a recent rendered article before editing. Preserve unrelated working-tree changes.
 - Draft a complete, reviewable article with `status: "draft"`; do not turn a draft into a public post, commit, push, merge, or deploy unless the user asks. Research notes alone are not an article.
 - Use a short lead and descriptive sections so readers can scan or enter mid-article. Split a long story into separately linked posts when the parts answer distinct questions, serve different audiences, or need independent evidence and updates. Give each part a standalone lead.
 - Put descriptive inline links beside meaningful claims, figures, named tools, and related concepts. Prefer primary sources; identify vendor claims, independent findings, and inference. Use `references` as a source index and `further_reading` for optional next reads; neither substitutes for links in the prose. Link relevant existing posts naturally, verify targets, and avoid repetitive or indiscriminate links.
@@ -28,27 +28,12 @@ Streamlined workflow for publishing articles to both blogs from any project.
 - For time-sensitive claims, include when they were checked and what readers can verify now. Keep EN/FR article and metadata parity where translations exist. For revisions, update `updated_date` while retaining original `date` and release metadata unless the user requests a new edition.
 - Review rendered Ryan and Canopy article routes, mobile width, links, figures, captions, metadata, Sources/Further reading, SEO and sitemap output. State separately which checks were source/build, browser, and live deployment checks.
 
-## Blog repo location
+## Blog repository and article structure
 
-```
-<AI_WIKI_ROOT>/07_Projects/blog.ryanspice.com
-```
-
-Always work in this repo regardless of which project triggered the article.
-
-## Article structure
-
-Articles live at:
-
-```
-src/lib/content/articles/<slug>.md
-```
-
-Images live at:
-
-```
-static/img/articles/<slug>/
-```
+Discover the appropriate authorized blog repository from project instructions
+or private local configuration. Verify it before editing and do not publish local
+filesystem locations in the article or handoff. Follow the repository's current
+conventions for article sources and image assets.
 
 ## Frontmatter contract
 
@@ -69,10 +54,10 @@ release_time: "21:00"
 summary: "One-line summary for cards and SEO"
 seo_description: "Longer description for meta tags"
 accent: "#00d4aa"                      # theme accent color
-image: "/img/articles/<slug>/hero.svg" # hero/portrait image
+image: "HERO_IMAGE_URL" # hero/portrait image
 image_alt: "Alt text"
 image_credit: "Credit line"
-image_source: "/img/articles/<slug>/hero.svg"
+image_source: "HERO_IMAGE_URL"
 image_position: "center top"
 row_image: "https://images.unsplash.com/..." # card thumbnail
 row_image_alt: "Alt text"
@@ -93,7 +78,7 @@ tags:
 credits:
   - "Author Name"
 references:
-  - "Original article diagrams|/img/articles/<slug>/diagram.svg"
+  - "Original article diagrams|DIAGRAM_URL"
   - "Source name|https://url"
 related_posts:
   - "related-article-slug"
@@ -124,11 +109,11 @@ All diagrams follow this style:
 
 ### 1. Write the article
 
-Create `src/lib/content/articles/<slug>.md` with full frontmatter and body.
+Create the article using the repository's current source conventions, with full frontmatter and body.
 
 ### 2. Create explanatory figures where useful
 
-Create a diagram, screenshot, chart, or other figure under `static/img/articles/<slug>/` when it clarifies the article. The SVG style above applies only to new SVG diagrams.
+Create a diagram, screenshot, chart, or other figure using the repository's asset conventions when it clarifies the article. The SVG style above applies only to new SVG diagrams.
 
 ### 3. Update frontmatter with image references
 
@@ -140,15 +125,8 @@ The following branch, PR, merge, and deployment steps apply only when the user h
 
 #### Commit and push to a branch
 
-```powershell
-cd "<AI_WIKI_ROOT>/07_Projects/blog.ryanspice.com"
-git checkout main
-git pull
-git checkout -b blog/<slug>
-git add src/lib/content/articles/<slug>.md static/img/articles/<slug>/
-git commit -m "feat: <article title>"
-git push -u origin blog/<slug>
-```
+Verify the destination and branch, preserve unrelated changes, stage only the
+requested article and its assets, and follow the repository's release process.
 
 ### 5. Create PR to main
 
@@ -184,7 +162,7 @@ Verify both sites:
 
 ## CI fix: Playwright for mermaid tests
 
-If mermaid tests fail in CI, add this step to `.github/workflows/test-blog.yml`:
+If mermaid tests fail in CI, add this step to the appropriate project CI workflow:
 
 ```yaml
 - name: Install Playwright browsers
@@ -206,8 +184,8 @@ If mermaid tests fail in CI, add this step to `.github/workflows/test-blog.yml`:
 
 ### Images not showing
 
-- Verify SVG files are in `static/img/articles/<slug>/`
-- Check frontmatter `image` path starts with `/img/articles/`
+- Verify image assets follow the current repository conventions.
+- Check frontmatter image references resolve correctly.
 - Ensure SVG has proper `xmlns` attribute
 
 ## Verification
