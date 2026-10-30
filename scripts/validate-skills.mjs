@@ -61,11 +61,23 @@ function parseFrontmatter(text, repoPath) {
 
   const fields = new Map();
   const frontmatter = normalized.slice(4, end).split('\n');
+  let inMetadata = false;
   for (const line of frontmatter) {
+    if (/^metadata:\s*$/.test(line)) {
+      inMetadata = true;
+      continue;
+    }
     const match = /^([A-Za-z0-9_-]+):\s*(.*)$/.exec(line);
-    if (!match) continue;
-    const [, key, rawValue] = match;
-    fields.set(key, rawValue.trim().replace(/^"(.*)"$/, '$1'));
+    if (match) {
+      inMetadata = false;
+      const [, key, rawValue] = match;
+      fields.set(key, rawValue.trim().replace(/^"(.*)"$/, '$1'));
+      continue;
+    }
+    const nested = inMetadata && /^\s{2}(provenance_[A-Za-z0-9_-]+):\s*(.*)$/.exec(line);
+    if (nested && !fields.has(nested[1])) {
+      fields.set(nested[1], nested[2].trim().replace(/^"(.*)"$/, '$1'));
+    }
   }
 
   return fields;
