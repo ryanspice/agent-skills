@@ -1,0 +1,4 @@
+interface:
+  display_name: "Agent Conversation Recovery"
+  short_description: "List, inspect, and safely resume agent sessions"
+  default_prompt: "Use $agent-conversation-recovery to list my recent Claude-family and Hermes sessions, keep Codex separate, and show safe resume or replay commands."

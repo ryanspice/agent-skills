@@ -1,0 +1,18 @@
+{
+  "schema_version": "1.0",
+  "name": "pixelboats-lab-to-runtime-promotion",
+  "version": "0.1.0",
+  "status": "candidate",
+  "scope": "project",
+  "project_slug": "pixelboats",
+  "canonical_path": "04_skills/agent-skills/skills/pixelboats-lab-to-runtime-promotion",
+  "entrypoint": "SKILL.md",
+  "tags": ["pixelboats", "promotion", "lab-to-game", "runtime", "integration", "migration"],
+  "triggers": ["migrating a lab to /game", "promoting a prototype to runtime", "integrating audio/physics/AI engine"],
+  "provenance": {
+    "generator": "Claude Code lead + Nemotron/Vibethinker review",
+    "source": "GPT-5.6 audit + GLM 5.2 blueprint. Nemotron expanded with full lifecycle, teardown, error handling, performance budget, lab retention, and rollback requirements.",
+    "created_utc": "2026-07-21T00:00:00Z",
+    "status": "staged-candidate"
+  }
+}

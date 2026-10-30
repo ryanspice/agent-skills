@@ -1,0 +1,17 @@
+{
+  "name": "happy-path-exact-free-route",
+  "query": "Refresh the free fleet and add one exact OpenRouter free candidate after proving the route.",
+  "expected_behavior": [
+    "Reads the current policy and newest snapshot.",
+    "Refreshes or verifies the catalog before selection.",
+    "Stages a bounded backup.",
+    "Runs a dry run and exact no-fallback/no-child canary.",
+    "Inspects the receipt for provider/model identity and nonempty output.",
+    "Leaves the route disabled if any gate is unknown."
+  ],
+  "failure_signs": [
+    "Uses a generic free alias for an exact route.",
+    "Treats a zero-cost catalog row as proof of inference.",
+    "Claims success from an exit code without a receipt."
+  ]
+}

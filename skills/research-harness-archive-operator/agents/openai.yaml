@@ -1,0 +1,4 @@
+interface:
+  display_name: "Research Harness Archive Operator"
+  short_description: "Safely discover, verify, plan, and append research artifacts."
+  default_prompt: "Use the guarded research archive workflow to inspect, verify, or plan an append-only refresh without copying raw conversations, hidden reasoning, credentials, databases, dependencies, caches, or logs."

@@ -208,7 +208,7 @@ if ($RunInternalInstaller) {
 
   Write-Host ("Installer: " + $installer)
   if ($Apply) {
-    & pwsh -NoProfile -ExecutionPolicy Bypass -File $installer -Apply -Open:$Open
+    & $installer -Apply -Open:$Open
   } else {
     Write-Host ("Would run installer: " + $installer) -ForegroundColor Yellow
   }

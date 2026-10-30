@@ -1,0 +1,58 @@
+{
+  "schema_version": "1.0",
+  "id": "pixelboats",
+  "name": "PixelBoats MCP",
+  "version": "0.3.1",
+  "status": "connected-mapped",
+  "derived_from": {
+    "package_adapter": "mcp/pixelboats/adapter.json",
+    "package_version": "0.3.0",
+    "source_sha256": "9e9eafe21255ecde464aae16d04e6b446bedff1d0e9f7c6c53674b93d9cc6426"
+  },
+  "discovery": {
+    "date": "2026-07-20",
+    "method": "live connected-session enumeration (Claude Code); server v0.2.0, 18 tools + 7 resources",
+    "connected_tools": [
+      "pixelboats_project_snapshot", "pixelboats_repo_status", "pixelboats_changed_files",
+      "pixelboats_docs_search", "pixelboats_skill_search", "pixelboats_skill_read",
+      "pixelboats_runtime_read", "pixelboats_verify", "pixelboats_queue", "pixelboats_queue_status",
+      "pixelboats_build_task_packet", "pixelboats_write_evidence", "pixelboats_agent_catalog",
+      "pixelboats_agent_workflow_health", "pixelboats_lane_board", "pixelboats_commit_guard",
+      "pixelboats_dev_server_status", "pixelboats_apply_defender_exclusions"
+    ]
+  },
+  "server": {
+    "name": "pixelboats-mcp",
+    "transport": "discover",
+    "connection": "external",
+    "credentials": "not-stored"
+  },
+  "authority": {
+    "read": true,
+    "stage": true,
+    "write": false,
+    "promote": false
+  },
+  "project": {
+    "slug": "pixelboats",
+    "expected_root": "<DEV_ROOT>/PixelBoats"
+  },
+  "capabilities": [
+    { "alias": "project.search", "requirement": "required", "access": "read", "tool": "pixelboats_docs_search", "status": "mapped", "note": "Docs/skills search; code search stays harness-native (Grep). Sibling: pixelboats_skill_search." },
+    { "alias": "project.read", "requirement": "required", "access": "read", "tool": null, "status": "unmapped", "note": "No generic file-read tool in the MCP surface. Use harness-native Read against <DEV_ROOT>/PixelBoats; pixelboats_runtime_read covers live runtime state only. Fail closed." },
+    { "alias": "project.state", "requirement": "required", "access": "read", "tool": "pixelboats_project_snapshot", "status": "mapped", "note": "Siblings: pixelboats_repo_status, pixelboats_changed_files, pixelboats_dev_server_status, pixelboats_queue_status." },
+    { "alias": "project.test", "requirement": "optional", "access": "read", "tool": "pixelboats_verify", "status": "mapped", "note": "Runs through the shared pixelboats_queue; expensive checks gated by PIXELBOATS_MCP_ENABLE_EXPENSIVE_CHECKS." },
+    { "alias": "project.build", "requirement": "optional", "access": "read", "tool": "pixelboats_queue", "status": "mapped", "note": "Builds/navigation/screenshots go through the singleton queue; never raw bun run dev." },
+    { "alias": "project.asset-inspect", "requirement": "optional", "access": "read", "tool": null, "status": "unmapped", "note": "No connected tool. Fail closed; use harness-native reads." },
+    { "alias": "project.write", "requirement": "optional", "access": "write", "tool": null, "status": "unmapped", "note": "Write authority stays disabled (write:false) per plan; not separately authorized." },
+    { "alias": "project.handoff", "requirement": "optional", "access": "stage", "tool": "pixelboats_build_task_packet", "status": "mapped", "note": "Evidence staging sibling: pixelboats_write_evidence." },
+    { "alias": "project.lane-catalog", "requirement": "optional", "access": "read", "tool": "pixelboats_agent_catalog", "status": "mapped", "note": "mcp-bridge control 'lane_catalog'. Local complement: Invoke-FuguLane.ps1 -ListLanes. Configured does not mean reachable — quota/probe state must be explicit." },
+    { "alias": "project.evidence-write", "requirement": "optional", "access": "stage", "tool": "pixelboats_write_evidence", "status": "mapped", "note": "mcp-bridge control 'evidence_write'." }
+  ],
+  "fallbacks": [
+    "Use repository-local tools only after resolving <DEV_ROOT>/PixelBoats and current instructions.",
+    "Do not substitute conversation memory for repository reads.",
+    "Do not auto-ingest WIP TARs or rough demos into Svelte Lab."
+  ],
+  "smoke_tests": []
+}

@@ -110,13 +110,12 @@ Start from the base compact resume template. Adjust:
 - No stocked/inventoried shop claim for Shopify demo
 - No unproved Canadian data-residency guarantee
 
-### 5. Deploy
+### 5. Deployment
 
-```bash
-/c/Windows/System32/OpenSSH/scp.exe -i ~/.ssh/id_ed25519_ryanspice \
-  documents/Ryan-Spice-Finnie-Resume-{COMPANY}.html \
-  rspice@ryanspice.com:/home/rspice/domains/ryanspice.com/public_html/documents/
-```
+Deploy only when the user explicitly requests it. Discover the configured
+publication destination and approved identity from the machine's local private
+configuration; verify the target and keep credentials and private paths out of
+this skill. Otherwise return the finished resume for review.
 
 ## Template structure
 

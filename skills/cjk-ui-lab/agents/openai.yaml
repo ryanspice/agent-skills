@@ -1,0 +1,4 @@
+interface:
+  display_name: "CJK UI Lab"
+  short_description: "Build Japanese and Korean UI labs"
+  default_prompt: "Use $cjk-ui-lab to build or audit a CJK-native SvelteKit UI lab."

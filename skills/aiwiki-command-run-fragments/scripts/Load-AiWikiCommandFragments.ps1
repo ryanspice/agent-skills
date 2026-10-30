@@ -133,6 +133,81 @@ function Convert-ToConsoleSafe {
   return $sb.ToString()
 }
 
+function ConvertTo-AiWikiNoWindowArguments {
+  param([string[]]$Arguments = @())
+  $quoted = foreach ($argument in $Arguments) {
+    $value = [string]$argument
+    if ($value.Length -eq 0) {
+      '""'
+    } elseif ($value -notmatch '[\s"]') {
+      $value
+    } else {
+      $escaped = $value -replace '(\\*)"', '$1$1\"'
+      $escaped = $escaped -replace '(\\+)$', '$1$1'
+      '"{0}"' -f $escaped
+    }
+  }
+  return ($quoted -join ' ')
+}
+
+function Resolve-AiWikiNoWindowExecutable {
+  param([Parameter(Mandatory = $true)][string]$FilePath)
+  if (Test-Path -LiteralPath $FilePath -PathType Leaf) {
+    return [IO.Path]::GetFullPath($FilePath)
+  }
+  $application = Get-Command $FilePath -CommandType Application -ErrorAction Stop | Select-Object -First 1
+  if (-not $application.Source) { throw "Executable not found: $FilePath" }
+  return [IO.Path]::GetFullPath($application.Source)
+}
+
+function Start-AiWikiNoWindowProcess {
+  param(
+    [Parameter(Mandatory = $true)][string]$FilePath,
+    [string[]]$Arguments = @(),
+    [string]$WorkingDirectory = (Get-Location).Path,
+    [switch]$CaptureOutput
+  )
+
+  $psi = [System.Diagnostics.ProcessStartInfo]::new()
+  $psi.FileName = Resolve-AiWikiNoWindowExecutable -FilePath $FilePath
+  $psi.WorkingDirectory = $WorkingDirectory
+  $psi.UseShellExecute = $false
+  $psi.CreateNoWindow = $true
+  $psi.WindowStyle = [System.Diagnostics.ProcessWindowStyle]::Hidden
+  $psi.RedirectStandardOutput = [bool]$CaptureOutput
+  $psi.RedirectStandardError = [bool]$CaptureOutput
+  $psi.Arguments = ConvertTo-AiWikiNoWindowArguments -Arguments $Arguments
+
+  $process = [System.Diagnostics.Process]::new()
+  $process.StartInfo = $psi
+  [void]$process.Start()
+
+  return [pscustomobject]@{
+    Process = $process
+    OutputTask = if ($CaptureOutput) { $process.StandardOutput.ReadToEndAsync() } else { $null }
+    ErrorTask = if ($CaptureOutput) { $process.StandardError.ReadToEndAsync() } else { $null }
+  }
+}
+
+function Complete-AiWikiNoWindowProcess {
+  param(
+    [Parameter(Mandatory = $true)]$Child,
+    [string]$StandardOutputPath = "",
+    [string]$StandardErrorPath = ""
+  )
+
+  $Child.Process.WaitForExit()
+  $stdout = if ($Child.OutputTask) { $Child.OutputTask.GetAwaiter().GetResult() } else { "" }
+  $stderr = if ($Child.ErrorTask) { $Child.ErrorTask.GetAwaiter().GetResult() } else { "" }
+  if ($StandardOutputPath) { $stdout | Set-Content -LiteralPath $StandardOutputPath -Encoding UTF8 }
+  if ($StandardErrorPath) { $stderr | Set-Content -LiteralPath $StandardErrorPath -Encoding UTF8 }
+  return [pscustomobject]@{
+    ExitCode = $Child.Process.ExitCode
+    Stdout = $stdout
+    Stderr = $stderr
+  }
+}
+
 function Write-CleanOutput {
   param([string]$Path, [string]$Color = "Gray")
   if (-not (Test-Path $Path)) { return }
@@ -161,7 +236,8 @@ exit 0
 "@
   $wrapped | Set-Content -Path $scriptPath -Encoding UTF8
   $sw = [System.Diagnostics.Stopwatch]::StartNew()
-  $proc = Start-Process -FilePath "pwsh" -ArgumentList @("-NoProfile", "-ExecutionPolicy", "Bypass", "-File", $scriptPath) -NoNewWindow -PassThru -RedirectStandardOutput $outPath -RedirectStandardError $errPath
+  $child = Start-AiWikiNoWindowProcess -FilePath "pwsh.exe" -Arguments @("-NoProfile", "-NonInteractive", "-ExecutionPolicy", "Bypass", "-File", $scriptPath) -WorkingDirectory $runtime -CaptureOutput
+  $proc = $child.Process
   try {
     $i = 0
     while (-not $proc.HasExited) {
@@ -172,7 +248,7 @@ exit 0
       $i++
       $proc.Refresh()
     }
-    $proc.WaitForExit()
+    $completed = Complete-AiWikiNoWindowProcess -Child $child -StandardOutputPath $outPath -StandardErrorPath $errPath
     $elapsed = $sw.Elapsed.TotalSeconds
     Update-Estimate -Kind $Kind -Label $Label -Seconds $elapsed
     Write-Host -NoNewline "`r"
@@ -281,10 +357,12 @@ function Start-ElasticDirectBat {
   $log = Get-ElasticLogPath
   $err = Get-ElasticErrPath
   $workDir = Split-Path -Parent $BatPath
-  $cmd = "/c title AI Wiki Elasticsearch && `"$BatPath`" >> `"$log`" 2>> `"$err`""
+  $cmd = 'call "{0}" 1>>"{1}" 2>>"{2}"' -f $BatPath, $log, $err
   Write-Host ("Starting Elastic hidden via: " + $BatPath) -ForegroundColor Cyan
   Write-Host ("Log: " + $log) -ForegroundColor DarkCyan
-  $proc = Start-Process -FilePath "cmd.exe" -ArgumentList $cmd -WorkingDirectory $workDir -WindowStyle Hidden -PassThru
+  $cmdExe = if ($env:ComSpec -and (Test-Path -LiteralPath $env:ComSpec -PathType Leaf)) { $env:ComSpec } else { "cmd.exe" }
+  $child = Start-AiWikiNoWindowProcess -FilePath $cmdExe -Arguments @("/d", "/s", "/c", $cmd) -WorkingDirectory $workDir
+  $proc = $child.Process
   $proc.Id | Set-Content -Path (Get-ElasticPidPath) -Encoding UTF8
 }
 
@@ -294,8 +372,19 @@ function Start-ElasticScriptHidden {
   $err = Get-ElasticErrPath
   Write-Host ("Starting Elastic hidden via script: " + $ScriptPath) -ForegroundColor Cyan
   Write-Host ("Log: " + $log) -ForegroundColor DarkCyan
-  $args = @("-NoProfile", "-ExecutionPolicy", "Bypass", "-File", $ScriptPath)
-  $proc = Start-Process -FilePath "pwsh" -ArgumentList $args -WindowStyle Hidden -PassThru -RedirectStandardOutput $log -RedirectStandardError $err
+  $relayPath = Join-Path (Ensure-ServiceRuntime) "start-elastic-silent.ps1"
+  @'
+param(
+  [Parameter(Mandatory = $true)][string]$Target,
+  [Parameter(Mandatory = $true)][string]$StdoutLog,
+  [Parameter(Mandatory = $true)][string]$StderrLog
+)
+& $Target 1>> $StdoutLog 2>> $StderrLog
+exit $LASTEXITCODE
+'@ | Set-Content -LiteralPath $relayPath -Encoding UTF8
+  $args = @("-NoProfile", "-NonInteractive", "-ExecutionPolicy", "Bypass", "-File", $relayPath, "-Target", $ScriptPath, "-StdoutLog", $log, "-StderrLog", $err)
+  $child = Start-AiWikiNoWindowProcess -FilePath "pwsh.exe" -Arguments $args -WorkingDirectory (Split-Path -Parent $ScriptPath)
+  $proc = $child.Process
   $proc.Id | Set-Content -Path (Get-ElasticPidPath) -Encoding UTF8
 }
 
@@ -354,7 +443,11 @@ function Stop-Elastic {
   $scriptPath = Find-ElasticStopScript
   if ($scriptPath) {
     Write-Host ("Stopping Elastic via script: " + $scriptPath) -ForegroundColor Cyan
-    & pwsh -NoProfile -ExecutionPolicy Bypass -File $scriptPath
+    $child = Start-AiWikiNoWindowProcess -FilePath "pwsh.exe" -Arguments @("-NoProfile", "-NonInteractive", "-ExecutionPolicy", "Bypass", "-File", $scriptPath) -WorkingDirectory (Split-Path -Parent $scriptPath) -CaptureOutput
+    $completed = Complete-AiWikiNoWindowProcess -Child $child
+    if ($completed.Stdout) { Write-Host $completed.Stdout.TrimEnd() }
+    if ($completed.Stderr) { Write-Host $completed.Stderr.TrimEnd() -ForegroundColor Yellow }
+    if ($completed.ExitCode -ne 0) { throw "Elastic stop script exited with code $($completed.ExitCode)." }
     return
   }
 

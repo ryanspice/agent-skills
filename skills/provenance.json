@@ -8,9 +8,33 @@
     "modified": "Adapted, revised, copied, or derived from another skill/source/reference, with upstream/source credit retained."
   },
   "credit_policy": "Ryan Spice-Finnie is credited for created and locally mutated AI Wiki skills. Modified/adapted skills also retain upstream/source-reference credit where known. Ingesting them directly into this repository makes ryanspice/agent-skills the owned distribution surface.",
-  "source_file_count": 179,
-  "skill_document_count": 54,
+  "source_file_count": 264,
+  "skill_document_count": 69,
   "source_files": [
+    {
+      "path": "skills/agent-conversation-recovery/SKILL.md",
+      "source_path": "04_skills/agent-skills/skills/agent-conversation-recovery/SKILL.md",
+      "kind": "skill-document",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "abecfb221f7c274d2dce6adb0539de4e924c1e37f5400130d543d9ddc96f2574",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/agent-conversation-recovery/agents/openai.yaml",
+      "source_path": "04_skills/agent-skills/skills/agent-conversation-recovery/agents/openai.yaml",
+      "kind": "support-file",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "9dd4a2766b17772c3d603a6eab9dd2c325f3b8bdcd1a5f047cc8c2bd6caa1a70",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/ai-wiki-file-management/SKILL.md",
+      "source_path": "04_skills/agent-skills/skills/ai-wiki-file-management/SKILL.md",
+      "kind": "skill-document",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "2e9f45db1cc700e8d788615ccef94fa7058019106ac323b4ba31357a435a88ae",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
     {
       "path": "skills/ai-wiki-file-management/mcp-skill.json",
       "source_path": "04_skills/agent-skills/skills/ai-wiki-file-management/mcp-skill.json",
@@ -25,14 +49,6 @@
       "kind": "support-file",
       "credit": "Ryan Spice-Finnie",
       "sha256": "cd9a00f56cc347b1393156a32c95690e27efa94f1e97c74400859a871b5f305d",
-      "ingested_as": "ryanspice/agent-skills owned skill"
-    },
-    {
-      "path": "skills/ai-wiki-file-management/SKILL.md",
-      "source_path": "04_skills/agent-skills/skills/ai-wiki-file-management/SKILL.md",
-      "kind": "skill-document",
-      "credit": "Ryan Spice-Finnie",
-      "sha256": "2e9f45db1cc700e8d788615ccef94fa7058019106ac323b4ba31357a435a88ae",
       "ingested_as": "ryanspice/agent-skills owned skill"
     },
     {
@@ -92,11 +108,19 @@
       "ingested_as": "ryanspice/agent-skills owned skill"
     },
     {
+      "path": "skills/aiwiki-command-run-fragments/SKILL.md",
+      "source_path": "04_skills/agent-skills/skills/aiwiki-command-run-fragments/SKILL.md",
+      "kind": "skill-document",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "a37fddd22db677b82839262bbd898bf09b4d80ad691c96516a092c3e465882f9",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
       "path": "skills/aiwiki-command-run-fragments/scripts/Load-AiWikiCommandFragments.OutputPolish.ps1",
       "source_path": "04_skills/agent-skills/skills/aiwiki-command-run-fragments/scripts/Load-AiWikiCommandFragments.OutputPolish.ps1",
       "kind": "support-file",
       "credit": "Ryan Spice-Finnie",
-      "sha256": "93c45ef2e4b4e5cff31255945184a6675954ecfee85a2e56e3e9c140d472df48",
+      "sha256": "23478ff4dacbf2c148784597654b0331f4c892d1ff80a1b22cf6f2c33c775be7",
       "ingested_as": "ryanspice/agent-skills owned skill"
     },
     {
@@ -120,15 +144,7 @@
       "source_path": "04_skills/agent-skills/skills/aiwiki-command-run-fragments/scripts/Load-AiWikiCommandFragments.ps1",
       "kind": "support-file",
       "credit": "Ryan Spice-Finnie",
-      "sha256": "f74e6aee6906c2d26f80a41ee636b925b73a2405ca7aa95761fcd5b114f8b814",
-      "ingested_as": "ryanspice/agent-skills owned skill"
-    },
-    {
-      "path": "skills/aiwiki-command-run-fragments/SKILL.md",
-      "source_path": "04_skills/agent-skills/skills/aiwiki-command-run-fragments/SKILL.md",
-      "kind": "skill-document",
-      "credit": "Ryan Spice-Finnie",
-      "sha256": "02692c64551537bcb9f6780898f56963da13c15ebbfe2e3d4174cbbf8c348e2d",
+      "sha256": "a29e25477961ce10e8646444ab82ac86fdf6100804f9766d6a61e06731083fb3",
       "ingested_as": "ryanspice/agent-skills owned skill"
     },
     {
@@ -144,7 +160,7 @@
       "source_path": "04_skills/agent-skills/skills/aiwiki-deep-research-orchestrator/SKILL.md",
       "kind": "skill-document",
       "credit": "Ryan Spice-Finnie",
-      "sha256": "3cf3ae872a5260241d72afbf682473ee68222f5950ec9237add1093fccba77f8",
+      "sha256": "40cfbf5e9aada6dc222c21f1b0b2f0ba7a642843b40bcbfd83c5db281fd49683",
       "ingested_as": "ryanspice/agent-skills owned skill"
     },
     {
@@ -153,6 +169,14 @@
       "kind": "thoughts-state",
       "credit": "Ryan Spice-Finnie",
       "sha256": "26ac629d6d337d2221c3315a9b4b7c371880c3bf2597942e6b980d484aa25ad1",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/aiwiki-external-skill-intake/SKILL.md",
+      "source_path": "04_skills/agent-skills/skills/aiwiki-external-skill-intake/SKILL.md",
+      "kind": "skill-document",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "7e45727aed0d5a45f6ee162fa03c0d39f082d73e80235c84ca65bb6aa99c8a5e",
       "ingested_as": "ryanspice/agent-skills owned skill"
     },
     {
@@ -188,11 +212,11 @@
       "ingested_as": "ryanspice/agent-skills owned skill"
     },
     {
-      "path": "skills/aiwiki-external-skill-intake/SKILL.md",
-      "source_path": "04_skills/agent-skills/skills/aiwiki-external-skill-intake/SKILL.md",
+      "path": "skills/aiwiki-skill-registry-mcp-workflow/SKILL.md",
+      "source_path": "04_skills/agent-skills/skills/aiwiki-skill-registry-mcp-workflow/SKILL.md",
       "kind": "skill-document",
       "credit": "Ryan Spice-Finnie",
-      "sha256": "7e45727aed0d5a45f6ee162fa03c0d39f082d73e80235c84ca65bb6aa99c8a5e",
+      "sha256": "7ffd1bdb1bd4a015100da4876e0aab944279914261850d2319e2e17b9d0219a8",
       "ingested_as": "ryanspice/agent-skills owned skill"
     },
     {
@@ -204,19 +228,403 @@
       "ingested_as": "ryanspice/agent-skills owned skill"
     },
     {
-      "path": "skills/aiwiki-skill-registry-mcp-workflow/SKILL.md",
-      "source_path": "04_skills/agent-skills/skills/aiwiki-skill-registry-mcp-workflow/SKILL.md",
-      "kind": "skill-document",
-      "credit": "Ryan Spice-Finnie",
-      "sha256": "7ffd1bdb1bd4a015100da4876e0aab944279914261850d2319e2e17b9d0219a8",
-      "ingested_as": "ryanspice/agent-skills owned skill"
-    },
-    {
       "path": "skills/aiwiki-svelte-lab-workflow/SKILL.md",
       "source_path": "04_skills/agent-skills/skills/aiwiki-svelte-lab-workflow/SKILL.md",
       "kind": "skill-document",
       "credit": "Ryan Spice-Finnie",
       "sha256": "4678fdc244319ed625ab0a142d7600f96a146a9aa521b539efef24e8ee367416",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/blog-publish/SKILL.md",
+      "source_path": "04_skills/agent-skills/skills/blog-publish/SKILL.md",
+      "kind": "skill-document",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "956cb62bd7dabd35031505e45db767f02fe22b2f327fdac5f044fc960ca9c84d",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/bmo-agent-benchmark/SKILL.md",
+      "source_path": "04_skills/agent-skills/skills/bmo-agent-benchmark/SKILL.md",
+      "kind": "skill-document",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "a52c74fc773065df4b013db9542ab2a0c3a16218062c9d26be4e2080b88b5787",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/bmo-agent-benchmark/agents/openai.yaml",
+      "source_path": "04_skills/agent-skills/skills/bmo-agent-benchmark/agents/openai.yaml",
+      "kind": "support-file",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "175c50afb5e4298beeddadf2cca5d82a2d40d7a154c0869fae410b58fb8b8d8f",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/bmo-agent-benchmark/assets/fixture-v2/bmo-home-source-brief.json",
+      "source_path": "04_skills/agent-skills/skills/bmo-agent-benchmark/assets/fixture-v2/bmo-home-source-brief.json",
+      "kind": "support-file",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "40327eb90562b3d2bd583f8a7425d7a9949e24bd44f1366138c9f8a02071b585",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/bmo-agent-benchmark/assets/fixture-v2/condition-action-first.md",
+      "source_path": "04_skills/agent-skills/skills/bmo-agent-benchmark/assets/fixture-v2/condition-action-first.md",
+      "kind": "support-file",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "e4c905e7ee7ef7df07f97879fbf669b361c57032fcc9978281cc4dcd25e4a6e0",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/bmo-agent-benchmark/assets/fixture-v2/condition-standard.md",
+      "source_path": "04_skills/agent-skills/skills/bmo-agent-benchmark/assets/fixture-v2/condition-standard.md",
+      "kind": "support-file",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "1b1c7ceacd5258421933a65a136611e057de00d0be3a376a578f244daec50413",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/bmo-agent-benchmark/assets/fixture-v2/implementation-spec.md",
+      "source_path": "04_skills/agent-skills/skills/bmo-agent-benchmark/assets/fixture-v2/implementation-spec.md",
+      "kind": "support-file",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "0d496a234f75eda1e8baf801d556e3c789a6230486061a57d5ed747c43514d18",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/bmo-agent-benchmark/assets/fixture-v2/matrix-v2.json",
+      "source_path": "04_skills/agent-skills/skills/bmo-agent-benchmark/assets/fixture-v2/matrix-v2.json",
+      "kind": "support-file",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "cc25cd4cbebc2f52ab7357f58962cdbc49cacb9d1fea73029ba503095fb1d218",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/bmo-agent-benchmark/assets/fixture-v2/pass1-task-template.md",
+      "source_path": "04_skills/agent-skills/skills/bmo-agent-benchmark/assets/fixture-v2/pass1-task-template.md",
+      "kind": "support-file",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "92bf39dcbe7e81bf897faefaa71aa92adf7e5110d464a0765b959c3c954d4349",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/bmo-agent-benchmark/assets/fixture-v2/pass2-task-template.md",
+      "source_path": "04_skills/agent-skills/skills/bmo-agent-benchmark/assets/fixture-v2/pass2-task-template.md",
+      "kind": "support-file",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "b52aefedb165cbae382210774f440dca0e8b86ad1b5d469d0c921895257b79c4",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/bmo-agent-benchmark/assets/fixture-v2/visible-reasoning-kernel.md",
+      "source_path": "04_skills/agent-skills/skills/bmo-agent-benchmark/assets/fixture-v2/visible-reasoning-kernel.md",
+      "kind": "support-file",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "c415b2cfd90a394e73a067719cbf859a2aedf6e1a555e7d8119256e1ed0367fc",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/bmo-agent-benchmark/assets/fixture-v3/bmo-home-source-brief.json",
+      "source_path": "04_skills/agent-skills/skills/bmo-agent-benchmark/assets/fixture-v3/bmo-home-source-brief.json",
+      "kind": "support-file",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "40327eb90562b3d2bd583f8a7425d7a9949e24bd44f1366138c9f8a02071b585",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/bmo-agent-benchmark/assets/fixture-v3/condition-action-first.md",
+      "source_path": "04_skills/agent-skills/skills/bmo-agent-benchmark/assets/fixture-v3/condition-action-first.md",
+      "kind": "support-file",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "e4c905e7ee7ef7df07f97879fbf669b361c57032fcc9978281cc4dcd25e4a6e0",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/bmo-agent-benchmark/assets/fixture-v3/condition-standard.md",
+      "source_path": "04_skills/agent-skills/skills/bmo-agent-benchmark/assets/fixture-v3/condition-standard.md",
+      "kind": "support-file",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "1b1c7ceacd5258421933a65a136611e057de00d0be3a376a578f244daec50413",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/bmo-agent-benchmark/assets/fixture-v3/implementation-spec.md",
+      "source_path": "04_skills/agent-skills/skills/bmo-agent-benchmark/assets/fixture-v3/implementation-spec.md",
+      "kind": "support-file",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "0d496a234f75eda1e8baf801d556e3c789a6230486061a57d5ed747c43514d18",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/bmo-agent-benchmark/assets/fixture-v3/matrix-v3.json",
+      "source_path": "04_skills/agent-skills/skills/bmo-agent-benchmark/assets/fixture-v3/matrix-v3.json",
+      "kind": "support-file",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "bbf7073d004173b4fab45bb2ba24226d5596d9ffd7a1d3e0f6e3465f3ab713fe",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/bmo-agent-benchmark/assets/fixture-v3/pass1-task-template.md",
+      "source_path": "04_skills/agent-skills/skills/bmo-agent-benchmark/assets/fixture-v3/pass1-task-template.md",
+      "kind": "support-file",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "37e6622142ef4f6fb8672c83e59e7b890eba70fc3bee17a2a4221aa54de8f0a5",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/bmo-agent-benchmark/assets/fixture-v3/pass2-task-template.md",
+      "source_path": "04_skills/agent-skills/skills/bmo-agent-benchmark/assets/fixture-v3/pass2-task-template.md",
+      "kind": "support-file",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "7065866356e6173719491fbe363d0ab51736d3e077c7da7e66e2bd5c276de255",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/bmo-agent-benchmark/assets/fixture-v3/policy-spiceflow-v0.4-bmo.md",
+      "source_path": "04_skills/agent-skills/skills/bmo-agent-benchmark/assets/fixture-v3/policy-spiceflow-v0.4-bmo.md",
+      "kind": "support-file",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "f5f3fec585964ba6baf3c18c74172464f53f1db404d556cf913ca6dd0dd0b04b",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/bmo-agent-benchmark/assets/fixture-v3/source-archive-manifest.json",
+      "source_path": "04_skills/agent-skills/skills/bmo-agent-benchmark/assets/fixture-v3/source-archive-manifest.json",
+      "kind": "support-file",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "2cec0a25f5adc264920d212a883d631701cab22bc772bebbe99225864aea3c64",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/bmo-agent-benchmark/assets/fixture-v3/visible-reasoning-kernel.md",
+      "source_path": "04_skills/agent-skills/skills/bmo-agent-benchmark/assets/fixture-v3/visible-reasoning-kernel.md",
+      "kind": "support-file",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "c415b2cfd90a394e73a067719cbf859a2aedf6e1a555e7d8119256e1ed0367fc",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/bmo-agent-benchmark/assets/starter/.gitignore",
+      "source_path": "04_skills/agent-skills/skills/bmo-agent-benchmark/assets/starter/.gitignore",
+      "kind": "support-file",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "d1aec8becdfa546cbb4ed193ffd576dd7f353c742cb9f361be4b2697ecefe992",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/bmo-agent-benchmark/assets/starter/.npmrc",
+      "source_path": "04_skills/agent-skills/skills/bmo-agent-benchmark/assets/starter/.npmrc",
+      "kind": "support-file",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "7151cf397def0c2cb0ab65643701d27d335a72c90f775675b5f826bc7005818a",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/bmo-agent-benchmark/assets/starter/README.md",
+      "source_path": "04_skills/agent-skills/skills/bmo-agent-benchmark/assets/starter/README.md",
+      "kind": "support-file",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "779c91d826d3bee538045863fb8556df0e454a7b2d2a17e130c151ba2b9f9df2",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/bmo-agent-benchmark/assets/starter/package.json",
+      "source_path": "04_skills/agent-skills/skills/bmo-agent-benchmark/assets/starter/package.json",
+      "kind": "support-file",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "da39b9d1e4fbcf9a88c7816a171a949549c65250e81570f41ff36e53a763aba0",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/bmo-agent-benchmark/assets/starter/src/app.d.ts",
+      "source_path": "04_skills/agent-skills/skills/bmo-agent-benchmark/assets/starter/src/app.d.ts",
+      "kind": "support-file",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "3d450fc2fc7b0f10b6a9493a682769aac34f8b612f0f5d1bc4845a7b0bfe9f0a",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/bmo-agent-benchmark/assets/starter/src/app.html",
+      "source_path": "04_skills/agent-skills/skills/bmo-agent-benchmark/assets/starter/src/app.html",
+      "kind": "support-file",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "824aebe3df873b559437d5e9dbf97f09f35c3b006608950cb582bcfbeae85faa",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/bmo-agent-benchmark/assets/starter/src/lib/assets/favicon.svg",
+      "source_path": "04_skills/agent-skills/skills/bmo-agent-benchmark/assets/starter/src/lib/assets/favicon.svg",
+      "kind": "support-file",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "d7d9227f0fe5bfb4189fb6ba4dd9e2d524f6a1dfd02bd901c65330987675c0b3",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/bmo-agent-benchmark/assets/starter/src/lib/index.ts",
+      "source_path": "04_skills/agent-skills/skills/bmo-agent-benchmark/assets/starter/src/lib/index.ts",
+      "kind": "support-file",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "4beec0ade3bea5be651939b305bccf69d48506c74eda0a1a50a0dd6c79c4e91a",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/bmo-agent-benchmark/assets/starter/src/routes/+layout.svelte",
+      "source_path": "04_skills/agent-skills/skills/bmo-agent-benchmark/assets/starter/src/routes/+layout.svelte",
+      "kind": "support-file",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "ebd8d1fe186e66679a9f5627747a0d9aa04853505d70c9f00cbbc7333dabe3d5",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/bmo-agent-benchmark/assets/starter/src/routes/+page.svelte",
+      "source_path": "04_skills/agent-skills/skills/bmo-agent-benchmark/assets/starter/src/routes/+page.svelte",
+      "kind": "support-file",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "9dd633ced2345cf3712ded48cdba85cb07933348909e5681a3d2d941627403c0",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/bmo-agent-benchmark/assets/starter/static/robots.txt",
+      "source_path": "04_skills/agent-skills/skills/bmo-agent-benchmark/assets/starter/static/robots.txt",
+      "kind": "support-file",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "b033243267bcbdab84cb01e940811d6d77a894d78f0470faaf0eb43f8e4efcc9",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/bmo-agent-benchmark/assets/starter/tsconfig.json",
+      "source_path": "04_skills/agent-skills/skills/bmo-agent-benchmark/assets/starter/tsconfig.json",
+      "kind": "support-file",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "7a19bf2d57ef51ed3d7ddb0ed6ac3c4aa89025ab1cc2b0271132477905763134",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/bmo-agent-benchmark/assets/starter/vite.config.ts",
+      "source_path": "04_skills/agent-skills/skills/bmo-agent-benchmark/assets/starter/vite.config.ts",
+      "kind": "support-file",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "8f489600e36ef36af5b82d1e7733b5026f9d41a49a94302cbb76833033a9254a",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/bmo-agent-benchmark/mcp-skill.json",
+      "source_path": "04_skills/agent-skills/skills/bmo-agent-benchmark/mcp-skill.json",
+      "kind": "support-file",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "14c1e882e11235ac203cd2e4c7c56cce57c4b49010a3722ccb4f115676a5ac15",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/bmo-agent-benchmark/references/design-and-cost.md",
+      "source_path": "04_skills/agent-skills/skills/bmo-agent-benchmark/references/design-and-cost.md",
+      "kind": "support-file",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "96c7ac54458987646dcfa2d46bc969c3fed75d6b99eff564c8b3ff497e79e627",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/bmo-agent-benchmark/references/prior-baseline.md",
+      "source_path": "04_skills/agent-skills/skills/bmo-agent-benchmark/references/prior-baseline.md",
+      "kind": "support-file",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "be24a746a5a47d15221e40305b73df8475b40a7496a37a205ef662d43d74bef0",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/bmo-agent-benchmark/references/r10-results.md",
+      "source_path": "04_skills/agent-skills/skills/bmo-agent-benchmark/references/r10-results.md",
+      "kind": "support-file",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "cb5d80aeb76d93999c78634628ab7069a07684071c5b0e6f81760d9e72b99f4d",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/bmo-agent-benchmark/references/workbench-command-registry-record.json",
+      "source_path": "04_skills/agent-skills/skills/bmo-agent-benchmark/references/workbench-command-registry-record.json",
+      "kind": "support-file",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "44a6382ec01cded3940ebb14c380be489d972f7704a61d37cd1a21ef7842c4c8",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/bmo-agent-benchmark/scripts/Invoke-BmoAgentBenchmark.ps1",
+      "source_path": "04_skills/agent-skills/skills/bmo-agent-benchmark/scripts/Invoke-BmoAgentBenchmark.ps1",
+      "kind": "support-file",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "da937ffd52ceebde6a0eb83f58e0dcd0910134c00b1e574f1d95c14b989ab12d",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/bmo-agent-benchmark/scripts/Invoke-BmoAgentBenchmarkV3.ps1",
+      "source_path": "04_skills/agent-skills/skills/bmo-agent-benchmark/scripts/Invoke-BmoAgentBenchmarkV3.ps1",
+      "kind": "support-file",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "0e39a5eff4db1305af67ef49ad7c3643f142aafe3aedcdc6a95bcff22972f2c2",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/bmo-agent-benchmark/scripts/New-BmoAgentBenchmarkPackage.ps1",
+      "source_path": "04_skills/agent-skills/skills/bmo-agent-benchmark/scripts/New-BmoAgentBenchmarkPackage.ps1",
+      "kind": "support-file",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "c39cd60f4e861848a86cccecd6180606288214ead7755d49e081dca967533066",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/bmo-agent-benchmark/scripts/Test-BmoBenchmarkArtifact.ps1",
+      "source_path": "04_skills/agent-skills/skills/bmo-agent-benchmark/scripts/Test-BmoBenchmarkArtifact.ps1",
+      "kind": "support-file",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "aeb45086af1605c68bc92bb9c9863ffa9225e1cfefd97907ddab4c1954bfc24f",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/bmo-agent-benchmark/scripts/Test-BmoBenchmarkArtifactV3.ps1",
+      "source_path": "04_skills/agent-skills/skills/bmo-agent-benchmark/scripts/Test-BmoBenchmarkArtifactV3.ps1",
+      "kind": "support-file",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "8d79d477c5386a42213340fd05ce74ff1a20ed3e982f7bcb124964a33c393870",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/bmo-agent-benchmark/scripts/Test-BmoBenchmarkPacket.ps1",
+      "source_path": "04_skills/agent-skills/skills/bmo-agent-benchmark/scripts/Test-BmoBenchmarkPacket.ps1",
+      "kind": "support-file",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "074b8bedf5def22d7f6fa230393c49692499619b15e4f68bab2329fd8f2e8a6e",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/bmo-agent-benchmark/scripts/Test-BmoBenchmarkPacketV3.ps1",
+      "source_path": "04_skills/agent-skills/skills/bmo-agent-benchmark/scripts/Test-BmoBenchmarkPacketV3.ps1",
+      "kind": "support-file",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "abce8d8d036b238d1a71782b5595e9c1286426ec5491d5b9d9b4ab48b525e680",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/bmo-agent-benchmark/scripts/Test-BmoBrowserArtifactV3.mjs",
+      "source_path": "04_skills/agent-skills/skills/bmo-agent-benchmark/scripts/Test-BmoBrowserArtifactV3.mjs",
+      "kind": "support-file",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "39f28f5fd4108332a1811d18baf3718bb43ef4a9051ee7bd27a79a998f9ddfc5",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/candidates/deep-research-workflow-candidate-v0.1.0/README.md",
+      "source_path": "04_skills/agent-skills/skills/candidates/deep-research-workflow-candidate-v0.1.0/README.md",
+      "kind": "support-file",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "45f90e125ffda8b6908d7931ffe6825be3f0cc4f68b7d2de7873a8ff8bac99b6",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/candidates/deep-research-workflow-candidate-v0.1.0/SKILL.md",
+      "source_path": "04_skills/agent-skills/skills/candidates/deep-research-workflow-candidate-v0.1.0/SKILL.md",
+      "kind": "skill-document",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "d61035d3c2810192b8426928dd86cc944ee548ea1c408cea305e556fd4268585",
       "ingested_as": "ryanspice/agent-skills owned skill"
     },
     {
@@ -236,27 +644,11 @@
       "ingested_as": "ryanspice/agent-skills owned skill"
     },
     {
-      "path": "skills/candidates/deep-research-workflow-candidate-v0.1.0/README.md",
-      "source_path": "04_skills/agent-skills/skills/candidates/deep-research-workflow-candidate-v0.1.0/README.md",
-      "kind": "support-file",
-      "credit": "Ryan Spice-Finnie",
-      "sha256": "45f90e125ffda8b6908d7931ffe6825be3f0cc4f68b7d2de7873a8ff8bac99b6",
-      "ingested_as": "ryanspice/agent-skills owned skill"
-    },
-    {
       "path": "skills/candidates/deep-research-workflow-candidate-v0.1.0/search-adaptation.md",
       "source_path": "04_skills/agent-skills/skills/candidates/deep-research-workflow-candidate-v0.1.0/search-adaptation.md",
       "kind": "support-file",
       "credit": "Ryan Spice-Finnie",
       "sha256": "198bba8940a4565b341cb3586bcd8a6e266eca4d5ab5c8581889681e5dfa1ac4",
-      "ingested_as": "ryanspice/agent-skills owned skill"
-    },
-    {
-      "path": "skills/candidates/deep-research-workflow-candidate-v0.1.0/SKILL.md",
-      "source_path": "04_skills/agent-skills/skills/candidates/deep-research-workflow-candidate-v0.1.0/SKILL.md",
-      "kind": "skill-document",
-      "credit": "Ryan Spice-Finnie",
-      "sha256": "d61035d3c2810192b8426928dd86cc944ee548ea1c408cea305e556fd4268585",
       "ingested_as": "ryanspice/agent-skills owned skill"
     },
     {
@@ -273,6 +665,30 @@
       "kind": "support-file",
       "credit": "Ryan Spice-Finnie",
       "sha256": "0f99003c164527a66de8897366292c989cafe6615a8c598211396445fdc86b9f",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/candidates/deepseek-research-api-substrate-v0.1.0/SKILL.md",
+      "source_path": "04_skills/agent-skills/skills/candidates/deepseek-research-api-substrate-v0.1.0/SKILL.md",
+      "kind": "skill-document",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "485b5b276bc972788f784fa24fe85386856352030b882f3d62b1622dcfe32339",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/candidates/enterprise-deep-research-workflow-candidate-v0.1.0/README.md",
+      "source_path": "04_skills/agent-skills/skills/candidates/enterprise-deep-research-workflow-candidate-v0.1.0/README.md",
+      "kind": "support-file",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "846ea829047b4502ada0ee3ce86cb09cf0c0cfcfee1dda0af71993dafc87ca7f",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/candidates/enterprise-deep-research-workflow-candidate-v0.1.0/SKILL.md",
+      "source_path": "04_skills/agent-skills/skills/candidates/enterprise-deep-research-workflow-candidate-v0.1.0/SKILL.md",
+      "kind": "skill-document",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "e9f1aebb3d308ba6c8cad5824031992ea953eedac2e19157d10b659ae8807e31",
       "ingested_as": "ryanspice/agent-skills owned skill"
     },
     {
@@ -308,27 +724,11 @@
       "ingested_as": "ryanspice/agent-skills owned skill"
     },
     {
-      "path": "skills/candidates/enterprise-deep-research-workflow-candidate-v0.1.0/README.md",
-      "source_path": "04_skills/agent-skills/skills/candidates/enterprise-deep-research-workflow-candidate-v0.1.0/README.md",
-      "kind": "support-file",
-      "credit": "Ryan Spice-Finnie",
-      "sha256": "846ea829047b4502ada0ee3ce86cb09cf0c0cfcfee1dda0af71993dafc87ca7f",
-      "ingested_as": "ryanspice/agent-skills owned skill"
-    },
-    {
       "path": "skills/candidates/enterprise-deep-research-workflow-candidate-v0.1.0/research-state.schema.json",
       "source_path": "04_skills/agent-skills/skills/candidates/enterprise-deep-research-workflow-candidate-v0.1.0/research-state.schema.json",
       "kind": "support-file",
       "credit": "Ryan Spice-Finnie",
       "sha256": "9ae6970216c60af08c10d43f0194581b66eab6ef1a0b0e1d5001f5196335f54c",
-      "ingested_as": "ryanspice/agent-skills owned skill"
-    },
-    {
-      "path": "skills/candidates/enterprise-deep-research-workflow-candidate-v0.1.0/SKILL.md",
-      "source_path": "04_skills/agent-skills/skills/candidates/enterprise-deep-research-workflow-candidate-v0.1.0/SKILL.md",
-      "kind": "skill-document",
-      "credit": "Ryan Spice-Finnie",
-      "sha256": "e9f1aebb3d308ba6c8cad5824031992ea953eedac2e19157d10b659ae8807e31",
       "ingested_as": "ryanspice/agent-skills owned skill"
     },
     {
@@ -348,6 +748,62 @@
       "ingested_as": "ryanspice/agent-skills owned skill"
     },
     {
+      "path": "skills/cjk-ui-lab/SKILL.md",
+      "source_path": "04_skills/agent-skills/skills/cjk-ui-lab/SKILL.md",
+      "kind": "skill-document",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "3116964b81ed9b19ebe7a4033b0933d6344bf97ef30e0408fb5eff946a2d4b81",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/cjk-ui-lab/agents/openai.yaml",
+      "source_path": "04_skills/agent-skills/skills/cjk-ui-lab/agents/openai.yaml",
+      "kind": "support-file",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "5cbfa4d9b93f5ae6d5fdcc3f6aa841df0fb6c919722a7b4302b0e5be0cfc7021",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/cjk-ui-lab/mcp-skill.json",
+      "source_path": "04_skills/agent-skills/skills/cjk-ui-lab/mcp-skill.json",
+      "kind": "support-file",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "dc8a7555be27164e27b1f4b9374e35f872f4ae2ca1688de531dafb990970c031",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/cjk-ui-lab/references/audit-rubric.md",
+      "source_path": "04_skills/agent-skills/skills/cjk-ui-lab/references/audit-rubric.md",
+      "kind": "support-file",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "984236f46318ae62a48c9fd46f76fd57322ad7c87ff4debec4b05bbc23921476",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/cjk-ui-lab/references/research-sources.md",
+      "source_path": "04_skills/agent-skills/skills/cjk-ui-lab/references/research-sources.md",
+      "kind": "support-file",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "6aecc7624d5690366a7f2431a2b482f238ed1747e35288c2e1e8466f326e1575",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/cjk-ui-lab/references/sveltekit-implementation-pattern.md",
+      "source_path": "04_skills/agent-skills/skills/cjk-ui-lab/references/sveltekit-implementation-pattern.md",
+      "kind": "support-file",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "92797bd2926cf5ec5cd54e32847ab1c8d442880ccb1c1a46241ba3787b142662",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/code-and-plan/SKILL.md",
+      "source_path": "04_skills/agent-skills/skills/code-and-plan/SKILL.md",
+      "kind": "skill-document",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "d80b8f8a55b5d30e6f39fa37770b38cfe9aa98b221396a474690e3619d4cc867",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
       "path": "skills/creating-skills/.thoughts",
       "source_path": "04_skills/agent-skills/skills/creating-skills/.thoughts",
       "kind": "thoughts-state",
@@ -361,6 +817,22 @@
       "kind": "support-file",
       "credit": "Ryan Spice-Finnie",
       "sha256": "56577d0c9fe899a157956240b9c5bfcc3c13adc56b0d4912bf80faf820ea8768",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/creating-skills/README.md",
+      "source_path": "04_skills/agent-skills/skills/creating-skills/README.md",
+      "kind": "support-file",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "866e491495094a5bec067bc442d54dbef3276dc3f1edf132da3f79d12dbe5c1e",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/creating-skills/SKILL.md",
+      "source_path": "04_skills/agent-skills/skills/creating-skills/SKILL.md",
+      "kind": "skill-document",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "970aaa109799ef52bdba9323acc9fcc7740e51e207cafb10b4e9afb4c497c70e",
       "ingested_as": "ryanspice/agent-skills owned skill"
     },
     {
@@ -416,7 +888,7 @@
       "source_path": "04_skills/agent-skills/skills/creating-skills/install-creating-skills.ps1",
       "kind": "support-file",
       "credit": "Ryan Spice-Finnie",
-      "sha256": "eb2859e42d51ff4fd983d78b4c98c6b703e038c25d323cc45366e3d59a256749",
+      "sha256": "76b51312b86b6c2d9e2586c4c9fda8559a70d9e83b5320bf0c6f4704c1ce542b",
       "ingested_as": "ryanspice/agent-skills owned skill"
     },
     {
@@ -425,14 +897,6 @@
       "kind": "support-file",
       "credit": "Ryan Spice-Finnie",
       "sha256": "7da8b5b1e51235abda79078da2fef83284ac136f1778c5a4ba617dbe00478799",
-      "ingested_as": "ryanspice/agent-skills owned skill"
-    },
-    {
-      "path": "skills/creating-skills/README.md",
-      "source_path": "04_skills/agent-skills/skills/creating-skills/README.md",
-      "kind": "support-file",
-      "credit": "Ryan Spice-Finnie",
-      "sha256": "866e491495094a5bec067bc442d54dbef3276dc3f1edf132da3f79d12dbe5c1e",
       "ingested_as": "ryanspice/agent-skills owned skill"
     },
     {
@@ -508,14 +972,6 @@
       "ingested_as": "ryanspice/agent-skills owned skill"
     },
     {
-      "path": "skills/creating-skills/scripts/rebuild_skills_registry.py",
-      "source_path": "04_skills/agent-skills/skills/creating-skills/scripts/rebuild_skills_registry.py",
-      "kind": "support-file",
-      "credit": "Ryan Spice-Finnie",
-      "sha256": "9664f9bd37bb4090f19bb0e5a71b8b85924a363e2eba633239bf722596d0fb4a",
-      "ingested_as": "ryanspice/agent-skills owned skill"
-    },
-    {
       "path": "skills/creating-skills/scripts/rebuild-skills-registry.ps1",
       "source_path": "04_skills/agent-skills/skills/creating-skills/scripts/rebuild-skills-registry.ps1",
       "kind": "support-file",
@@ -524,19 +980,19 @@
       "ingested_as": "ryanspice/agent-skills owned skill"
     },
     {
+      "path": "skills/creating-skills/scripts/rebuild_skills_registry.py",
+      "source_path": "04_skills/agent-skills/skills/creating-skills/scripts/rebuild_skills_registry.py",
+      "kind": "support-file",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "9664f9bd37bb4090f19bb0e5a71b8b85924a363e2eba633239bf722596d0fb4a",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
       "path": "skills/creating-skills/scripts/validate_skill.py",
       "source_path": "04_skills/agent-skills/skills/creating-skills/scripts/validate_skill.py",
       "kind": "support-file",
       "credit": "Ryan Spice-Finnie",
       "sha256": "2baffe1900b3059fc4c06d1889c491d9136e79e52376a519f315f07265e7a02e",
-      "ingested_as": "ryanspice/agent-skills owned skill"
-    },
-    {
-      "path": "skills/creating-skills/SKILL.md",
-      "source_path": "04_skills/agent-skills/skills/creating-skills/SKILL.md",
-      "kind": "skill-document",
-      "credit": "Ryan Spice-Finnie",
-      "sha256": "970aaa109799ef52bdba9323acc9fcc7740e51e207cafb10b4e9afb4c497c70e",
       "ingested_as": "ryanspice/agent-skills owned skill"
     },
     {
@@ -580,6 +1036,14 @@
       "ingested_as": "ryanspice/agent-skills owned skill"
     },
     {
+      "path": "skills/cross-machine-media/SKILL.md",
+      "source_path": "04_skills/agent-skills/skills/cross-machine-media/SKILL.md",
+      "kind": "skill-document",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "8a0b5d75052723569f310347bf280806aba26337bdc0128d53fa2b7fc43cefec",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
       "path": "skills/decorated-wait-action-output-v0.0.1/SKILL.md",
       "source_path": "04_skills/agent-skills/skills/decorated-wait-action-output-v0.0.1/SKILL.md",
       "kind": "skill-document",
@@ -596,6 +1060,158 @@
       "ingested_as": "ryanspice/agent-skills owned skill"
     },
     {
+      "path": "skills/deep-research-workflow/SKILL.md",
+      "source_path": "04_skills/agent-skills/skills/deep-research-workflow/SKILL.md",
+      "kind": "skill-document",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "83ac4db57f2616e4b6428fb07e6c19f8cd415e1bac6b04b294d7f2547cf84665",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/enterprise-deep-research-workflow/SKILL.md",
+      "source_path": "04_skills/agent-skills/skills/enterprise-deep-research-workflow/SKILL.md",
+      "kind": "skill-document",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "a166af201c178a6c50b27176c8043ad77077a590b8b1bdb7e916453a624cb504",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/fugu-free-model-fleet-operator/.thoughts",
+      "source_path": "04_skills/agent-skills/skills/fugu-free-model-fleet-operator/.thoughts",
+      "kind": "thoughts-state",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "c5ea91339de6fa8732528e3301be2d1ef84e3a4fc2c56b61e541c53dd78019fb",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/fugu-free-model-fleet-operator/CHANGELOG.md",
+      "source_path": "04_skills/agent-skills/skills/fugu-free-model-fleet-operator/CHANGELOG.md",
+      "kind": "support-file",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "92dfaa235edaea45f607fc991ab2e308397364b1ffa4bdfc8c33043aa7810582",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/fugu-free-model-fleet-operator/README.md",
+      "source_path": "04_skills/agent-skills/skills/fugu-free-model-fleet-operator/README.md",
+      "kind": "support-file",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "d57a1c111ee64c53eea54c34243f26b7a29e8cdbaad50baa3764a67f1ff813af",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/fugu-free-model-fleet-operator/SKILL.md",
+      "source_path": "04_skills/agent-skills/skills/fugu-free-model-fleet-operator/SKILL.md",
+      "kind": "skill-document",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "1df391dc3dc12d615e2fcaec3a1e3d41870af347977c5244e024e70e95f31ecb",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/fugu-free-model-fleet-operator/agents/openai.yaml",
+      "source_path": "04_skills/agent-skills/skills/fugu-free-model-fleet-operator/agents/openai.yaml",
+      "kind": "support-file",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "94034608a3f4a79afc77dac374f3cb245f4e2cfbe8b6b22d8987a4c92bb3f451",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/fugu-free-model-fleet-operator/examples/evals/ambiguous-catalog.json",
+      "source_path": "04_skills/agent-skills/skills/fugu-free-model-fleet-operator/examples/evals/ambiguous-catalog.json",
+      "kind": "support-file",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "5ede065507cbf062429ea12a66cfc5fa4d291e063288c7eae4bd25df6e462589",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/fugu-free-model-fleet-operator/examples/evals/derived-manifest-regression.json",
+      "source_path": "04_skills/agent-skills/skills/fugu-free-model-fleet-operator/examples/evals/derived-manifest-regression.json",
+      "kind": "support-file",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "c25145eb5ce38ed880a052ef5acd7a0f24ed5ccd83c98adcd2ac8b3069ddf01f",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/fugu-free-model-fleet-operator/examples/evals/happy-path.json",
+      "source_path": "04_skills/agent-skills/skills/fugu-free-model-fleet-operator/examples/evals/happy-path.json",
+      "kind": "support-file",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "fc2a5d626bcfc70628682814d0cba4f3853663854be7664caebda25ea72a922e",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/fugu-free-model-fleet-operator/examples/evals/luna-composability.json",
+      "source_path": "04_skills/agent-skills/skills/fugu-free-model-fleet-operator/examples/evals/luna-composability.json",
+      "kind": "support-file",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "c6e4a7d54bd5af3f98165fba7fd23858d53f08eb0b5ad27034719ad49a8e0f93",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/fugu-free-model-fleet-operator/examples/evals/protected-boundary.json",
+      "source_path": "04_skills/agent-skills/skills/fugu-free-model-fleet-operator/examples/evals/protected-boundary.json",
+      "kind": "support-file",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "3694a0630d6f6205adcfff5d42e0d88509bf0b3d6ec46e2fbad427f554c51403",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/fugu-free-model-fleet-operator/mcp-skill.json",
+      "source_path": "04_skills/agent-skills/skills/fugu-free-model-fleet-operator/mcp-skill.json",
+      "kind": "support-file",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "0e085de032bc900a46efd925adda6f694b56d74ec83b4a4edf0041c7742fea61",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/fugu-free-model-fleet-operator/reference/luna-light-runbook.md",
+      "source_path": "04_skills/agent-skills/skills/fugu-free-model-fleet-operator/reference/luna-light-runbook.md",
+      "kind": "support-file",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "f80f3f67b035462545058a8d484c338aaf17ff8c61c2f3f54f3128a5199af10d",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/fugu-free-model-fleet-operator/reference/operational-contract.md",
+      "source_path": "04_skills/agent-skills/skills/fugu-free-model-fleet-operator/reference/operational-contract.md",
+      "kind": "support-file",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "b8248556b8ebb98c07352bac251b2cd8c4dea37a12495ad3a3e77ef1503461b5",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/fugu-free-model-fleet-operator/reference/receipt-schema.md",
+      "source_path": "04_skills/agent-skills/skills/fugu-free-model-fleet-operator/reference/receipt-schema.md",
+      "kind": "support-file",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "9df7be88d55baf6c5001637cce35f2a68be719be6170454ef7307e2236bad635",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/fugu-free-model-fleet-operator/scripts/Invoke-FuguFreeModelFleetSnapshot.ps1",
+      "source_path": "04_skills/agent-skills/skills/fugu-free-model-fleet-operator/scripts/Invoke-FuguFreeModelFleetSnapshot.ps1",
+      "kind": "support-file",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "e4a6f9dcb6e48c7c9f6e434f36249bb1f97a6a4febc5fb748b904a6f72641519",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/fugu-free-model-fleet-operator/templates/luna-light-engage.md",
+      "source_path": "04_skills/agent-skills/skills/fugu-free-model-fleet-operator/templates/luna-light-engage.md",
+      "kind": "support-file",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "8fabe19e4a3ec489f45d39884d801ad45ffa8130c434dae906b8fe0f65f6d477",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/fugu-free-model-fleet-operator/templates/operator-report.md",
+      "source_path": "04_skills/agent-skills/skills/fugu-free-model-fleet-operator/templates/operator-report.md",
+      "kind": "support-file",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "fe62731069afb6d5b807fde376c5da77b6484b382ac7157cbc980a4a8f23fd65",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
       "path": "skills/gpt55-webapp-builder-codex-bridge/.thoughts",
       "source_path": "04_skills/agent-skills/skills/gpt55-webapp-builder-codex-bridge/.thoughts",
       "kind": "thoughts-state",
@@ -609,6 +1225,22 @@
       "kind": "support-file",
       "credit": "Ryan Spice-Finnie",
       "sha256": "bbc00b330b364e8f49ac47d1cb7a562d5590101c4828c2165503c7287e432273",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/gpt55-webapp-builder-codex-bridge/README.md",
+      "source_path": "04_skills/agent-skills/skills/gpt55-webapp-builder-codex-bridge/README.md",
+      "kind": "support-file",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "86a75ed4f8d5714eec5c3836d7ad566a29846492d30c199af31b1cfbf02d6a3f",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/gpt55-webapp-builder-codex-bridge/SKILL.md",
+      "source_path": "04_skills/agent-skills/skills/gpt55-webapp-builder-codex-bridge/SKILL.md",
+      "kind": "skill-document",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "600fe8f3be7076ac94085871e100363757ae3b95d51dc5050b344278883c1ce2",
       "ingested_as": "ryanspice/agent-skills owned skill"
     },
     {
@@ -684,14 +1316,6 @@
       "ingested_as": "ryanspice/agent-skills owned skill"
     },
     {
-      "path": "skills/gpt55-webapp-builder-codex-bridge/README.md",
-      "source_path": "04_skills/agent-skills/skills/gpt55-webapp-builder-codex-bridge/README.md",
-      "kind": "support-file",
-      "credit": "Ryan Spice-Finnie",
-      "sha256": "86a75ed4f8d5714eec5c3836d7ad566a29846492d30c199af31b1cfbf02d6a3f",
-      "ingested_as": "ryanspice/agent-skills owned skill"
-    },
-    {
       "path": "skills/gpt55-webapp-builder-codex-bridge/reference/architecture-patterns.md",
       "source_path": "04_skills/agent-skills/skills/gpt55-webapp-builder-codex-bridge/reference/architecture-patterns.md",
       "kind": "support-file",
@@ -756,14 +1380,6 @@
       "ingested_as": "ryanspice/agent-skills owned skill"
     },
     {
-      "path": "skills/gpt55-webapp-builder-codex-bridge/SKILL.md",
-      "source_path": "04_skills/agent-skills/skills/gpt55-webapp-builder-codex-bridge/SKILL.md",
-      "kind": "skill-document",
-      "credit": "Ryan Spice-Finnie",
-      "sha256": "600fe8f3be7076ac94085871e100363757ae3b95d51dc5050b344278883c1ce2",
-      "ingested_as": "ryanspice/agent-skills owned skill"
-    },
-    {
       "path": "skills/gpt55-webapp-builder-codex-bridge/templates/builder-handoff-prompt.md",
       "source_path": "04_skills/agent-skills/skills/gpt55-webapp-builder-codex-bridge/templates/builder-handoff-prompt.md",
       "kind": "support-file",
@@ -804,11 +1420,43 @@
       "ingested_as": "ryanspice/agent-skills owned skill"
     },
     {
+      "path": "skills/grill-spice/SKILL.md",
+      "source_path": "04_skills/agent-skills/skills/grill-spice/SKILL.md",
+      "kind": "skill-document",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "8b14591ef55445853441b60f9930aec775e325e94e8b448a214e46d56b0f37e6",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
       "path": "skills/hermes-local-llamacpp-aiwiki-agent/SKILL.md",
       "source_path": "04_skills/agent-skills/skills/hermes-local-llamacpp-aiwiki-agent/SKILL.md",
       "kind": "skill-document",
       "credit": "Ryan Spice-Finnie",
-      "sha256": "7a463b5986306d738820f682e628658ddc80ffd80738520a03c057bb29c08a78",
+      "sha256": "03cfcf1bec663456709f53d172d5ba4122e5a5b774811163505983b95c422c6a",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/hermes-subprocess-delegation/SKILL.md",
+      "source_path": "04_skills/agent-skills/skills/hermes-subprocess-delegation/SKILL.md",
+      "kind": "skill-document",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "1417800b64eb2f732b91332b78c92a5dd1d15194bbb660380bfd9b82be3c6c71",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/hermes-table-renderer/SKILL.md",
+      "source_path": "04_skills/agent-skills/skills/hermes-table-renderer/SKILL.md",
+      "kind": "skill-document",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "14802782fd69ccdd586a7db7e4f7cabdd0547bbc0b0ca1e86d6d91a2ef845b1b",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/hermes-table-renderer/mcp-skill.json",
+      "source_path": "04_skills/agent-skills/skills/hermes-table-renderer/mcp-skill.json",
+      "kind": "support-file",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "2b8350804a6b8395c180c1c5e694cda92118d6f4028f555c16b474b970666e51",
       "ingested_as": "ryanspice/agent-skills owned skill"
     },
     {
@@ -817,6 +1465,22 @@
       "kind": "thoughts-state",
       "credit": "Ryan Spice-Finnie",
       "sha256": "55c24c59a9ca5b41be0e5a9e422696f9463e9fbfaea682a4604c8131f3dbc003",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/image-to-ui-sveltekit/README.md",
+      "source_path": "04_skills/agent-skills/skills/image-to-ui-sveltekit/README.md",
+      "kind": "support-file",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "eee700a95a722ea3975b8dc6c247127052704c5d96986c4cb064c7b17644d4f4",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/image-to-ui-sveltekit/SKILL.md",
+      "source_path": "04_skills/agent-skills/skills/image-to-ui-sveltekit/SKILL.md",
+      "kind": "skill-document",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "5089496180c2f07fcf952778042d5cad1af455eceb4651edead4e2bea757efe7",
       "ingested_as": "ryanspice/agent-skills owned skill"
     },
     {
@@ -833,14 +1497,6 @@
       "kind": "support-file",
       "credit": "Ryan Spice-Finnie",
       "sha256": "3ddd69df970a1dee33fd4e7c79eeeee6e5198501f4b92383bb3e6777c565d377",
-      "ingested_as": "ryanspice/agent-skills owned skill"
-    },
-    {
-      "path": "skills/image-to-ui-sveltekit/README.md",
-      "source_path": "04_skills/agent-skills/skills/image-to-ui-sveltekit/README.md",
-      "kind": "support-file",
-      "credit": "Ryan Spice-Finnie",
-      "sha256": "eee700a95a722ea3975b8dc6c247127052704c5d96986c4cb064c7b17644d4f4",
       "ingested_as": "ryanspice/agent-skills owned skill"
     },
     {
@@ -865,14 +1521,6 @@
       "kind": "support-file",
       "credit": "Ryan Spice-Finnie",
       "sha256": "c72467b5cbd7f8957dadb52697b1a5036e3c963d87fb84ebaf67ca5e2c326d7d",
-      "ingested_as": "ryanspice/agent-skills owned skill"
-    },
-    {
-      "path": "skills/image-to-ui-sveltekit/SKILL.md",
-      "source_path": "04_skills/agent-skills/skills/image-to-ui-sveltekit/SKILL.md",
-      "kind": "skill-document",
-      "credit": "Ryan Spice-Finnie",
-      "sha256": "5089496180c2f07fcf952778042d5cad1af455eceb4651edead4e2bea757efe7",
       "ingested_as": "ryanspice/agent-skills owned skill"
     },
     {
@@ -932,6 +1580,14 @@
       "ingested_as": "ryanspice/agent-skills owned skill"
     },
     {
+      "path": "skills/powershell-script-authoring/SKILL.md",
+      "source_path": "04_skills/agent-skills/skills/powershell-script-authoring/SKILL.md",
+      "kind": "skill-document",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "7ab0c6e438afd59dafc2506b142a10f83e7a2112fe6a8615b9eeae947aff0e94",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
       "path": "skills/powershell-script-authoring/examples/powershell-request-evals.md",
       "source_path": "04_skills/agent-skills/skills/powershell-script-authoring/examples/powershell-request-evals.md",
       "kind": "support-file",
@@ -980,19 +1636,11 @@
       "ingested_as": "ryanspice/agent-skills owned skill"
     },
     {
-      "path": "skills/powershell-script-authoring/SKILL.md",
-      "source_path": "04_skills/agent-skills/skills/powershell-script-authoring/SKILL.md",
-      "kind": "skill-document",
-      "credit": "Ryan Spice-Finnie",
-      "sha256": "7ab0c6e438afd59dafc2506b142a10f83e7a2112fe6a8615b9eeae947aff0e94",
-      "ingested_as": "ryanspice/agent-skills owned skill"
-    },
-    {
       "path": "skills/powershell-script-authoring/templates/build-file-script-template.ps1",
       "source_path": "04_skills/agent-skills/skills/powershell-script-authoring/templates/build-file-script-template.ps1",
       "kind": "support-file",
       "credit": "Ryan Spice-Finnie",
-      "sha256": "5400422267b119270b1dd26ff3e2e6bb290d694df4a593c6086610def527432c",
+      "sha256": "f3d932238d20dec62c9f091cfc5e01e2d6f37c8e61f7d163b1187f3565c59b23",
       "ingested_as": "ryanspice/agent-skills owned skill"
     },
     {
@@ -1092,6 +1740,14 @@
       "ingested_as": "ryanspice/agent-skills owned skill"
     },
     {
+      "path": "skills/repo-skill-recommender-copy/SKILL.md",
+      "source_path": "04_skills/agent-skills/skills/repo-skill-recommender-copy/SKILL.md",
+      "kind": "skill-document",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "a4ae2d2575500e97105950c05876d8bf00d5d5770906619de7095a2a3a6d6b4d",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
       "path": "skills/repo-skill-recommender-copy/mcp-skill.json",
       "source_path": "04_skills/agent-skills/skills/repo-skill-recommender-copy/mcp-skill.json",
       "kind": "support-file",
@@ -1116,11 +1772,11 @@
       "ingested_as": "ryanspice/agent-skills owned skill"
     },
     {
-      "path": "skills/repo-skill-recommender-copy/SKILL.md",
-      "source_path": "04_skills/agent-skills/skills/repo-skill-recommender-copy/SKILL.md",
+      "path": "skills/repo-skill-recommender/SKILL.md",
+      "source_path": "04_skills/agent-skills/skills/repo-skill-recommender/SKILL.md",
       "kind": "skill-document",
       "credit": "Ryan Spice-Finnie",
-      "sha256": "a4ae2d2575500e97105950c05876d8bf00d5d5770906619de7095a2a3a6d6b4d",
+      "sha256": "2141aea8f14df7f5390b8d5df009f5d136dd7808f4169e666b420d0d15892003",
       "ingested_as": "ryanspice/agent-skills owned skill"
     },
     {
@@ -1148,11 +1804,27 @@
       "ingested_as": "ryanspice/agent-skills owned skill"
     },
     {
-      "path": "skills/repo-skill-recommender/SKILL.md",
-      "source_path": "04_skills/agent-skills/skills/repo-skill-recommender/SKILL.md",
+      "path": "skills/research-harness-archive-operator/SKILL.md",
+      "source_path": "04_skills/agent-skills/skills/research-harness-archive-operator/SKILL.md",
       "kind": "skill-document",
       "credit": "Ryan Spice-Finnie",
-      "sha256": "2141aea8f14df7f5390b8d5df009f5d136dd7808f4169e666b420d0d15892003",
+      "sha256": "eb7ecc0694373402742535fb4e424e5ad748b31e9a41607d60cfd75ba6288ad3",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/research-harness-archive-operator/agents/openai.yaml",
+      "source_path": "04_skills/agent-skills/skills/research-harness-archive-operator/agents/openai.yaml",
+      "kind": "support-file",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "4aed047946c678a00501ab8a5cede20b480972d7ec413e264e63b65fa97b9137",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/send-it/SKILL.md",
+      "source_path": "04_skills/agent-skills/skills/send-it/SKILL.md",
+      "kind": "skill-document",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "58715970df1455eaf1a680fa56e97329270282f4c9015fcd6fa1a1532adf734e",
       "ingested_as": "ryanspice/agent-skills owned skill"
     },
     {
@@ -1161,6 +1833,14 @@
       "kind": "thoughts-state",
       "credit": "Ryan Spice-Finnie",
       "sha256": "2a2742b00d9f233642d746c05b28e2c03b05957a0a79f727f8fab08ebe52117a",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/sprite-pixel-art-sprite-sheets-gpt55/SKILL.md",
+      "source_path": "04_skills/agent-skills/skills/sprite-pixel-art-sprite-sheets-gpt55/SKILL.md",
+      "kind": "skill-document",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "ee81c5b8da653fd412a7d9945c05193c5d19bf1ce67d9f9dede03514c94464d2",
       "ingested_as": "ryanspice/agent-skills owned skill"
     },
     {
@@ -1204,27 +1884,11 @@
       "ingested_as": "ryanspice/agent-skills owned skill"
     },
     {
-      "path": "skills/sprite-pixel-art-sprite-sheets-gpt55/SKILL.md",
-      "source_path": "04_skills/agent-skills/skills/sprite-pixel-art-sprite-sheets-gpt55/SKILL.md",
-      "kind": "skill-document",
-      "credit": "Ryan Spice-Finnie",
-      "sha256": "ee81c5b8da653fd412a7d9945c05193c5d19bf1ce67d9f9dede03514c94464d2",
-      "ingested_as": "ryanspice/agent-skills owned skill"
-    },
-    {
       "path": "skills/svelte-lab-demo-ingestion/SKILL.md",
       "source_path": "04_skills/agent-skills/skills/svelte-lab-demo-ingestion/SKILL.md",
       "kind": "skill-document",
       "credit": "Ryan Spice-Finnie",
       "sha256": "73b35113b0044e90f20d042a1f971b3df5da9ac24d432e79be586eda6aa65355",
-      "ingested_as": "ryanspice/agent-skills owned skill"
-    },
-    {
-      "path": "skills/sveltekit2-bootstrap-discipline/mcp-skill.json",
-      "source_path": "04_skills/agent-skills/skills/sveltekit2-bootstrap-discipline/mcp-skill.json",
-      "kind": "support-file",
-      "credit": "Ryan Spice-Finnie",
-      "sha256": "6271528ce8661d6d86df9e69082928e83cccfb4d89991f0dd2febdabf0125804",
       "ingested_as": "ryanspice/agent-skills owned skill"
     },
     {
@@ -1236,11 +1900,11 @@
       "ingested_as": "ryanspice/agent-skills owned skill"
     },
     {
-      "path": "skills/sveltekit2-svelte5-engineering/mcp-skill.json",
-      "source_path": "04_skills/agent-skills/skills/sveltekit2-svelte5-engineering/mcp-skill.json",
+      "path": "skills/sveltekit2-bootstrap-discipline/mcp-skill.json",
+      "source_path": "04_skills/agent-skills/skills/sveltekit2-bootstrap-discipline/mcp-skill.json",
       "kind": "support-file",
       "credit": "Ryan Spice-Finnie",
-      "sha256": "f327bef873722f2f384585791013152d1ad751a5e42cb4978ff632f731894e46",
+      "sha256": "6271528ce8661d6d86df9e69082928e83cccfb4d89991f0dd2febdabf0125804",
       "ingested_as": "ryanspice/agent-skills owned skill"
     },
     {
@@ -1249,6 +1913,22 @@
       "kind": "skill-document",
       "credit": "Ryan Spice-Finnie",
       "sha256": "cfe4cffbdff21cae1c5dcab212f3823a33fa9c8a82a23120913f387b948fc83f",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/sveltekit2-svelte5-engineering/mcp-skill.json",
+      "source_path": "04_skills/agent-skills/skills/sveltekit2-svelte5-engineering/mcp-skill.json",
+      "kind": "support-file",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "f327bef873722f2f384585791013152d1ad751a5e42cb4978ff632f731894e46",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/universal-prompt-pack-builder/SKILL.md",
+      "source_path": "04_skills/agent-skills/skills/universal-prompt-pack-builder/SKILL.md",
+      "kind": "skill-document",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "06b3fa1fd20aa4b34d5b2d7477a7e3b36e50d2a6d1a00d62603560836a2ec202",
       "ingested_as": "ryanspice/agent-skills owned skill"
     },
     {
@@ -1265,14 +1945,6 @@
       "kind": "support-file",
       "credit": "Ryan Spice-Finnie",
       "sha256": "d569a7e3f4f1602df64098cffedd627f0ad7e002e87d4e087653b2d21a99c253",
-      "ingested_as": "ryanspice/agent-skills owned skill"
-    },
-    {
-      "path": "skills/universal-prompt-pack-builder/SKILL.md",
-      "source_path": "04_skills/agent-skills/skills/universal-prompt-pack-builder/SKILL.md",
-      "kind": "skill-document",
-      "credit": "Ryan Spice-Finnie",
-      "sha256": "06b3fa1fd20aa4b34d5b2d7477a7e3b36e50d2a6d1a00d62603560836a2ec202",
       "ingested_as": "ryanspice/agent-skills owned skill"
     },
     {
@@ -1308,14 +1980,6 @@
       "ingested_as": "ryanspice/agent-skills owned skill"
     },
     {
-      "path": "skills/vibe-guard-pack-aiwiki-adapted/vibe-check/mcp-skill.json",
-      "source_path": "04_skills/agent-skills/skills/vibe-guard-pack-aiwiki-adapted/vibe-check/mcp-skill.json",
-      "kind": "support-file",
-      "credit": "Ryan Spice-Finnie",
-      "sha256": "776d189342e49ded898c5ca540fb16ea9a175999dd86b3a0b1a42e16b906486d",
-      "ingested_as": "ryanspice/agent-skills owned skill"
-    },
-    {
       "path": "skills/vibe-guard-pack-aiwiki-adapted/vibe-check/SKILL.md",
       "source_path": "04_skills/agent-skills/skills/vibe-guard-pack-aiwiki-adapted/vibe-check/SKILL.md",
       "kind": "skill-document",
@@ -1324,11 +1988,11 @@
       "ingested_as": "ryanspice/agent-skills owned skill"
     },
     {
-      "path": "skills/vibe-guard-pack-aiwiki-adapted/vibe-explain/mcp-skill.json",
-      "source_path": "04_skills/agent-skills/skills/vibe-guard-pack-aiwiki-adapted/vibe-explain/mcp-skill.json",
+      "path": "skills/vibe-guard-pack-aiwiki-adapted/vibe-check/mcp-skill.json",
+      "source_path": "04_skills/agent-skills/skills/vibe-guard-pack-aiwiki-adapted/vibe-check/mcp-skill.json",
       "kind": "support-file",
       "credit": "Ryan Spice-Finnie",
-      "sha256": "b16cc6b5fd9703dcfd56d08a43b1c8f0359e0507bc18ec5c6945b20a56ac8c1b",
+      "sha256": "776d189342e49ded898c5ca540fb16ea9a175999dd86b3a0b1a42e16b906486d",
       "ingested_as": "ryanspice/agent-skills owned skill"
     },
     {
@@ -1340,11 +2004,11 @@
       "ingested_as": "ryanspice/agent-skills owned skill"
     },
     {
-      "path": "skills/vibe-guard-pack-aiwiki-adapted/vibe-guard/mcp-skill.json",
-      "source_path": "04_skills/agent-skills/skills/vibe-guard-pack-aiwiki-adapted/vibe-guard/mcp-skill.json",
+      "path": "skills/vibe-guard-pack-aiwiki-adapted/vibe-explain/mcp-skill.json",
+      "source_path": "04_skills/agent-skills/skills/vibe-guard-pack-aiwiki-adapted/vibe-explain/mcp-skill.json",
       "kind": "support-file",
       "credit": "Ryan Spice-Finnie",
-      "sha256": "118c7482187cb3b4299797b8884459582360e7ab800fd4e2099df42a4d18a73a",
+      "sha256": "b16cc6b5fd9703dcfd56d08a43b1c8f0359e0507bc18ec5c6945b20a56ac8c1b",
       "ingested_as": "ryanspice/agent-skills owned skill"
     },
     {
@@ -1356,11 +2020,11 @@
       "ingested_as": "ryanspice/agent-skills owned skill"
     },
     {
-      "path": "skills/vibe-guard-pack-aiwiki-adapted/vibe-secure/mcp-skill.json",
-      "source_path": "04_skills/agent-skills/skills/vibe-guard-pack-aiwiki-adapted/vibe-secure/mcp-skill.json",
+      "path": "skills/vibe-guard-pack-aiwiki-adapted/vibe-guard/mcp-skill.json",
+      "source_path": "04_skills/agent-skills/skills/vibe-guard-pack-aiwiki-adapted/vibe-guard/mcp-skill.json",
       "kind": "support-file",
       "credit": "Ryan Spice-Finnie",
-      "sha256": "1d41d5e39cda68ab3271288289de16719458638e8ab8a51ef2bec8cc3e18c4fb",
+      "sha256": "118c7482187cb3b4299797b8884459582360e7ab800fd4e2099df42a4d18a73a",
       "ingested_as": "ryanspice/agent-skills owned skill"
     },
     {
@@ -1372,11 +2036,27 @@
       "ingested_as": "ryanspice/agent-skills owned skill"
     },
     {
+      "path": "skills/vibe-guard-pack-aiwiki-adapted/vibe-secure/mcp-skill.json",
+      "source_path": "04_skills/agent-skills/skills/vibe-guard-pack-aiwiki-adapted/vibe-secure/mcp-skill.json",
+      "kind": "support-file",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "1d41d5e39cda68ab3271288289de16719458638e8ab8a51ef2bec8cc3e18c4fb",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
       "path": "skills/walking-cycle-generation/.thoughts",
       "source_path": "04_skills/agent-skills/skills/walking-cycle-generation/.thoughts",
       "kind": "thoughts-state",
       "credit": "Ryan Spice-Finnie",
       "sha256": "76c8cf902c601764e2c63048c7dad26afc05d909146244ff64913e187d9539d3",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/walking-cycle-generation/SKILL.md",
+      "source_path": "04_skills/agent-skills/skills/walking-cycle-generation/SKILL.md",
+      "kind": "skill-document",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "1ff95bb39630c4272fcfc1e44709ec2cbbcc2562d05fd188404016a99e8a0722",
       "ingested_as": "ryanspice/agent-skills owned skill"
     },
     {
@@ -1388,11 +2068,11 @@
       "ingested_as": "ryanspice/agent-skills owned skill"
     },
     {
-      "path": "skills/walking-cycle-generation/SKILL.md",
-      "source_path": "04_skills/agent-skills/skills/walking-cycle-generation/SKILL.md",
+      "path": "skills/windows-phone-metro-design/SKILL.md",
+      "source_path": "04_skills/agent-skills/skills/windows-phone-metro-design/SKILL.md",
       "kind": "skill-document",
       "credit": "Ryan Spice-Finnie",
-      "sha256": "1ff95bb39630c4272fcfc1e44709ec2cbbcc2562d05fd188404016a99e8a0722",
+      "sha256": "0671e5090728ee648b761839fce9c73101d33941a8af29d9e1e7eb4c45ad28b2",
       "ingested_as": "ryanspice/agent-skills owned skill"
     },
     {
@@ -1412,22 +2092,6 @@
       "ingested_as": "ryanspice/agent-skills owned skill"
     },
     {
-      "path": "skills/windows-phone-metro-design/SKILL.md",
-      "source_path": "04_skills/agent-skills/skills/windows-phone-metro-design/SKILL.md",
-      "kind": "skill-document",
-      "credit": "Ryan Spice-Finnie",
-      "sha256": "0671e5090728ee648b761839fce9c73101d33941a8af29d9e1e7eb4c45ad28b2",
-      "ingested_as": "ryanspice/agent-skills owned skill"
-    },
-    {
-      "path": "skills/windows-tar-package-installer-workflow/scripts/Install-TarPackage.ps1",
-      "source_path": "04_skills/agent-skills/skills/windows-tar-package-installer-workflow/scripts/Install-TarPackage.ps1",
-      "kind": "support-file",
-      "credit": "Ryan Spice-Finnie",
-      "sha256": "e2636bc59ca0196d11f98d9c82a9b320eeb3339dc86e933f4cad9ac56aba0f1a",
-      "ingested_as": "ryanspice/agent-skills owned skill"
-    },
-    {
       "path": "skills/windows-tar-package-installer-workflow/SKILL.md",
       "source_path": "04_skills/agent-skills/skills/windows-tar-package-installer-workflow/SKILL.md",
       "kind": "skill-document",
@@ -1436,15 +2100,41 @@
       "ingested_as": "ryanspice/agent-skills owned skill"
     },
     {
-      "path": "skills/cross-machine-media/SKILL.md",
-      "source_path": "04_skills/agent-skills/skills/cross-machine-media/SKILL.md",
+      "path": "skills/windows-tar-package-installer-workflow/scripts/Install-TarPackage.ps1",
+      "source_path": "04_skills/agent-skills/skills/windows-tar-package-installer-workflow/scripts/Install-TarPackage.ps1",
+      "kind": "support-file",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "a102f72d6097563d837b37a83dc66c56e3ee47e9af5e1675e52aad9236595642",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/workbench-console-safety-operator/SKILL.md",
+      "source_path": "04_skills/agent-skills/skills/workbench-console-safety-operator/SKILL.md",
       "kind": "skill-document",
       "credit": "Ryan Spice-Finnie",
-      "sha256": "db52ca2a3a44607da4a74318629e41ab38f889fab1399422601407faedcd0631",
+      "sha256": "38fa297ba87fd807f74566d62cafdeb18d43f7162823aa1cf5859e507cc53d42",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/workbench-console-safety-operator/agents/openai.yaml",
+      "source_path": "04_skills/agent-skills/skills/workbench-console-safety-operator/agents/openai.yaml",
+      "kind": "support-file",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "977fc3525ca0f802d3979c83e18d98a4cf9b9de0009fa390a62555d294b5b42d",
       "ingested_as": "ryanspice/agent-skills owned skill"
     }
   ],
   "skills": [
+    {
+      "name": "agent-conversation-recovery",
+      "path": "skills/agent-conversation-recovery/SKILL.md",
+      "origin": "original",
+      "source_path": "04_skills/agent-skills/skills/agent-conversation-recovery/SKILL.md",
+      "credit": "Ryan Spice-Finnie",
+      "note": "Registered from the existing local working tree; earlier origins were not independently verified.",
+      "upstream": "",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
     {
       "name": "ai-wiki-file-management",
       "path": "skills/ai-wiki-file-management/SKILL.md",
@@ -1526,6 +2216,26 @@
       "ingested_as": "ryanspice/agent-skills owned skill"
     },
     {
+      "name": "blog-publish",
+      "path": "skills/blog-publish/SKILL.md",
+      "source_path": "04_skills/agent-skills/skills/blog-publish/SKILL.md",
+      "origin": "original",
+      "credit": "Ryan Spice-Finnie",
+      "note": "Universal blog publishing skill for blog.ryanspice.com and blog.canopydigital.ca.",
+      "upstream": "",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "name": "bmo-agent-benchmark",
+      "path": "skills/bmo-agent-benchmark/SKILL.md",
+      "origin": "original",
+      "source_path": "04_skills/agent-skills/skills/bmo-agent-benchmark/SKILL.md",
+      "credit": "Ryan Spice-Finnie",
+      "note": "Registered from the existing local working tree; earlier origins were not independently verified.",
+      "upstream": "",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
       "name": "deep-research-workflow-candidate",
       "path": "skills/candidates/deep-research-workflow-candidate-v0.1.0/SKILL.md",
       "origin": "modified",
@@ -1536,6 +2246,14 @@
       "ingested_as": "ryanspice/agent-skills owned skill"
     },
     {
+      "name": "deepseek-research-api-substrate",
+      "path": "skills/candidates/deepseek-research-api-substrate-v0.1.0/SKILL.md",
+      "source_path": "04_skills/agent-skills/skills/candidates/deepseek-research-api-substrate-v0.1.0/SKILL.md",
+      "origin": "original",
+      "credit": "Ryan Spice-Finnie",
+      "note": "Candidate skill for DeepSeek as a research API substrate, held as candidate pending deeper source and API validation."
+    },
+    {
       "name": "Enterprise Deep Research Workflow Candidate",
       "path": "skills/candidates/enterprise-deep-research-workflow-candidate-v0.1.0/SKILL.md",
       "origin": "modified",
@@ -1543,6 +2261,26 @@
       "credit": "Ryan Spice-Finnie",
       "note": "Enterprise research workflow candidate adapted by Ryan Spice-Finnie from reviewed external deep-research architecture patterns.",
       "upstream": "199-biotechnologies/claude-deep-research-skill https://github.com/199-biotechnologies/claude-deep-research-skill; DeepWiki architecture view https://deepwiki.com/199-biotechnologies/claude-deep-research-skill",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "name": "cjk-ui-lab",
+      "path": "skills/cjk-ui-lab/SKILL.md",
+      "source_path": "04_skills/agent-skills/skills/cjk-ui-lab/SKILL.md",
+      "origin": "original",
+      "credit": "Ryan Spice-Finnie",
+      "note": "Original AI Wiki local skill credited to Ryan Spice-Finnie.",
+      "upstream": "",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "name": "code-and-plan",
+      "path": "skills/code-and-plan/SKILL.md",
+      "origin": "original",
+      "source_path": "04_skills/agent-skills/skills/code-and-plan/SKILL.md",
+      "credit": "Ryan Spice-Finnie",
+      "note": "Imported from user-provided Code n? Plan skill attachment.",
+      "upstream": "",
       "ingested_as": "ryanspice/agent-skills owned skill"
     },
     {
@@ -1606,6 +2344,16 @@
       "ingested_as": "ryanspice/agent-skills owned skill"
     },
     {
+      "name": "cross-machine-media",
+      "path": "skills/cross-machine-media/SKILL.md",
+      "origin": "original",
+      "source_path": "04_skills/agent-skills/skills/cross-machine-media/SKILL.md",
+      "credit": "Ryan Spice-Finnie",
+      "note": "Original owner-directed cross-machine media workflow curated from the AI Wiki skill.",
+      "upstream": "",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
       "name": "decorated-wait-action-output",
       "path": "skills/decorated-wait-action-output-v0.0.1/SKILL.md",
       "origin": "original",
@@ -1630,6 +2378,34 @@
       "selection_reason": "active default: selected by policy (decorated-wait-action-output)"
     },
     {
+      "name": "deep-research-workflow",
+      "path": "skills/deep-research-workflow/SKILL.md",
+      "source_path": "04_skills/agent-skills/skills/deep-research-workflow/SKILL.md",
+      "origin": "modified",
+      "credit": "Ryan Spice-Finnie",
+      "note": "Promoted research workflow skill based on Ryan Spice-Finnie AI Wiki research operations adaptation.",
+      "upstream": "Promoted from skills/candidates/deep-research-workflow-candidate-v0.1.0 after Prompt Operations deep research review."
+    },
+    {
+      "name": "enterprise-deep-research-workflow",
+      "path": "skills/enterprise-deep-research-workflow/SKILL.md",
+      "source_path": "04_skills/agent-skills/skills/enterprise-deep-research-workflow/SKILL.md",
+      "origin": "modified",
+      "credit": "Ryan Spice-Finnie",
+      "note": "Promoted enterprise research workflow skill based on Ryan Spice-Finnie AI Wiki research operations adaptation.",
+      "upstream": "Promoted from skills/candidates/enterprise-deep-research-workflow-candidate-v0.1.0 after Prompt Operations deep research review."
+    },
+    {
+      "name": "fugu-free-model-fleet-operator",
+      "path": "skills/fugu-free-model-fleet-operator/SKILL.md",
+      "origin": "original",
+      "source_path": "04_skills/agent-skills/skills/fugu-free-model-fleet-operator/SKILL.md",
+      "credit": "Ryan Spice-Finnie",
+      "note": "Reviewed and promoted from the AI Wiki free-model fleet refresh workflow.",
+      "upstream": "",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
       "name": "gpt55-webapp-builder-codex-bridge",
       "path": "skills/gpt55-webapp-builder-codex-bridge/SKILL.md",
       "origin": "original",
@@ -1640,12 +2416,42 @@
       "ingested_as": "ryanspice/agent-skills owned skill"
     },
     {
+      "name": "grill-spice",
+      "path": "skills/grill-spice/SKILL.md",
+      "origin": "modified",
+      "source_path": "04_skills/agent-skills/skills/grill-spice/SKILL.md",
+      "credit": "Ryan Spice-Finnie",
+      "note": "Imported from user-provided Grill Spice skill attachment.",
+      "upstream": "https://github.com/mattpocock/skills",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
       "name": "hermes-local-llamacpp-aiwiki-agent",
       "path": "skills/hermes-local-llamacpp-aiwiki-agent/SKILL.md",
       "origin": "original",
       "source_path": "04_skills/agent-skills/skills/hermes-local-llamacpp-aiwiki-agent/SKILL.md",
       "credit": "Ryan Spice-Finnie",
       "note": "Original AI Wiki local skill credited to Ryan Spice-Finnie.",
+      "upstream": "",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "name": "hermes-subprocess-delegation",
+      "path": "skills/hermes-subprocess-delegation/SKILL.md",
+      "origin": "original",
+      "source_path": "04_skills/agent-skills/skills/hermes-subprocess-delegation/SKILL.md",
+      "credit": "Ryan Spice-Finnie",
+      "note": "Original AI Wiki local skill credited to Ryan Spice-Finnie, promoted from a PixelBoats project delegation rule into a reusable Hermes subprocess pattern.",
+      "upstream": "",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "name": "hermes-table-renderer",
+      "path": "skills/hermes-table-renderer/SKILL.md",
+      "origin": "original",
+      "source_path": "04_skills/agent-skills/skills/hermes-table-renderer/SKILL.md",
+      "credit": "Ryan Spice-Finnie",
+      "note": "Registered from the existing local working tree; earlier origins were not independently verified.",
       "upstream": "",
       "ingested_as": "ryanspice/agent-skills owned skill"
     },
@@ -1863,6 +2669,26 @@
       "selection_reason": "active default: selected by policy (repo-skill-recommender)"
     },
     {
+      "name": "research-harness-archive-operator",
+      "path": "skills/research-harness-archive-operator/SKILL.md",
+      "origin": "original",
+      "source_path": "04_skills/agent-skills/skills/research-harness-archive-operator/SKILL.md",
+      "credit": "Ryan Spice-Finnie",
+      "note": "Registered from the existing local working tree; earlier origins were not independently verified.",
+      "upstream": "",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "name": "send-it",
+      "path": "skills/send-it/SKILL.md",
+      "origin": "original",
+      "source_path": "04_skills/agent-skills/skills/send-it/SKILL.md",
+      "credit": "Ryan Spice-Finnie",
+      "note": "Created for reviewable pull-request handoff.",
+      "upstream": "",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
       "name": "sprite-pixel-art-sprite-sheets-gpt55",
       "path": "skills/sprite-pixel-art-sprite-sheets-gpt55/SKILL.md",
       "origin": "original",
@@ -2017,12 +2843,12 @@
       "ingested_as": "ryanspice/agent-skills owned skill"
     },
     {
-      "name": "cross-machine-media",
-      "path": "skills/cross-machine-media/SKILL.md",
+      "name": "workbench-console-safety-operator",
+      "path": "skills/workbench-console-safety-operator/SKILL.md",
       "origin": "original",
-      "source_path": "04_skills/agent-skills/skills/cross-machine-media/SKILL.md",
+      "source_path": "04_skills/agent-skills/skills/workbench-console-safety-operator/SKILL.md",
       "credit": "Ryan Spice-Finnie",
-      "note": "Original owner-directed cross-machine media workflow curated from the AI Wiki skill.",
+      "note": "Registered from the existing local working tree; earlier origins were not independently verified.",
       "upstream": "",
       "ingested_as": "ryanspice/agent-skills owned skill"
     }

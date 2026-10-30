@@ -1,11 +1,12 @@
 ---
 name: cross-machine-media
 description: Coordinate Blender renders on Spice-Book, local image or video generation on Spice-PC, and user-authorized ChatGPT web image generation, including workload checks and verified handoffs. Use for cross-machine creative production, not ordinary single-machine edits.
-provenance_origin: "original"
-provenance_source_path: "04_skills/agent-skills/skills/cross-machine-media/SKILL.md"
-provenance_credit: "Ryan Spice-Finnie"
-provenance_ingested_as: "ryanspice/agent-skills owned skill"
-provenance_note: "Original owner-directed cross-machine media workflow curated from the AI Wiki skill."
+metadata:
+  provenance_origin: "original"
+  provenance_source_path: "04_skills/agent-skills/skills/cross-machine-media/SKILL.md"
+  provenance_credit: "Ryan Spice-Finnie"
+  provenance_ingested_as: "ryanspice/agent-skills owned skill"
+  provenance_note: "Original owner-directed cross-machine media workflow curated from the AI Wiki skill."
 ---
 
 # Cross-machine media work

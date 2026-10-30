@@ -1,0 +1,44 @@
+{
+  "schema_version": "1.0",
+  "name": "skill-forge",
+  "version": "0.3.0",
+  "status": "promoted",
+  "scope": "universal",
+  "project_slug": null,
+  "canonical_path": "04_skills/agent-skills/skills/skill-forge",
+  "entrypoint": "SKILL.md",
+  "tags": ["spiceflow", "skills", "evaluation", "ai-wiki", "reuse"],
+  "triggers": ["create a skill", "derive a workflow from history", "improve an existing skill", "stage AI Wiki skill metadata"],
+  "required_capabilities": ["knowledge.search", "knowledge.context-pack"],
+  "capability_mappings": {
+    "knowledge.search": "aiwiki vault_search (verified connected 2026-07-20)",
+    "knowledge.context-pack": "aiwiki context_pack (verified connected 2026-07-20)"
+  },
+  "mirrors": [],
+  "provenance": {
+    "generator": "SpiceFlow Forge",
+    "source": "Ryan Spice-Finnie AI Wiki and reusable-skill workflow conventions",
+    "created_utc": "2026-07-19T00:00:00Z",
+    "promoted_utc": "2026-07-20T00:00:00Z",
+    "generated": true,
+    "package_source_name": "skills/spiceflow-skill-forge",
+    "package_version": "0.3.0",
+    "original_archive": "<DOWNLOADS_ROOT>/spiceflow-v0.3.0.tar.gz",
+    "original_sha256": "72917231175dcba4b6113354e8e99d8f2acd56d5a0d969e4db99bfef39dd5418",
+    "promoted_from_archive": "<DOWNLOADS_ROOT>/spiceflow-v0.3.0-corrected.tar.gz",
+    "promoted_from_sha256": "9e9eafe21255ecde464aae16d04e6b446bedff1d0e9f7c6c53674b93d9cc6426",
+    "staging_path": "<DOWNLOADS_ROOT>/spiceflow-v0.3.0-corrected-review/spiceflow-v0.3.0",
+    "note": "Normalized public slug of package source skills/spiceflow-skill-forge. Do not hand-edit without a versioned skill-forge derivation; see PROVENANCE.md."
+  },
+  "growth": {
+    "feedback_log": "aiwiki append_log",
+    "growth_requests": "aiwiki stage_inbound_note -> AI-Wiki/00_INBOX/proposed",
+    "derivation": "skill-forge versioned candidate (semver bump, provenance hash chain)",
+    "promotion": "owner-gated via pnpm-validated agent-skills workflow"
+  },
+  "validation": {
+    "status": "partial",
+    "evals": "../spiceflow/references/EVALS.md",
+    "note": "20-scenario behavioral eval pass deferred by owner to the post-ingestion review gate (2026-07-20)."
+  }
+}
