@@ -16,8 +16,7 @@ Individual skill versions do not represent a version of the full library.
 - [Browse source and releases](https://github.com/ryanspice/agent-skills)
 - [Review open skill changes](https://github.com/ryanspice/agent-skills/pulls)
 
-The main branch ZIP contains the current main branch, not the combined pending
-work described below. It is a source snapshot, not a versioned release package.
+The main branch ZIP is a source snapshot, not a versioned release package.
 
 ## Get started
 
@@ -41,8 +40,8 @@ npm run aiwiki:link-codex -- --name send-it --apply
 ```
 
 The linker uses directory junctions on Windows. Confirm the selected skill is
-present in your checkout; Send It is currently pending on main. Its `--all`
-mode includes candidates and templates, so select individual skills unless
+present in your checkout. The linker's `--all` mode includes candidates and
+templates, so select individual skills unless
 that broader scope is intentional. Other harnesses need their own supported
 installation or discovery process.
 
@@ -68,25 +67,17 @@ existing paths. The adapted Vibe Guard pack retains CodeCoincognition's credit
 and awaits comparison with upstream before classification. Wayfinder Spice's
 origin is unverified. SpiceFlow's earlier influence has not yet been identified.
 
-## Pending work
+## Collection scope
 
-The intended collection includes several changes under review. Their contents
-are not yet all present on main:
-
-- [Send It, Code n' Plan, and Grill Spice](https://github.com/ryanspice/agent-skills/pull/6).
-- [Research, SpiceFlow, forge, and verification skills](https://github.com/ryanspice/agent-skills/pull/7), stacked on the planning skills.
-- [Workbench, research, and publishing skills](https://github.com/ryanspice/agent-skills/pull/8), stacked on the preceding integration.
-- [Cross-machine media](https://github.com/ryanspice/agent-skills/pull/9), proposed separately against main.
-
-Review and reconcile these changes before treating the combined catalog as a
-release. Some supporting examples are absent, and provenance coverage, Codex
-format compatibility, and runtime acceptance still need review.
+The collection includes planning, research, SpiceFlow, workbench, publishing,
+and cross-machine media workflows. Review individual skill requirements and
+provenance before use; runtime and harness compatibility vary by skill.
 
 <!-- SKILL_INVENTORY_START -->
 ## Skill inventory and fleet references
 
-Snapshot of this checkout, `origin/main`, and the pending cross-machine media
-branch. Some entries still await integration into main. ⭐ pins recently added skills at the top: Cross-machine
+Catalog snapshot of the integrated collection. Recheck the source after updates,
+as skill content, sizes, and available versions can change. ⭐ pins recently added skills at the top: Cross-machine
 Media, Send It, Code n' Plan, and Grill Spice. The remaining order is an
 editorial estimate of broadly useful workflows, followed by alphabetical
 order; invocation counts are not available, so this is not measured usage.
@@ -99,16 +90,15 @@ For fleet use, the canonical repo source is `AI-Wiki/04_skills/agent-skills/skil
 link or route a harness to the selected skill rather than making an unmanaged
 copy. A listed skill is not necessarily installed, active, or compatible with
 every harness. Candidates and templates are not automatic production skills.
-Unregistered entries need provenance review. Main-only links show repository
-files that still need to be synchronized into this checkout before local use.
+Unregistered entries need provenance review.
 
 | Skill | Recorded origin | SKILL.md bytes | Suggested fleet reference |
 | --- | --- | ---: | --- |
-| ⭐ [cross-machine-media](https://github.com/ryanspice/agent-skills/blob/codex/cross-machine-media/skills/cross-machine-media/SKILL.md) | Recorded original (Ryan/AI Wiki); not in manifest | 6,284 | Repo checkout; reconcile provenance |
+| ⭐ [cross-machine-media](skills/cross-machine-media/SKILL.md) | Recorded original (Ryan/AI Wiki) | 6,304 | AI Wiki repo skill source |
 | ⭐ [send-it](skills/send-it/SKILL.md) | Recorded original (Ryan/AI Wiki) | 3,992 | AI Wiki repo skill source |
 | ⭐ [code-and-plan](skills/code-and-plan/SKILL.md) | Recorded original (Ryan/AI Wiki) | 10,285 | AI Wiki repo skill source |
 | ⭐ [grill-spice](skills/grill-spice/SKILL.md) | Ryan adaptation; Matt Pocock | 7,366 | AI Wiki repo skill source |
-| [chalk-it-up](https://github.com/ryanspice/agent-skills/blob/main/skills/chalk-it-up/SKILL.md) | Recorded original (Ryan/AI Wiki); not in manifest | 3,003 | origin/main; sync before fleet use |
+| [chalk-it-up](skills/chalk-it-up/SKILL.md) | Recorded original (Ryan/AI Wiki); not in manifest | 3,003 | Repo checkout; reconcile provenance |
 | [spiceflow](skills/spiceflow/SKILL.md) | Customized; influence unknown; unregistered | 28,903 | Repo checkout; reconcile provenance |
 | [evidence-first-engineering](skills/evidence-first-engineering/SKILL.md) | Not established; not in manifest | 4,608 | Repo checkout; reconcile provenance |
 | [deep-research-workflow](skills/deep-research-workflow/SKILL.md) | Ryan adaptation; external research sources | 3,629 | AI Wiki repo skill source |
@@ -116,19 +106,19 @@ files that still need to be synchronized into this checkout before local use.
 | [tauri-sveltekit](skills/tauri-sveltekit-svelte/SKILL.md) | Not established; not in manifest | 5,130 | Repo checkout; reconcile provenance |
 | [sveltekit2-svelte5-engineering](skills/sveltekit2-svelte5-engineering/SKILL.md) | Recorded original (Ryan/AI Wiki) | 11,053 | AI Wiki repo skill source |
 | [blog-publish](skills/blog-publish/SKILL.md) | Recorded original (Ryan/AI Wiki) | 8,446 | AI Wiki repo skill source |
-| [systematic-debugging](https://github.com/ryanspice/agent-skills/blob/main/skills/systematic-debugging/SKILL.md) | Hermes adaptation; obra/superpowers | 10,480 | origin/main; sync before fleet use |
-| [requesting-code-review](https://github.com/ryanspice/agent-skills/blob/main/skills/requesting-code-review/SKILL.md) | Hermes adaptation; obra/superpowers, MorAlekss | 8,483 | origin/main; sync before fleet use |
+| [systematic-debugging](skills/systematic-debugging/SKILL.md) | Hermes adaptation; obra/superpowers | 10,480 | Repo checkout; reconcile provenance |
+| [requesting-code-review](skills/requesting-code-review/SKILL.md) | Hermes adaptation; obra/superpowers, MorAlekss | 8,483 | Repo checkout; reconcile provenance |
 | [ai-wiki-file-management](skills/ai-wiki-file-management/SKILL.md) | Recorded original (Ryan/AI Wiki) | 12,337 | AI Wiki repo skill source |
 | [powershell-script-authoring](skills/powershell-script-authoring/SKILL.md) | Recorded original (Ryan/AI Wiki) | 13,841 | AI Wiki repo skill source |
 | [repo-skill-recommender](skills/repo-skill-recommender/SKILL.md) | Recorded original (Ryan/AI Wiki) | 4,914 | AI Wiki repo skill source |
 | [hermes-subprocess-delegation](skills/hermes-subprocess-delegation/SKILL.md) | Recorded original (Ryan/AI Wiki) | 5,878 | AI Wiki repo skill source |
 | [fugu-free-model-fleet-operator](skills/fugu-free-model-fleet-operator/SKILL.md) | Recorded original (Ryan/AI Wiki) | 5,706 | AI Wiki repo skill source |
-| [repo-skill-recommender](https://github.com/ryanspice/agent-skills/blob/main/skills/repo-skill-recommender-copy/SKILL.md) | Recorded adaptation; see provenance | 5,809 | origin/main; sync before fleet use |
+| [repo-skill-recommender](skills/repo-skill-recommender-copy/SKILL.md) | Recorded adaptation; see provenance | 5,809 | AI Wiki repo skill source |
 | [resume-tailoring](skills/resume-tailoring/SKILL.md) | Recorded author: Ryan Spice-Finnie (ryanspice), Hermes Agent; not in manifest | 7,314 | Repo checkout; reconcile provenance |
-| [seo-live-audit](https://github.com/ryanspice/agent-skills/blob/main/skills/seo-live-audit/SKILL.md) | Recorded author: Ryan Spice-Finnie (ryanspice), Hermes Agent; not in manifest | 12,612 | origin/main; sync before fleet use |
-| [Svelte 5 Virtual List](https://github.com/ryanspice/agent-skills/blob/main/skills/svelte5-virtual-list/SKILL.md) | Not established; not in manifest | 17,009 | origin/main; sync before fleet use |
-| [sveltekit-lab-route-authoring](https://github.com/ryanspice/agent-skills/blob/main/skills/sveltekit-lab-route-authoring/SKILL.md) | Not established; not in manifest | 28,507 | origin/main; sync before fleet use |
-| [agent-conversation-recovery](skills/agent-conversation-recovery/SKILL.md) | Not established; not in manifest | 4,604 | Repo checkout; reconcile provenance |
+| [seo-live-audit](skills/seo-live-audit/SKILL.md) | Recorded author: Ryan Spice-Finnie (ryanspice), Hermes Agent; not in manifest | 12,612 | Repo checkout; reconcile provenance |
+| [Svelte 5 Virtual List](skills/svelte5-virtual-list/SKILL.md) | Not established; not in manifest | 17,009 | Repo checkout; reconcile provenance |
+| [sveltekit-lab-route-authoring](skills/sveltekit-lab-route-authoring/SKILL.md) | Not established; not in manifest | 28,507 | Repo checkout; reconcile provenance |
+| [agent-conversation-recovery](skills/agent-conversation-recovery/SKILL.md) | Not established | 4,604 | AI Wiki repo skill source |
 | [aiwiki-command-layer-notes](skills/aiwiki-command-layer-notes/SKILL.md) | Recorded original (Ryan/AI Wiki) | 1,066 | AI Wiki repo skill source |
 | [aiwiki-command-run-fragments](skills/aiwiki-command-run-fragments/SKILL.md) | Recorded original (Ryan/AI Wiki) | 4,582 | AI Wiki repo skill source |
 | [aiwiki-console-output](skills/aiwiki-console-output/SKILL.md) | Recorded original (Ryan/AI Wiki) | 1,156 | AI Wiki repo skill source |
@@ -138,7 +128,7 @@ files that still need to be synchronized into this checkout before local use.
 | [aiwiki-svelte-lab-workflow](skills/aiwiki-svelte-lab-workflow/SKILL.md) | Recorded original (Ryan/AI Wiki) | 1,049 | AI Wiki repo skill source |
 | [spiceflow-artifact-forge](skills/artifact-forge/SKILL.md) | Not established; not in manifest | 5,014 | Repo checkout; reconcile provenance |
 | [aurora-dev-os-devops](skills/aurora-dev-os-devops/SKILL.md) | Not established; not in manifest | 55,640 | Repo checkout; reconcile provenance |
-| [bmo-agent-benchmark](skills/bmo-agent-benchmark/SKILL.md) | Not established; not in manifest | 15,502 | Repo checkout; reconcile provenance |
+| [bmo-agent-benchmark](skills/bmo-agent-benchmark/SKILL.md) | Not established | 15,502 | AI Wiki repo skill source |
 | [deep-research-workflow-candidate](skills/candidates/deep-research-workflow-candidate-v0.1.0/SKILL.md) | Ryan adaptation; external research sources | 7,254 | Repo candidate; review before use |
 | [deepseek-research-api-substrate](skills/candidates/deepseek-research-api-substrate-v0.1.0/SKILL.md) | Recorded original (Ryan/AI Wiki) | 2,425 | Repo candidate; review before use |
 | [enterprise-deep-research-workflow-candidate-v0.1.0](skills/candidates/enterprise-deep-research-workflow-candidate-v0.1.0/SKILL.md) | Ryan adaptation; external research sources | 5,347 | Repo candidate; review before use |
@@ -153,7 +143,7 @@ files that still need to be synchronized into this checkout before local use.
 | [decorated-wait-action-output](skills/decorated-wait-action-output-v0.0.5/SKILL.md) | Ryan revision of decorated-wait v0.0.1 | 7,706 | AI Wiki repo skill source |
 | [gpt55-webapp-builder-codex-bridge](skills/gpt55-webapp-builder-codex-bridge/SKILL.md) | Recorded original (Ryan/AI Wiki) | 10,752 | AI Wiki repo skill source |
 | [hermes-local-llamacpp-aiwiki-agent](skills/hermes-local-llamacpp-aiwiki-agent/SKILL.md) | Recorded original (Ryan/AI Wiki) | 8,683 | AI Wiki repo skill source |
-| [hermes-table-renderer](skills/hermes-table-renderer/SKILL.md) | Recorded original (Ryan/AI Wiki); not in manifest | 9,557 | Repo checkout; reconcile provenance |
+| [hermes-table-renderer](skills/hermes-table-renderer/SKILL.md) | Recorded original (Ryan/AI Wiki) | 9,557 | AI Wiki repo skill source |
 | [image-to-ui-sveltekit](skills/image-to-ui-sveltekit/SKILL.md) | Recorded original (Ryan/AI Wiki) | 15,068 | AI Wiki repo skill source |
 | [local-first-storage-architecture](skills/local-first-storage-architecture/SKILL.md) | Recorded original (Ryan/AI Wiki) | 4,030 | AI Wiki repo skill source |
 | [spiceflow-mcp-bridge](skills/mcp-bridge/SKILL.md) | Not established; not in manifest | 4,863 | Repo checkout; reconcile provenance |
@@ -174,7 +164,7 @@ files that still need to be synchronized into this checkout before local use.
 | [prompt-operations-storefront](skills/prompt-ops-book-skills-v0.2.1/prompt-operations-storefront/SKILL.md) | Recorded original (Ryan/AI Wiki) | 1,191 | AI Wiki repo skill source |
 | [publishing-release-operations](skills/prompt-ops-book-skills-v0.2.1/publishing-release-operations/SKILL.md) | Recorded original (Ryan/AI Wiki) | 1,032 | AI Wiki repo skill source |
 | [university-textbook-design](skills/prompt-ops-book-skills-v0.2.1/university-textbook-design/SKILL.md) | Recorded original (Ryan/AI Wiki) | 835 | AI Wiki repo skill source |
-| [research-harness-archive-operator](skills/research-harness-archive-operator/SKILL.md) | Not established; not in manifest | 6,060 | Repo checkout; reconcile provenance |
+| [research-harness-archive-operator](skills/research-harness-archive-operator/SKILL.md) | Not established | 6,060 | AI Wiki repo skill source |
 | [spiceflow-skill-forge](skills/skill-forge/SKILL.md) | Not established; not in manifest | 5,408 | Repo checkout; reconcile provenance |
 | [social-preview-unfurl-verification](skills/social-preview-unfurl-verification/SKILL.md) | Recorded original (Ryan/AI Wiki); not in manifest | 6,871 | Repo checkout; reconcile provenance |
 | [sprite-pixel-art-sprite-sheets-gpt55](skills/sprite-pixel-art-sprite-sheets-gpt55/SKILL.md) | Recorded original (Ryan/AI Wiki) | 7,248 | AI Wiki repo skill source |
@@ -191,7 +181,7 @@ files that still need to be synchronized into this checkout before local use.
 | [walking-cycle-generation](skills/walking-cycle-generation/SKILL.md) | Recorded original (Ryan/AI Wiki) | 10,590 | AI Wiki repo skill source |
 | [windows-phone-metro-design](skills/windows-phone-metro-design/SKILL.md) | Ryan revision of local source reference | 5,946 | AI Wiki repo skill source |
 | [windows-tar-package-installer-workflow](skills/windows-tar-package-installer-workflow/SKILL.md) | Recorded original (Ryan/AI Wiki) | 4,187 | AI Wiki repo skill source |
-| [workbench-console-safety-operator](skills/workbench-console-safety-operator/SKILL.md) | Not established; not in manifest | 8,137 | Repo checkout; reconcile provenance |
+| [workbench-console-safety-operator](skills/workbench-console-safety-operator/SKILL.md) | Not established | 8,137 | AI Wiki repo skill source |
 <!-- SKILL_INVENTORY_END -->
 
 ## AI Wiki and fleet integration
