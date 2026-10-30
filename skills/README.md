@@ -55,8 +55,6 @@ Active default selection metadata is tracked in `skills/provenance.json` where a
 | `image-to-ui-sveltekit` | `original` | Ryan Spice-Finnie | `skills/image-to-ui-sveltekit/SKILL.md` | `04_skills/agent-skills/skills/image-to-ui-sveltekit/SKILL.md` |
 | `local-first-storage-architecture` | `original` | Ryan Spice-Finnie | `skills/local-first-storage-architecture/SKILL.md` | `04_skills/agent-skills/skills/local-first-storage-architecture/SKILL.md` |
 | `neanderthal` | `original` | Ryan Spice-Finnie | `skills/neanderthal/SKILL.md` | `04_skills/agent-skills/skills/neanderthal/SKILL.md` |
-| `pixelboats-fish-water-ecology` | `original` | Ryan Spice-Finnie | `skills/pixelboats-fish-water-ecology/SKILL.md` | `04_skills/agent-skills/skills/pixelboats-fish-water-ecology/SKILL.md` |
-| `pixelboats-stormy-hud-lab` | `original` | Ryan Spice-Finnie | `skills/pixelboats-stormy-hud-lab/SKILL.md` | `04_skills/agent-skills/skills/pixelboats-stormy-hud-lab/SKILL.md` |
 | `powershell-script-authoring` | `original` | Ryan Spice-Finnie | `skills/powershell-script-authoring/SKILL.md` | `04_skills/agent-skills/skills/powershell-script-authoring/SKILL.md` |
 | `book-graphics-design` | `original` | Ryan Spice-Finnie | `skills/prompt-ops-book-skills-v0.2.1/book-graphics-design/SKILL.md` | `04_skills/agent-skills/skills/prompt-ops-book-skills-v0.2.1/book-graphics-design/SKILL.md` |
 | `book-reading-review` | `original` | Ryan Spice-Finnie | `skills/prompt-ops-book-skills-v0.2.1/book-reading-review/SKILL.md` | `04_skills/agent-skills/skills/prompt-ops-book-skills-v0.2.1/book-reading-review/SKILL.md` |
