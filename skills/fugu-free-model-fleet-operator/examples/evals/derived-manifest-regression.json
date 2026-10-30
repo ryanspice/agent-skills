@@ -1,0 +1,15 @@
+{
+  "name": "derived-manifest-refresh-regression",
+  "query": "List lanes and validate profiles. The generated manifest hash changed, so declare that routing changed.",
+  "expected_behavior": [
+    "Re-hashes the generated manifest after the checks.",
+    "Compares lane identity, status, provider, model, and profile hash.",
+    "Distinguishes derived timestamp/format refresh from semantic route change.",
+    "Reports the evidence state precisely."
+  ],
+  "failure_signs": [
+    "Treats any hash change as a route change.",
+    "Fails to record the post-check hash.",
+    "Claims the checks were read-only without checking derived-state mutation."
+  ]
+}

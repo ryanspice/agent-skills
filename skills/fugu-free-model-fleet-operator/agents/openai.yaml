@@ -1,0 +1,4 @@
+interface:
+  display_name: "Fugu Free-Model Fleet Operator"
+  short_description: "Refresh and verify exact free-model routes safely"
+  default_prompt: "Use $fugu-free-model-fleet-operator to snapshot, plan, stage, verify, or roll back the free-model fleet with exact provider identities and fail-closed receipts."

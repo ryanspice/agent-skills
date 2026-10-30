@@ -2,8 +2,10 @@ import { execFileSync } from 'node:child_process';
 import { existsSync, readdirSync, readFileSync, statSync } from 'node:fs';
 import path from 'node:path';
 import process from 'node:process';
+import { fileURLToPath } from 'node:url';
+import { requireAiWikiRoot } from './aiwiki-root.mjs';
 
-const defaultAiWikiRoot = 'S:\\OneDrive\\Obsidan\\AI-Wiki';
+const repoRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const expectedSourceRoot = '04_skills/agent-skills/skills';
 const retiredLocalCreatedRoot = ['04_skills', 'generated'].join('/');
 
@@ -37,7 +39,7 @@ function loadJson(filePath) {
 }
 
 const errors = [];
-const aiWikiRoot = path.resolve(process.env.AIWIKI_ROOT || defaultAiWikiRoot);
+const aiWikiRoot = requireAiWikiRoot(repoRoot);
 const cloneRoot = path.join(aiWikiRoot, '04_skills', 'agent-skills');
 const cloneSkillsRoot = path.join(cloneRoot, 'skills');
 const policyPath = path.join(aiWikiRoot, '03_indexes', 'skills', 'skill-scan-policy.json');

@@ -1,0 +1,76 @@
+{
+  "id": "bmo-agent-benchmark",
+  "kind": "workflow",
+  "title": "Run the hash-bound BMO agent benchmark",
+  "description": "Orchestrate, resume, score, browser-review, and package BMO16 v3: eight Flash initial builds and matched Flash/Pro repairs of four frozen artifacts across Hermes and ClaudeSeek.",
+  "clients": ["hermes", "claude", "codex", "kun", "powershell"],
+  "project": "cross-workbench",
+  "mode": "plan-gated-paid-delegation",
+  "prerequisites": [
+    "<USER_HOME>\\.claude\\FUGU-CODEX.md read before paid execution",
+    "compact fixture validates",
+    "Hermes query-file transport preflight passes",
+    "fresh machine-local WorkspaceRoot selected",
+    "plan receipt reports 8 prepared initial targets, 8 pending repair targets and 8 initial prompts",
+    "dry-run reports zero remote calls",
+    "owner explicitly approves the displayed plan scope and hard stop; the conductor retains the exact unexpired SHA-256 and token"
+  ],
+  "execution": {
+    "mcp_tools": ["workbench_command_search", "workbench_command_read"],
+    "commands": [
+      "pwsh -NoProfile -ExecutionPolicy Bypass -File '<AI_WIKI_ROOT>\\04_skills\\agent-skills\\skills\\bmo-agent-benchmark\\scripts\\Invoke-BmoAgentBenchmarkV3.ps1' -Action Validate -Json",
+      "pwsh -NoProfile -ExecutionPolicy Bypass -File '<AI_WIKI_ROOT>\\04_skills\\agent-skills\\skills\\bmo-agent-benchmark\\scripts\\Invoke-BmoAgentBenchmarkV3.ps1' -Action Plan -WorkspaceRoot '<fresh DEV_ROOT machine-local run root>' -Json",
+      "pwsh -NoProfile -ExecutionPolicy Bypass -File '<AI_WIKI_ROOT>\\04_skills\\agent-skills\\skills\\bmo-agent-benchmark\\scripts\\Invoke-BmoAgentBenchmarkV3.ps1' -Action DryRun -WorkspaceRoot '<same run root>' -Json",
+      "pwsh -NoProfile -ExecutionPolicy Bypass -File '<AI_WIKI_ROOT>\\04_skills\\agent-skills\\skills\\bmo-agent-benchmark\\scripts\\Invoke-BmoAgentBenchmarkV3.ps1' -Action Run -WorkspaceRoot '<same run root>' -ApprovedPlanSha256 '<conductor-retained SHA-256>' -ConfirmToken '<conductor-retained token>' -Resume -Json",
+      "pwsh -NoProfile -ExecutionPolicy Bypass -File '<AI_WIKI_ROOT>\\04_skills\\agent-skills\\skills\\bmo-agent-benchmark\\scripts\\Invoke-BmoAgentBenchmarkV3.ps1' -Action Run -WorkspaceRoot '<same run root>' -ApprovedPlanSha256 '<conductor-retained SHA-256>' -ConfirmToken '<conductor-retained token>' -Resume -ContinueAfterFailedCell -Json"
+    ],
+    "write_policy": "The read-only MCP exposes guidance only. Paid Run still requires exact plan-hash and token parameters through the typed local runner, but the conductor supplies them from the owner's recorded approval. Standing authority never expands the matrix, provider, egress or hard stop."
+  },
+  "artifacts": [
+    "validated compact fixture",
+    "hash-bound 16-cell plan, completed preparation manifest and approval receipt",
+    "zero-call dry-run receipt",
+    "per-cell prompts, attempt receipts, frozen-source clone receipts, logs, snapshots, check/build/browser reports, file deltas and account deltas",
+    "matrix score and synthesis",
+    "versioned TAR.GZ package"
+  ],
+  "output_locations": [
+    "<DEV_ROOT>\\deepseek.workspace\\bmo-agent-benchmark",
+    "<DOWNLOADS_ROOT>"
+  ],
+  "verification": "The v3 fixture validator, Hermes query-file preflight, Claude JSON-argument/auth preflight and hidden-process early-exit probe pass; the approval receipt is emitted only after 8 initial roots and prompts validate; dry-run has remoteCallsMade=0; all child processes are hidden; calls are serial; each repair clone matches its frozen source hash before model contact; paid or ambiguous cells are never retried; cumulative terminal-cell deltas stay under the original hard stop; and every buildable cell receives headless browser evidence.",
+  "failure_modes": [
+    "plan or fixture drift",
+    "approval receipt emitted before every initial workspace is prepared",
+    "repair clone differs from its frozen source or is reused by two repair cells",
+    "missing or incorrect target node_modules junction",
+    "large prompt placed on the Windows process command line",
+    "research-only Fable packet contradicts coding edits",
+    "visible child console",
+    "Claude child flags rebound as PowerShell launcher parameters",
+    "Claude bare mode missing ANTHROPIC_API_KEY",
+    "Claude budget mistaken for provider billing",
+    "ClaudeSeek iteration count mistaken for Hermes turn parity",
+    "nested delegation or background agent",
+    "raw BMO page leaked into context",
+    "automatic retry or model substitution",
+    "provider spend stop reached"
+  ],
+  "safety_notes": [
+    "Do not close or restart user-owned terminals or agent sessions.",
+    "Hermes coding cells disable the research-only Soul/Fable packet and use the same visible reasoning kernel as ClaudeSeek.",
+    "Hermes receives the assembled packet through a retained SHA-256-bound UTF-8 query file.",
+    "Plan and dry-run verify all eight initial targets. Repair roots are created lazily from ownership-bound frozen snapshots.",
+    "The conductor retains approved plan credentials internally; do not ask the owner to copy and paste them again.",
+    "A provider-free retry requires zero balance delta, zero stream, unchanged target and an archived failed attempt.",
+    "ContinueAfterFailedCell skips a preserved result and never retries it.",
+    "Raw DOM, credentials and unrelated local files never enter delegate context.",
+    "Heavy outputs stay off OneDrive."
+  ],
+  "sources": [
+    "04_skills/agent-skills/skills/bmo-agent-benchmark/SKILL.md",
+    "04_skills/agent-skills/skills/bmo-agent-benchmark/assets/fixture-v3/matrix-v3.json",
+    "04_skills/agent-skills/skills/bmo-agent-benchmark/scripts/Invoke-BmoAgentBenchmarkV3.ps1",
+    "<USER_HOME>\\.claude\\FUGU-CODEX.md"
+  ]
+}

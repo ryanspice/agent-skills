@@ -1,0 +1,15 @@
+{
+  "name": "cjk-ui-lab",
+  "description": "Workflow skill for CJK-native Japanese/Korean UI research, SvelteKit implementation, typography, tokens, and accessibility.",
+  "status": "active",
+  "kind": "generated-workflow-skill",
+  "skill_path": "04_skills/agent-skills/skills/cjk-ui-lab/SKILL.md",
+  "tags": [
+    "cjk-ui",
+    "japanese-ui",
+    "korean-ui",
+    "sveltekit",
+    "design-system",
+    "accessibility"
+  ]
+}

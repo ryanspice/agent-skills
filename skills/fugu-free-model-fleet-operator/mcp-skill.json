@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0.0",
+  "name": "fugu-free-model-fleet-operator",
+  "display_name": "Fugu Free-Model Fleet Operator",
+  "version": "0.2.0",
+  "status": "active",
+  "scope": "universal",
+  "canonical_path": "04_skills/agent-skills/skills/fugu-free-model-fleet-operator",
+  "entrypoint": "SKILL.md",
+  "description": "Maintains exact free-model routes across Fugu, Hermes, OpenCode, and T3 Code with catalog refresh, staged configuration, fail-closed canaries, receipts, and rollback.",
+  "invocation_phrases": [
+    "refresh free models",
+    "update the Fugu fleet",
+    "add Hermes free profiles",
+    "reconcile OpenCode providers",
+    "update T3 Code models",
+    "free model fleet snapshot"
+  ],
+  "allowed_mcp_tools": [
+    "fugu_provider_catalog",
+    "fugu_provider_state",
+    "vault_search",
+    "vault_read"
+  ],
+  "write_policy": "Snapshot and plan are read-only apart from generated reports. Stage/apply require explicit user intent, bounded backups, fail-closed route gates, and no direct T3 userdata edits.",
+  "risk": "high",
+  "updated_at": "2026-09-13T20:30:00Z"
+}

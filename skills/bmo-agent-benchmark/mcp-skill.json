@@ -1,0 +1,26 @@
+{
+  "slug": "bmo-agent-benchmark",
+  "name": "BMO Agent Benchmark",
+  "version": "0.3.0",
+  "type": "universal-agent-skill",
+  "status": "active",
+  "canonical_path": "04_skills/agent-skills/skills/bmo-agent-benchmark/SKILL.md",
+  "entrypoint": "04_skills/agent-skills/skills/bmo-agent-benchmark/SKILL.md",
+  "description": "Prepares, approves, runs, scores, and packages BMO16 v3: eight Flash initial builds plus matched Flash and Pro repairs of four frozen artifacts across Hermes and ClaudeSeek.",
+  "invocation_phrases": [
+    "BMO benchmark",
+    "run the 16 BMO tests",
+    "Flash versus Pro BMO test",
+    "Hermes ClaudeSeek benchmark",
+    "BMO compact packet",
+    "Flash says but does not edit",
+    "orchestrate the whole 16 review path"
+  ],
+  "allowed_mcp_tools": [
+    "workbench_command_search",
+    "workbench_command_read"
+  ],
+  "write_policy": "MCP is discovery-only. Local preparation writes only to an allowlisted machine-local run root. The conductor retains the exact plan SHA-256 and token after explicit owner approval so the owner does not have to relay them. Standing authority permits only evidenced infrastructure repair and independent-cell continuation under the unchanged hard stop.",
+  "risk": "high for paid multi-call execution; low for validation, planning, dry-run, scoring, and read-only MCP discovery.",
+  "updated_at": "2026-07-28T19:05:00-04:00"
+}

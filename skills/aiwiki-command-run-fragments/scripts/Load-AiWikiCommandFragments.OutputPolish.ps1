@@ -126,7 +126,8 @@ exit 0
   $wrapped | Set-Content -Path $scriptPath -Encoding UTF8
 
   $sw = [System.Diagnostics.Stopwatch]::StartNew()
-  $proc = Start-Process -FilePath "pwsh" -ArgumentList @("-NoProfile", "-ExecutionPolicy", "Bypass", "-File", $scriptPath) -NoNewWindow -PassThru -RedirectStandardOutput $outPath -RedirectStandardError $errPath
+  $child = Start-AiWikiNoWindowProcess -FilePath "pwsh.exe" -Arguments @("-NoProfile", "-NonInteractive", "-ExecutionPolicy", "Bypass", "-File", $scriptPath) -WorkingDirectory $runtime -CaptureOutput
+  $proc = $child.Process
 
   try {
     $i = 0
@@ -139,7 +140,7 @@ exit 0
       $proc.Refresh()
     }
 
-    $proc.WaitForExit()
+    $completed = Complete-AiWikiNoWindowProcess -Child $child -StandardOutputPath $outPath -StandardErrorPath $errPath
     $elapsed = $sw.Elapsed.TotalSeconds
     Update-Estimate -Kind $Kind -Label $Label -Seconds $elapsed
 

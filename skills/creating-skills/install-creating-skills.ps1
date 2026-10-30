@@ -1,4 +1,4 @@
-param(
+﻿param(
   [string]$AiWikiRoot = "<AI_WIKI_ROOT>",
   [string]$SkillName  = "creating-skills",
   [string]$Version    = "0.1.3",
@@ -35,7 +35,7 @@ if (-not $Apply) {
 
 # ── Validate ─────────────────────────────────────────────
 Write-Host "==> Validating SKILL.md" -ForegroundColor Cyan
-pwsh -NoProfile -ExecutionPolicy Bypass -Command "python $ValidPy $SkillRoot"
+& python $ValidPy $SkillRoot
 if ($LASTEXITCODE -ne 0) {
   Write-Host "FAIL: SKILL.md validation failed — aborting." -ForegroundColor Red
   exit 1
@@ -43,7 +43,7 @@ if ($LASTEXITCODE -ne 0) {
 
 # ── Rebuild registry ─────────────────────────────────────
 Write-Host "==> Rebuilding skill registry" -ForegroundColor Cyan
-pwsh -NoProfile -ExecutionPolicy Bypass -Command "python $RegPy --ai-wiki-root $AiWikiRoot --apply --backup"
+& python $RegPy --ai-wiki-root $AiWikiRoot --apply --backup
 if ($LASTEXITCODE -ne 0) {
   Write-Host "WARN: registry rebuild exited non-zero (may be benign on first run)." -ForegroundColor Yellow
 }

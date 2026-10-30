@@ -1,0 +1,119 @@
+{
+  "schemaVersion": "3.0.0",
+  "benchmarkId": "bmo-agent-benchmark-v3",
+  "objective": "Measure Flash-only initial implementation reliability, harness and prompt effects, and Flash-versus-Pro repair effectiveness against identical frozen BMO artifacts across Hermes and ClaudeSeek.",
+  "design": {
+    "callCount": 16,
+    "waveCount": 4,
+    "callsPerWave": 4,
+    "execution": "serial-within-wave",
+    "initialArtifactCount": 8,
+    "frozenRepairSourceCount": 4,
+    "repairCloneCount": 8,
+    "repairHandoff": "identical-frozen-artifact-plus-deterministic-evidence-only",
+    "maxCyclesPerCell": 12,
+    "maxRuntimeSecondsPerCell": 1200,
+    "maxPromptCharacters": 64000,
+    "apiRetriesPerCell": 0,
+    "claudeHarnessBudgetUsdPerCell": 5.0,
+    "hermesDoctrine": "no-soul-no-research-fable-packet",
+    "commonPolicyPacket": true,
+    "divergentFocus": false,
+    "providerSpendStopUsd": 2.25,
+    "providerSpendExpectedUsd": {
+      "low": 0.3,
+      "high": 0.75
+    }
+  },
+  "ratesUsdPerMillionTokens": {
+    "deepseek-v4-flash": {
+      "cacheHitInput": 0.0028,
+      "cacheMissInput": 0.14,
+      "output": 0.28
+    },
+    "deepseek-v4-pro": {
+      "cacheHitInput": 0.003625,
+      "cacheMissInput": 0.435,
+      "output": 0.87
+    }
+  },
+  "waves": [
+    {
+      "wave": 1,
+      "purpose": "Predeclared Flash initial builds that become the four frozen repair sources",
+      "cells": ["F01", "F03", "F05", "F07"]
+    },
+    {
+      "wave": 2,
+      "purpose": "Independent Flash initial-build replicates",
+      "cells": ["F02", "F04", "F06", "F08"]
+    },
+    {
+      "wave": 3,
+      "purpose": "Flash repairs of isolated clones of the four frozen source artifacts",
+      "cells": ["F09", "F10", "F11", "F12"]
+    },
+    {
+      "wave": 4,
+      "purpose": "Pro repairs of separate identical clones of the same four frozen source artifacts",
+      "cells": ["P13", "P14", "P15", "P16"]
+    }
+  ],
+  "cells": [
+    {"id":"F01","wave":1,"block":"flash-initial","harness":"hermes","condition":"standard","pass":1,"model":"deepseek-v4-flash","lane":"worker-flash","targetKey":"initial-hermes-standard-a","freezeForRepairs":true},
+    {"id":"F02","wave":2,"block":"flash-initial","harness":"hermes","condition":"standard","pass":1,"model":"deepseek-v4-flash","lane":"worker-flash","targetKey":"initial-hermes-standard-b","freezeForRepairs":false},
+    {"id":"F03","wave":1,"block":"flash-initial","harness":"hermes","condition":"action-first","pass":1,"model":"deepseek-v4-flash","lane":"worker-flash","targetKey":"initial-hermes-action-a","freezeForRepairs":true},
+    {"id":"F04","wave":2,"block":"flash-initial","harness":"hermes","condition":"action-first","pass":1,"model":"deepseek-v4-flash","lane":"worker-flash","targetKey":"initial-hermes-action-b","freezeForRepairs":false},
+    {"id":"F05","wave":1,"block":"flash-initial","harness":"claudeseek","condition":"standard","pass":1,"model":"deepseek-v4-flash","launcher":"claudeseek-flash","targetKey":"initial-claudeseek-standard-a","freezeForRepairs":true},
+    {"id":"F06","wave":2,"block":"flash-initial","harness":"claudeseek","condition":"standard","pass":1,"model":"deepseek-v4-flash","launcher":"claudeseek-flash","targetKey":"initial-claudeseek-standard-b","freezeForRepairs":false},
+    {"id":"F07","wave":1,"block":"flash-initial","harness":"claudeseek","condition":"action-first","pass":1,"model":"deepseek-v4-flash","launcher":"claudeseek-flash","targetKey":"initial-claudeseek-action-a","freezeForRepairs":true},
+    {"id":"F08","wave":2,"block":"flash-initial","harness":"claudeseek","condition":"action-first","pass":1,"model":"deepseek-v4-flash","launcher":"claudeseek-flash","targetKey":"initial-claudeseek-action-b","freezeForRepairs":false},
+
+    {"id":"F09","wave":3,"block":"flash-repair","harness":"hermes","condition":"standard","pass":2,"model":"deepseek-v4-flash","lane":"worker-flash","targetKey":"repair-flash-hermes-standard","dependsOn":"F01"},
+    {"id":"F10","wave":3,"block":"flash-repair","harness":"hermes","condition":"action-first","pass":2,"model":"deepseek-v4-flash","lane":"worker-flash","targetKey":"repair-flash-hermes-action","dependsOn":"F03"},
+    {"id":"F11","wave":3,"block":"flash-repair","harness":"claudeseek","condition":"standard","pass":2,"model":"deepseek-v4-flash","launcher":"claudeseek-flash","targetKey":"repair-flash-claudeseek-standard","dependsOn":"F05"},
+    {"id":"F12","wave":3,"block":"flash-repair","harness":"claudeseek","condition":"action-first","pass":2,"model":"deepseek-v4-flash","launcher":"claudeseek-flash","targetKey":"repair-flash-claudeseek-action","dependsOn":"F07"},
+
+    {"id":"P13","wave":4,"block":"pro-repair","harness":"hermes","condition":"standard","pass":2,"model":"deepseek-v4-pro","lane":"worker-pro","targetKey":"repair-pro-hermes-standard","dependsOn":"F01"},
+    {"id":"P14","wave":4,"block":"pro-repair","harness":"hermes","condition":"action-first","pass":2,"model":"deepseek-v4-pro","lane":"worker-pro","targetKey":"repair-pro-hermes-action","dependsOn":"F03"},
+    {"id":"P15","wave":4,"block":"pro-repair","harness":"claudeseek","condition":"standard","pass":2,"model":"deepseek-v4-pro","launcher":"claudeseek","targetKey":"repair-pro-claudeseek-standard","dependsOn":"F05"},
+    {"id":"P16","wave":4,"block":"pro-repair","harness":"claudeseek","condition":"action-first","pass":2,"model":"deepseek-v4-pro","launcher":"claudeseek","targetKey":"repair-pro-claudeseek-action","dependsOn":"F07"}
+  ],
+  "frozenRepairSources": [
+    {"sourceCell":"F01","harness":"hermes","condition":"standard","consumers":["F09","P13"]},
+    {"sourceCell":"F03","harness":"hermes","condition":"action-first","consumers":["F10","P14"]},
+    {"sourceCell":"F05","harness":"claudeseek","condition":"standard","consumers":["F11","P15"]},
+    {"sourceCell":"F07","harness":"claudeseek","condition":"action-first","consumers":["F12","P16"]}
+  ],
+  "egress": {
+    "included": [
+      "implementation-spec.md",
+      "bmo-home-source-brief.json",
+      "policy-spiceflow-v0.4-bmo.md",
+      "visible-reasoning-kernel.md",
+      "one execution-condition file",
+      "one cell task",
+      "repair-source deterministic evidence when applicable"
+    ],
+    "excluded": [
+      "raw BMO DOM, CSS and Next.js payload",
+      "source archive payload",
+      "analytics and consent payloads",
+      "Divergent Focus",
+      "previous model transcript and final prose",
+      "credentials and unrelated local files"
+    ]
+  },
+  "stopConditions": [
+    "plan, policy, source archive or fixture hash drift",
+    "provider identity drift or unavailable route",
+    "visible-console regression",
+    "nested delegation or unapproved tool expansion",
+    "authentication, quota or rate-limit failure",
+    "provider account-balance delta reaches 2.25 USD",
+    "cell hard timeout at 1200 seconds",
+    "repair workspace does not match its frozen source before model contact",
+    "target escapes the prepared workspace",
+    "user cancellation"
+  ]
+}

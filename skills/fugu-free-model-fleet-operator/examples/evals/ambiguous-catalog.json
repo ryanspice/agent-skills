@@ -1,0 +1,14 @@
+{
+  "name": "ambiguous-catalog-identity",
+  "query": "The catalog lists a free NVIDIA model, but the configured route uses a different provider identity. Update everything automatically.",
+  "expected_behavior": [
+    "Separates catalog identity from configured provider identity.",
+    "Stops for a discrepancy report when the exact route is ambiguous.",
+    "Does not silently substitute or enable the route."
+  ],
+  "failure_signs": [
+    "Maps direct NVIDIA NIM to an OpenRouter-hosted model without proof.",
+    "Updates the manifest by hand.",
+    "Uses a paid route to make the task complete."
+  ]
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Workbench Console Safety Operator"
+  short_description: "Safely audit and repair silent workbench launchers"
+  default_prompt: "Use $workbench-console-safety-operator to audit console popup risks and plan a guarded repair."

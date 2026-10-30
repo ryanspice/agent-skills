@@ -1,0 +1,102 @@
+{
+  "schemaVersion": "2.0.0",
+  "benchmarkId": "bmo-agent-benchmark-v2",
+  "objective": "Measure whether DeepSeek V4 Flash can produce and continue a non-trivial SvelteKit implementation alone, and whether a fresh DeepSeek V4 Pro integration pass materially improves the same Flash-produced artifact across Hermes and ClaudeSeek.",
+  "design": {
+    "callCount": 16,
+    "waveCount": 4,
+    "callsPerWave": 4,
+    "execution": "serial-within-wave",
+    "passHandoff": "artifact-plus-deterministic-evidence-only",
+    "maxTurnsPerCell": 10,
+    "maxRuntimeSecondsPerCell": 900,
+    "maxPromptCharacters": 64000,
+    "claudeHarnessBudgetUsdPerCell": 5.0,
+    "hermesDoctrine": "no-soul-no-research-fable-packet",
+    "commonVisibleReasoningKernel": true,
+    "providerSpendStopUsd": 2.25,
+    "providerSpendExpectedUsd": {
+      "low": 0.3,
+      "high": 0.55
+    }
+  },
+  "ratesUsdPerMillionTokens": {
+    "deepseek-v4-flash": {
+      "cacheHitInput": 0.0028,
+      "cacheMissInput": 0.14,
+      "output": 0.28
+    },
+    "deepseek-v4-pro": {
+      "cacheHitInput": 0.003625,
+      "cacheMissInput": 0.435,
+      "output": 0.87
+    }
+  },
+  "waves": [
+    {
+      "wave": 1,
+      "purpose": "Flash-only producing passes",
+      "cells": ["F01", "F03", "F05", "F07"]
+    },
+    {
+      "wave": 2,
+      "purpose": "Fresh Flash-only integration passes",
+      "cells": ["F02", "F04", "F06", "F08"]
+    },
+    {
+      "wave": 3,
+      "purpose": "Mixed-workflow Flash producing passes",
+      "cells": ["M01", "M03", "M05", "M07"]
+    },
+    {
+      "wave": 4,
+      "purpose": "Fresh Pro integration passes",
+      "cells": ["M02", "M04", "M06", "M08"]
+    }
+  ],
+  "cells": [
+    {"id":"F01","wave":1,"block":"flash-only","harness":"hermes","condition":"standard","pass":1,"model":"deepseek-v4-flash","lane":"worker-flash","targetKey":"flash-hermes-standard"},
+    {"id":"F02","wave":2,"block":"flash-only","harness":"hermes","condition":"standard","pass":2,"model":"deepseek-v4-flash","lane":"worker-flash","targetKey":"flash-hermes-standard","dependsOn":"F01"},
+    {"id":"F03","wave":1,"block":"flash-only","harness":"hermes","condition":"action-first","pass":1,"model":"deepseek-v4-flash","lane":"worker-flash","targetKey":"flash-hermes-action"},
+    {"id":"F04","wave":2,"block":"flash-only","harness":"hermes","condition":"action-first","pass":2,"model":"deepseek-v4-flash","lane":"worker-flash","targetKey":"flash-hermes-action","dependsOn":"F03"},
+    {"id":"F05","wave":1,"block":"flash-only","harness":"claudeseek","condition":"standard","pass":1,"model":"deepseek-v4-flash","launcher":"claudeseek-flash","targetKey":"flash-claudeseek-standard"},
+    {"id":"F06","wave":2,"block":"flash-only","harness":"claudeseek","condition":"standard","pass":2,"model":"deepseek-v4-flash","launcher":"claudeseek-flash","targetKey":"flash-claudeseek-standard","dependsOn":"F05"},
+    {"id":"F07","wave":1,"block":"flash-only","harness":"claudeseek","condition":"action-first","pass":1,"model":"deepseek-v4-flash","launcher":"claudeseek-flash","targetKey":"flash-claudeseek-action"},
+    {"id":"F08","wave":2,"block":"flash-only","harness":"claudeseek","condition":"action-first","pass":2,"model":"deepseek-v4-flash","launcher":"claudeseek-flash","targetKey":"flash-claudeseek-action","dependsOn":"F07"},
+    {"id":"M01","wave":3,"block":"flash-to-pro","harness":"hermes","condition":"standard","pass":1,"model":"deepseek-v4-flash","lane":"worker-flash","targetKey":"mixed-hermes-standard"},
+    {"id":"M02","wave":4,"block":"flash-to-pro","harness":"hermes","condition":"standard","pass":2,"model":"deepseek-v4-pro","lane":"review-pro","targetKey":"mixed-hermes-standard","dependsOn":"M01"},
+    {"id":"M03","wave":3,"block":"flash-to-pro","harness":"hermes","condition":"action-first","pass":1,"model":"deepseek-v4-flash","lane":"worker-flash","targetKey":"mixed-hermes-action"},
+    {"id":"M04","wave":4,"block":"flash-to-pro","harness":"hermes","condition":"action-first","pass":2,"model":"deepseek-v4-pro","lane":"review-pro","targetKey":"mixed-hermes-action","dependsOn":"M03"},
+    {"id":"M05","wave":3,"block":"flash-to-pro","harness":"claudeseek","condition":"standard","pass":1,"model":"deepseek-v4-flash","launcher":"claudeseek-flash","targetKey":"mixed-claudeseek-standard"},
+    {"id":"M06","wave":4,"block":"flash-to-pro","harness":"claudeseek","condition":"standard","pass":2,"model":"deepseek-v4-pro","launcher":"claudeseek","targetKey":"mixed-claudeseek-standard","dependsOn":"M05"},
+    {"id":"M07","wave":3,"block":"flash-to-pro","harness":"claudeseek","condition":"action-first","pass":1,"model":"deepseek-v4-flash","launcher":"claudeseek-flash","targetKey":"mixed-claudeseek-action"},
+    {"id":"M08","wave":4,"block":"flash-to-pro","harness":"claudeseek","condition":"action-first","pass":2,"model":"deepseek-v4-pro","launcher":"claudeseek","targetKey":"mixed-claudeseek-action","dependsOn":"M07"}
+  ],
+  "egress": {
+    "included": [
+      "implementation-spec.md",
+      "bmo-home-source-brief.json",
+      "visible-reasoning-kernel.md",
+      "one execution-condition file",
+      "one cell task",
+      "pass-2 deterministic evidence when applicable"
+    ],
+    "excluded": [
+      "raw BMO DOM, CSS and Next.js payload",
+      "analytics and consent payloads",
+      "previous model transcript and final prose",
+      "credentials and unrelated local files"
+    ]
+  },
+  "stopConditions": [
+    "plan or fixture hash drift",
+    "provider identity drift or unavailable route",
+    "visible-console regression",
+    "nested delegation or unapproved tool expansion",
+    "authentication, quota or rate-limit failure",
+    "provider account-balance delta reaches 2.25 USD",
+    "cell hard timeout",
+    "target escapes the prepared workspace",
+    "user cancellation"
+  ]
+}
