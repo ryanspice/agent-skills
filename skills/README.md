@@ -28,6 +28,9 @@ Active default selection metadata is tracked in `skills/provenance.json` where a
 
 | Skill | Origin | Credit | Path | Source |
 |---|---|---|---|---|
+| `code-and-plan` | `original` | Ryan Spice-Finnie | `skills/code-and-plan/SKILL.md` | `04_skills/agent-skills/skills/code-and-plan/SKILL.md` |
+| `grill-spice` | `modified` | Ryan Spice-Finnie | `skills/grill-spice/SKILL.md` | `04_skills/agent-skills/skills/grill-spice/SKILL.md` |
+| `send-it` | `original` | Ryan Spice-Finnie | `skills/send-it/SKILL.md` | `04_skills/agent-skills/skills/send-it/SKILL.md` |
 | `ai-wiki-file-management` | `original` | Ryan Spice-Finnie | `skills/ai-wiki-file-management/SKILL.md` | `04_skills/agent-skills/skills/ai-wiki-file-management/SKILL.md` |
 | `AI Wiki Command Layer Notes` | `original` | Ryan Spice-Finnie | `skills/aiwiki-command-layer-notes/SKILL.md` | `04_skills/agent-skills/skills/aiwiki-command-layer-notes/SKILL.md` |
 | `aiwiki-command-run-fragments` | `original` | Ryan Spice-Finnie | `skills/aiwiki-command-run-fragments/SKILL.md` | `04_skills/agent-skills/skills/aiwiki-command-run-fragments/SKILL.md` |
