@@ -17,9 +17,9 @@ While this branch is isolated, use its checkout under
   against duplicate launches or retries after uncertain results.
 - [x] Add the branch-first skill authoring rule to repository guidance.
 - [x] Pass skill structure, provenance, public-path, and repository checks.
-- [ ] Push the branch and verify its remote commit.
+- [x] Push the branch and verify its remote commit.
 - [x] Replace the earlier standalone harness copy with a link to this source.
-- [ ] Deliver the exact skill and branch instructions to the requested target
+- [x] Deliver the exact skill and branch instructions to the requested target
   conversation; keep delivery separate from the recipient's completion.
 - [ ] On the target machine, fetch the branch and confirm the received skill
   matches its Git commit. Preserve a dirty checkout; use a separate checkout
@@ -50,6 +50,14 @@ the repository validator passed for 68 registered skills, including provenance
 hashes and the public-path audit. The harness junction resolves to this branch
 checkout and its `SKILL.md` SHA-256 matches the source. The earlier standalone
 copy was preserved in local runtime recovery storage with verified hashes.
+
+Handoff evidence (2026-10-31): remote branch publication was verified at
+`8d2cf631b3a14ecc4ca8e509abb14ebad8f918e6`. T3 returned `delivery: steered`
+for the exact skill, support files, hashes, branch-fetch instructions, and
+eventual Wiki path sent to the owner's requested conversation on the target
+machine. This proves delivery, not that the recipient fetched or completed
+the remaining checks. All three repository commands (`npm run check`,
+`npm test`, `npm run build`) passed; they currently run the same validator.
 
 ## Receiving this branch
 
