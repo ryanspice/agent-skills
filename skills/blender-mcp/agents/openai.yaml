@@ -1,0 +1,4 @@
+interface:
+  display_name: "Blender MCP"
+  short_description: "Work with Blender through MCP"
+  default_prompt: "Use $blender-mcp to work on my Blender scene through the available MCP tools."

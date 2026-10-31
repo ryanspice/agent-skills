@@ -25,6 +25,13 @@ PixelBoats project, rather than distributed in this shared catalog.
 
 ## Get started
 
+New skills start on an `unfinished/<name>` branch in the AI Wiki skills repo,
+with an unfinished status and an evidence-backed checklist. See
+[skill authoring instructions](AGENTS.md). Cross-machine work uses the pushed
+branch instead of waiting for OneDrive. The current
+[Blender MCP draft](skills/blender-mcp/SKILL.md) and
+[progress checklist](skills/blender-mcp/STATUS.md) are unfinished.
+
 Clone the source with Git, then browse the [skill catalog](#skill-inventory-and-fleet-references)
 and read the selected skill's `SKILL.md` and supporting files. For example:
 

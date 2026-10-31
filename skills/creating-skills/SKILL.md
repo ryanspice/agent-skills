@@ -14,6 +14,16 @@ provenance_note: "Original AI Wiki local skill credited to Ryan Spice-Finnie."
 
 # Creating Skills
 
+## Branch-first authoring
+
+Follow [the repository authoring rules](../../AGENTS.md): author Ryan-owned
+skills in this AI Wiki repository on a dedicated `unfinished/<name>` branch,
+mark them unfinished, and track evidence-backed checkboxes in `STATUS.md`.
+Push an authorized handoff branch so another machine can fetch it without
+waiting for OneDrive. Harness directories are links or managed mirrors, not
+the canonical authoring location. This rule supersedes historical defaults
+below that suggest another source location or immediate installation.
+
 ## Purpose
 
 Turn repeated workflows, prompts, transcripts, research, screenshots, repo notes, examples, and project conventions into durable portable agent skills.

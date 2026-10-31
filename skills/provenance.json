@@ -8,8 +8,8 @@
     "modified": "Adapted, revised, copied, or derived from another skill/source/reference, with upstream/source credit retained."
   },
   "credit_policy": "Ryan Spice-Finnie is credited for created and locally mutated AI Wiki skills. Modified/adapted skills also retain upstream/source-reference credit where known. Ingesting them directly into this repository makes ryanspice/agent-skills the owned distribution surface.",
-  "source_file_count": 261,
-  "skill_document_count": 67,
+  "source_file_count": 264,
+  "skill_document_count": 68,
   "source_files": [
     {
       "path": "skills/agent-conversation-recovery/SKILL.md",
@@ -233,6 +233,30 @@
       "kind": "skill-document",
       "credit": "Ryan Spice-Finnie",
       "sha256": "4678fdc244319ed625ab0a142d7600f96a146a9aa521b539efef24e8ee367416",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/blender-mcp/SKILL.md",
+      "source_path": "04_skills/agent-skills/skills/blender-mcp/SKILL.md",
+      "kind": "skill-document",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "6806fa199656732c3b42ad371e679df3474fe19d8c23503dd03d780ea1781483",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/blender-mcp/STATUS.md",
+      "source_path": "04_skills/agent-skills/skills/blender-mcp/STATUS.md",
+      "kind": "support-file",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "0ecda727b4164049f50e392279a146847110d031bbd1cbfda78ba50d8ece00a5",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "path": "skills/blender-mcp/agents/openai.yaml",
+      "source_path": "04_skills/agent-skills/skills/blender-mcp/agents/openai.yaml",
+      "kind": "support-file",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "bdcf59ae4af7e44528b9abbd1d41a160f34bea32085bcf8f85c2a50a61733b4f",
       "ingested_as": "ryanspice/agent-skills owned skill"
     },
     {
@@ -832,7 +856,7 @@
       "source_path": "04_skills/agent-skills/skills/creating-skills/SKILL.md",
       "kind": "skill-document",
       "credit": "Ryan Spice-Finnie",
-      "sha256": "970aaa109799ef52bdba9323acc9fcc7740e51e207cafb10b4e9afb4c497c70e",
+      "sha256": "e756b799bb8bd4e01309a8378d247c883baa9823418e8b457b1d8b18c51fe5b5",
       "ingested_as": "ryanspice/agent-skills owned skill"
     },
     {
@@ -2188,6 +2212,16 @@
       "source_path": "04_skills/agent-skills/skills/aiwiki-svelte-lab-workflow/SKILL.md",
       "credit": "Ryan Spice-Finnie",
       "note": "Original AI Wiki local skill credited to Ryan Spice-Finnie.",
+      "upstream": "",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "name": "blender-mcp",
+      "path": "skills/blender-mcp/SKILL.md",
+      "origin": "original",
+      "source_path": "04_skills/agent-skills/skills/blender-mcp/SKILL.md",
+      "credit": "Ryan Spice-Finnie",
+      "note": "Original Blender MCP workflow authored for Ryan's AI Wiki and T3 Code; unfinished pending live acceptance.",
       "upstream": "",
       "ingested_as": "ryanspice/agent-skills owned skill"
     },
