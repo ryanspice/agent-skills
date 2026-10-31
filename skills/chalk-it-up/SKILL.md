@@ -8,6 +8,7 @@ provenance_credit: "Ryan Spice-Finnie"
 provenance_ingested_as: "ryanspice/agent-skills owned skill"
 version: "1.0.0"
 status: "active"
+provenance_note: "Owner identified Chalk It Up as an original workflow."
 ---
 
 # Chalk It Up

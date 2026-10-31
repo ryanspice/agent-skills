@@ -1,6 +1,12 @@
 ---
 name: tauri-sveltekit
 description: Use this skill when building, auditing, or refactoring Tauri apps using SvelteKit 2, Svelte 5 runes, TypeScript, Rust commands, app shell UI, tray/window behavior, or desktop integration.
+metadata:
+  provenance_origin: "unknown"
+  provenance_source_path: "04_skills/agent-skills/skills/tauri-sveltekit-svelte/SKILL.md"
+  provenance_credit: "Unverified"
+  provenance_ingested_as: "ryanspice/agent-skills owned skill"
+  provenance_note: "Earlier authorship and source have not been independently verified."
 ---
 
 # Tauri + SvelteKit Skill

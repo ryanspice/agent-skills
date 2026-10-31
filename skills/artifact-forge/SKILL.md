@@ -1,6 +1,12 @@
 ---
 name: spiceflow-artifact-forge
 description: Build durable, versioned TAR.GZ handoffs, implementation bundles, research packs, audit packs, visual asset packs, automation packs, and release artifacts. Use when Ryan asks to package work, create a TAR, produce scripts or installers, prepare a handoff, make work resumable, or leave another agent with a verifiable continuation artifact. Prefer PowerShell-first tooling, explicit manifests, acceptance checks, verification, rollback, and source authority.
+metadata:
+  provenance_origin: "unknown"
+  provenance_source_path: "04_skills/agent-skills/skills/artifact-forge/SKILL.md"
+  provenance_credit: "Ryan Spice-Finnie (customization); earlier source unverified"
+  provenance_ingested_as: "ryanspice/agent-skills owned skill"
+  provenance_note: "SpiceFlow package customized for Ryan; earlier influence has not been identified."
 ---
 
 # SpiceFlow Artifact Forge

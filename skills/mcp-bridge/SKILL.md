@@ -1,6 +1,12 @@
 ---
 name: spiceflow-mcp-bridge
 description: Discover, map, validate, and use AI Wiki, PixelBoats, and future MCP servers through capability-based adapters. Use when work depends on connected project or knowledge sources, when a skill must call MCP tools, when tool names differ across harnesses, or when a new MCP should be integrated without coupling SpiceFlow to one server implementation.
+metadata:
+  provenance_origin: "unknown"
+  provenance_source_path: "04_skills/agent-skills/skills/mcp-bridge/SKILL.md"
+  provenance_credit: "Ryan Spice-Finnie (customization); earlier source unverified"
+  provenance_ingested_as: "ryanspice/agent-skills owned skill"
+  provenance_note: "SpiceFlow package customized for Ryan; earlier influence has not been identified."
 ---
 
 # SpiceFlow MCP Bridge

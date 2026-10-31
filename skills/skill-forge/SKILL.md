@@ -1,6 +1,12 @@
 ---
 name: spiceflow-skill-forge
 description: Derive, create, evaluate, stage, improve, and package reusable AI skills from repeated workflows, conversation history, repository evidence, scripts, templates, handoffs, and MCP capabilities. Use when Ryan wants a new skill, wants to extract a pattern from prior work, improve an existing skill, add AI Wiki-compatible metadata, or build reusable operating behavior for multiple harnesses.
+metadata:
+  provenance_origin: "unknown"
+  provenance_source_path: "04_skills/agent-skills/skills/skill-forge/SKILL.md"
+  provenance_credit: "Ryan Spice-Finnie (customization); earlier source unverified"
+  provenance_ingested_as: "ryanspice/agent-skills owned skill"
+  provenance_note: "SpiceFlow package customized for Ryan; earlier influence has not been identified."
 ---
 
 # SpiceFlow Skill Forge

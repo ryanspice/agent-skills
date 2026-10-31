@@ -7,7 +7,7 @@ import { auditPublicPaths } from './audit-public-paths.mjs';
 const repoRoot = process.cwd();
 const skillsRoot = path.join(repoRoot, 'skills');
 const manifestPath = path.join(skillsRoot, 'provenance.json');
-const allowedOrigins = new Set(['original', 'modified']);
+const allowedOrigins = new Set(['original', 'modified', 'unknown']);
 const legacyBucketPath = ['skills', 'aiwiki-generated'].join('/');
 const expectedOwnedSourceRoot = '04_skills/agent-skills/skills/';
 const blockedPathPatterns = [
@@ -142,6 +142,11 @@ const skillFiles = allFiles
   .map(toRepoPath)
   .filter((repoPath) => repoPath.endsWith('/SKILL.md') || repoPath.endsWith('.SKILL.md'));
 const ingestedSkillFiles = [...manifestByPath.keys()].sort();
+
+for (const skillPath of skillFiles) {
+  if (!manifestByPath.has(skillPath)) fail(`${skillPath}: skill document missing from provenance manifest`);
+}
+
 
 if (ingestedSkillFiles.length < 50) {
   fail(`expected at least 50 AI Wiki-ingested skill files, found ${ingestedSkillFiles.length}`);

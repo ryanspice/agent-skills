@@ -6,6 +6,12 @@ author: Hermes Agent (adapted from obra/superpowers)
 license: MIT
 platforms: [linux, macos, windows]
 metadata:
+  provenance_origin: "modified"
+  provenance_source_path: "04_skills/agent-skills/skills/systematic-debugging/SKILL.md"
+  provenance_credit: "Hermes Agent"
+  provenance_ingested_as: "ryanspice/agent-skills owned skill"
+  provenance_note: "Adapted by Hermes Agent from obra/superpowers; Ryan-specific contribution not established."
+  provenance_upstream: "obra/superpowers"
   hermes:
     tags: [debugging, troubleshooting, problem-solving, root-cause, investigation]
     related_skills: [test-driven-development, writing-plans, subagent-driven-development]
