@@ -55,6 +55,7 @@ installation or discovery process.
 - **Send It** - organize authorized work into reviewable pull requests.
 - **Code n' Plan** - use focused code-backed questions to build an actionable plan.
 - **Grill Spice** - pressure-test decisions, with credit to its upstream inspiration.
+- **Wayfinder Spice** - map decisions for complex efforts, adapted from Matt Pocock's Wayfinder.
 - **Cross-machine media** - coordinate creative work and handoffs across machines.
 - **Chalk It Up** - wrap up a finished change using its documented workflow.
 
@@ -69,8 +70,9 @@ installation or discovery process.
 
 These folders are browsing indexes; canonical skill files remain at their
 existing paths. The adapted Vibe Guard pack retains CodeCoincognition's credit
-and awaits comparison with upstream before classification. Wayfinder Spice's
-origin is unverified. SpiceFlow's earlier influence has not yet been identified.
+and awaits comparison with upstream before classification. Wayfinder Spice is
+Ryan's customized adaptation of Matt Pocock's Wayfinder. SpiceFlow's earlier
+influence has not yet been identified.
 
 ## Collection scope
 
@@ -113,6 +115,7 @@ Grill Spice is customized support with upstream credit.
 | Skill | Estimated originality and recorded origin | SKILL.md bytes | Suggested fleet reference | What sets it apart |
 | --- | --- | ---: | --- | --- |
 | ⭐ ⚙️ [cross-machine-media](skills/cross-machine-media/SKILL.md) | ● ~100% (low confidence); Recorded original (Ryan/AI Wiki) | 6,304 | AI Wiki repo skill source | Coordinates creative work across machines with workload and handoff checks. |
+| ⭐ 🧭 [wayfinder-spice](skills/wayfinder-spice/SKILL.md) | ❔ ? (low confidence); Ryan adaptation; Matt Pocock | 12,989 | AI Wiki repo skill source; invoke explicitly | Maps consequential decisions and their evidence before implementation; reuses existing maps. |
 | ⭐ ⚙️ [send-it](skills/send-it/SKILL.md) | ● 100% (owner-confirmed); Recorded original (Ryan/AI Wiki) | 3,992 | AI Wiki repo skill source | Organizes authorized changes into reviewable PRs; no automatic merge. |
 | ⭐ 🤓 [code-and-plan](skills/code-and-plan/SKILL.md) | ● 100% (owner-confirmed); Recorded original (Ryan/AI Wiki) | 10,285 | AI Wiki repo skill source | Alternates focused questions and code sketches to refine a build plan. |
 | ⭐ 🤓 [grill-spice](skills/grill-spice/SKILL.md) | ◕ ~80% (low confidence); Ryan adaptation; Matt Pocock | 7,366 | AI Wiki repo skill source | Challenges one consequential decision at a time using evidence. |
