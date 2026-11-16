@@ -9,8 +9,8 @@
     "unknown": "Prior authorship or upstream source has not been independently established."
   },
   "credit_policy": "Ryan Spice-Finnie is credited for created and locally mutated AI Wiki skills. Modified/adapted skills also retain upstream/source-reference credit where known. Ingesting them directly into this repository makes ryanspice/agent-skills the owned distribution surface.",
-  "source_file_count": 300,
-  "skill_document_count": 83,
+  "source_file_count": 301,
+  "skill_document_count": 84,
   "source_files": [
     {
       "path": "skills/agent-conversation-recovery/SKILL.md",
@@ -1581,6 +1581,14 @@
       "ingested_as": "ryanspice/agent-skills owned skill"
     },
     {
+      "path": "skills/moss-texture-generation/SKILL.md",
+      "source_path": "04_skills/agent-skills/skills/moss-texture-generation/SKILL.md",
+      "kind": "skill-document",
+      "credit": "Ryan Spice-Finnie",
+      "sha256": "3fb10868c67f4ec1de171e773cdb5df55ade719d772613039b254875b858ff02",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
       "path": "skills/neanderthal/SKILL.md",
       "source_path": "04_skills/agent-skills/skills/neanderthal/SKILL.md",
       "kind": "skill-document",
@@ -2803,6 +2811,16 @@
       "source_path": "04_skills/agent-skills/skills/mcp-bridge/SKILL.md",
       "credit": "Ryan Spice-Finnie (customization); earlier source unverified",
       "note": "SpiceFlow package customized for Ryan; earlier influence has not been identified.",
+      "upstream": "",
+      "ingested_as": "ryanspice/agent-skills owned skill"
+    },
+    {
+      "name": "moss-texture-generation",
+      "path": "skills/moss-texture-generation/SKILL.md",
+      "origin": "original",
+      "source_path": "04_skills/agent-skills/skills/moss-texture-generation/SKILL.md",
+      "credit": "Ryan Spice-Finnie",
+      "note": "Written from workstation thread records and a live read-only check. Machine paths and environment ids are placeholders; resolve them from local configuration.",
       "upstream": "",
       "ingested_as": "ryanspice/agent-skills owned skill"
     },
